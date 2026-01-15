@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      /* Default to black for light mode */
+      text {
+        fill: #000000;
+      }
+      
+      /* White for dark mode */
+      @media (prefers-color-scheme: dark) {
+        text {
+          fill: #ffffff;
+        }
+      }
+      
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        font-family: Brother-1816-Thin, 'Brother 1816';
+        font-size: 69.98px;
+        font-weight: 200;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        font-family: Brother-1816-Medium, 'Brother 1816';
+        font-size: 119.07px;
+        font-weight: 500;
+      }
+
+      .cls-6 {
+        letter-spacing: .02em;
+      }
+
+      .cls-7 {
+        letter-spacing: .02em;
+      }
+
+      .cls-8 {
+        letter-spacing: .04em;
+      }
+
+      .cls-9 {
+        letter-spacing: .04em;
+      }
+
+      .cls-10 {
+        letter-spacing: .03em;
+      }
+
+      .cls-11 {
+        letter-spacing: 0em;
+      }
+
+      .cls-12 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <text class="cls-5" transform="translate(42.84 538.89)"><tspan class="cls-9" x="0" y="0">OSAM</tspan><tspan class="cls-1" x="363.03" y="0">A </tspan><tspan class="cls-9" x="475.08" y="0">MOUSS</tspan><tspan x="913" y="0">A</tspan></text>
+  <text class="cls-2" transform="translate(74.85 622.94)"><tspan class="cls-11" x="0" y="0">U</tspan><tspan class="cls-3" x="48.91" y="0">p</tspan><tspan class="cls-6" x="93.49" y="0">p</tspan><tspan x="139.81" y="0">er </tspan><tspan class="cls-8" x="224.48" y="0">G</tspan><tspan class="cls-4" x="277.31" y="0">I &amp; Gene</tspan><tspan class="cls-12" x="553.29" y="0">r</tspan><tspan class="cls-7" x="579.11" y="0">a</tspan><tspan x="617.59" y="0">l Su</tspan><tspan class="cls-8" x="735.08" y="0">r</tspan><tspan class="cls-4" x="763" y="0">g</tspan><tspan class="cls-10" x="800.43" y="0">e</tspan><tspan x="843.19" y="0">on</tspan></text>
+</svg>

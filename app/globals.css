@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbar for iPhone mockup */
+.iphone-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.iphone-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Force widget to stay inside iPhone */
+#topdoctors-gb-widget-container-6 {
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+#topdoctors-gb-widget-container-6 > * {
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-color: #6E6E6E;
+}
+
+/* Force custom cursor on EVERYTHING - highest priority */
+*, *::before, *::after {
+  cursor: url('/cursor.svg') 16 16, url('/cursor.png') 16 16, auto !important;
+}
+
+html, html * {
+  cursor: url('/cursor.svg') 16 16, url('/cursor.png') 16 16, auto !important;
+}
+
+body, body * {
+  cursor: url('/cursor.svg') 16 16, url('/cursor.png') 16 16, auto !important;
+}
+
+/* Interactive elements - pointer cursor */
+a, button, [role="button"], input, textarea, select, label,
+a:active, button:active, [role="button"]:active, input:active, textarea:active, select:active,
+a:focus, button:focus, [role="button"]:focus, input:focus, textarea:focus, select:focus,
+a:hover, button:hover, [role="button"]:hover, input:hover, textarea:hover, select:hover,
+a:visited, button:visited,
+nav, nav *, nav a, nav button, nav [role="button"],
+nav a:active, nav button:active, nav [role="button"]:active,
+nav a:focus, nav button:focus, nav [role="button"]:focus,
+nav a:hover, nav button:hover, nav [role="button"]:hover,
+header, header *, header a, header button, header [role="button"],
+header a:active, header button:active, header [role="button"]:active,
+header a:focus, header button:focus, header [role="button"]:focus,
+header a:hover, header button:hover, header [role="button"]:hover,
+footer, footer *, footer a, footer button,
+img, svg, div, span, p, h1, h2, h3, h4, h5, h6,
+section, main, article, aside {
+  cursor: url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer !important;
+}
+
+/* Menu overlay - ensure cursor shows */
+[class*="fixed"], [class*="absolute"], [class*="z-40"], [class*="z-50"], [class*="z-[60]"] {
+  cursor: url('/cursor.svg') 16 16, url('/cursor.png') 16 16, auto !important;
+}
+
+[class*="fixed"] *, [class*="absolute"] * {
+  cursor: url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer !important;
+}
+
+/* Force cursor on all menu elements */
+div[class*="fixed"][class*="inset-0"],
+div[class*="fixed"][class*="inset-0"] *,
+nav[class*="absolute"],
+nav[class*="absolute"] *,
+button[class*="absolute"],
+button[class*="absolute"] *,
+svg, svg *,
+path, line, circle, rect, polygon {
+  cursor: url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer !important;
+}
+
+html {
+  background: var(--background-color);
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--background-color);
+}
+
+@keyframes letterBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.letter-bounce {
+  animation: letterBounce 0.6s ease-in-out;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.shimmer-hover:hover::before {
+  left: 100%;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.hero-breathe {
+  animation: breathe 20s ease-in-out infinite;
+}
+
+@keyframes growShrink {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.image-slide {
+  animation: growShrink 30s ease-in-out infinite;
+}
+
+.image-grow-shrink {
+  animation: growShrink 30s ease-in-out infinite;
+}
+
+/* TopDoctors widget positioning */
+#topdoctors-gb-widget-container-2 {
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
