@@ -76,13 +76,13 @@ export default function ResearchPage() {
                 he was proactive in endorsing his evidence-based approach to surgery
                 and continued to nurture his research skills. He finally undertook a
                 statistically-based postgraduate degree and he pushed his boundaries to
-                publish in very high-impact journals. Osama's work has also been
+                publish in very high-impact journals. Osama&apos;s work has also been
                 referenced and used in the most recent NICE guidelines change for better
                 Obesity management in the UK.
               </p>
               <p>
                 Osama founded and led the Imperial Obesity Epidemiology Syndicate
-                (I'OBES), a research collaboration with various specialities that used
+                (I&apos;OBES), a research collaboration with various specialities that used
                 extensive data analysis on long-term obesity outcomes. He has also
                 supervised several BSc projects successfully to more publications.
               </p>
@@ -210,7 +210,7 @@ function MorePublicationsSection() {
             More Publications
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
-            If you are interested in viewing many more of Osama Moussa's
+            If you are interested in viewing many more of Osama Moussa&apos;s
             publications, please download this PDF which titles all of his
             publications and contributions over the years.
           </p>

@@ -21,7 +21,7 @@ export default function AboutSection() {
         
         {/* Descriptive Text - Sans-serif, smaller */}
         <p className="text-base sm:text-lg md:text-xl text-white mb-10 max-w-3xl mx-auto leading-relaxed font-light">
-          Osama's experience nurtured a vast exposure in open, laparoscopic and robotic Upper GI surgery ranging from benign, bariatric to oncological.
+          Osama&apos;s experience nurtured a vast exposure in open, laparoscopic and robotic Upper GI surgery ranging from benign, bariatric to oncological.
         </p>
         
         {/* Learn More Button - Thin white border, light grey fill, white text */}

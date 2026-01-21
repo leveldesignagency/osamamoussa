@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/Footer";
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.osamamoussa.co.uk"),
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
   title: {
     default: "Mr Osama Moussa | Consultant General Surgeon | Upper GI Surgery | London & Hertfordshire",
     template: "%s | Mr Osama Moussa - Consultant General Surgeon"

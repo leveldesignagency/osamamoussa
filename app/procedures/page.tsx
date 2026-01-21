@@ -160,7 +160,7 @@ function IntroductionSection() {
               Upper GI and General surgical procedures. Minimally invasive surgery
               took a significant step forward with the introduction of robotically
               assisted procedures. Osama is trained in not one but two robotic
-              modules (Versius and Intuitive). In the hands of Osama's skill set,
+              modules (Versius and Intuitive). In the hands of Osama&apos;s skill set,
               both robotic and laparoscopic surgery is very safe. Both have
               significant benefits when compared to open surgery, including a
               shorter hospital stay, shorter recovery as well as a lower risk of

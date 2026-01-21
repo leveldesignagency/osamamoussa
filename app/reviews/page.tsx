@@ -145,7 +145,7 @@ export default function ReviewsPage() {
                   ))}
                 </div>
                 <p className="text-black leading-relaxed italic font-serif">
-                  "{review.text}"
+                  &quot;{review.text}&quot;
                 </p>
               </div>
             ))}
@@ -159,7 +159,7 @@ export default function ReviewsPage() {
           <div className="max-w-6xl mx-auto border-2 border-white p-8 mb-8">
             <h2 className="text-2xl sm:text-3xl font-sans font-bold text-white mb-6">
               Here are some resources for you to look through which can aid in your
-              understanding of Osama's Medical Background, and any queries or concerns
+              understanding of Osama&apos;s Medical Background, and any queries or concerns
               you have based around your surgery...
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
