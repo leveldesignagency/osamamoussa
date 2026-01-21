@@ -30,50 +30,50 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="relative text-white uppercase tracking-wide group pb-1"
+                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200"
                 >
                   About
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </li>
               <li className="text-gray-500">|</li>
               <li>
                 <Link
                   href="/procedures"
-                  className="relative text-white uppercase tracking-wide group pb-1"
+                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200"
                 >
                   Procedures
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </li>
               <li className="text-gray-500">|</li>
               <li>
                 <Link
                   href="/research"
-                  className="relative text-white uppercase tracking-wide group pb-1"
+                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200"
                 >
                   Research
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </li>
               <li className="text-gray-500">|</li>
               <li>
                 <Link
                   href="/reviews"
-                  className="relative text-white uppercase tracking-wide group pb-1"
+                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200"
                 >
                   Reviews
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </li>
               <li className="text-gray-500">|</li>
               <li>
                 <Link
                   href="/procedures/contact"
-                  className="relative text-white uppercase tracking-wide group pb-1"
+                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200"
                 >
                   Contact
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </li>
             </ul>
@@ -98,7 +98,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/osama-moussa-1610o/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:opacity-60 transition-opacity duration-200"
+                className="text-white hover:text-black transition-colors duration-200"
                 aria-label="LinkedIn"
               >
                 <svg
@@ -114,7 +114,7 @@ export default function Footer() {
                 href="https://x.com/mromoussa"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:opacity-60 transition-opacity duration-200"
+                className="text-white hover:text-black transition-colors duration-200"
                 aria-label="X (Twitter)"
               >
                 <svg
@@ -144,14 +144,14 @@ export default function Footer() {
               <div className="text-xs text-gray-500 space-x-3">
                 <Link
                   href="/terms-and-conditions"
-                  className="hover:text-gray-400 transition-colors duration-200"
+                  className="hover:text-black transition-colors duration-200"
                 >
                   Terms and Conditions
                 </Link>
                 <span>|</span>
                 <Link
                   href="/privacy-policy"
-                  className="hover:text-gray-400 transition-colors duration-200"
+                  className="hover:text-black transition-colors duration-200"
                 >
                   Privacy Policy
                 </Link>

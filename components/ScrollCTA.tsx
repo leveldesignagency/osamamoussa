@@ -91,7 +91,7 @@ export default function ScrollCTA() {
               <div className="flex items-center gap-3">
                 <Link
                   href="/procedures/contact"
-                  className="inline-block px-6 py-3 border-2 border-black bg-transparent text-black font-semibold button-swipe whitespace-nowrap"
+                  className="inline-block px-6 py-3 border-2 border-black bg-transparent text-black font-semibold button-swipe button-swipe-black whitespace-nowrap"
                 >
                   Book Now
                 </Link>
