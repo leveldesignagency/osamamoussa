@@ -136,10 +136,9 @@ export default function Footer() {
                   href="http://www.leveldesignagency.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative text-white hover:text-gray-300 transition-colors duration-200 inline-block group"
+                  className="text-white hover:text-red-500 transition-colors duration-200 inline-block"
                 >
                   LEVEL DESIGN AGENCY LTD
-                  <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </p>
               <div className="text-xs text-gray-500 space-x-3">

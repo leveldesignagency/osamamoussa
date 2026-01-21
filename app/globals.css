@@ -120,6 +120,11 @@ body {
   display: inline-flex;
 }
 
+.phone-number-bounce .phone-char {
+  display: inline-block;
+  transition: transform 0.1s ease-out;
+}
+
 .phone-number-bounce:hover .phone-char {
   animation: phoneCharBounce 0.5s ease-in-out;
   animation-fill-mode: both;
