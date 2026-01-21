@@ -368,7 +368,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full px-8 py-3 bg-white text-[#6E6E6E] font-semibold hover:bg-gray-100 hover:text-black transition-all duration-300 border-2 border-white shimmer-hover text-lg"
+                className="w-full px-8 py-3 border-2 border-white bg-white text-[#6E6E6E] font-semibold transition-all duration-300 button-swipe button-swipe-white-bg text-lg"
               >
                 Submit
               </button>

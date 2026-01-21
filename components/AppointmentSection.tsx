@@ -67,7 +67,7 @@ export default function AppointmentSection() {
               </p>
               <Link
                 href="/procedures/contact"
-                className="inline-block px-8 py-4 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium hover:bg-white hover:text-[#6E6E6E] hover:border-black transition-all duration-300 text-center shimmer-hover"
+                className="inline-block px-8 py-4 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium hover:border-black transition-all duration-300 text-center button-swipe text-white"
               >
                 Book Now
               </Link>

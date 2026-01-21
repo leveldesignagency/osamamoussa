@@ -216,12 +216,13 @@ function ProcedureCard({ procedure, index }: { procedure: Procedure, index: numb
     >
                 {procedure.imageLeft ? (
                   <>
-                    <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden">
+                    <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-72 lg:h-96" : "h-64 lg:h-80"}`}>
                       <Image
                         src={procedure.image}
                         alt={procedure.title}
                         fill
                         className="object-cover"
+                        style={procedure.image === "/linx-procedure.png" ? { objectPosition: "center 30%" } : {}}
                       />
                     </div>
                     <div>
@@ -243,12 +244,13 @@ function ProcedureCard({ procedure, index }: { procedure: Procedure, index: numb
                         {procedure.description}
                       </p>
                     </div>
-                    <div className="relative w-full h-64 lg:h-80 rounded-lg overflow-hidden">
+                    <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-72 lg:h-96" : "h-64 lg:h-80"}`}>
                       <Image
                         src={procedure.image}
                         alt={procedure.title}
                         fill
                         className="object-cover"
+                        style={procedure.image === "/linx-procedure.png" ? { objectPosition: "center 30%" } : {}}
                       />
                     </div>
                   </>

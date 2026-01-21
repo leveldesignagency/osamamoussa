@@ -27,7 +27,7 @@ export default function AboutSection() {
         {/* Learn More Button - Thin white border, light grey fill, white text */}
         <Link
           href="/procedures"
-          className="inline-block px-10 py-4 border border-white bg-[#9a9a9a] text-white font-normal hover:bg-[#b0b0b0] transition-colors duration-200 shimmer-hover"
+          className="inline-block px-10 py-4 border border-white bg-[#9a9a9a] text-white font-normal transition-all duration-200 button-swipe text-white relative"
         >
           Learn More
         </Link>

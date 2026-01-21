@@ -146,7 +146,7 @@ function TitleSection() {
               href="https://www.researchgate.net/profile/Osama-Moussa-7"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium hover:bg-white hover:text-[#6E6E6E] transition-colors duration-200 text-center shimmer-hover"
+              className="inline-block px-6 py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white"
             >
               Researchgate
             </Link>
@@ -154,7 +154,7 @@ function TitleSection() {
               href="https://scholargps.com/scholars/40596147119067/osama-moussa"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium hover:bg-white hover:text-[#6E6E6E] transition-colors duration-200 text-center shimmer-hover"
+              className="inline-block px-6 py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white"
             >
               Scholargps
             </Link>
@@ -187,7 +187,7 @@ function PublicationItem({ pub, index }: { pub: Publication, index: number }) {
           href={pub.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-6 py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium hover:bg-white hover:text-[#6E6E6E] transition-colors duration-200 text-center shimmer-hover"
+          className="inline-block px-6 py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white"
         >
           View Publication
         </Link>
@@ -218,7 +218,7 @@ function MorePublicationsSection() {
             href="https://www.osamamoussa.co.uk/_files/ugd/ac3c0f_d8b35d56a8244ff7a4114e8c2242f65d.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 bg-[#6E6E6E] text-white font-medium hover:bg-[#5a5a5a] transition-colors duration-200 shimmer-hover"
+            className="inline-block px-8 py-4 border-2 border-[#6E6E6E] bg-[#6E6E6E] text-white font-medium transition-colors duration-200 button-swipe text-white"
           >
             Download
           </Link>

@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import AppointmentSection from "@/components/AppointmentSection";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "Privacy Policy for Mr Osama Moussa's medical practice website. Learn how we protect and handle your personal information.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.osamamoussa.co.uk/privacy-policy",
+  },
+};
 
 export default function PrivacyPolicyPage() {
   return (

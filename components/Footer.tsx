@@ -98,7 +98,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/osama-moussa-1610o/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:opacity-60 transition-opacity duration-200 shimmer-hover"
+                className="text-white hover:opacity-60 transition-opacity duration-200"
                 aria-label="LinkedIn"
               >
                 <svg
@@ -114,7 +114,7 @@ export default function Footer() {
                 href="https://x.com/mromoussa"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:opacity-60 transition-opacity duration-200 shimmer-hover"
+                className="text-white hover:opacity-60 transition-opacity duration-200"
                 aria-label="X (Twitter)"
               >
                 <svg

@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import AppointmentSection from "@/components/AppointmentSection";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions",
+  description: "Terms and Conditions for Mr Osama Moussa's medical practice website. Please read our terms of use before using this website.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://www.osamamoussa.co.uk/terms-and-conditions",
+  },
+};
 
 export default function TermsAndConditionsPage() {
   return (

@@ -18,12 +18,53 @@ npm run dev
 
 ## Deployment to Vercel
 
-1. Push your code to a Git repository
-2. Import the project in Vercel
-3. Vercel will automatically detect Next.js and configure the build settings
-4. Deploy!
+### Option 1: Deploy via Vercel Dashboard (Recommended)
 
-The site is configured for Vercel deployment with `vercel.json`.
+1. **Push your code to a Git repository** (GitHub, GitLab, or Bitbucket)
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git remote add origin <your-repo-url>
+   git push -u origin main
+   ```
+
+2. **Import the project in Vercel**
+   - Go to [vercel.com](https://vercel.com) and sign in
+   - Click "Add New..." → "Project"
+   - Import your Git repository
+   - Vercel will automatically detect Next.js and configure the build settings
+
+3. **Configure environment variables** (if needed)
+   - Add any required environment variables in the Vercel dashboard
+
+4. **Deploy!**
+   - Click "Deploy" and Vercel will build and deploy your site
+   - Your site will be live at `https://your-project.vercel.app`
+
+### Option 2: Deploy via Vercel CLI
+
+1. **Install Vercel CLI**
+   ```bash
+   npm i -g vercel
+   ```
+
+2. **Deploy**
+   ```bash
+   vercel
+   ```
+
+3. **For production deployment**
+   ```bash
+   vercel --prod
+   ```
+
+The site is configured for Vercel deployment with `vercel.json`. Vercel will automatically:
+- Detect Next.js framework
+- Run `npm install` and `npm run build`
+- Optimize images and assets
+- Provide HTTPS and CDN
+- Enable automatic deployments on git push
 
 ## Project Structure
 

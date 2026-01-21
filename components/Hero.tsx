@@ -82,13 +82,13 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
                 <Link
                   href="/procedures/contact"
-                  className="inline-block px-8 py-4 border-2 border-black bg-gray-500/10 text-black font-medium hover:bg-white hover:text-black hover:border-black transition-all duration-300 text-center shimmer-hover"
+                  className="inline-block px-8 py-4 border-2 border-black bg-gray-500/10 text-black font-medium hover:border-black transition-all duration-300 text-center button-swipe"
                 >
                   Book Now
                 </Link>
                 <Link
                   href="mailto:pa@osamamoussa.co.uk?subject=Hi!%20Can%20you%20help%20me%3F"
-                  className="inline-block px-8 py-4 border-2 border-black bg-gray-500/10 text-black font-medium hover:bg-white hover:text-black hover:border-black transition-all duration-300 text-center shimmer-hover"
+                  className="inline-block px-8 py-4 border-2 border-black bg-gray-500/10 text-black font-medium hover:border-black transition-all duration-300 text-center button-swipe"
                 >
                   Email Us
                 </Link>

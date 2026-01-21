@@ -1,6 +1,37 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import AppointmentSection from "@/components/AppointmentSection";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About Mr Osama Moussa",
+  description: "Mr Osama Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. Extensive training at Imperial College London, Royal Marsden, UCL, and Chelsea & Westminster hospitals. Expert in open, laparoscopic, and robotic Upper GI surgery.",
+  keywords: [
+    "Osama Moussa biography",
+    "Consultant Surgeon background",
+    "Upper GI Surgeon qualifications",
+    "West Hertfordshire Hospitals",
+    "Imperial College London surgeon",
+    "Royal Marsden surgeon",
+    "Laparoscopic surgery training",
+    "Robotic surgery expert",
+    "Minimal Access Surgery",
+    "Anti-reflux surgery fellowship",
+    "Bariatric surgery fellowship",
+    "Medical Doctorate Imperial",
+    "CCT General Surgery",
+    "Liverpool Newcastle Scotland training"
+  ],
+  openGraph: {
+    title: "About Mr Osama Moussa | Consultant General Surgeon",
+    description: "Distinguished Consultant General Surgeon specialising in Upper GI and General Surgery. Expert in laparoscopic, robotic, and open surgery with extensive training at prestigious London hospitals.",
+    url: "https://www.osamamoussa.co.uk/about",
+    type: "profile",
+  },
+  alternates: {
+    canonical: "https://www.osamamoussa.co.uk/about",
+  },
+};
 
 export default function AboutPage() {
   return (

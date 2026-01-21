@@ -1,6 +1,33 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import AppointmentSection from "@/components/AppointmentSection";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Patient Reviews & Resources",
+  description: "Read patient reviews and testimonials for Mr Osama Moussa. Access helpful resources and links for patients seeking Upper GI surgical care in London and Hertfordshire.",
+  keywords: [
+    "Osama Moussa reviews",
+    "Patient testimonials",
+    "Surgeon reviews London",
+    "Upper GI surgeon reviews",
+    "Patient feedback",
+    "Surgical patient reviews",
+    "IWantGreatCare reviews",
+    "TopDoctors reviews",
+    "NHS patient resources",
+    "Surgical care resources"
+  ],
+  openGraph: {
+    title: "Patient Reviews & Resources | Mr Osama Moussa",
+    description: "Read patient reviews and testimonials. Access helpful resources for Upper GI surgical care.",
+    url: "https://www.osamamoussa.co.uk/reviews",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://www.osamamoussa.co.uk/reviews",
+  },
+};
 
 export default function ReviewsPage() {
   const resources = [
@@ -142,7 +169,7 @@ export default function ReviewsPage() {
                   href={resource.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-2 border-white p-4 text-center text-white hover:bg-white hover:text-[#6E6E6E] transition-all duration-300"
+                  className="border-2 border-white p-4 text-center text-white transition-all duration-300 button-swipe text-white rounded-lg"
                 >
                   <p className="text-sm font-sans font-bold">{resource.title}</p>
                 </Link>
@@ -162,7 +189,7 @@ export default function ReviewsPage() {
                 href="https://www.researchgate.net/profile/Osama-Moussa-7"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-4 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium hover:bg-white hover:text-[#6E6E6E] hover:border-black transition-all duration-300 text-center shimmer-hover"
+                className="inline-block px-8 py-4 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium hover:border-black transition-all duration-300 text-center button-swipe text-white"
               >
                 Researchgate
               </Link>
@@ -170,7 +197,7 @@ export default function ReviewsPage() {
                 href="https://scholargps.com/scholars/40596147119067/osama-moussa"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-4 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium hover:bg-white hover:text-[#6E6E6E] hover:border-black transition-all duration-300 text-center shimmer-hover"
+                className="inline-block px-8 py-4 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium hover:border-black transition-all duration-300 text-center button-swipe text-white"
               >
                 Scholargps
               </Link>

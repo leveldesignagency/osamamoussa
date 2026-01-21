@@ -26,7 +26,7 @@ export default function ReviewsSection() {
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
 
   return (
-    <section className="w-full bg-white py-24 px-4 sm:px-6 lg:px-8">
+    <section id="reviews-section" className="w-full bg-white py-24 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Side - Image with feathered bottom */}
@@ -104,7 +104,7 @@ export default function ReviewsSection() {
               href="https://www.iwantgreatcare.org/doctors/mr-osama-m-moussa?page=2"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-10 py-4 text-lg border-2 border-black text-black font-medium hover:bg-black hover:text-white transition-colors duration-200 shimmer-hover"
+              className="inline-block px-10 py-4 text-lg border-2 border-black text-black font-medium transition-colors duration-200 button-swipe button-swipe-black"
             >
               More Reviews
             </Link>
