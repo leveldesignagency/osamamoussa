@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 export default function ScrollCTA() {
   const [isVisible, setIsVisible] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
   const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function ScrollCTA() {
         // Hide if we're at or past the reviews section
         if (currentScrollY + windowHeight >= reviewsTop - 100) {
           setIsVisible(false);
-          setLastScrollY(currentScrollY);
+          lastScrollY.current = currentScrollY;
           return;
         }
       }
@@ -44,16 +44,16 @@ export default function ScrollCTA() {
       // Show after scrolling past 500px
       if (currentScrollY > 500) {
         // Show on scroll down, hide on scroll up
-        if (currentScrollY > lastScrollY && currentScrollY - lastScrollY > 5) {
+        if (currentScrollY > lastScrollY.current && currentScrollY - lastScrollY.current > 5) {
           setIsVisible(true);
-        } else if (currentScrollY < lastScrollY) {
+        } else if (currentScrollY < lastScrollY.current) {
           setIsVisible(false);
         }
       } else {
         setIsVisible(false);
       }
       
-      setLastScrollY(currentScrollY);
+      lastScrollY.current = currentScrollY;
     };
 
     // Initial check
