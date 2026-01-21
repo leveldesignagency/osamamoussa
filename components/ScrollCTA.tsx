@@ -92,7 +92,7 @@ export default function ScrollCTA() {
                 </Link>
                 <button
                   onClick={handleDismiss}
-                  className="px-6 py-3 border-2 border-black bg-transparent text-black font-semibold button-swipe whitespace-nowrap opacity-30 hover:opacity-100 transition-opacity duration-200"
+                  className="px-6 py-3 border-2 border-black bg-transparent text-black font-semibold button-swipe button-swipe-white-bg whitespace-nowrap opacity-30 hover:opacity-100 transition-opacity duration-200"
                   aria-label="Close banner"
                 >
                   Close
