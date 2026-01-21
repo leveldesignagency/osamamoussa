@@ -107,6 +107,25 @@ body {
   animation: letterBounce 0.6s ease-in-out;
 }
 
+@keyframes phoneCharBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.phone-number-bounce {
+  display: inline-flex;
+}
+
+.phone-number-bounce:hover .phone-char {
+  animation: phoneCharBounce 0.5s ease-in-out;
+  animation-fill-mode: both;
+}
+
+
 @keyframes shimmer {
   0% {
     background-position: -1000px 0;
