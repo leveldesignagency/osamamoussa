@@ -118,25 +118,25 @@ export default function ValuesSection() {
 
   const values = [
     {
-      video: "/Value 1.mp4",
+      video: "https://wu0h7bvzfe6rners.public.blob.vercel-storage.com/Value%201.mp4",
       title: "Exceptional Expertise in Upper GI Surgery",
       description:
         "With a distinguished background in upper gastrointestinal surgery, Osama Moussa brings a wealth of expertise to his practice. His commitment to delivering surgical excellence in this specialised field ensures that patients receive the highest standard of care tailored to their unique needs.",
     },
     {
-      video: "/Values 2.mp4",
+      video: "https://wu0h7bvzfe6rners.public.blob.vercel-storage.com/Values%202.mp4",
       title: "Extensive Training and Experience",
       description:
         "Osama Moussa's professional journey has been marked by extensive training and experience across various eminent medical institutions in the UK. From teaching centres in cities like Liverpool and Newcastle to renowned London tertiary centres such as Imperial College London, University College London and the Royal Marsden, he has acquired a breadth of clinical insight and exposure to complex surgical cases.",
     },
     {
-      video: "/Values 3.mp4",
+      video: "https://wu0h7bvzfe6rners.public.blob.vercel-storage.com/Values%203.mp4",
       title: "Multidisciplinary Approach",
       description:
         "Osama Moussa's comprehensive training has equipped him with skills in open, laparoscopic, and robotic upper GI surgery. His expertise extends beyond traditional surgical methods to include advanced techniques such as laparoscopy and robotic-assisted surgery, ensuring patients have access to the latest innovations in surgical care.",
     },
     {
-      video: "/Values 4.mp4",
+      video: "https://wu0h7bvzfe6rners.public.blob.vercel-storage.com/Values%204.mp4",
       title: "Commitment to Academic Excellence",
       description:
         "Osama Moussa's dedication to advancing his skills and knowledge is evident through his pursuit of academic excellence. From obtaining a Postgraduate Diploma in Minimal Access Surgery to completing a research Medical Doctorate at Imperial College London, he demonstrates a commitment to staying at the forefront of medical advancements in his field. His research, particularly in metabolic health in obesity, highlights his commitment to innovation.",
