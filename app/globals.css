@@ -349,14 +349,14 @@ body {
 
 /* Hamburger menu - blur other items on hover */
 .menu-nav-group .menu-item {
-  opacity: 1;
-  filter: blur(0);
+  opacity: 1 !important;
+  filter: blur(0) !important;
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .menu-nav-group:hover .menu-item:not(:hover) {
-  opacity: 0.5;
-  filter: blur(2px);
+  opacity: 0.5 !important;
+  filter: blur(2px) !important;
 }
 
 .menu-nav-group .menu-item:hover {
@@ -365,14 +365,14 @@ body {
 }
 
 .mobile-menu-nav-group .mobile-menu-item {
-  opacity: 1;
-  filter: blur(0);
+  opacity: 1 !important;
+  filter: blur(0) !important;
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
 .mobile-menu-nav-group:hover .mobile-menu-item:not(:hover) {
-  opacity: 0.5;
-  filter: blur(2px);
+  opacity: 0.5 !important;
+  filter: blur(2px) !important;
 }
 
 .mobile-menu-nav-group .mobile-menu-item:hover {
