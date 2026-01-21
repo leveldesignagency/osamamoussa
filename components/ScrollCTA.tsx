@@ -14,16 +14,17 @@ export default function ScrollCTA() {
     if (dismissedState === 'true') {
       setIsDismissed(true);
       setIsVisible(false);
+      return;
     }
 
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
       // Don't show if dismissed
       if (isDismissed) {
         setIsVisible(false);
         return;
       }
+
+      const currentScrollY = window.scrollY;
       
       // Find reviews section and check if we've reached it
       const reviewsSection = document.getElementById('reviews-section');
@@ -35,6 +36,7 @@ export default function ScrollCTA() {
         // Hide if we're at or past the reviews section
         if (currentScrollY + windowHeight >= reviewsTop - 100) {
           setIsVisible(false);
+          setLastScrollY(currentScrollY);
           return;
         }
       }
@@ -42,9 +44,9 @@ export default function ScrollCTA() {
       // Show after scrolling past 500px
       if (currentScrollY > 500) {
         // Show on scroll down, hide on scroll up
-        if (currentScrollY > lastScrollY) {
+        if (currentScrollY > lastScrollY && currentScrollY - lastScrollY > 5) {
           setIsVisible(true);
-        } else {
+        } else if (currentScrollY < lastScrollY) {
           setIsVisible(false);
         }
       } else {
@@ -54,9 +56,12 @@ export default function ScrollCTA() {
       setLastScrollY(currentScrollY);
     };
 
+    // Initial check
+    handleScroll();
+    
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY, isDismissed]);
+  }, [isDismissed]);
 
   const handleDismiss = () => {
     setIsDismissed(true);
