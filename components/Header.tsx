@@ -86,9 +86,21 @@ export default function Header({ backgroundColor = "transparent" }: HeaderProps)
             {/* Phone Number */}
             <a
               href="tel:07352167642"
-              className={`${textColor} font-medium hover:opacity-80 transition-opacity hidden sm:block text-lg`}
+              className={`${textColor} font-medium transition-opacity hidden sm:block text-lg group`}
             >
-              07352167642
+              <span className="inline-flex">
+                {"07352167642".split("").map((char, index) => (
+                  <span
+                    key={index}
+                    className="inline-block group-hover:phone-char-bounce"
+                    style={{
+                      animationDelay: `${index * 0.04}s`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
+              </span>
             </a>
 
             {/* Social Icons */}
