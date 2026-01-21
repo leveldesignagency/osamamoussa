@@ -34,8 +34,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Video files (too large for GitHub)
-*.mp4
-Value*.mp4
-Values*.mp4
+# Large video files (keep compressed versions in public/)
+# Allow compressed videos in public/ directory
+!/public/*.mp4
 
