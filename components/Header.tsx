@@ -65,7 +65,7 @@ export default function Header({ backgroundColor = "transparent" }: HeaderProps)
         </div>
       )}
       <header className={`absolute top-0 left-0 right-0 z-50 ${bgClass}`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto pl-4 sm:pl-6 lg:pl-8 pr-2 sm:pr-3 lg:pr-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Top Left */}
           <div className="flex-shrink-0">
@@ -82,7 +82,7 @@ export default function Header({ backgroundColor = "transparent" }: HeaderProps)
           </div>
 
           {/* Right Side - Phone, Social Icons, Hamburger */}
-          <div className="flex items-center gap-6 mr-4 sm:mr-8">
+          <div className="flex items-center gap-6 mr-0 sm:mr-1">
             {/* Phone Number */}
             <a
               href="tel:07352167642"
