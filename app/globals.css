@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile image positioning for hero */
+@media (max-width: 640px) {
+  .hero-image-mobile {
+    object-position: 30% center !important;
+  }
+}
+
 /* Hide scrollbar for iPhone mockup */
 .iphone-scroll::-webkit-scrollbar {
   display: none;

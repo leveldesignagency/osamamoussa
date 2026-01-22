@@ -67,29 +67,29 @@ export default function ScrollCTA() {
 
   return (
     <div 
-      className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ease-out ${
+      className={`fixed bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ease-out ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'
       }`}
-      style={{ maxWidth: '90%', width: '100%' }}
+      style={{ maxWidth: '95%', width: '100%' }}
     >
-      <div className="bg-white rounded-full shadow-2xl overflow-hidden border-2 border-gray-200">
+      <div className="bg-white rounded-full sm:rounded-full shadow-2xl overflow-hidden border-2 border-gray-200">
         <div className="relative">
           {/* Content */}
-          <div className="container mx-auto px-6 sm:px-8 lg:px-10 py-5">
-            <div className="flex items-center justify-between gap-4">
-              <p className="text-black text-2xl sm:text-3xl lg:text-4xl font-bold">
+          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 md:py-5">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
+              <p className="text-black text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center sm:text-left">
                 Book Your Appointment Today
               </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 sm:gap-3">
                 <Link
                   href="/procedures/contact"
-                  className="inline-block px-6 py-3 border-2 border-black bg-transparent text-black font-semibold button-swipe button-swipe-black whitespace-nowrap"
+                  className="inline-block px-4 sm:px-6 py-2 sm:py-3 border-2 border-black bg-transparent text-black font-semibold button-swipe button-swipe-black whitespace-nowrap text-sm sm:text-base"
                 >
                   Book Now
                 </Link>
                 <button
                   onClick={handleDismiss}
-                  className="px-6 py-3 border-2 border-black bg-transparent text-black font-semibold button-swipe button-swipe-white-bg whitespace-nowrap opacity-30 hover:opacity-100 transition-opacity duration-200"
+                  className="px-4 sm:px-6 py-2 sm:py-3 border-2 border-black bg-transparent text-black font-semibold button-swipe button-swipe-white-bg whitespace-nowrap opacity-30 hover:opacity-100 transition-opacity duration-200 text-sm sm:text-base"
                   aria-label="Close banner"
                 >
                   Close

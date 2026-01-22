@@ -58,16 +58,16 @@ export default function AppointmentSection() {
         
         {/* Content */}
         <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-end">
-            <div className="max-w-md text-right">
-              <p className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-sans font-bold text-white mb-6">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-center sm:justify-end">
+            <div className="max-w-md text-center sm:text-right">
+              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sans font-bold text-white mb-4 sm:mb-6">
                 Book Your<br />
                 Appointment<br />
                 Today!
               </p>
               <Link
                 href="/procedures/contact"
-                className="inline-block px-8 py-4 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium hover:border-black transition-all duration-300 text-center button-swipe text-white"
+                className="inline-block px-6 sm:px-8 py-3 sm:py-4 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium hover:border-black transition-all duration-300 text-center button-swipe text-white text-sm sm:text-base"
               >
                 Book Now
               </Link>
@@ -79,10 +79,10 @@ export default function AppointmentSection() {
       {/* TopDoctors Widget Section - White background, overlapping */}
       <section className="w-full bg-white py-8 relative" style={{ padding: 0, margin: 0, overflow: 'visible' }}>
         <div 
+          className="absolute left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none"
           style={{ 
-            position: 'absolute',
             top: '-65px',
-            left: 'calc(50% - 180px)',
+            left: 'calc(50% - 65px)',
             zIndex: 30,
             width: '130px'
           }}
@@ -92,7 +92,7 @@ export default function AppointmentSection() {
             style={{ 
               maxWidth: "130px", 
               width: "130px",
-              margin: 0,
+              margin: '0 auto',
               padding: 0,
               display: "block",
               position: "relative"

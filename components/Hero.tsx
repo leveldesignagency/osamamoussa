@@ -74,18 +74,19 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden">
-      <div className="absolute inset-0">
+    <section className="relative w-full h-screen overflow-hidden" style={{ overflow: 'hidden' }}>
+      <div className="absolute inset-0 overflow-hidden">
         <Image
           src="/1-2.jpg"
           alt="Osama Moussa"
           fill
-          className="object-cover hero-breathe"
+          className="object-cover hero-breathe hero-image-mobile"
           priority
           quality={90}
           style={{
             maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)'
+            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
+            objectPosition: 'left center',
           }}
         />
       </div>
@@ -100,22 +101,22 @@ export default function Hero() {
       ></div>
       
       {/* Hero Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-start">
+      <div className="relative z-10 h-full flex flex-col justify-center items-center sm:items-start">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-black mb-8 leading-tight max-w-3xl animate-fade-in-up">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-black mb-8 leading-tight max-w-3xl animate-fade-in-up text-center sm:text-left">
             A leader in Upper GI Surgery in London and Hertfordshire
           </h1>
           
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
+          <div className="flex flex-row gap-2 sm:gap-4 animate-fade-in-up justify-center sm:justify-start" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
                 <Link
                   href="/procedures/contact"
-                  className="inline-block px-8 py-4 border-2 border-black bg-gray-500/10 text-black font-medium hover:border-black transition-all duration-300 text-center button-swipe"
+                  className="inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-black bg-white text-black font-medium hover:border-black transition-all duration-300 text-center button-swipe text-sm sm:text-base"
                 >
                   Book Now
                 </Link>
                 <Link
                   href="mailto:pa@osamamoussa.co.uk?subject=Hi!%20Can%20you%20help%20me%3F"
-                  className="inline-block px-8 py-4 border-2 border-black bg-gray-500/10 text-black font-medium hover:border-black transition-all duration-300 text-center button-swipe"
+                  className="inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-black bg-white text-black font-medium hover:border-black transition-all duration-300 text-center button-swipe text-sm sm:text-base"
                 >
                   Email Us
                 </Link>
@@ -123,12 +124,12 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Widgets Overlay at Bottom - aligned with buttons above */}
+      {/* Widgets Overlay at Bottom - centered on mobile */}
       <div className="absolute bottom-8 z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex flex-col sm:flex-row gap-2 items-start">
+          <div className="flex flex-col sm:flex-row gap-2 items-center sm:items-start justify-center sm:justify-start">
             {/* TopDoctors Widget - first, same size */}
-            <div className="w-full sm:w-auto" style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "flex-start" }}>
+            <div className="w-full sm:w-auto" style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center sm:flex-start" }}>
               <div
                 id="topdoctors-gb-widget-container-8"
                 style={{ 
@@ -138,7 +139,7 @@ export default function Hero() {
             </div>
 
             {/* Doctify Widget - second, same size */}
-            <div className="w-full sm:w-auto" style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start" }}>
+            <div className="w-full sm:w-auto" style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center sm:flex-start" }}>
               <iframe
                 id="09in4nm9"
                 className="doctify-widget"

@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-grey">
+    <main className="min-h-screen bg-gradient-grey overflow-x-hidden">
       <Header />
       <Hero />
       <AboutSection />

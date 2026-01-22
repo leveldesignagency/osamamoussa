@@ -18,7 +18,7 @@ export default function LogosSection() {
       <div className="container mx-auto max-w-7xl">
         <div
           ref={ref}
-          className={`flex flex-wrap items-center justify-center gap-8 lg:gap-12 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
+          className={`flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-8 lg:gap-12 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
         >
           {logos.map((logo, index) => (
             <div
