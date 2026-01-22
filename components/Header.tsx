@@ -456,9 +456,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
             </div>
           </div>
         </div>
-
-      </div>
-    </header>
+      </header>
     </>
   );
 }
