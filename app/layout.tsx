@@ -298,6 +298,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Search Console Verification */}
+        <meta
+          name="google-site-verification"
+          content="AL_dAbT3HMo2JGmN4fEc8t7K_WM8wfIRYQyMJcC0w7w"
+        />
         {/* SVG Favicon with dark/light mode support */}
         <link
           rel="icon"

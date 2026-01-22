@@ -14,6 +14,21 @@ export default function BackgroundMusic() {
     // Set initial volume
     audioRef.current.volume = 0.3;
 
+    // Check if audio file loads successfully
+    const handleCanPlay = () => {
+      // Audio file loaded successfully
+      console.log("Background music file loaded");
+    };
+
+    const handleError = (e: Event) => {
+      // Audio file failed to load
+      console.error("Background music file not found. Please add /background-music.mp3 to the public folder.");
+      console.error("Audio error:", e);
+    };
+
+    audioRef.current.addEventListener("canplay", handleCanPlay);
+    audioRef.current.addEventListener("error", handleError);
+
     // Try to autoplay on load
     const tryAutoplay = async () => {
       if (audioRef.current) {
@@ -34,6 +49,10 @@ export default function BackgroundMusic() {
 
     return () => {
       clearTimeout(timer);
+      if (audioRef.current) {
+        audioRef.current.removeEventListener("canplay", handleCanPlay);
+        audioRef.current.removeEventListener("error", handleError);
+      }
     };
   }, []);
 
