@@ -49,7 +49,7 @@ export default function AppointmentSection() {
               alt="Book Your Appointment"
               fill
               className="object-cover"
-              style={{ objectPosition: 'center center' }}
+              style={{ objectPosition: 'center center', width: 'auto' }}
               priority
               sizes="100vw"
             />
@@ -76,8 +76,8 @@ export default function AppointmentSection() {
         </div>
       </section>
 
-      {/* TopDoctors Widget Section - White background, overlapping */}
-      <section className="w-full bg-white py-8 relative" style={{ padding: 0, margin: 0, overflow: 'visible' }}>
+      {/* TopDoctors Widget Section - White background, overlapping - Hidden on mobile */}
+      <section className="w-full bg-white py-8 relative hidden sm:block" style={{ padding: 0, margin: 0, overflow: 'visible' }}>
         <div 
           className="absolute left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none"
           style={{ 
@@ -101,14 +101,14 @@ export default function AppointmentSection() {
         </div>
       </section>
 
-      {/* Insurance Logos - One Line, Smaller */}
+      {/* Insurance Logos - 2 Column Stack on Mobile, Horizontal on Desktop */}
       <section className="w-full bg-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
-          <div className="flex flex-nowrap items-center justify-center gap-2 sm:gap-3 lg:gap-4 overflow-x-auto">
+          <div className="grid grid-cols-2 sm:flex sm:flex-nowrap items-center justify-center gap-4 sm:gap-3 lg:gap-4 sm:overflow-x-auto">
             {insuranceLogos.map((logo, index) => (
               <div 
                 key={index} 
-                className="flex-shrink-0" 
+                className="flex-shrink-0 flex items-center justify-center" 
                 style={{ 
                   width: '80px', 
                   height: '40px', 

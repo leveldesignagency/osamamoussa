@@ -67,8 +67,8 @@ export default function ResearchPage() {
       {/* Research Description Section */}
       <section className="w-full py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="space-y-6 text-lg text-white leading-relaxed">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-white leading-relaxed">
               <p>
                 Beyond his clinical endeavours, Mr Moussa is deeply invested in
                 pioneering research, particularly in metabolic health and obesity. His
@@ -93,7 +93,7 @@ export default function ResearchPage() {
                 completed;
               </p>
             </div>
-            <div className="relative w-full h-96 lg:h-[500px] rounded-lg overflow-hidden">
+            <div className="relative w-full h-64 sm:h-80 lg:h-[500px] rounded-lg overflow-hidden mt-6 lg:mt-0">
               <Image
                 src="/OM10.jpg"
                 alt="Osama Moussa Research"

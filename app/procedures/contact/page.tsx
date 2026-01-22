@@ -118,8 +118,8 @@ export default function ContactPage() {
       <section className="w-full py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Info */}
-            <div className="relative" style={{ height: '100%', minHeight: '700px' }}>
+            {/* Contact Info - Image hidden on mobile */}
+            <div className="relative hidden lg:block" style={{ height: '100%', minHeight: '700px' }}>
               <div className="relative w-full h-full" style={{ height: '100%', minHeight: '700px', overflow: 'visible' }}>
                 <div className="absolute flex items-start justify-center" style={{ transform: 'scale(0.75)', top: '-15%', left: 0, right: 0, height: '130%' }}>
                   <Image
@@ -131,8 +131,8 @@ export default function ContactPage() {
                   />
                 </div>
               </div>
-              {/* Contact Card - Overlaid on image */}
-              <div className="absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-md p-8 space-y-6 text-white z-10">
+              {/* Contact Card - Overlaid on image (desktop) or standalone (mobile) */}
+              <div className="absolute lg:relative bottom-0 left-0 right-0 bg-black/70 lg:bg-black/70 backdrop-blur-md p-6 lg:p-8 space-y-4 lg:space-y-6 text-white z-10 lg:mt-8">
                 <div className="flex items-center gap-4">
                   <a
                     href="https://wa.me/+447352167642"
@@ -502,11 +502,11 @@ export default function ContactPage() {
       {/* Hospitals Section */}
       <section className="w-full py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {hospitals.map((hospital, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
                 {/* Map Embed */}
-                <div className="w-full h-64 relative">
+                <div className="w-full h-48 sm:h-64 relative">
                   <iframe
                     width="100%"
                     height="100%"

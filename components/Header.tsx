@@ -86,8 +86,8 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
             </Link>
           </div>
 
-          {/* Right Side - Phone, Social Icons - Hidden on mobile */}
-          <div className="flex items-center gap-6 mr-0 sm:mr-1 hidden sm:flex">
+          {/* Right Side - Phone, Social Icons - Hidden on mobile, closer to hamburger */}
+          <div className="flex items-center gap-4 sm:gap-6 mr-4 sm:mr-2 hidden sm:flex">
             {/* Phone Number */}
             <a
               href="tel:07352167642"

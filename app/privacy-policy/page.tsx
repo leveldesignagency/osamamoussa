@@ -33,10 +33,10 @@ export default function PrivacyPolicyPage() {
       {/* Content */}
       <section className="w-full py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-white space-y-8">
+          <div className="max-w-4xl mx-auto text-white space-y-6 sm:space-y-8">
             <div>
-              <h2 className="text-2xl font-sans font-bold mb-4">1. Introduction</h2>
-              <p className="text-lg leading-relaxed">
+              <h2 className="text-xl sm:text-2xl font-sans font-bold mb-3 sm:mb-4">1. Introduction</h2>
+              <p className="text-base sm:text-lg leading-relaxed">
                 Osama Moussa, Consultant General Surgeon, is committed to protecting your privacy and personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully.
               </p>
             </div>

@@ -78,7 +78,7 @@ export default function AboutPage() {
             </h1>
             
             {/* Content */}
-            <div className="w-1/2 space-y-4 text-lg text-black leading-relaxed pr-12 sm:pr-16 lg:pr-24">
+            <div className="w-full lg:w-1/2 space-y-4 text-base sm:text-lg text-black leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24">
             <p>
               Mr. Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. His extensive training includes rotations through hospitals in Liverpool, Newcastle, Scotland, and Northwest London, culminating in his CCT.
             </p>
@@ -103,11 +103,11 @@ export default function AboutPage() {
             Accreditations
           </h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Image - Left side, no left padding, rounded corners with shadows */}
-            <div className="relative h-[600px] lg:h-[800px] overflow-hidden -ml-4 sm:-ml-6 lg:-ml-8 rounded-3xl" style={{ 
-              width: 'calc(100% + 1rem)', 
-              maxWidth: 'calc(100% + 1rem)',
+            <div className="relative h-[400px] sm:h-[500px] lg:h-[800px] overflow-hidden -mx-4 sm:-mx-6 lg:-ml-8 lg:mr-0 rounded-3xl" style={{ 
+              width: 'calc(100% + 2rem)', 
+              maxWidth: 'calc(100% + 2rem)',
               boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
             }}>
               <div className="absolute inset-0 image-slide overflow-hidden rounded-3xl">

@@ -211,14 +211,14 @@ function ProcedureCard({ procedure, index }: { procedure: Procedure, index: numb
   return (
     <div
       ref={ref}
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center fade-in-on-scroll ${isVisible ? "visible" : ""} ${
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center fade-in-on-scroll ${isVisible ? "visible" : ""} ${
         procedure.imageLeft ? "" : "lg:flex-row-reverse"
       }`}
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
                 {procedure.imageLeft ? (
                   <>
-                    <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-72 lg:h-96" : "h-64 lg:h-80"}`} style={{ 
+                    <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-64 sm:h-72 lg:h-96" : "h-56 sm:h-64 lg:h-80"}`} style={{ 
                       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
                     }}>
                       <Image
@@ -235,10 +235,10 @@ function ProcedureCard({ procedure, index }: { procedure: Procedure, index: numb
                       }}></div>
                     </div>
                     <div>
-                      <h2 className="text-2xl sm:text-3xl font-sans font-bold text-white mb-4">
+                      <h2 className="text-xl sm:text-2xl lg:text-3xl font-sans font-bold text-white mb-3 sm:mb-4">
                         {procedure.title}
                       </h2>
-                      <p className="text-lg text-white leading-relaxed">
+                      <p className="text-base sm:text-lg text-white leading-relaxed">
                         {procedure.description}
                       </p>
                     </div>
@@ -246,14 +246,14 @@ function ProcedureCard({ procedure, index }: { procedure: Procedure, index: numb
                 ) : (
                   <>
                     <div>
-                      <h2 className="text-2xl sm:text-3xl font-sans font-bold text-white mb-4">
+                      <h2 className="text-xl sm:text-2xl lg:text-3xl font-sans font-bold text-white mb-3 sm:mb-4">
                         {procedure.title}
                       </h2>
-                      <p className="text-lg text-white leading-relaxed">
+                      <p className="text-base sm:text-lg text-white leading-relaxed">
                         {procedure.description}
                       </p>
                     </div>
-                    <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-72 lg:h-96" : "h-64 lg:h-80"}`} style={{ 
+                    <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-64 sm:h-72 lg:h-96" : "h-56 sm:h-64 lg:h-80"}`} style={{ 
                       boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
                     }}>
                       <Image

@@ -88,6 +88,7 @@ export default function Hero() {
             WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
             objectPosition: 'left center',
           }}
+          sizes="100vw"
         />
       </div>
       {/* Subtle vignette overlay for depth */}
@@ -138,8 +139,8 @@ export default function Hero() {
               ></div>
             </div>
 
-            {/* Doctify Widget - second, same size */}
-            <div className="w-full sm:w-auto" style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center sm:flex-start" }}>
+            {/* Doctify Widget - second, same size, centered */}
+            <div className="w-full sm:w-auto" style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center sm:flex-start", overflow: "hidden" }}>
               <iframe
                 id="09in4nm9"
                 className="doctify-widget"
@@ -149,7 +150,7 @@ export default function Hero() {
                 scrolling="no"
                 name="average-rating-widget"
                 title="Doctify Rating Widget"
-                style={{ display: "block", border: "none", width: "200px", maxWidth: "200px", verticalAlign: "top" }}
+                style={{ display: "block", border: "none", width: "200px", maxWidth: "200px", minWidth: "200px", verticalAlign: "top", margin: "0 auto" }}
               />
             </div>
           </div>

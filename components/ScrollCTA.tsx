@@ -76,7 +76,7 @@ export default function ScrollCTA() {
         <div className="relative">
           {/* Content */}
           <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 md:py-5">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2 sm:gap-4">
               <p className="text-black text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center sm:text-left">
                 Book Your Appointment Today
               </p>
