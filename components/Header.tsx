@@ -143,10 +143,11 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                 </svg>
               </a>
             </div>
+            </div>
 
             {/* Hamburger Menu - Always visible on all screens */}
             <div className="relative flex-shrink-0">
-            <button
+              <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`${textColor} hover:opacity-80 transition-opacity p-2`}
               aria-label="Menu"
@@ -457,7 +458,8 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                 </>
               )}
             </div>
-            </div>
+          </div>
+        </div>
         </div>
       </header>
     </>
