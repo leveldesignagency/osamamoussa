@@ -138,7 +138,7 @@ function PageTitleSection() {
         ref={ref}
         className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       >
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white uppercase tracking-tight">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white uppercase tracking-tight text-center lg:text-left">
           Procedures
         </h1>
       </div>
@@ -155,7 +155,7 @@ function IntroductionSection() {
         ref={ref}
         className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       >
-        <div className="space-y-8 text-lg sm:text-xl text-gray-200 leading-relaxed">
+        <div className="space-y-8 text-lg sm:text-xl text-gray-200 leading-relaxed text-center lg:text-left">
             <p>
               Osama delivers Laparoscopic and Robotic surgical services at West
               Hertfordshire NHS Teaching Trust. He is trained in various benign
@@ -216,61 +216,33 @@ function ProcedureCard({ procedure, index }: { procedure: Procedure, index: numb
       }`}
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
-                {procedure.imageLeft ? (
-                  <>
-                    <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-64 sm:h-72 lg:h-96" : "h-56 sm:h-64 lg:h-80"}`} style={{ 
-                      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
-                    }}>
-                      <Image
-                        src={procedure.image}
-                        alt={procedure.title}
-                        fill
-                        className="object-cover rounded-lg"
-                        style={procedure.image === "/linx-procedure.png" ? { objectPosition: "center 30%" } : {}}
-                      />
-                      {/* Inner shadow overlay - above the image */}
-                      <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ 
-                        boxShadow: 'inset 0 4px 12px 0 rgba(0, 0, 0, 0.25), inset 0 0 40px 0 rgba(0, 0, 0, 0.15)',
-                        zIndex: 10
-                      }}></div>
-                    </div>
-                    <div>
-                      <h2 className="text-xl sm:text-2xl lg:text-3xl font-sans font-bold text-white mb-3 sm:mb-4">
-                        {procedure.title}
-                      </h2>
-                      <p className="text-base sm:text-lg text-white leading-relaxed">
-                        {procedure.description}
-                      </p>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div>
-                      <h2 className="text-xl sm:text-2xl lg:text-3xl font-sans font-bold text-white mb-3 sm:mb-4">
-                        {procedure.title}
-                      </h2>
-                      <p className="text-base sm:text-lg text-white leading-relaxed">
-                        {procedure.description}
-                      </p>
-                    </div>
-                    <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-64 sm:h-72 lg:h-96" : "h-56 sm:h-64 lg:h-80"}`} style={{ 
-                      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
-                    }}>
-                      <Image
-                        src={procedure.image}
-                        alt={procedure.title}
-                        fill
-                        className="object-cover rounded-lg"
-                        style={procedure.image === "/linx-procedure.png" ? { objectPosition: "center 30%" } : {}}
-                      />
-                      {/* Inner shadow overlay - above the image */}
-                      <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ 
-                        boxShadow: 'inset 0 4px 12px 0 rgba(0, 0, 0, 0.25), inset 0 0 40px 0 rgba(0, 0, 0, 0.15)',
-                        zIndex: 10
-                      }}></div>
-                    </div>
-                  </>
-                )}
+      {/* Mobile: Always text first, then image. Desktop: Follow imageLeft prop */}
+      {/* Text Content - Always first on mobile */}
+      <div className={procedure.imageLeft ? "lg:order-1" : "lg:order-2"}>
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-sans font-bold text-white mb-3 sm:mb-4 text-center lg:text-left">
+          {procedure.title}
+        </h2>
+        <p className="text-base sm:text-lg text-white leading-relaxed text-center lg:text-left">
+          {procedure.description}
+        </p>
+      </div>
+      {/* Image - Always second on mobile */}
+      <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-64 sm:h-72 lg:h-96" : "h-56 sm:h-64 lg:h-80"} ${procedure.imageLeft ? "lg:order-2" : "lg:order-1"}`} style={{ 
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+      }}>
+        <Image
+          src={procedure.image}
+          alt={procedure.title}
+          fill
+          className="object-cover rounded-lg"
+          style={procedure.image === "/linx-procedure.png" ? { objectPosition: "center 30%" } : {}}
+        />
+        {/* Inner shadow overlay - above the image */}
+        <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ 
+          boxShadow: 'inset 0 4px 12px 0 rgba(0, 0, 0, 0.25), inset 0 0 40px 0 rgba(0, 0, 0, 0.15)',
+          zIndex: 10
+        }}></div>
+      </div>
     </div>
   );
 }

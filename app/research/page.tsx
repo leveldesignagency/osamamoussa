@@ -68,7 +68,7 @@ export default function ResearchPage() {
       <section className="w-full py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-white leading-relaxed">
+            <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-white leading-relaxed text-center lg:text-left">
               <p>
                 Beyond his clinical endeavours, Mr Moussa is deeply invested in
                 pioneering research, particularly in metabolic health and obesity. His
@@ -135,7 +135,7 @@ function TitleSection() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <h1 
             ref={titleRef}
-            className={`text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white uppercase tracking-tight fade-in-on-scroll ${titleVisible ? "visible" : ""}`}
+            className={`text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white uppercase tracking-tight fade-in-on-scroll text-center lg:text-left ${titleVisible ? "visible" : ""}`}
           >
             Research
           </h1>
@@ -178,13 +178,13 @@ function PublicationItem({ pub, index }: { pub: Publication, index: number }) {
   return (
     <div
       ref={ref}
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-6 items-center pb-8 border-b border-white/20 last:border-0 hover:bg-white/5 transition-colors duration-200 rounded-lg p-4 -mx-4 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-6 items-center pb-4 sm:pb-8 border-b border-white/20 last:border-0 hover:bg-white/5 transition-colors duration-200 rounded-lg p-3 sm:p-4 -mx-2 sm:-mx-4 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
-      <h2 className="text-xl sm:text-2xl font-sans font-bold text-white">
+      <h2 className="text-xl sm:text-2xl font-sans font-bold text-white text-center lg:text-left">
         {pub.title}
       </h2>
-      <div className="flex justify-start lg:justify-end">
+      <div className="flex justify-center lg:justify-end">
         <Link
           href={pub.url}
           target="_blank"
@@ -207,7 +207,7 @@ function MorePublicationsSection() {
         ref={ref}
         className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       >
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto text-center lg:text-left">
           <h2 className="text-3xl font-sans font-bold text-gray-900 mb-6">
             More Publications
           </h2>

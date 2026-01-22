@@ -32,10 +32,10 @@ export default function WidgetsSection() {
   }, []);
 
   return (
-    <section className="w-full bg-gradient-grey py-12 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-gradient-grey py-12 px-4 sm:px-6 lg:px-8 pb-24 sm:pb-12">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          {/* Doctify Widget */}
+          {/* Doctify Widget - Only widget on mobile */}
           <div className="flex justify-center">
             <iframe
               id="09in4nm9"
@@ -49,8 +49,8 @@ export default function WidgetsSection() {
             />
           </div>
 
-          {/* TopDoctors Widget */}
-          <div className="flex justify-center">
+          {/* TopDoctors Widget - Hidden on mobile */}
+          <div className="hidden md:flex justify-center">
             <div
               id="topdoctors-gb-widget-container-8"
               style={{ maxWidth: "245px" }}

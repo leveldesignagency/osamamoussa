@@ -104,7 +104,7 @@ export default function AppointmentSection() {
       {/* Insurance Logos - 2 Column Stack on Mobile, Horizontal on Desktop */}
       <section className="w-full bg-white py-8 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-2 sm:flex sm:flex-nowrap items-center justify-center gap-4 sm:gap-3 lg:gap-4 sm:overflow-x-auto">
+          <div className="grid grid-cols-2 sm:flex sm:flex-nowrap items-center justify-center gap-4 sm:gap-3 lg:gap-4 sm:overflow-x-auto px-4 sm:px-0">
             {insuranceLogos.map((logo, index) => (
               <div 
                 key={index} 

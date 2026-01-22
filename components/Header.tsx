@@ -278,7 +278,9 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                                   opacity: shouldSlideOut ? 0 : 1,
                                   transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
                                   transitionDelay: shouldSlideOut ? `${slideDelay}ms` : '0ms',
-                                  cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer"
+                                  cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer",
+                                  paddingTop: '0.75rem',
+                                  paddingBottom: '0.75rem'
                                 }}
                               >
                                 {item.label}

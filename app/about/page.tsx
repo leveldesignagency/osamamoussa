@@ -48,7 +48,7 @@ export default function AboutPage() {
               src="/OM6.jpg"
               alt="About Osama Moussa"
               fill
-              className="object-cover"
+              className="object-cover about-hero-image"
               style={{ objectPosition: 'center top' }}
               priority
               sizes="100vw"
@@ -70,15 +70,15 @@ export default function AboutPage() {
           }}
         ></div>
         
-        {/* Title and Content - aligned to left margin */}
-        <div className="relative z-30" style={{ paddingTop: '128px', paddingBottom: '48px' }}>
+        {/* Title and Content - aligned to left margin on desktop, centered on mobile */}
+        <div className="relative z-30" style={{ paddingTop: '128px', paddingBottom: '80px', minHeight: 'calc(100vh - 128px)' }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-black uppercase tracking-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-black uppercase tracking-tight mb-6 text-center lg:text-left">
               About Osama Moussa
             </h1>
             
             {/* Content */}
-            <div className="w-full lg:w-1/2 space-y-4 text-base sm:text-lg text-black leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24">
+            <div className="w-full lg:w-1/2 space-y-4 text-base sm:text-lg text-black leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0">
             <p>
               Mr. Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. His extensive training includes rotations through hospitals in Liverpool, Newcastle, Scotland, and Northwest London, culminating in his CCT.
             </p>
@@ -99,7 +99,7 @@ export default function AboutPage() {
       {/* Accreditations Section */}
       <section className="w-full py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl font-sans font-bold text-white mb-12 uppercase">
+          <h2 className="text-4xl sm:text-5xl font-sans font-bold text-white mb-12 uppercase text-center lg:text-left">
             Accreditations
           </h2>
           
@@ -115,7 +115,7 @@ export default function AboutPage() {
                   src="/OM7.jpg"
                   alt="Osama Moussa Accreditations"
                   fill
-                  className="object-cover rounded-3xl"
+                  className="object-cover rounded-3xl about-accred-image"
                   style={{ objectPosition: 'center center' }}
                 />
               </div>
@@ -126,8 +126,8 @@ export default function AboutPage() {
               }}></div>
             </div>
 
-            {/* Accreditations List - Right side */}
-            <div className="space-y-8 text-white">
+            {/* Accreditations List - Right side, centered on mobile */}
+            <div className="space-y-8 text-white text-center lg:text-left">
               <div>
                 <h3 className="text-2xl font-sans font-bold text-white mb-4">
                   Postgraduate
