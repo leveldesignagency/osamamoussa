@@ -17,11 +17,18 @@ export const metadata: Metadata = {
     default: "Mr Osama Moussa | Consultant General Surgeon | Upper GI Surgery | London & Hertfordshire",
     template: "%s | Mr Osama Moussa - Consultant General Surgeon"
   },
-  description: "Mr Osama Moussa is a Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. Expert in laparoscopic, robotic, and open surgery for benign, bariatric, and oncological procedures. Serving London and Hertfordshire.",
+  description: "Mr Osama Moussa is a Consultant General Surgeon specialising in Upper GI and General Surgery. Expert in laparoscopic, robotic, and open surgery for benign, bariatric, and oncological procedures. Serving London (Chelsea, Belgravia, Fitzrovia, Holland Park, West London), Hertfordshire, Watford, Hemel Hempstead, and surrounding areas. Available at Spire Bushey, Circle Health Group hospitals, and West Hertfordshire NHS Trust.",
   keywords: [
     "Osama Moussa",
     "Consultant General Surgeon",
     "Upper GI Surgeon",
+    "Upper GI Surgeon London",
+    "Upper GI Doctor London",
+    "Upper GI Specialist London",
+    "Acid Reflux Doctor London",
+    "Acid Reflux Doctor Near Me",
+    "GORD Doctor London",
+    "GERD Doctor London",
     "Laparoscopic Surgeon",
     "Robotic Surgeon",
     "Bariatric Surgeon",
@@ -31,7 +38,17 @@ export const metadata: Metadata = {
     "London Surgeon",
     "Hertfordshire Surgeon",
     "Watford Surgeon",
+    "Chelsea Surgeon",
+    "Belgravia Surgeon",
+    "Fitzrovia Surgeon",
+    "Holland Park Surgeon",
+    "West London Surgeon",
+    "Hemel Hempstead Surgeon",
     "West Hertfordshire Hospitals",
+    "Spire Bushey",
+    "Circle Health Group",
+    "Bishops Wood Hospital",
+    "Wellington Hospital",
     "Upper Gastrointestinal Surgery",
     "Minimal Access Surgery",
     "Anti-reflux Surgery",
@@ -43,7 +60,16 @@ export const metadata: Metadata = {
     "Oesophageal Surgery",
     "General Surgery London",
     "NHS Consultant Surgeon",
-    "Private Surgeon London"
+    "Private Surgeon London",
+    "Upper GI Surgeon Chelsea",
+    "Upper GI Surgeon Belgravia",
+    "Upper GI Surgeon Fitzrovia",
+    "Upper GI Surgeon Holland Park",
+    "Upper GI Surgeon West London",
+    "Upper GI Surgeon Hemel Hempstead",
+    "Acid Reflux Specialist London",
+    "GORD Specialist London",
+    "GERD Specialist London"
   ],
   authors: [{ name: "Mr Osama Moussa" }],
   creator: "Mr Osama Moussa",
@@ -117,11 +143,43 @@ export default function RootLayout({
       },
       {
         "@type": "City",
+        "name": "Chelsea"
+      },
+      {
+        "@type": "City",
+        "name": "Belgravia"
+      },
+      {
+        "@type": "City",
+        "name": "Fitzrovia"
+      },
+      {
+        "@type": "City",
+        "name": "Holland Park"
+      },
+      {
+        "@type": "City",
+        "name": "West London"
+      },
+      {
+        "@type": "City",
         "name": "Hertfordshire"
       },
       {
         "@type": "City",
         "name": "Watford"
+      },
+      {
+        "@type": "City",
+        "name": "Hemel Hempstead"
+      },
+      {
+        "@type": "City",
+        "name": "Bushey"
+      },
+      {
+        "@type": "City",
+        "name": "Northwood"
       }
     ],
     "medicalSpecialty": [
@@ -129,7 +187,13 @@ export default function RootLayout({
       "Upper Gastrointestinal Surgery",
       "Laparoscopic Surgery",
       "Robotic Surgery",
-      "Bariatric Surgery"
+      "Bariatric Surgery",
+      "Acid Reflux Treatment",
+      "GORD Treatment",
+      "GERD Treatment",
+      "Hernia Surgery",
+      "Gallbladder Surgery",
+      "Gastric Surgery"
     ],
     "priceRange": "$$"
   };
@@ -150,16 +214,64 @@ export default function RootLayout({
       "addressRegion": "Hertfordshire",
       "addressCountry": "GB"
     },
-    "worksFor": {
-      "@type": "Hospital",
-      "name": "West Hertfordshire Hospitals NHS Trust"
-    },
+    "worksFor": [
+      {
+        "@type": "Hospital",
+        "name": "West Hertfordshire Hospitals NHS Trust",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Vicarage Road",
+          "addressLocality": "Watford",
+          "postalCode": "WD18 0HB",
+          "addressCountry": "GB"
+        }
+      },
+      {
+        "@type": "Hospital",
+        "name": "Spire Bushey Healthcare",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Heathbourne Rd",
+          "addressLocality": "Bushey",
+          "postalCode": "WD23 1RD",
+          "addressCountry": "GB"
+        }
+      },
+      {
+        "@type": "Hospital",
+        "name": "Bishops Wood Hospital",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rickmansworth Road",
+          "addressLocality": "Northwood",
+          "postalCode": "HA6 2JW",
+          "addressCountry": "GB"
+        }
+      },
+      {
+        "@type": "Hospital",
+        "name": "The Wellington Hospital",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "8A Wellington Place",
+          "addressLocality": "London",
+          "postalCode": "NW8 9LE",
+          "addressCountry": "GB"
+        }
+      }
+    ],
     "medicalSpecialty": [
       "General Surgery",
       "Upper Gastrointestinal Surgery",
       "Laparoscopic Surgery",
       "Robotic Surgery",
-      "Bariatric Surgery"
+      "Bariatric Surgery",
+      "Acid Reflux Treatment",
+      "GORD Treatment",
+      "GERD Treatment",
+      "Hernia Surgery",
+      "Gallbladder Surgery",
+      "Gastric Surgery"
     ],
     "alumniOf": [
       {
