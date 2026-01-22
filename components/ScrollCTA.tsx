@@ -70,12 +70,12 @@ export default function ScrollCTA() {
       className={`fixed bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ease-out ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0 pointer-events-none'
       }`}
-      style={{ maxWidth: '95%', width: '100%' }}
+      style={{ maxWidth: '95%', width: 'auto', minWidth: 'min(95%, 800px)' }}
     >
       <div className="bg-white rounded-full sm:rounded-full shadow-2xl overflow-hidden border-2 border-gray-200">
         <div className="relative">
           {/* Content */}
-          <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-4 md:py-5">
+          <div className="px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5">
             <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2 sm:gap-4">
               <p className="text-black text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center sm:text-left">
                 Book Your Appointment Today

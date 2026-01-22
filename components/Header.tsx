@@ -73,7 +73,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
       <div className="container mx-auto pl-4 sm:pl-6 lg:pl-8 pr-2 sm:pr-3 lg:pr-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Centered on mobile, left on desktop */}
-          <div className="flex-shrink-0 sm:flex-shrink-0 flex-1 sm:flex-none flex justify-center sm:justify-start">
+          <div className="flex-shrink-0 flex-1 sm:flex-none flex justify-center sm:justify-start">
             <Link href="/" className="block">
               <Image
                 src="/Osama Moussa Logo-01.svg"
@@ -86,8 +86,10 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
             </Link>
           </div>
 
-          {/* Right Side - Phone, Social Icons - Hidden on mobile, closer to hamburger */}
-          <div className="flex items-center gap-4 sm:gap-6 mr-4 sm:mr-2 hidden sm:flex">
+          {/* Right Side - Phone, Social Icons, Hamburger - All together on desktop */}
+          <div className="flex items-center gap-4 sm:gap-6">
+            {/* Phone and Social - Hidden on mobile */}
+            <div className="hidden sm:flex items-center gap-4 sm:gap-6">
             {/* Phone Number */}
             <a
               href="tel:07352167642"
@@ -141,10 +143,9 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                 </svg>
               </a>
             </div>
-          </div>
 
-          {/* Hamburger Menu - Always visible on all screens */}
-          <div className="relative">
+            {/* Hamburger Menu - Always visible on all screens */}
+            <div className="relative flex-shrink-0">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`${textColor} hover:opacity-80 transition-opacity p-2`}
@@ -454,7 +455,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                 </>
               )}
             </div>
-          </div>
+            </div>
         </div>
       </header>
     </>
