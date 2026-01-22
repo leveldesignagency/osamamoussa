@@ -207,7 +207,7 @@ function MorePublicationsSection() {
         ref={ref}
         className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       >
-        <div className="max-w-3xl mx-auto text-center lg:text-left">
+        <div className="max-w-3xl text-center sm:text-left">
           <h2 className="text-3xl font-sans font-bold text-gray-900 mb-6">
             More Publications
           </h2>
