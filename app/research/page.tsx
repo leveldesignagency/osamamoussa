@@ -56,7 +56,9 @@ export default function ResearchPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#6E6E6E] via-[#7a7a7a] to-[#6E6E6E]">
+    <main className="min-h-screen bg-gradient-grey relative">
+      {/* Smooth gradient overlay at top for header area */}
+      <div className="absolute top-0 left-0 right-0 h-32 header-gradient-overlay z-40 pointer-events-none"></div>
       <Header backgroundColor="grey" />
       
       {/* Page Title with Links */}
@@ -104,7 +106,7 @@ export default function ResearchPage() {
       </section>
 
       {/* Publications Section */}
-      <section className="w-full bg-gradient-to-b from-[#6E6E6E] via-[#7a7a7a] to-[#6E6E6E] py-16">
+      <section className="w-full py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-8">
             {publications.map((pub, index) => (

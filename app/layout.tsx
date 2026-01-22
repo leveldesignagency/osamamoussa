@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import { GlobalErrorHandler } from "./global-error-handler";
+import BackgroundMusic from "@/components/BackgroundMusic";
 
 export const viewport = {
   width: "device-width",
@@ -222,6 +224,8 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <GlobalErrorHandler />
+        <BackgroundMusic />
         {children}
         <Footer />
         <SpeedInsights />

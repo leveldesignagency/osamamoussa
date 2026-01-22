@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#4a4a4a] text-white py-12">
+    <footer className="w-full bg-transparent text-white py-12" style={{ background: 'transparent' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {/* Logo */}
@@ -36,7 +36,7 @@ export default function Footer() {
                   <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </li>
-              <li className="text-gray-500">|</li>
+              <li className="text-white/50">|</li>
               <li>
                 <Link
                   href="/procedures"
@@ -46,7 +46,7 @@ export default function Footer() {
                   <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </li>
-              <li className="text-gray-500">|</li>
+              <li className="text-white/50">|</li>
               <li>
                 <Link
                   href="/research"
@@ -56,7 +56,7 @@ export default function Footer() {
                   <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </li>
-              <li className="text-gray-500">|</li>
+              <li className="text-white/50">|</li>
               <li>
                 <Link
                   href="/reviews"
@@ -66,7 +66,7 @@ export default function Footer() {
                   <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                 </Link>
               </li>
-              <li className="text-gray-500">|</li>
+              <li className="text-white/50">|</li>
               <li>
                 <Link
                   href="/procedures/contact"
@@ -129,26 +129,26 @@ export default function Footer() {
             </div>
 
             {/* Design Credit */}
-            <div className="text-sm text-gray-400 text-right">
-              <p className="mb-2">
+            <div className="text-sm text-right">
+              <p className="mb-2 text-white/70">
                 Designed by{" "}
                 <Link
                   href="http://www.leveldesignagency.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-red-500 transition-colors duration-200 inline-block"
+                  className="text-white/70 hover:text-black transition-colors duration-200 inline-block"
                 >
                   LEVEL DESIGN AGENCY LTD
                 </Link>
               </p>
-              <div className="text-xs text-gray-500 space-x-3">
+              <div className="text-xs text-white/70 space-x-3">
                 <Link
                   href="/terms-and-conditions"
                   className="hover:text-black transition-colors duration-200"
                 >
                   Terms and Conditions
                 </Link>
-                <span>|</span>
+                <span className="text-white/70">|</span>
                 <Link
                   href="/privacy-policy"
                   className="hover:text-black transition-colors duration-200"

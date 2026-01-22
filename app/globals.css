@@ -12,6 +12,52 @@
   scrollbar-width: none;
 }
 
+/* Sophisticated grey gradient background with animation */
+.bg-gradient-grey {
+  background: linear-gradient(
+    to bottom,
+    #525252 0%,
+    #5a5a5a 15%,
+    #6E6E6E 30%,
+    #7a7a7a 50%,
+    #6E6E6E 70%,
+    #5a5a5a 85%,
+    #525252 88%,
+    rgba(0, 0, 0, 0.15) 92%,
+    rgba(0, 0, 0, 0.3) 96%,
+    rgba(0, 0, 0, 0.5) 98%,
+    #000000 100%
+  );
+  background-size: 100% 200%;
+  animation: gradientShift 15s ease-in-out infinite alternate;
+}
+
+/* Pause gradient animation when menu is open */
+body.menu-open .bg-gradient-grey,
+.menu-open .bg-gradient-grey {
+  animation-play-state: paused;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+/* Smooth top gradient overlay for header area */
+.header-gradient-overlay {
+  background: linear-gradient(
+    to bottom,
+    #525252 0%,
+    #525252 30%,
+    rgba(90, 90, 90, 0.4) 60%,
+    transparent 100%
+  );
+}
+
 /* Force widget to stay inside iPhone */
 #topdoctors-gb-widget-container-6 {
   max-width: 100% !important;
@@ -91,7 +137,7 @@ html {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: var(--background-color);
+  background: transparent;
 }
 
 @keyframes letterBounce {
@@ -347,35 +393,51 @@ body {
   display: block !important;
 }
 
-/* Hamburger menu - blur other items on hover */
+/* Hamburger menu - blur other items on hover (only when not transitioning) */
 .menu-nav-group .menu-item {
-  opacity: 1 !important;
-  filter: blur(0) !important;
+  opacity: 1;
+  filter: blur(0);
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-.menu-nav-group:hover .menu-item:not(:hover) {
-  opacity: 0.5 !important;
-  filter: blur(2px) !important;
+/* Only blur others when a menu item is actually hovered AND not transitioning */
+.menu-nav-group:has(.menu-item:hover) .menu-item:not(:hover):not(.menu-transitioning) {
+  opacity: 0.5;
+  filter: blur(2px);
 }
 
-.menu-nav-group .menu-item:hover {
-  opacity: 1 !important;
-  filter: blur(0) !important;
+.menu-nav-group .menu-item:hover:not(.menu-transitioning) {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* Don't apply blur during transitions - let transition classes handle it */
+.menu-nav-group .menu-item.menu-transitioning {
+  opacity: inherit !important;
+  filter: inherit !important;
+  transform: inherit !important;
 }
 
 .mobile-menu-nav-group .mobile-menu-item {
-  opacity: 1 !important;
-  filter: blur(0) !important;
+  opacity: 1;
+  filter: blur(0);
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-.mobile-menu-nav-group:hover .mobile-menu-item:not(:hover) {
-  opacity: 0.5 !important;
-  filter: blur(2px) !important;
+/* Only blur others when a menu item is actually hovered AND not transitioning */
+.mobile-menu-nav-group:has(.mobile-menu-item:hover) .mobile-menu-item:not(:hover):not(.mobile-menu-transitioning) {
+  opacity: 0.5;
+  filter: blur(2px);
 }
 
-.mobile-menu-nav-group .mobile-menu-item:hover {
-  opacity: 1 !important;
-  filter: blur(0) !important;
+.mobile-menu-nav-group .mobile-menu-item:hover:not(.mobile-menu-transitioning) {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* Don't apply blur during transitions - let transition classes handle it */
+.mobile-menu-nav-group .mobile-menu-item.mobile-menu-transitioning {
+  opacity: inherit !important;
+  filter: inherit !important;
+  transform: inherit !important;
 }

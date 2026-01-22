@@ -27,6 +27,9 @@ function ValueCard({ videoSrc, title, description, index, audioEnabled }: ValueC
 
   const handleMouseEnter = async () => {
     setIsHovered(true);
+    // Dispatch event to pause background music
+    window.dispatchEvent(new CustomEvent("videoHoverStart"));
+    
     if (videoRef.current) {
       try {
         videoRef.current.volume = 1;
@@ -54,6 +57,9 @@ function ValueCard({ videoSrc, title, description, index, audioEnabled }: ValueC
 
   const handleMouseLeave = () => {
     setIsHovered(false);
+    // Dispatch event to resume background music
+    window.dispatchEvent(new CustomEvent("videoHoverEnd"));
+    
     if (videoRef.current) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
@@ -69,8 +75,8 @@ function ValueCard({ videoSrc, title, description, index, audioEnabled }: ValueC
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Video Card */}
-      <div className="relative w-full aspect-square overflow-hidden bg-black shadow-lg drop-shadow-xl">
+      {/* Video Card - Rounded all corners */}
+      <div className="relative w-full aspect-square overflow-hidden bg-black shadow-lg drop-shadow-xl rounded-3xl">
         <video
           ref={videoRef}
           src={videoSrc}
@@ -80,19 +86,19 @@ function ValueCard({ videoSrc, title, description, index, audioEnabled }: ValueC
           playsInline
           preload="auto"
         />
-      </div>
+        
+        {/* Text Card - Overlaying bottom 20% of video */}
+        <div className="absolute bottom-0 left-0 right-0 w-full bg-black pt-8 px-6 pb-6 rounded-b-2xl shadow-lg z-10 flex flex-col" style={{ height: '20%' }}>
+          {/* Title */}
+          <h3 className="text-white font-bold text-lg sm:text-xl lg:text-2xl mb-2 text-left line-clamp-1">
+            {title}
+          </h3>
 
-      {/* Text Card - hovering over video with rounded top corners */}
-      <div className="relative w-full bg-black pt-12 px-8 pb-6 -mt-20 z-10 rounded-t-lg shadow-lg drop-shadow-xl min-h-[280px] flex flex-col">
-        {/* Title */}
-        <h3 className="text-white font-bold text-xl sm:text-2xl lg:text-3xl mb-6 text-left">
-          {title}
-        </h3>
-
-        {/* Description */}
-        <p className="text-white text-xs sm:text-sm lg:text-base text-left leading-relaxed flex-grow">
-          {description}
-        </p>
+          {/* Description */}
+          <p className="text-white text-xs sm:text-sm lg:text-base text-left leading-relaxed line-clamp-2">
+            {description}
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -144,7 +150,7 @@ export default function ValuesSection() {
   ];
 
   return (
-    <section className="w-full bg-[#6E6E6E] py-16">
+    <section className="w-full bg-transparent py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-6">
           {values.map((value, index) => (

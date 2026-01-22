@@ -28,7 +28,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
   return (
     <>
       {isTransitioning && (
-        <div className="fixed inset-0 z-[100] bg-[#6E6E6E] flex items-center justify-center transition-opacity duration-500">
+        <div className="fixed inset-0 z-[100] bg-gradient-grey flex items-center justify-center transition-opacity duration-500">
           {showLogo && (
             <div className="animate-scale-in">
               <Image

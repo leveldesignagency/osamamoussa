@@ -28,18 +28,46 @@ export default function Hero() {
     // Check if TopDoctors script (type 8) already exists
     const existingTopDoctors8 = document.getElementById("topdoctors-widget-script-8");
     if (!existingTopDoctors8) {
-      const topDoctorsScript = document.createElement("script");
-      topDoctorsScript.type = "text/javascript";
-      topDoctorsScript.src =
-        "https://staticnew-prod.topdoctors.co.uk/static/widgets/main.min.js#type=8&apikey=IkCuQgS4Bq74_3NI8FWd4sRj58VWbQ%3D%3D&environment=prod&config=dW5kZWZpbmVk&country=gb&storage=https%3A%2F%2Fstaticnew-prod.topdoctors.co.uk&apiurl=https%3A%2F%2Fwww.topdoctors.co.uk%2Fapi&hostname=https%3A%2F%2Fwww.topdoctors.co.uk";
-      topDoctorsScript.async = true;
-      topDoctorsScript.id = "topdoctors-widget-script-8";
-      document.body.appendChild(topDoctorsScript);
+      let retryCount = 0;
+      const maxRetries = 3;
       
-      // Ensure widget loads after script
-      topDoctorsScript.onload = () => {
-        // Widget should auto-initialize
+      const loadTopDoctorsScript = () => {
+        const topDoctorsScript = document.createElement("script");
+        topDoctorsScript.type = "text/javascript";
+        topDoctorsScript.src =
+          "https://staticnew-prod.topdoctors.co.uk/static/widgets/main.min.js#type=8&apikey=IkCuQgS4Bq74_3NI8FWd4sRj58VWbQ%3D%3D&environment=prod&config=dW5kZWZpbmVk&country=gb&storage=https%3A%2F%2Fstaticnew-prod.topdoctors.co.uk&apiurl=https%3A%2F%2Fwww.topdoctors.co.uk%2Fapi&hostname=https%3A%2F%2Fwww.topdoctors.co.uk";
+        topDoctorsScript.async = true;
+        topDoctorsScript.id = "topdoctors-widget-script-8";
+        
+        topDoctorsScript.onload = () => {
+          // Widget should auto-initialize, but wait a bit and check
+          setTimeout(() => {
+            const widgetContainer = document.getElementById("topdoctors-gb-widget-container-8");
+            if (widgetContainer && widgetContainer.children.length === 0 && retryCount < maxRetries) {
+              // Widget didn't load, retry
+              retryCount++;
+              if (topDoctorsScript.parentNode) {
+                topDoctorsScript.parentNode.removeChild(topDoctorsScript);
+              }
+              setTimeout(loadTopDoctorsScript, 1000 * retryCount);
+            }
+          }, 2000);
+        };
+        
+        topDoctorsScript.onerror = () => {
+          if (retryCount < maxRetries) {
+            retryCount++;
+            if (topDoctorsScript.parentNode) {
+              topDoctorsScript.parentNode.removeChild(topDoctorsScript);
+            }
+            setTimeout(loadTopDoctorsScript, 1000 * retryCount);
+          }
+        };
+        
+        document.body.appendChild(topDoctorsScript);
       };
+      
+      loadTopDoctorsScript();
     }
 
     scriptsLoaded.current = true;
@@ -55,20 +83,19 @@ export default function Hero() {
           className="object-cover hero-breathe"
           priority
           quality={90}
+          style={{
+            maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)'
+          }}
         />
       </div>
       {/* Subtle vignette overlay for depth */}
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.2) 100%)'
-        }}
-      ></div>
-      {/* Gradient fade at bottom transitioning to #6E6E6E */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(110, 110, 110, 0.3) 75%, #6E6E6E 100%)'
+          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.2) 100%)',
+          maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)'
         }}
       ></div>
       

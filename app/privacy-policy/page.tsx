@@ -16,7 +16,9 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#6E6E6E] via-[#7a7a7a] to-[#6E6E6E]">
+    <main className="min-h-screen bg-gradient-grey relative">
+      {/* Smooth gradient overlay at top for header area */}
+      <div className="absolute top-0 left-0 right-0 h-32 header-gradient-overlay z-40 pointer-events-none"></div>
       <Header backgroundColor="grey" />
       
       {/* Page Title */}

@@ -109,7 +109,9 @@ export default function ProceduresPage() {
 
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#6E6E6E] via-[#7a7a7a] to-[#6E6E6E]">
+    <main className="min-h-screen bg-gradient-grey relative">
+      {/* Smooth gradient overlay at top for header area */}
+      <div className="absolute top-0 left-0 right-0 h-32 header-gradient-overlay z-40 pointer-events-none"></div>
       <Header backgroundColor="grey" />
       
       {/* Page Title */}
@@ -216,14 +218,21 @@ function ProcedureCard({ procedure, index }: { procedure: Procedure, index: numb
     >
                 {procedure.imageLeft ? (
                   <>
-                    <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-72 lg:h-96" : "h-64 lg:h-80"}`}>
+                    <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-72 lg:h-96" : "h-64 lg:h-80"}`} style={{ 
+                      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+                    }}>
                       <Image
                         src={procedure.image}
                         alt={procedure.title}
                         fill
-                        className="object-cover"
+                        className="object-cover rounded-lg"
                         style={procedure.image === "/linx-procedure.png" ? { objectPosition: "center 30%" } : {}}
                       />
+                      {/* Inner shadow overlay - above the image */}
+                      <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ 
+                        boxShadow: 'inset 0 4px 12px 0 rgba(0, 0, 0, 0.25), inset 0 0 40px 0 rgba(0, 0, 0, 0.15)',
+                        zIndex: 10
+                      }}></div>
                     </div>
                     <div>
                       <h2 className="text-2xl sm:text-3xl font-sans font-bold text-white mb-4">
@@ -244,14 +253,21 @@ function ProcedureCard({ procedure, index }: { procedure: Procedure, index: numb
                         {procedure.description}
                       </p>
                     </div>
-                    <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-72 lg:h-96" : "h-64 lg:h-80"}`}>
+                    <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-72 lg:h-96" : "h-64 lg:h-80"}`} style={{ 
+                      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+                    }}>
                       <Image
                         src={procedure.image}
                         alt={procedure.title}
                         fill
-                        className="object-cover"
+                        className="object-cover rounded-lg"
                         style={procedure.image === "/linx-procedure.png" ? { objectPosition: "center 30%" } : {}}
                       />
+                      {/* Inner shadow overlay - above the image */}
+                      <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ 
+                        boxShadow: 'inset 0 4px 12px 0 rgba(0, 0, 0, 0.25), inset 0 0 40px 0 rgba(0, 0, 0, 0.15)',
+                        zIndex: 10
+                      }}></div>
                     </div>
                   </>
                 )}

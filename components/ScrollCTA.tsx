@@ -9,16 +9,8 @@ export default function ScrollCTA() {
   const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
-    // Check if dismissed state is in local storage
-    const dismissedState = localStorage.getItem('scrollCTADismissed');
-    if (dismissedState === 'true') {
-      setIsDismissed(true);
-      setIsVisible(false);
-      return;
-    }
-
     const handleScroll = () => {
-      // Don't show if dismissed
+      // Don't show if dismissed (only for current session)
       if (isDismissed) {
         setIsVisible(false);
         return;
@@ -66,7 +58,7 @@ export default function ScrollCTA() {
   const handleDismiss = () => {
     setIsDismissed(true);
     setIsVisible(false);
-    localStorage.setItem('scrollCTADismissed', 'true'); // Persist dismissal
+    // No localStorage - banner will show again on page refresh
   };
 
   if (isDismissed) {

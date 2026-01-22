@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 
 interface HeaderProps {
   backgroundColor?: string;
+  textColor?: "black" | "white";
 }
 
 const menuItems = [
@@ -17,26 +18,30 @@ const menuItems = [
   { href: "/procedures/contact", label: "CONTACT", pageTitle: "CONTACT" },
 ];
 
-export default function Header({ backgroundColor = "transparent" }: HeaderProps) {
+export default function Header({ backgroundColor = "transparent", textColor: textColorProp }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [clickedItemIndex, setClickedItemIndex] = useState<number | null>(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [transitionPageName, setTransitionPageName] = useState<string>("");
   const router = useRouter();
 
-  const bgClass = backgroundColor === "grey" ? "bg-[#6E6E6E]" : "bg-transparent";
+  const bgClass = "bg-transparent";
   // Menu items should always be white when menu is open
-  const textColor = isMenuOpen ? "text-white" : (backgroundColor === "grey" ? "text-white" : "text-black");
+  // Use prop if provided, otherwise default logic
+  const textColor = isMenuOpen ? "text-white" : (textColorProp === "black" ? "text-black" : (textColorProp === "white" ? "text-white" : (backgroundColor === "grey" ? "text-white" : "text-black")));
   
-  // Prevent body scroll when menu is open
+  // Prevent body scroll when menu is open and pause gradient animation
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
+      document.body.classList.add("menu-open");
     } else {
       document.body.style.overflow = "unset";
+      document.body.classList.remove("menu-open");
     }
     return () => {
       document.body.style.overflow = "unset";
+      document.body.classList.remove("menu-open");
     };
   }, [isMenuOpen]);
 
@@ -44,7 +49,7 @@ export default function Header({ backgroundColor = "transparent" }: HeaderProps)
     <>
       {/* Page Transition Overlay */}
       {isTransitioning && (
-        <div className="fixed inset-0 z-[100] bg-[#6E6E6E] flex flex-col items-center justify-center">
+        <div className="fixed inset-0 z-[100] bg-gradient-grey flex flex-col items-center justify-center">
           {/* Small Logo at Top */}
           <div className="absolute top-8 animate-scale-in">
             <Image
@@ -75,7 +80,7 @@ export default function Header({ backgroundColor = "transparent" }: HeaderProps)
                 alt="Osama Moussa Logo"
                 width={200}
                 height={50}
-                className={`h-12 w-auto ${backgroundColor === "grey" ? "brightness-0 invert" : ""}`}
+                className={`h-12 w-auto ${textColorProp === "black" ? "" : (backgroundColor === "grey" ? "brightness-0 invert" : "")}`}
                 priority
               />
             </Link>
@@ -228,7 +233,7 @@ export default function Header({ backgroundColor = "transparent" }: HeaderProps)
                         className="flex-1 flex flex-col items-center justify-center px-4"
                         style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                       >
-                        <div className="flex flex-col gap-6 sm:gap-8 text-center">
+                        <div className="flex flex-col gap-6 sm:gap-8 text-center mobile-menu-nav-group">
                           {menuItems.map((item, index) => {
                             const isClicked = clickedItemIndex === index;
                             const shouldSlideOut = clickedItemIndex !== null && index !== clickedItemIndex;
@@ -263,10 +268,13 @@ export default function Header({ backgroundColor = "transparent" }: HeaderProps)
                                     }, 1000);
                                   }, 600);
                                 }}
-                                className={`text-black font-bold text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider transition-all duration-500 hover:opacity-70 ${
-                                  shouldSlideOut ? 'opacity-0 scale-95' : ''
+                                className={`text-black font-bold text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider mobile-menu-item ${
+                                  shouldSlideOut ? 'mobile-menu-transitioning' : ''
                                 }`}
                                 style={{
+                                  transform: shouldSlideOut ? 'translateY(-20px) scale(0.95)' : 'translateY(0) scale(1)',
+                                  opacity: shouldSlideOut ? 0 : 1,
+                                  transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
                                   transitionDelay: shouldSlideOut ? `${slideDelay}ms` : '0ms',
                                   cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer"
                                 }}
@@ -380,7 +388,7 @@ export default function Header({ backgroundColor = "transparent" }: HeaderProps)
                     
                     {/* Menu Container - Right Aligned */}
                     <nav 
-                      className="absolute top-0 right-0 h-full flex items-center justify-end pr-8 sm:pr-12 lg:pr-16 z-50"
+                      className="absolute top-0 right-0 h-full flex items-center justify-end pr-8 sm:pr-12 lg:pr-16 z-50 menu-nav-group"
                       onMouseEnter={() => setIsMenuOpen(true)}
                       style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                     >
@@ -424,10 +432,13 @@ export default function Header({ backgroundColor = "transparent" }: HeaderProps)
                                   }, 1000);
                                 }, 600);
                               }}
-                              className={`${textColor} font-bold text-right text-2xl sm:text-3xl lg:text-4xl uppercase tracking-wider transition-all duration-500 relative group pb-2 hover:opacity-80 hover:blur-[0.5px] hover:brightness-110 ${
-                                shouldSlideOut ? 'translate-x-full opacity-0' : ''
+                              className={`${textColor} font-bold text-right text-2xl sm:text-3xl lg:text-4xl uppercase tracking-wider relative group pb-2 menu-item ${
+                                shouldSlideOut ? 'menu-transitioning' : ''
                               }`}
                               style={{
+                                transform: shouldSlideOut ? 'translateX(100%)' : 'translateX(0)',
+                                opacity: shouldSlideOut ? 0 : 1,
+                                transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
                                 transitionDelay: shouldSlideOut ? `${slideDelay}ms` : '0ms',
                                 cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer"
                               }}

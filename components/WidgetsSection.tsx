@@ -32,7 +32,7 @@ export default function WidgetsSection() {
   }, []);
 
   return (
-    <section className="w-full bg-[#6E6E6E] py-12 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-gradient-grey py-12 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           {/* Doctify Widget */}

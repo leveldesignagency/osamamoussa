@@ -35,14 +35,14 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#6E6E6E] via-[#7a7a7a] to-[#6E6E6E]">
-      <Header backgroundColor="grey" />
+    <main className="min-h-screen bg-gradient-grey relative">
+      <Header backgroundColor="grey" textColor="black" />
 
       {/* About Section */}
       <section className="relative w-full overflow-hidden" style={{ height: '100vh' }}>
-        {/* Container to clip the growing image */}
-        <div className="absolute" style={{ top: '80px', left: 0, right: 0, bottom: 0, overflow: 'hidden' }}>
-          {/* Background Image - starts at 80px from top */}
+        {/* Container to clip the growing image - full height from top */}
+        <div className="absolute" style={{ top: 0, left: 0, right: 0, bottom: 0, overflow: 'hidden' }}>
+          {/* Background Image - full height from top */}
           <div className="absolute image-slide" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
             <Image
               src="/OM6.jpg"
@@ -56,16 +56,13 @@ export default function AboutPage() {
           </div>
         </div>
         
-        {/* Grey feather at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#6E6E6E] to-transparent z-20"></div>
-        
-        {/* Grey glass overlay on left */}
+        {/* Grey glass overlay on left - full height to match image */}
         <div 
           className="absolute backdrop-blur-xl z-10"
           style={{
-            top: '80px',
+            top: 0,
             left: 0,
-            bottom: '20px',
+            bottom: 0,
             width: '60%',
             background: 'linear-gradient(to right, rgba(110, 110, 110, 0.3) 0%, rgba(110, 110, 110, 0.3) 85%, rgba(110, 110, 110, 0) 100%)',
             maskImage: 'linear-gradient(to right, black 0%, black 50%, transparent 100%)',
@@ -73,16 +70,15 @@ export default function AboutPage() {
           }}
         ></div>
         
-        {/* Title - positioned to match other pages */}
-        <div className="relative z-30 container mx-auto px-4 sm:px-6 lg:px-8" style={{ paddingTop: '128px', paddingBottom: '48px' }}>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white uppercase tracking-tight">
-            About Osama Moussa
-          </h1>
-        </div>
-        
-        {/* Content */}
-        <div className="relative z-30 container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-1/2 space-y-4 text-lg text-white leading-relaxed pr-12 sm:pr-16 lg:pr-24">
+        {/* Title and Content - aligned to left margin */}
+        <div className="relative z-30" style={{ paddingTop: '128px', paddingBottom: '48px' }}>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-black uppercase tracking-tight mb-6">
+              About Osama Moussa
+            </h1>
+            
+            {/* Content */}
+            <div className="w-1/2 space-y-4 text-lg text-black leading-relaxed pr-12 sm:pr-16 lg:pr-24">
             <p>
               Mr. Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. His extensive training includes rotations through hospitals in Liverpool, Newcastle, Scotland, and Northwest London, culminating in his CCT.
             </p>
@@ -95,29 +91,39 @@ export default function AboutPage() {
             <p>
               Mr. Moussa is actively involved in research, focusing on metabolic health in obesity. His work has been published in high-impact journals. His dedication to surgical excellence is pivotal in advancing benign Upper GI Surgery.
             </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Accreditations Section */}
-      <section className="w-full bg-gradient-to-b from-[#6E6E6E] via-[#7a7a7a] to-[#6E6E6E] py-16">
+      <section className="w-full py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl sm:text-5xl font-sans font-bold text-white mb-12 uppercase">
             Accreditations
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Image - Left side, no left padding, square edges */}
-            <div className="relative h-[600px] lg:h-[800px] overflow-hidden -ml-4 sm:-ml-6 lg:-ml-8" style={{ width: 'calc(100% + 1rem)', maxWidth: 'calc(100% + 1rem)' }}>
-              <div className="absolute inset-0 image-slide overflow-hidden">
+            {/* Image - Left side, no left padding, rounded corners with shadows */}
+            <div className="relative h-[600px] lg:h-[800px] overflow-hidden -ml-4 sm:-ml-6 lg:-ml-8 rounded-3xl" style={{ 
+              width: 'calc(100% + 1rem)', 
+              maxWidth: 'calc(100% + 1rem)',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+            }}>
+              <div className="absolute inset-0 image-slide overflow-hidden rounded-3xl">
                 <Image
                   src="/OM7.jpg"
                   alt="Osama Moussa Accreditations"
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-3xl"
                   style={{ objectPosition: 'center center' }}
                 />
               </div>
+              {/* Inner shadow overlay - above the image */}
+              <div className="absolute inset-0 rounded-3xl pointer-events-none" style={{ 
+                boxShadow: 'inset 0 4px 12px 0 rgba(0, 0, 0, 0.25), inset 0 0 40px 0 rgba(0, 0, 0, 0.15)',
+                zIndex: 10
+              }}></div>
             </div>
 
             {/* Accreditations List - Right side */}

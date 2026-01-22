@@ -10,7 +10,7 @@ import AppointmentSection from "@/components/AppointmentSection";
 import ScrollCTA from "@/components/ScrollCTA";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Osama Moussa",
   description: "Mr Osama Moussa - A leader in Upper GI Surgery in London and Hertfordshire. Consultant General Surgeon specialising in laparoscopic, robotic, and open surgery for benign, bariatric, and oncological procedures. Book your consultation today.",
   keywords: [
     "Upper GI Surgeon London",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#6E6E6E]">
+    <main className="min-h-screen bg-gradient-grey">
       <Header />
       <Hero />
       <AboutSection />
