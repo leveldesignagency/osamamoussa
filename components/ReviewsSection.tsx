@@ -26,8 +26,15 @@ export default function ReviewsSection() {
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
 
   return (
-    <section id="reviews-section" className="w-full bg-white py-24 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto max-w-7xl">
+    <section id="reviews-section" className="w-full bg-white py-24 px-4 sm:px-6 lg:px-8 relative">
+      {/* Feathered top fade - blends with values section above */}
+      <div
+        className="absolute top-0 left-0 right-0 h-32 pointer-events-none z-10"
+        style={{
+          background: "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.7) 70%, rgba(255,255,255,1) 100%)",
+        }}
+      ></div>
+      <div className="container mx-auto max-w-7xl relative z-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Side - Image with feathered bottom */}
           <div
