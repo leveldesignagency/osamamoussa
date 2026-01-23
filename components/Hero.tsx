@@ -76,11 +76,27 @@ export default function Hero() {
   return (
     <section className="relative w-full h-screen overflow-hidden" style={{ overflow: 'hidden' }}>
       <div className="absolute inset-0 overflow-hidden">
+        {/* Mobile Image */}
+        <Image
+          src="/OsamaHeroMobile.png"
+          alt="Osama Moussa"
+          fill
+          className="object-cover hero-breathe hero-image-mobile sm:hidden"
+          priority
+          quality={90}
+          style={{
+            maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
+            objectPosition: 'center center',
+          }}
+          sizes="100vw"
+        />
+        {/* Desktop Image */}
         <Image
           src="/1-2.jpg"
           alt="Osama Moussa"
           fill
-          className="object-cover hero-breathe hero-image-mobile"
+          className="object-cover hero-breathe hidden sm:block"
           priority
           quality={90}
           style={{
