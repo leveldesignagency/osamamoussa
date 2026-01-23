@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Mobile image positioning for hero - right align */
+/* Mobile image positioning for hero - center face */
 @media (max-width: 640px) {
   .hero-image-mobile {
-    object-position: right center !important;
+    object-position: center center !important;
   }
   .about-hero-image {
     object-position: center 30% !important;

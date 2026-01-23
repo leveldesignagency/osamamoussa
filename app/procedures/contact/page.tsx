@@ -115,7 +115,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Information and Form */}
-      <section className="w-full py-8">
+      <section className="w-full py-8 pb-4 md:pb-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Info - Image hidden on mobile, contact card shown on mobile above form */}
@@ -424,7 +424,7 @@ export default function ContactPage() {
       </section>
 
       {/* Top Doctors Section */}
-      <section className="w-full py-16 min-h-[600px]">
+      <section className="w-full py-8 md:py-16 min-h-0 md:min-h-[600px]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Left Column - TOP DOCTOR CERTIFIED - Hidden on mobile */}
@@ -544,7 +544,7 @@ export default function ContactPage() {
       </section>
 
       {/* Hospitals Section */}
-      <section className="w-full py-16">
+      <section className="w-full pt-8 pb-16 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 text-center lg:text-left">
             {hospitals.map((hospital, index) => (

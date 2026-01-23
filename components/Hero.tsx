@@ -86,7 +86,7 @@ export default function Hero() {
           style={{
             maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
             WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
-            objectPosition: 'left center',
+            objectPosition: 'center center',
           }}
           sizes="100vw"
         />
