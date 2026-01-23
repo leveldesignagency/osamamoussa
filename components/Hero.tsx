@@ -125,11 +125,11 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Widgets Overlay at Bottom - vertically stacked, centered */}
+      {/* Widgets Overlay at Bottom - vertically stacked on mobile, horizontal on desktop */}
       <div className="absolute bottom-8 z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex flex-col gap-4 items-center justify-center">
-            {/* Doctify Widget - Top */}
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-2 items-center justify-center sm:justify-start">
+            {/* Doctify Widget - Top on mobile, first on desktop */}
             <div style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center", overflow: "hidden" }}>
               <iframe
                 id="09in4nm9"
@@ -144,8 +144,8 @@ export default function Hero() {
               />
             </div>
 
-            {/* TopDoctors Widget - Bottom */}
-            <div style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center" }}>
+            {/* TopDoctors Widget - Bottom on mobile, second on desktop */}
+            <div className="hidden sm:block" style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center" }}>
               <div
                 id="topdoctors-gb-widget-container-8"
                 style={{ 
