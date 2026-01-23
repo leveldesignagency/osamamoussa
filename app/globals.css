@@ -416,6 +416,43 @@ body {
   display: block !important;
 }
 
+/* Insurance Logos Marquee Animation */
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause marquee on hover */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
 /* Hamburger menu - blur other items on hover (only when not transitioning) */
 .menu-nav-group .menu-item {
   opacity: 1;

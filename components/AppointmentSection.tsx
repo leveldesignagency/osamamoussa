@@ -101,38 +101,56 @@ export default function AppointmentSection() {
         </div>
       </section>
 
-      {/* Insurance Logos - 2 Column Stack on Mobile, Horizontal on Desktop */}
-      <section className="w-full bg-white py-8 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-2 sm:flex sm:flex-nowrap items-center justify-center gap-4 sm:gap-3 lg:gap-4 sm:overflow-x-auto px-4 sm:px-0">
-            {insuranceLogos.map((logo, index) => (
-              <div 
-                key={index} 
-                className="flex-shrink-0 flex items-center justify-center" 
-                style={{ 
-                  width: '80px', 
-                  height: '40px', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center' 
-                }}
-              >
-                <Image
-                  src={logo}
-                  alt={`Insurance ${index + 1}`}
-                  width={80}
-                  height={40}
-                  className="object-contain opacity-100"
-                  style={{ 
-                    maxWidth: '80px', 
-                    maxHeight: '40px', 
-                    width: 'auto', 
-                    height: 'auto',
-                    objectFit: 'contain'
-                  }}
-                />
-              </div>
-            ))}
+      {/* Insurance Logos - Horizontal Auto-Scrolling Marquee */}
+      <section className="w-full bg-white py-8 overflow-hidden">
+        <div className="relative">
+          <div className="marquee-container">
+            <div className="marquee-content">
+              {/* First set of logos */}
+              {insuranceLogos.map((logo, index) => (
+                <div 
+                  key={`logo-1-${index}`}
+                  className="marquee-item"
+                >
+                  <Image
+                    src={logo}
+                    alt={`Insurance ${index + 1}`}
+                    width={100}
+                    height={50}
+                    className="object-contain"
+                    style={{ 
+                      maxWidth: '100px', 
+                      maxHeight: '50px', 
+                      width: 'auto', 
+                      height: 'auto',
+                      objectFit: 'contain'
+                    }}
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {insuranceLogos.map((logo, index) => (
+                <div 
+                  key={`logo-2-${index}`}
+                  className="marquee-item"
+                >
+                  <Image
+                    src={logo}
+                    alt={`Insurance ${index + 1}`}
+                    width={100}
+                    height={50}
+                    className="object-contain"
+                    style={{ 
+                      maxWidth: '100px', 
+                      maxHeight: '50px', 
+                      width: 'auto', 
+                      height: 'auto',
+                      objectFit: 'contain'
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
