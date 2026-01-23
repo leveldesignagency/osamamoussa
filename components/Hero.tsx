@@ -134,16 +134,16 @@ export default function Hero() {
                   Email Us
                 </MobileButton>
                 
-                {/* Desktop Buttons - EXACT original styling - DO NOT TOUCH */}
+                {/* Desktop Buttons - Transparent, black border, black text, white fill on hover */}
                 <Link
                   href="/procedures/contact"
-                  className="hidden sm:inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-white sm:border-black bg-white/10 sm:bg-white backdrop-blur-sm sm:backdrop-blur-none text-white sm:text-black font-medium hover:border-white sm:hover:border-black transition-all duration-300 text-center button-swipe button-swipe-black text-sm sm:text-base"
+                  className="hidden sm:inline-block px-8 py-4 border-2 border-black bg-transparent text-black font-medium hover:bg-white transition-all duration-300 text-center button-swipe button-swipe-white-bg text-base"
                 >
                   Book Now
                 </Link>
                 <Link
                   href="mailto:pa@osamamoussa.co.uk?subject=Hi!%20Can%20you%20help%20me%3F"
-                  className="hidden sm:inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-white sm:border-black bg-white/10 sm:bg-white backdrop-blur-sm sm:backdrop-blur-none text-white sm:text-black font-medium hover:border-white sm:hover:border-black transition-all duration-300 text-center button-swipe button-swipe-black text-sm sm:text-base"
+                  className="hidden sm:inline-block px-8 py-4 border-2 border-black bg-transparent text-black font-medium hover:bg-white transition-all duration-300 text-center button-swipe button-swipe-white-bg text-base"
                 >
                   Email Us
                 </Link>
@@ -215,6 +215,53 @@ export default function Hero() {
                 }}
               ></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Mobile Widgets Section - Separate section below hero
+export function MobileWidgetsSection() {
+  return (
+    <section className="w-full bg-transparent py-8 sm:hidden">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col gap-4 items-center justify-center">
+          {/* Doctify Widget - Mobile */}
+          <div 
+            style={{ 
+              width: "200px", 
+              flexShrink: 0, 
+              display: "flex", 
+              alignItems: "flex-start", 
+              justifyContent: "center", 
+              overflow: "hidden"
+            }}
+          >
+            <iframe
+              id="09in4nm9-mobile"
+              className="doctify-widget"
+              src="https://www.doctify.com/wv2/average-rating-widget?containerId=09in4nm9&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=darkNavy&widgetName=average-rating-widget"
+              width="200"
+              height="200"
+              frameBorder="0"
+              scrolling="no"
+              name="average-rating-widget-mobile"
+              title="Doctify Rating Widget"
+              style={{ 
+                display: "block", 
+                border: "none", 
+                width: "200px", 
+                maxWidth: "200px", 
+                minWidth: "200px",
+                height: "200px",
+                maxHeight: "200px",
+                minHeight: "200px",
+                verticalAlign: "top", 
+                margin: "0 auto"
+              }}
+            />
           </div>
         </div>
       </div>
