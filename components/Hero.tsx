@@ -119,13 +119,13 @@ export default function Hero() {
       ></div>
       
       {/* Hero Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center sm:items-start">
+      <div className="relative z-10 h-full flex flex-col justify-end sm:justify-center items-center sm:items-start pb-32 sm:pb-0">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white sm:text-black mb-8 leading-tight max-w-3xl animate-fade-in-up text-center sm:text-left">
             A leader in Upper GI Surgery in London and Hertfordshire
           </h1>
           
-          <div className="flex flex-row gap-2 sm:gap-4 animate-fade-in-up justify-center sm:justify-start mb-24 sm:mb-8" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
+          <div className="flex flex-row gap-2 sm:gap-4 animate-fade-in-up justify-center sm:justify-start mb-8" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
                 {/* Mobile Buttons - White bg, black text, black on hover/click */}
                 <MobileButton href="/procedures/contact" className="sm:hidden">
                   Book Now

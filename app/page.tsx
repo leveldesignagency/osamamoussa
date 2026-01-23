@@ -62,7 +62,6 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-grey overflow-x-hidden">
       <Header />
       <Hero />
-      <MobileWidgetsSection />
       <AboutSection />
       <ValuesSection />
       <LogosSection />
