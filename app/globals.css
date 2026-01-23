@@ -408,17 +408,15 @@ body {
   animation: growShrink 30s ease-in-out infinite;
 }
 
-/* Hero Widgets Container - Professional containment */
-.hero-widgets-container {
-  contain: layout style paint !important;
-  will-change: auto !important;
-}
-
-.hero-widget-wrapper {
-  contain: layout style paint !important;
+/* Hero Widgets - Fixed positioning to prevent movement */
+#09in4nm9 {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
   transform: translateZ(0) !important;
-  backface-visibility: hidden !important;
   -webkit-transform: translateZ(0) !important;
+  will-change: auto !important;
+  contain: strict !important;
 }
 
 /* TopDoctors widget positioning and quality */

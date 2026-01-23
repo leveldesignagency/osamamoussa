@@ -152,21 +152,21 @@ export default function Hero() {
       </div>
 
       {/* Widgets Overlay at Bottom - vertically stacked on mobile, horizontal on desktop */}
-      <div className="absolute bottom-4 sm:bottom-8 z-20 w-full pointer-events-none">
+      <div className="absolute bottom-4 sm:bottom-8 z-20 w-full" style={{ pointerEvents: "none" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-2 items-center justify-center sm:justify-start hero-widgets-container">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-2 items-center justify-center sm:justify-start" style={{ position: "relative", isolation: "isolate" }}>
             {/* Doctify Widget - Top on mobile, first on desktop */}
             <div 
-              className="hero-widget-wrapper"
               style={{ 
                 width: "200px", 
+                height: "200px",
                 flexShrink: 0, 
                 display: "flex", 
                 alignItems: "flex-start", 
                 justifyContent: "center", 
                 overflow: "hidden",
                 position: "relative",
-                isolation: "isolate"
+                pointerEvents: "auto"
               }}
             >
               <iframe
@@ -187,18 +187,19 @@ export default function Hero() {
                   minWidth: "200px",
                   height: "200px",
                   maxHeight: "200px",
-                  minHeight: "200,
+                  minHeight: "200px",
                   verticalAlign: "top", 
-                  margin: "0 auto",
-                  position: "relative",
-                  pointerEvents: "auto"
+                  margin: "0",
+                  position: "absolute",
+                  top: "0",
+                  left: "0"
                 }}
               />
             </div>
 
             {/* TopDoctors Widget - Hidden on mobile, shown on desktop */}
             <div 
-              className="hidden sm:block hero-widget-wrapper" 
+              className="hidden sm:block" 
               style={{ 
                 width: "245px", 
                 flexShrink: 0, 
@@ -206,7 +207,7 @@ export default function Hero() {
                 alignItems: "flex-start", 
                 justifyContent: "center",
                 position: "relative",
-                isolation: "isolate"
+                pointerEvents: "auto"
               }}
             >
               <div
@@ -215,9 +216,8 @@ export default function Hero() {
                   width: "245px",
                   minWidth: "245px",
                   maxWidth: "245px",
-                  height: "auto",
                   position: "relative",
-                  pointerEvents: "auto"
+                  transform: "translateZ(0)"
                 }}
               ></div>
             </div>
