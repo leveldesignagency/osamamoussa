@@ -7,8 +7,8 @@ export default function Footer() {
   return (
     <footer className="w-full bg-transparent text-white py-8 sm:py-12" style={{ background: 'transparent' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Mobile Layout */}
-        <div className="flex flex-col sm:hidden gap-6">
+        {/* Mobile Layout - Full Height */}
+        <div className="flex flex-col sm:hidden min-h-screen justify-between py-12">
           {/* Logo - Centered */}
           <div className="flex justify-center">
             <Link href="/" className="inline-block">
@@ -22,35 +22,35 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* Navigation Links - Vertical Stack */}
-          <nav className="flex flex-col items-center gap-3">
+          {/* Navigation Links - Vertical Stack - Enlarged */}
+          <nav className="flex flex-col items-center gap-6 flex-1 justify-center">
             <Link
               href="/about"
-              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-sm"
+              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-medium"
             >
               About
             </Link>
             <Link
               href="/procedures"
-              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-sm"
+              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-medium"
             >
               Procedures
             </Link>
             <Link
               href="/research"
-              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-sm"
+              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-medium"
             >
               Research
             </Link>
             <Link
               href="/reviews"
-              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-sm"
+              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-medium"
             >
               Reviews
             </Link>
             <Link
               href="/procedures/contact"
-              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-sm"
+              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-medium"
             >
               Contact
             </Link>
