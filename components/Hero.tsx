@@ -154,24 +154,15 @@ export default function Hero() {
       {/* Signature - Desktop only, bottom right */}
       <div className="absolute bottom-8 right-8 z-20 hidden sm:block" style={{ pointerEvents: "none" }}>
         <div className="signature-container">
-          <svg
-            className="signature-svg"
-            width="200"
-            height="80"
-            viewBox="0 0 200 80"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              className="signature-path"
-              d="M10 40 Q30 20, 50 40 T90 40 Q110 20, 130 40 T170 40"
-              stroke="black"
-              strokeWidth="2"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <Image
+            src="/signature.svg"
+            alt="Osama Moussa Signature"
+            width={200}
+            height={80}
+            className="signature-image"
+            priority={false}
+            style={{ width: 'auto', height: '80px' }}
+          />
         </div>
       </div>
 
