@@ -12,7 +12,7 @@ export default function MobileButton({ href, children, className = "" }: MobileB
   return (
     <Link
       href={href}
-      className={`inline-block px-4 py-3 border-2 border-black bg-white text-black font-medium transition-all duration-300 text-center text-sm sm:text-base hover:bg-black hover:text-white active:bg-black active:text-white rounded-full ${className}`}
+      className={`inline-block px-4 py-3 border-2 border-white bg-black text-white font-medium transition-all duration-300 text-center text-sm sm:text-base hover:bg-white hover:text-black active:bg-white active:text-black rounded-full ${className}`}
     >
       {children}
     </Link>

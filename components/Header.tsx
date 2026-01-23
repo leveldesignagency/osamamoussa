@@ -72,8 +72,8 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
       <header className={`absolute top-0 left-0 right-0 z-50 ${bgClass}`}>
       <div className="container mx-auto pl-4 sm:pl-6 lg:pl-8 pr-2 sm:pr-3 lg:pr-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo - Centered on mobile, left on desktop */}
-          <div className="flex-shrink-0 flex-1 sm:flex-none flex justify-center sm:justify-start">
+          {/* Logo - Left aligned on mobile and desktop */}
+          <div className="flex-shrink-0 flex-1 sm:flex-none flex justify-start">
             <Link href="/" className="block">
               <Image
                 src="/Osama Moussa Logo-01.svg"
