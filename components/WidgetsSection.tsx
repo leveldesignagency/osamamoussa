@@ -49,12 +49,14 @@ export default function WidgetsSection() {
             />
           </div>
 
-          {/* TopDoctors Widget - Hidden on mobile */}
-          <div className="hidden md:flex justify-center">
-            <div
-              id="topdoctors-gb-widget-container-8"
-              style={{ maxWidth: "245px" }}
-            ></div>
+          {/* TopDoctors Widget - Hidden on mobile only */}
+          <div className="hidden md:block">
+            <div className="flex justify-center">
+              <div
+                id="topdoctors-gb-widget-container-8"
+                style={{ maxWidth: "245px" }}
+              ></div>
+            </div>
           </div>
         </div>
       </div>
