@@ -236,7 +236,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                         className="flex-1 flex flex-col items-end justify-center px-6 sm:px-8"
                         style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                       >
-                        <div className="flex flex-col gap-6 sm:gap-8 text-right mobile-menu-nav-group w-full max-w-xs">
+                        <div className="flex flex-col gap-2 sm:gap-3 text-right mobile-menu-nav-group w-full max-w-xs">
                           {menuItems.map((item, index) => {
                             const isClicked = clickedItemIndex === index;
                             const shouldSlideOut = clickedItemIndex !== null && index !== clickedItemIndex;
