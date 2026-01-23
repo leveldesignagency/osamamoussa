@@ -131,10 +131,10 @@ export default function ContactPage() {
                   />
                 </div>
               </div>
-              {/* Contact Card - Desktop only (overlaid on image) */}
-              <div className="absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-md p-6 lg:p-8 space-y-4 lg:space-y-6 text-white z-10">
+              {/* Contact Pills - Desktop only (overlaid on image) */}
+              <div className="absolute bottom-32 left-0 right-0 p-6 lg:p-8 space-y-4 lg:space-y-6 text-white z-10">
                 {/* Phone Number Pill */}
-                <div className="w-full max-w-md border-2 border-black bg-black/30 rounded-full px-6 py-4">
+                <div className="w-full max-w-md border-2 border-black bg-black/70 backdrop-blur-md rounded-full px-6 py-4">
                   <a
                     href="tel:07352167642"
                     className="flex items-center gap-3 text-white text-xl font-sans font-semibold hover:opacity-60 transition-opacity"
@@ -152,7 +152,7 @@ export default function ContactPage() {
                 </div>
                 
                 {/* Email Pill */}
-                <div className="w-full max-w-md border-2 border-black bg-black/30 rounded-full px-6 py-4">
+                <div className="w-full max-w-md border-2 border-black bg-black/70 backdrop-blur-md rounded-full px-6 py-4">
                   <a
                     href="mailto:pa@osamamoussa.co.uk"
                     className="flex items-center gap-3 text-white text-xl font-sans font-semibold hover:opacity-60 transition-opacity"
@@ -163,9 +163,11 @@ export default function ContactPage() {
                     <span>pa@osamamoussa.co.uk</span>
                   </a>
                 </div>
-                
-                {/* Contact Paragraph */}
-                <p className="text-base leading-relaxed pt-4 border-t border-white/20">
+              </div>
+              
+              {/* Contact Paragraph - Desktop only (separate container) */}
+              <div className="absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-md p-6 lg:p-8 text-white z-10">
+                <p className="text-base leading-relaxed">
                   You can contact my Personal Assistant directly or via the contact
                   form, alternatively you can make a booking via the hospitals websites
                   from the list below.
@@ -176,7 +178,7 @@ export default function ContactPage() {
             {/* Contact Card - Mobile only, above form */}
             <div className="lg:hidden space-y-4 mb-8 text-center">
               {/* Phone Number Pill */}
-              <div className="w-full max-w-md mx-auto border-2 border-black bg-black/30 rounded-full px-6 py-4">
+              <div className="w-full max-w-md mx-auto border-2 border-black bg-black/70 backdrop-blur-md rounded-full px-6 py-4">
                 <a
                   href="tel:07352167642"
                   className="flex items-center justify-center gap-3 text-white text-xl font-sans font-semibold hover:opacity-60 transition-opacity"
@@ -194,7 +196,7 @@ export default function ContactPage() {
               </div>
               
               {/* Email Pill */}
-              <div className="w-full max-w-md mx-auto border-2 border-black bg-black/30 rounded-full px-6 py-4">
+              <div className="w-full max-w-md mx-auto border-2 border-black bg-black/70 backdrop-blur-md rounded-full px-6 py-4">
                 <a
                   href="mailto:pa@osamamoussa.co.uk"
                   className="flex items-center justify-center gap-3 text-white text-xl font-sans font-semibold hover:opacity-60 transition-opacity"

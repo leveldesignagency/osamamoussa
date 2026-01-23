@@ -97,12 +97,13 @@ export default function AboutPage() {
         {/* Title and Content - aligned to left margin on desktop, centered on mobile */}
         <div className="relative z-30" style={{ paddingTop: '128px', paddingBottom: '80px' }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 ref={titleRef} className={`text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-black uppercase tracking-tight mb-6 text-center lg:text-left fade-in-on-scroll ${titleVisible ? "visible" : ""}`}>
-              About Osama Moussa
+            <h1 ref={titleRef} className={`text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-black uppercase tracking-tight mb-6 text-center lg:text-left fade-in-on-scroll ${titleVisible ? "visible" : ""}`} style={{ marginTop: '40vh', marginBottom: '2rem' }}>
+              <span className="sm:hidden">About Osama Moussa</span>
+              <span className="hidden sm:inline">About Osama Moussa</span>
             </h1>
             
             {/* Mobile: First paragraph only - larger text, black, over image, medium weight, simple fade-in */}
-            <div ref={firstParaRef} className={`w-full space-y-4 text-2xl sm:text-base text-black font-medium leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden fade-in-on-scroll ${firstParaVisible ? "visible" : ""}`} style={{ paddingBottom: '200px' }}>
+            <div ref={firstParaRef} className={`w-full space-y-4 text-2xl sm:text-base text-black font-medium leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden fade-in-on-scroll ${firstParaVisible ? "visible" : ""}`} style={{ paddingBottom: '200px', marginTop: '0' }}>
               <p>{firstParaText}</p>
             </div>
             
