@@ -43,7 +43,8 @@ export default function AboutPage() {
               style={{ 
                 objectPosition: 'center top',
                 maskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
-                WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)'
+                WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
+                opacity: 0.7
               }}
               priority
               sizes="100vw"
@@ -59,7 +60,8 @@ export default function AboutPage() {
               style={{ 
                 objectPosition: 'center top',
                 maskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
-                WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)'
+                WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
+                opacity: 0.7
               }}
               priority
               sizes="100vw"
