@@ -1,39 +1,30 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import AppointmentSection from "@/components/AppointmentSection";
 import Image from "next/image";
-
-export const metadata: Metadata = {
-  title: "About Mr Osama Moussa",
-  description: "Mr Osama Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. Extensive training at Imperial College London, Royal Marsden, UCL, and Chelsea & Westminster hospitals. Expert in open, laparoscopic, and robotic Upper GI surgery.",
-  keywords: [
-    "Osama Moussa biography",
-    "Consultant Surgeon background",
-    "Upper GI Surgeon qualifications",
-    "West Hertfordshire Hospitals",
-    "Imperial College London surgeon",
-    "Royal Marsden surgeon",
-    "Laparoscopic surgery training",
-    "Robotic surgery expert",
-    "Minimal Access Surgery",
-    "Anti-reflux surgery fellowship",
-    "Bariatric surgery fellowship",
-    "Medical Doctorate Imperial",
-    "CCT General Surgery",
-    "Liverpool Newcastle Scotland training"
-  ],
-  openGraph: {
-    title: "About Mr Osama Moussa | Consultant General Surgeon",
-    description: "Distinguished Consultant General Surgeon specialising in Upper GI and General Surgery. Expert in laparoscopic, robotic, and open surgery with extensive training at prestigious London hospitals.",
-    url: "https://www.osamamoussa.co.uk/about",
-    type: "profile",
-  },
-  alternates: {
-    canonical: "https://www.osamamoussa.co.uk/about",
-  },
-};
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function AboutPage() {
+  // Set page metadata
+  useEffect(() => {
+    document.title = "About Mr Osama Moussa";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Mr Osama Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. Extensive training at Imperial College London, Royal Marsden, UCL, and Chelsea & Westminster hospitals. Expert in open, laparoscopic, and robotic Upper GI surgery.');
+    }
+  }, []);
+
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const { ref: firstParaRef, isVisible: firstParaVisible } = useScrollAnimation();
+  const { ref: secondParaRef, isVisible: secondParaVisible } = useScrollAnimation();
+  const { ref: thirdParaRef, isVisible: thirdParaVisible } = useScrollAnimation();
+  const { ref: fourthParaRef, isVisible: fourthParaVisible } = useScrollAnimation();
+  const { ref: accreditationsRef, isVisible: accreditationsVisible } = useScrollAnimation();
+  const { ref: accreditationsImageRef, isVisible: accreditationsImageVisible } = useScrollAnimation();
+  const { ref: accreditationsListRef, isVisible: accreditationsListVisible } = useScrollAnimation();
+
   return (
     <main className="min-h-screen bg-gradient-grey relative">
       <Header backgroundColor="grey" textColor="black" />
@@ -90,22 +81,22 @@ export default function AboutPage() {
           }}
         ></div>
         
-        {/* Title and Content - aligned to left margin on desktop, centered on mobile */}
-        <div className="relative z-30" style={{ paddingTop: '128px', paddingBottom: '80px', minHeight: 'calc(100vh - 128px)' }}>
+        {/* Title and Content - aligned to left margin on desktop, centered on mobile - moved way down */}
+        <div className="relative z-30" style={{ paddingTop: '60vh', paddingBottom: '80px', minHeight: 'calc(100vh - 60vh)' }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-black uppercase tracking-tight mb-6 text-center lg:text-left">
+            <h1 ref={titleRef} className={`text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-black uppercase tracking-tight mb-6 text-center lg:text-left fade-in-on-scroll ${titleVisible ? "visible" : ""}`}>
               About Osama Moussa
             </h1>
             
-            {/* Mobile: First paragraph only - larger text, black, over image */}
-            <div className="w-full space-y-4 text-xl sm:text-base text-black leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden">
+            {/* Mobile: First paragraph only - larger text, black, over image, medium weight */}
+            <div ref={firstParaRef} className={`w-full space-y-4 text-xl sm:text-base text-black font-medium leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden fade-in-on-scroll ${firstParaVisible ? "visible" : ""}`}>
               <p>
                 Mr. Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. His extensive training includes rotations through hospitals in Liverpool, Newcastle, Scotland, and Northwest London, culminating in his CCT.
               </p>
             </div>
             
-            {/* Desktop: All paragraphs */}
-            <div className="hidden sm:block w-full lg:w-1/2 space-y-4 text-base sm:text-lg text-black leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24">
+            {/* Desktop: All paragraphs - medium weight */}
+            <div className="hidden sm:block w-full lg:w-1/2 space-y-4 text-base sm:text-lg text-black font-medium leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24">
               <p>
                 Mr. Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. His extensive training includes rotations through hospitals in Liverpool, Newcastle, Scotland, and Northwest London, culminating in his CCT.
               </p>
@@ -123,35 +114,35 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mobile: Second paragraph section - transparent background, white text */}
-      <section className="w-full py-12 px-4 sm:hidden bg-transparent">
+      {/* Mobile: Second paragraph section - transparent background, white text, medium weight, more gap */}
+      <section ref={secondParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${secondParaVisible ? "visible" : ""}`}>
         <div className="container mx-auto">
-          <p className="text-xl text-white leading-relaxed text-center">
+          <p className="text-xl text-white font-medium leading-relaxed text-center">
             Mr. Moussa has worked at prestigious institutions like Imperial College London, the Royal Marsden, University College London, and Chelsea & Westminster hospitals, gaining extensive experience in open, laparoscopic, and robotic Upper GI surgery, including benign, bariatric, and oncological procedures.
           </p>
         </div>
       </section>
 
-      {/* Mobile: Third paragraph section - transparent background, white text */}
-      <section className="w-full py-12 px-4 sm:hidden bg-transparent">
+      {/* Mobile: Third paragraph section - transparent background, white text, medium weight, more gap */}
+      <section ref={thirdParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${thirdParaVisible ? "visible" : ""}`}>
         <div className="container mx-auto">
-          <p className="text-xl text-white leading-relaxed text-center">
+          <p className="text-xl text-white font-medium leading-relaxed text-center">
             He holds a Postgraduate Diploma in Minimal Access Surgery and completed a research Medical Doctorate at Imperial College London in 2017. He also completed a Royal College of Surgeons-approved laparoscopic, anti-reflux, and bariatric surgery fellowship.
           </p>
         </div>
       </section>
 
-      {/* Mobile: Fourth paragraph section - transparent background, white text */}
-      <section className="w-full py-12 px-4 sm:hidden bg-transparent">
+      {/* Mobile: Fourth paragraph section - transparent background, white text, medium weight, more gap */}
+      <section ref={fourthParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${fourthParaVisible ? "visible" : ""}`}>
         <div className="container mx-auto">
-          <p className="text-xl text-white leading-relaxed text-center">
+          <p className="text-xl text-white font-medium leading-relaxed text-center">
             Mr. Moussa is actively involved in research, focusing on metabolic health in obesity. His work has been published in high-impact journals. His dedication to surgical excellence is pivotal in advancing benign Upper GI Surgery.
           </p>
         </div>
       </section>
 
       {/* Accreditations Section */}
-      <section className="w-full py-16">
+      <section ref={accreditationsRef} className={`w-full py-16 fade-in-on-scroll ${accreditationsVisible ? "visible" : ""}`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl sm:text-5xl font-sans font-bold text-white mb-12 uppercase text-center lg:text-left">
             Accreditations
@@ -159,7 +150,7 @@ export default function AboutPage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Image - Left side, no left padding, rounded corners with shadows */}
-            <div className="relative h-[400px] sm:h-[500px] lg:h-[800px] overflow-hidden -mx-4 sm:-mx-6 lg:-ml-8 lg:mr-0 rounded-3xl" style={{ 
+            <div ref={accreditationsImageRef} className={`relative h-[400px] sm:h-[500px] lg:h-[800px] overflow-hidden -mx-4 sm:-mx-6 lg:-ml-8 lg:mr-0 rounded-3xl fade-in-on-scroll ${accreditationsImageVisible ? "visible" : ""}`} style={{ 
               width: 'calc(100% + 2rem)', 
               maxWidth: 'calc(100% + 2rem)',
               boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
@@ -181,7 +172,7 @@ export default function AboutPage() {
             </div>
 
             {/* Accreditations List - Right side, centered on mobile */}
-            <div className="space-y-8 text-white text-center lg:text-left">
+            <div ref={accreditationsListRef} className={`space-y-8 text-white text-center lg:text-left fade-in-on-scroll ${accreditationsListVisible ? "visible" : ""}`}>
               <div>
                 <h3 className="text-2xl font-sans font-bold text-white mb-4">
                   Postgraduate
