@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import AppointmentSection from "@/components/AppointmentSection";
 import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { useSentenceReveal } from "@/hooks/useSentenceReveal";
 
 export default function AboutPage() {
   // Set page metadata
@@ -18,25 +17,20 @@ export default function AboutPage() {
   }, []);
 
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const { ref: firstParaRef, isVisible: firstParaVisible } = useScrollAnimation();
+  const { ref: secondParaRef, isVisible: secondParaVisible } = useScrollAnimation();
+  const { ref: thirdParaRef, isVisible: thirdParaVisible } = useScrollAnimation();
+  const { ref: fourthParaRef, isVisible: fourthParaVisible } = useScrollAnimation();
+  const { ref: desktopFirstParaRef, isVisible: desktopFirstParaVisible } = useScrollAnimation();
+  const { ref: desktopSecondParaRef, isVisible: desktopSecondParaVisible } = useScrollAnimation();
+  const { ref: desktopThirdParaRef, isVisible: desktopThirdParaVisible } = useScrollAnimation();
+  const { ref: desktopFourthParaRef, isVisible: desktopFourthParaVisible } = useScrollAnimation();
   
-  // Sentence-by-sentence reveal for paragraphs
+  // Paragraph text
   const firstParaText = "Mr. Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. His extensive training includes rotations through hospitals in Liverpool, Newcastle, Scotland, and Northwest London, culminating in his CCT.";
-  const { ref: firstParaRef, sentences: firstParaSentences, visibleSentences: firstParaVisible } = useSentenceReveal(firstParaText, 1000, 500);
-  
   const secondParaText = "Mr. Moussa has worked at prestigious institutions like Imperial College London, the Royal Marsden, University College London, and Chelsea & Westminster hospitals, gaining extensive experience in open, laparoscopic, and robotic Upper GI surgery, including benign, bariatric, and oncological procedures.";
-  const { ref: secondParaRef, sentences: secondParaSentences, visibleSentences: secondParaVisible } = useSentenceReveal(secondParaText, 1000, 500);
-  
   const thirdParaText = "He holds a Postgraduate Diploma in Minimal Access Surgery and completed a research Medical Doctorate at Imperial College London in 2017. He also completed a Royal College of Surgeons-approved laparoscopic, anti-reflux, and bariatric surgery fellowship.";
-  const { ref: thirdParaRef, sentences: thirdParaSentences, visibleSentences: thirdParaVisible } = useSentenceReveal(thirdParaText, 1000, 500);
-  
   const fourthParaText = "Mr. Moussa is actively involved in research, focusing on metabolic health in obesity. His work has been published in high-impact journals. His dedication to surgical excellence is pivotal in advancing benign Upper GI Surgery.";
-  const { ref: fourthParaRef, sentences: fourthParaSentences, visibleSentences: fourthParaVisible } = useSentenceReveal(fourthParaText, 1000, 500);
-  
-  // Desktop paragraphs - separate hooks
-  const { ref: desktopFirstParaRef, sentences: desktopFirstParaSentences, visibleSentences: desktopFirstParaVisible } = useSentenceReveal(firstParaText, 1000, 500);
-  const { ref: desktopSecondParaRef, sentences: desktopSecondParaSentences, visibleSentences: desktopSecondParaVisible } = useSentenceReveal(secondParaText, 1000, 500);
-  const { ref: desktopThirdParaRef, sentences: desktopThirdParaSentences, visibleSentences: desktopThirdParaVisible } = useSentenceReveal(thirdParaText, 1000, 500);
-  const { ref: desktopFourthParaRef, sentences: desktopFourthParaSentences, visibleSentences: desktopFourthParaVisible } = useSentenceReveal(fourthParaText, 1000, 500);
   
   const { ref: accreditationsRef, isVisible: accreditationsVisible } = useScrollAnimation();
   const { ref: accreditationsImageRef, isVisible: accreditationsImageVisible } = useScrollAnimation();
@@ -107,143 +101,53 @@ export default function AboutPage() {
               About Osama Moussa
             </h1>
             
-            {/* Mobile: First paragraph only - larger text, black, over image, medium weight, sentence reveal */}
-            <div ref={firstParaRef} className="w-full space-y-4 text-2xl sm:text-base text-black font-medium leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden" style={{ paddingBottom: '200px' }}>
-              <p>
-                {firstParaSentences.slice(0, firstParaVisible).map((sentence, index) => (
-                  <span
-                    key={index}
-                    className="inline-block animate-fade-in"
-                    style={{
-                      animationDelay: `${index * 0.1}s`,
-                      animationFillMode: 'both'
-                    }}
-                  >
-                    {sentence}{' '}
-                  </span>
-                ))}
-              </p>
+            {/* Mobile: First paragraph only - larger text, black, over image, medium weight, simple fade-in */}
+            <div ref={firstParaRef} className={`w-full space-y-4 text-2xl sm:text-base text-black font-medium leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden fade-in-on-scroll ${firstParaVisible ? "visible" : ""}`} style={{ paddingBottom: '200px' }}>
+              <p>{firstParaText}</p>
             </div>
             
-            {/* Desktop: All paragraphs - larger text, medium weight, sentence reveal */}
+            {/* Desktop: All paragraphs - larger text, medium weight, simple fade-in */}
             <div className="hidden sm:block w-full lg:w-1/2 space-y-6 text-xl sm:text-xl lg:text-2xl text-black font-medium leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24">
-              <p ref={desktopFirstParaRef}>
-                {desktopFirstParaSentences.slice(0, desktopFirstParaVisible).map((sentence, index) => (
-                  <span
-                    key={index}
-                    className="inline-block animate-fade-in"
-                    style={{
-                      animationDelay: `${index * 0.1}s`,
-                      animationFillMode: 'both'
-                    }}
-                  >
-                    {sentence}{' '}
-                  </span>
-                ))}
+              <p ref={desktopFirstParaRef} className={`fade-in-on-scroll ${desktopFirstParaVisible ? "visible" : ""}`}>
+                {firstParaText}
               </p>
-              <p ref={desktopSecondParaRef}>
-                {desktopSecondParaSentences.slice(0, desktopSecondParaVisible).map((sentence, index) => (
-                  <span
-                    key={index}
-                    className="inline-block animate-fade-in"
-                    style={{
-                      animationDelay: `${index * 0.1}s`,
-                      animationFillMode: 'both'
-                    }}
-                  >
-                    {sentence}{' '}
-                  </span>
-                ))}
+              <p ref={desktopSecondParaRef} className={`fade-in-on-scroll ${desktopSecondParaVisible ? "visible" : ""}`}>
+                {secondParaText}
               </p>
-              <p ref={desktopThirdParaRef}>
-                {desktopThirdParaSentences.slice(0, desktopThirdParaVisible).map((sentence, index) => (
-                  <span
-                    key={index}
-                    className="inline-block animate-fade-in"
-                    style={{
-                      animationDelay: `${index * 0.1}s`,
-                      animationFillMode: 'both'
-                    }}
-                  >
-                    {sentence}{' '}
-                  </span>
-                ))}
+              <p ref={desktopThirdParaRef} className={`fade-in-on-scroll ${desktopThirdParaVisible ? "visible" : ""}`}>
+                {thirdParaText}
               </p>
-              <p ref={desktopFourthParaRef}>
-                {desktopFourthParaSentences.slice(0, desktopFourthParaVisible).map((sentence, index) => (
-                  <span
-                    key={index}
-                    className="inline-block animate-fade-in"
-                    style={{
-                      animationDelay: `${index * 0.1}s`,
-                      animationFillMode: 'both'
-                    }}
-                  >
-                    {sentence}{' '}
-                  </span>
-                ))}
+              <p ref={desktopFourthParaRef} className={`fade-in-on-scroll ${desktopFourthParaVisible ? "visible" : ""}`}>
+                {fourthParaText}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mobile: Second paragraph section - transparent background, white text, medium weight, more gap, sentence reveal */}
-      <section ref={secondParaRef} className="w-full py-20 px-4 sm:hidden bg-transparent">
+      {/* Mobile: Second paragraph section - transparent background, white text, medium weight, more gap, simple fade-in */}
+      <section ref={secondParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${secondParaVisible ? "visible" : ""}`}>
         <div className="container mx-auto">
           <p className="text-2xl text-white font-medium leading-relaxed text-center">
-            {secondParaSentences.slice(0, secondParaVisible).map((sentence, index) => (
-              <span
-                key={index}
-                className="inline-block animate-fade-in"
-                style={{
-                  animationDelay: `${index * 0.1}s`,
-                  animationFillMode: 'both'
-                }}
-              >
-                {sentence}{' '}
-              </span>
-            ))}
+            {secondParaText}
           </p>
         </div>
       </section>
 
-      {/* Mobile: Third paragraph section - transparent background, white text, medium weight, more gap, sentence reveal */}
-      <section ref={thirdParaRef} className="w-full py-20 px-4 sm:hidden bg-transparent">
+      {/* Mobile: Third paragraph section - transparent background, white text, medium weight, more gap, simple fade-in */}
+      <section ref={thirdParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${thirdParaVisible ? "visible" : ""}`}>
         <div className="container mx-auto">
           <p className="text-2xl text-white font-medium leading-relaxed text-center">
-            {thirdParaSentences.slice(0, thirdParaVisible).map((sentence, index) => (
-              <span
-                key={index}
-                className="inline-block animate-fade-in"
-                style={{
-                  animationDelay: `${index * 0.1}s`,
-                  animationFillMode: 'both'
-                }}
-              >
-                {sentence}{' '}
-              </span>
-            ))}
+            {thirdParaText}
           </p>
         </div>
       </section>
 
-      {/* Mobile: Fourth paragraph section - transparent background, white text, medium weight, more gap, sentence reveal */}
-      <section ref={fourthParaRef} className="w-full py-20 px-4 sm:hidden bg-transparent">
+      {/* Mobile: Fourth paragraph section - transparent background, white text, medium weight, more gap, simple fade-in */}
+      <section ref={fourthParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${fourthParaVisible ? "visible" : ""}`}>
         <div className="container mx-auto">
           <p className="text-2xl text-white font-medium leading-relaxed text-center">
-            {fourthParaSentences.slice(0, fourthParaVisible).map((sentence, index) => (
-              <span
-                key={index}
-                className="inline-block animate-fade-in"
-                style={{
-                  animationDelay: `${index * 0.1}s`,
-                  animationFillMode: 'both'
-                }}
-              >
-                {sentence}{' '}
-              </span>
-            ))}
+            {fourthParaText}
           </p>
         </div>
       </section>
