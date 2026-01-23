@@ -76,25 +76,20 @@ export default function ScrollCTA() {
         <div className="relative">
           {/* Content */}
           <div className="px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5">
-            <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2 sm:gap-4">
-              <p className="text-black text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center sm:text-left">
-                Book Your Appointment Today
-              </p>
-              <div className="flex items-center gap-2 sm:gap-3">
-                <Link
-                  href="/procedures/contact"
-                  className="inline-block px-4 sm:px-6 py-2 sm:py-3 border-2 border-black bg-transparent text-black font-semibold button-swipe button-swipe-black whitespace-nowrap text-sm sm:text-base"
-                >
-                  Book Now
-                </Link>
-                <button
-                  onClick={handleDismiss}
-                  className="px-4 sm:px-6 py-2 sm:py-3 border-2 border-black bg-transparent text-black font-semibold button-swipe button-swipe-white-bg whitespace-nowrap opacity-30 hover:opacity-100 transition-opacity duration-200 text-sm sm:text-base"
-                  aria-label="Close banner"
-                >
-                  Close
-                </button>
-              </div>
+            <div className="flex flex-row items-center justify-center gap-2 sm:gap-3">
+              <Link
+                href="/procedures/contact"
+                className="inline-block px-4 sm:px-6 py-2 sm:py-3 border-2 border-black bg-transparent text-black font-semibold button-swipe button-swipe-black whitespace-nowrap text-sm sm:text-base"
+              >
+                Book Now
+              </Link>
+              <button
+                onClick={handleDismiss}
+                className="px-4 sm:px-6 py-2 sm:py-3 border-2 border-black bg-transparent text-black font-semibold button-swipe button-swipe-white-bg whitespace-nowrap opacity-30 hover:opacity-100 transition-opacity duration-200 text-sm sm:text-base"
+                aria-label="Close banner"
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>
