@@ -88,12 +88,12 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
 
           {/* Right Side - Phone, Social Icons, Hamburger - Wrapped in black pill on desktop */}
           <div className="flex items-center">
-            {/* Desktop: All wrapped in black pill */}
-            <div className="hidden sm:flex items-center gap-3 px-4 py-2 bg-black rounded-full">
+            {/* Desktop: All wrapped in pill with black border */}
+            <div className={`hidden sm:flex items-center gap-3 px-4 py-2 border-2 ${textColor === "text-black" ? "border-black" : "border-black"} rounded-full bg-transparent`}>
               {/* Phone Number */}
               <a
                 href="tel:07352167642"
-                className="text-white font-medium transition-opacity text-base phone-number-bounce hover:opacity-80"
+                className={`${textColor} font-medium transition-opacity text-base phone-number-bounce hover:opacity-80`}
               >
                 {"07352167642".split("").map((char, index) => (
                   <span
@@ -109,7 +109,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
               </a>
 
               {/* Divider */}
-              <div className="w-px h-5 bg-white/30"></div>
+              <div className={`w-px h-5 ${textColor === "text-black" ? "bg-black/30" : "bg-black/30"}`}></div>
 
               {/* Social Icons */}
               <div className="flex items-center gap-3">
@@ -117,7 +117,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                   href="https://www.linkedin.com/in/osama-moussa-1610o/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:opacity-60 transition-opacity duration-200"
+                  className={`${textColor} hover:opacity-60 transition-opacity duration-200`}
                   aria-label="LinkedIn"
                 >
                   <svg
@@ -133,7 +133,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                   href="https://x.com/mromoussa"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:opacity-60 transition-opacity duration-200"
+                  className={`${textColor} hover:opacity-60 transition-opacity duration-200`}
                   aria-label="X (Twitter)"
                 >
                   <svg
@@ -148,12 +148,12 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
               </div>
 
               {/* Divider */}
-              <div className="w-px h-5 bg-white/30"></div>
+              <div className={`w-px h-5 ${textColor === "text-black" ? "bg-black/30" : "bg-black/30"}`}></div>
 
               {/* Hamburger Menu - Inside pill on desktop */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white hover:opacity-80 transition-opacity p-1"
+                className={`${textColor} hover:opacity-80 transition-opacity p-1`}
                 aria-label="Menu"
                 aria-expanded={isMenuOpen}
                 style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
