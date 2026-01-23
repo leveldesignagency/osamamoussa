@@ -86,7 +86,7 @@ export default function Hero() {
           style={{
             maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
             WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
-            objectPosition: '35% center',
+            objectPosition: '50% center',
           }}
           sizes="100vw"
         />
@@ -126,7 +126,7 @@ export default function Hero() {
       </div>
 
       {/* Widgets Overlay at Bottom - vertically stacked on mobile, horizontal on desktop */}
-      <div className="absolute bottom-8 z-20 w-full">
+      <div className="absolute bottom-20 sm:bottom-8 z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-2 items-center justify-center sm:justify-start">
             {/* Doctify Widget - Top on mobile, first on desktop */}
@@ -144,7 +144,7 @@ export default function Hero() {
               />
             </div>
 
-            {/* TopDoctors Widget - Bottom on mobile, second on desktop */}
+            {/* TopDoctors Widget - Hidden on mobile, shown on desktop */}
             <div className="hidden sm:block" style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center" }}>
               <div
                 id="topdoctors-gb-widget-container-8"
