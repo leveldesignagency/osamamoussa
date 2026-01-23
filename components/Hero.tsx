@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import MobileButton from "./MobileButton";
 
 export default function Hero() {
   const scriptsLoaded = useRef(false);
@@ -125,15 +126,24 @@ export default function Hero() {
           </h1>
           
           <div className="flex flex-row gap-2 sm:gap-4 animate-fade-in-up justify-center sm:justify-start" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
+                {/* Mobile Buttons - White bg, black text, black on hover/click */}
+                <MobileButton href="/procedures/contact" className="sm:hidden">
+                  Book Now
+                </MobileButton>
+                <MobileButton href="mailto:pa@osamamoussa.co.uk?subject=Hi!%20Can%20you%20help%20me%3F" className="sm:hidden">
+                  Email Us
+                </MobileButton>
+                
+                {/* Desktop Buttons - Original styling */}
                 <Link
                   href="/procedures/contact"
-                  className="inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-white sm:border-black bg-white/10 sm:bg-white backdrop-blur-sm sm:backdrop-blur-none text-white sm:text-black font-medium hover:border-white sm:hover:border-black transition-all duration-300 text-center button-swipe text-sm sm:text-base"
+                  className="hidden sm:inline-block px-8 py-4 border-2 border-black bg-white text-black font-medium hover:border-black transition-all duration-300 text-center button-swipe text-base"
                 >
                   Book Now
                 </Link>
                 <Link
                   href="mailto:pa@osamamoussa.co.uk?subject=Hi!%20Can%20you%20help%20me%3F"
-                  className="inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-white sm:border-black bg-white/10 sm:bg-white backdrop-blur-sm sm:backdrop-blur-none text-white sm:text-black font-medium hover:border-white sm:hover:border-black transition-all duration-300 text-center button-swipe text-sm sm:text-base"
+                  className="hidden sm:inline-block px-8 py-4 border-2 border-black bg-white text-black font-medium hover:border-black transition-all duration-300 text-center button-swipe text-base"
                 >
                   Email Us
                 </Link>
