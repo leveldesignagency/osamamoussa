@@ -408,6 +408,35 @@ body {
   animation: growShrink 30s ease-in-out infinite;
 }
 
+/* Signature Animation - Fade in with optional path drawing for SVG */
+.signature-container {
+  opacity: 0;
+  animation: signatureFadeIn 1.5s ease-in-out 0.5s forwards;
+}
+
+.signature-image {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* If signature is an SVG with paths, this will animate the drawing */
+.signature-container svg path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: signatureDraw 2.5s ease-in-out 1s forwards;
+}
+
+@keyframes signatureDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes signatureFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 /* Hero Widgets - Fixed positioning to prevent movement */
 #09in4nm9 {
   position: absolute !important;

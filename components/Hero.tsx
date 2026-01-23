@@ -151,6 +151,30 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Signature - Desktop only, bottom right */}
+      <div className="absolute bottom-8 right-8 z-20 hidden sm:block" style={{ pointerEvents: "none" }}>
+        <div className="signature-container">
+          <svg
+            className="signature-svg"
+            width="200"
+            height="80"
+            viewBox="0 0 200 80"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              className="signature-path"
+              d="M10 40 Q30 20, 50 40 T90 40 Q110 20, 130 40 T170 40"
+              stroke="black"
+              strokeWidth="2"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+
       {/* Widgets Overlay at Bottom - Desktop only, inside hero */}
       <div className="absolute bottom-8 z-20 w-full hidden sm:block" style={{ pointerEvents: "none" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
