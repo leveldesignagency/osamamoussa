@@ -230,13 +230,13 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                       </div>
                     </div>
                     
-                    {/* Menu Content - Centered Vertical Links */}
-                    <div className="flex flex-col h-full pt-20 pb-32">
+                    {/* Menu Content - Right Aligned Vertical Links */}
+                    <div className="flex flex-col h-full pt-32 sm:pt-40 pb-32">
                       <nav 
-                        className="flex-1 flex flex-col items-center justify-center px-4"
+                        className="flex-1 flex flex-col items-end justify-center px-6 sm:px-8"
                         style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                       >
-                        <div className="flex flex-col gap-6 sm:gap-8 text-center mobile-menu-nav-group">
+                        <div className="flex flex-col gap-6 sm:gap-8 text-right mobile-menu-nav-group w-full max-w-xs">
                           {menuItems.map((item, index) => {
                             const isClicked = clickedItemIndex === index;
                             const shouldSlideOut = clickedItemIndex !== null && index !== clickedItemIndex;
@@ -291,13 +291,13 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                         </div>
                       </nav>
                       
-                      {/* Contact Info - Bottom */}
-                      <div className="px-4 pb-8">
-                        <div className="max-w-md mx-auto text-center space-y-4">
+                      {/* Contact Info - Bottom Right Aligned */}
+                      <div className="px-6 sm:px-8 pb-8">
+                        <div className="max-w-xs ml-auto text-right space-y-4">
                           {/* Email */}
                           <a
                             href="mailto:info@osamamoussa.co.uk"
-                            className="block text-[#6E6E6E] hover:text-black transition-colors text-base sm:text-lg"
+                            className="block text-black font-bold hover:opacity-70 transition-opacity text-base sm:text-lg"
                             style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                           >
                             info@osamamoussa.co.uk
@@ -306,19 +306,19 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                           {/* Phone */}
                           <a
                             href="tel:07352167642"
-                            className="block text-[#6E6E6E] hover:text-black transition-colors text-base sm:text-lg"
+                            className="block text-black font-bold hover:opacity-70 transition-opacity text-base sm:text-lg"
                             style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                           >
                             +44 (0)735 216 7642
                           </a>
                           
-                          {/* Social Icons - Bordered Boxes */}
-                          <div className="flex items-center justify-center gap-3 pt-4">
+                          {/* Social Icons - Black, Right Aligned */}
+                          <div className="flex items-center justify-end gap-3 pt-4">
                             <a
                               href="https://www.linkedin.com/in/osama-moussa-1610o/"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-gray-300 bg-gray-50 hover:bg-gray-100 transition-colors text-[#6E6E6E] hover:text-black"
+                              className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-black hover:text-white transition-all duration-200 text-black"
                               aria-label="LinkedIn"
                               style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                             >
@@ -335,7 +335,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                               href="https://x.com/mromoussa"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-gray-300 bg-gray-50 hover:bg-gray-100 transition-colors text-[#6E6E6E] hover:text-black"
+                              className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-black hover:text-white transition-all duration-200 text-black"
                               aria-label="X (Twitter)"
                               style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                             >
