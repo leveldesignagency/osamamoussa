@@ -137,13 +137,13 @@ export default function Hero() {
                 {/* Desktop Buttons - EXACT original styling - DO NOT TOUCH */}
                 <Link
                   href="/procedures/contact"
-                  className="hidden sm:inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-white sm:border-black bg-white/10 sm:bg-white backdrop-blur-sm sm:backdrop-blur-none text-white sm:text-black font-medium hover:border-white sm:hover:border-black transition-all duration-300 text-center button-swipe text-sm sm:text-base"
+                  className="hidden sm:inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-white sm:border-black bg-white/10 sm:bg-white backdrop-blur-sm sm:backdrop-blur-none text-white sm:text-black font-medium hover:border-white sm:hover:border-black transition-all duration-300 text-center button-swipe button-swipe-black text-sm sm:text-base"
                 >
                   Book Now
                 </Link>
                 <Link
                   href="mailto:pa@osamamoussa.co.uk?subject=Hi!%20Can%20you%20help%20me%3F"
-                  className="hidden sm:inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-white sm:border-black bg-white/10 sm:bg-white backdrop-blur-sm sm:backdrop-blur-none text-white sm:text-black font-medium hover:border-white sm:hover:border-black transition-all duration-300 text-center button-swipe text-sm sm:text-base"
+                  className="hidden sm:inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-white sm:border-black bg-white/10 sm:bg-white backdrop-blur-sm sm:backdrop-blur-none text-white sm:text-black font-medium hover:border-white sm:hover:border-black transition-all duration-300 text-center button-swipe button-swipe-black text-sm sm:text-base"
                 >
                   Email Us
                 </Link>
