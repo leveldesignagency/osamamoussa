@@ -95,9 +95,9 @@ export default function AboutPage() {
         ></div>
         
         {/* Title and Content - aligned to left margin on desktop, centered on mobile */}
-        <div className="relative z-30" style={{ paddingTop: '128px', paddingBottom: '80px' }}>
+        <div className="relative z-30 pt-32 pb-6">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 ref={titleRef} className={`text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-black uppercase tracking-tight mb-6 text-center lg:text-left fade-in-on-scroll ${titleVisible ? "visible" : ""}`} style={{ marginTop: '40vh', marginBottom: '2rem' }}>
+            <h1 ref={titleRef} className={`text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-black uppercase tracking-tight mb-6 text-center lg:text-left fade-in-on-scroll ${titleVisible ? "visible" : ""}`}>
               <span className="sm:hidden">About Osama Moussa</span>
               <span className="hidden sm:inline">About Osama Moussa</span>
             </h1>
@@ -108,7 +108,7 @@ export default function AboutPage() {
             </div>
             
             {/* Desktop: All paragraphs - larger text, medium weight, simple fade-in */}
-            <div className="hidden sm:block w-full lg:w-1/2 space-y-6 text-xl sm:text-xl lg:text-2xl text-black font-medium leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24" style={{ marginTop: '-10vh' }}>
+            <div className="hidden sm:block w-full lg:w-1/2 space-y-6 text-xl sm:text-xl lg:text-2xl text-black font-medium leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24">
               <p ref={desktopFirstParaRef} className={`fade-in-on-scroll ${desktopFirstParaVisible ? "visible" : ""}`}>
                 {firstParaText}
               </p>

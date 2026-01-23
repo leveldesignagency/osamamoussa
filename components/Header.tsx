@@ -26,6 +26,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
   const router = useRouter();
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const isAboutPage = pathname === "/about";
 
   const bgClass = "bg-transparent";
   // Menu items should always be white when menu is open
@@ -72,7 +73,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
         </div>
       )}
       <header className={`absolute top-0 left-0 right-0 z-50 ${bgClass}`}>
-      <div className="container mx-auto pl-2 sm:pl-3 lg:pl-4 pr-1 sm:pr-1.5 lg:pr-2">
+      <div className="container mx-auto pl-4 sm:pl-4 lg:pl-6 pr-4 sm:pr-4 lg:pr-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Left aligned on mobile and desktop */}
           <div className="flex-shrink-0 flex-1 sm:flex-none flex justify-start">
@@ -91,7 +92,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
           {/* Right Side - Phone, Social Icons, Hamburger - Wrapped in black pill on desktop */}
           <div className="flex items-center">
             {/* Desktop: All wrapped in pill with black border */}
-            <div className={`hidden sm:flex items-center gap-3 px-4 py-2 border-2 ${!isHomePage ? "border-white" : (textColor === "text-black" ? "border-black" : "border-black")} rounded-full bg-transparent`}>
+            <div className={`hidden sm:flex items-center gap-3 px-4 py-2 border-2 ${isAboutPage ? "border-black" : (!isHomePage ? "border-white" : (textColor === "text-black" ? "border-black" : "border-black"))} rounded-full bg-transparent`}>
               {/* Phone Number */}
               <a
                 href="tel:07352167642"
