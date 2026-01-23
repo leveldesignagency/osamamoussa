@@ -7,7 +7,6 @@ import LogosSection from "@/components/LogosSection";
 import ReviewsSection from "@/components/ReviewsSection";
 import TopDoctorsWidget from "@/components/TopDoctorsWidget";
 import AppointmentSection from "@/components/AppointmentSection";
-import ScrollCTA from "@/components/ScrollCTA";
 
 export const metadata: Metadata = {
   title: "Osama Moussa",
@@ -68,7 +67,6 @@ export default function Home() {
       <ReviewsSection />
       <TopDoctorsWidget />
       <AppointmentSection />
-      <ScrollCTA />
     </main>
   );
 }
