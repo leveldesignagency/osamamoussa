@@ -104,7 +104,7 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 h-full flex flex-col justify-center items-center sm:items-start">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-8 leading-tight max-w-3xl animate-fade-in-up text-center sm:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white sm:text-black mb-8 leading-tight max-w-3xl animate-fade-in-up text-center sm:text-left">
             A leader in Upper GI Surgery in London and Hertfordshire
           </h1>
           

@@ -82,16 +82,16 @@ export default function AppointmentSection() {
           className="absolute left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none"
           style={{ 
             top: '-65px',
-            left: 'calc(50% - 65px)',
+            left: 'calc(50% - 100px)',
             zIndex: 30,
-            width: '130px'
+            width: '200px'
           }}
         >
           <div
             id="topdoctors-gb-widget-container-2"
             style={{ 
-              maxWidth: "130px", 
-              width: "130px",
+              maxWidth: "200px", 
+              width: "200px",
               margin: '0 auto',
               padding: 0,
               display: "block",
