@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import Hero, { MobileWidgetsSection } from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import ValuesSection from "@/components/ValuesSection";
 import LogosSection from "@/components/LogosSection";
@@ -62,6 +62,7 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-grey overflow-x-hidden">
       <Header />
       <Hero />
+      <MobileWidgetsSection />
       <AboutSection />
       <ValuesSection />
       <LogosSection />

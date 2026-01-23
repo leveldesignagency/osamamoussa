@@ -151,15 +151,14 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Widgets Overlay at Bottom - vertically stacked on mobile, horizontal on desktop */}
-      <div className="absolute bottom-4 sm:bottom-8 z-20 w-full" style={{ pointerEvents: "none" }}>
+      {/* Widgets Overlay at Bottom - Desktop only, inside hero */}
+      <div className="absolute bottom-8 z-20 w-full hidden sm:block" style={{ pointerEvents: "none" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-2 items-center justify-center sm:justify-start" style={{ position: "relative", isolation: "isolate" }}>
-            {/* Doctify Widget - Top on mobile, first on desktop */}
+          <div className="flex flex-row gap-2 items-center justify-start" style={{ position: "relative" }}>
+            {/* Doctify Widget - Desktop */}
             <div 
               style={{ 
                 width: "200px", 
-                height: "200px",
                 flexShrink: 0, 
                 display: "flex", 
                 alignItems: "flex-start", 
@@ -189,17 +188,13 @@ export default function Hero() {
                   maxHeight: "200px",
                   minHeight: "200px",
                   verticalAlign: "top", 
-                  margin: "0",
-                  position: "absolute",
-                  top: "0",
-                  left: "0"
+                  margin: "0 auto"
                 }}
               />
             </div>
 
-            {/* TopDoctors Widget - Hidden on mobile, shown on desktop */}
+            {/* TopDoctors Widget - Desktop */}
             <div 
-              className="hidden sm:block" 
               style={{ 
                 width: "245px", 
                 flexShrink: 0, 
@@ -216,8 +211,7 @@ export default function Hero() {
                   width: "245px",
                   minWidth: "245px",
                   maxWidth: "245px",
-                  position: "relative",
-                  transform: "translateZ(0)"
+                  position: "relative"
                 }}
               ></div>
             </div>
