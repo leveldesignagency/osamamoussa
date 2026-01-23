@@ -178,7 +178,7 @@ function PublicationItem({ pub, index }: { pub: Publication, index: number }) {
   return (
     <div
       ref={ref}
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-6 items-center pb-4 sm:pb-8 border-b border-white/20 last:border-0 hover:bg-white/5 transition-colors duration-200 rounded-lg p-3 sm:p-4 -mx-2 sm:-mx-4 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-6 items-center pb-4 sm:pb-8 border-b border-white/20 last:border-0 hover:bg-white/5 transition-colors duration-200 rounded-lg px-4 sm:px-6 py-3 sm:py-4 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
       <h2 className="text-xl sm:text-2xl font-sans font-bold text-white text-center lg:text-left">
