@@ -408,12 +408,23 @@ body {
   animation: growShrink 30s ease-in-out infinite;
 }
 
-/* TopDoctors widget positioning */
-#topdoctors-gb-widget-container-2 {
+/* TopDoctors widget positioning and quality */
+#topdoctors-gb-widget-container-2,
+#topdoctors-gb-widget-container-8 {
   position: relative !important;
   margin: 0 !important;
   padding: 0 !important;
   display: block !important;
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: crisp-edges !important;
+  transform: translateZ(0) !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+#topdoctors-gb-widget-container-2 > *,
+#topdoctors-gb-widget-container-8 > * {
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: crisp-edges !important;
 }
 
 /* Insurance Logos Marquee Animation */

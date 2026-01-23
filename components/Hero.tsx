@@ -145,11 +145,13 @@ export default function Hero() {
             </div>
 
             {/* TopDoctors Widget - Hidden on mobile, shown on desktop */}
-            <div className="hidden sm:block" style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center" }}>
+            <div className="hidden sm:block" style={{ width: "245px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center" }}>
               <div
                 id="topdoctors-gb-widget-container-8"
                 style={{ 
-                  width: "200px"
+                  width: "245px",
+                  minWidth: "245px",
+                  maxWidth: "245px"
                 }}
               ></div>
             </div>
