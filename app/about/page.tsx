@@ -42,14 +42,34 @@ export default function AboutPage() {
       <section className="relative w-full overflow-hidden" style={{ height: '100vh' }}>
         {/* Container to clip the growing image - full height from top */}
         <div className="absolute" style={{ top: 0, left: 0, right: 0, bottom: 0, overflow: 'hidden' }}>
-          {/* Background Image - full height from top */}
-          <div className="absolute image-slide" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
+          {/* Mobile Image - full height from top */}
+          <div className="absolute image-slide sm:hidden" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
+            <Image
+              src="/osama about.png"
+              alt="About Osama Moussa"
+              fill
+              className="object-cover about-hero-image"
+              style={{ 
+                objectPosition: 'center top',
+                maskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)'
+              }}
+              priority
+              sizes="100vw"
+            />
+          </div>
+          {/* Desktop Image - full height from top */}
+          <div className="absolute image-slide hidden sm:block" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
             <Image
               src="/OM6.jpg"
               alt="About Osama Moussa"
               fill
               className="object-cover about-hero-image"
-              style={{ objectPosition: 'center top' }}
+              style={{ 
+                objectPosition: 'center top',
+                maskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)'
+              }}
               priority
               sizes="100vw"
             />
@@ -78,7 +98,7 @@ export default function AboutPage() {
             </h1>
             
             {/* Content */}
-            <div className="w-full lg:w-1/2 space-y-4 text-base sm:text-lg text-black leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0">
+            <div className="w-full lg:w-1/2 space-y-4 text-base sm:text-lg text-black leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24">
             <p>
               Mr. Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. His extensive training includes rotations through hospitals in Liverpool, Newcastle, Scotland, and Northwest London, culminating in his CCT.
             </p>
