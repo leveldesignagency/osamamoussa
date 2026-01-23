@@ -125,7 +125,7 @@ export default function Hero() {
             A leader in Upper GI Surgery in London and Hertfordshire
           </h1>
           
-          <div className="flex flex-row gap-2 sm:gap-4 animate-fade-in-up justify-center sm:justify-start mb-24 sm:mb-0" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
+          <div className="flex flex-row gap-2 sm:gap-4 animate-fade-in-up justify-center sm:justify-start mb-24 sm:mb-8" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
                 {/* Mobile Buttons - White bg, black text, black on hover/click */}
                 <MobileButton href="/procedures/contact" className="sm:hidden">
                   Book Now
@@ -134,16 +134,16 @@ export default function Hero() {
                   Email Us
                 </MobileButton>
                 
-                {/* Desktop Buttons - Original styling */}
+                {/* Desktop Buttons - EXACT original styling - DO NOT TOUCH */}
                 <Link
                   href="/procedures/contact"
-                  className="hidden sm:inline-block px-8 py-4 border-2 border-black bg-white text-black font-medium hover:border-black transition-all duration-300 text-center button-swipe text-base"
+                  className="hidden sm:inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-white sm:border-black bg-white/10 sm:bg-white backdrop-blur-sm sm:backdrop-blur-none text-white sm:text-black font-medium hover:border-white sm:hover:border-black transition-all duration-300 text-center button-swipe text-sm sm:text-base"
                 >
                   Book Now
                 </Link>
                 <Link
                   href="mailto:pa@osamamoussa.co.uk?subject=Hi!%20Can%20you%20help%20me%3F"
-                  className="hidden sm:inline-block px-8 py-4 border-2 border-black bg-white text-black font-medium hover:border-black transition-all duration-300 text-center button-swipe text-base"
+                  className="hidden sm:inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-white sm:border-black bg-white/10 sm:bg-white backdrop-blur-sm sm:backdrop-blur-none text-white sm:text-black font-medium hover:border-white sm:hover:border-black transition-all duration-300 text-center button-swipe text-sm sm:text-base"
                 >
                   Email Us
                 </Link>
@@ -152,32 +152,72 @@ export default function Hero() {
       </div>
 
       {/* Widgets Overlay at Bottom - vertically stacked on mobile, horizontal on desktop */}
-      <div className="absolute bottom-4 sm:bottom-8 z-20 w-full">
+      <div className="absolute bottom-4 sm:bottom-8 z-20 w-full pointer-events-none">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-2 items-center justify-center sm:justify-start">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-2 items-center justify-center sm:justify-start hero-widgets-container">
             {/* Doctify Widget - Top on mobile, first on desktop */}
-            <div style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center", overflow: "hidden" }}>
+            <div 
+              className="hero-widget-wrapper"
+              style={{ 
+                width: "200px", 
+                flexShrink: 0, 
+                display: "flex", 
+                alignItems: "flex-start", 
+                justifyContent: "center", 
+                overflow: "hidden",
+                position: "relative",
+                isolation: "isolate"
+              }}
+            >
               <iframe
                 id="09in4nm9"
                 className="doctify-widget"
                 src="https://www.doctify.com/wv2/average-rating-widget?containerId=09in4nm9&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=darkNavy&widgetName=average-rating-widget"
                 width="200"
+                height="200"
                 frameBorder="0"
                 scrolling="no"
                 name="average-rating-widget"
                 title="Doctify Rating Widget"
-                style={{ display: "block", border: "none", width: "200px", maxWidth: "200px", minWidth: "200px", verticalAlign: "top", margin: "0 auto" }}
+                style={{ 
+                  display: "block", 
+                  border: "none", 
+                  width: "200px", 
+                  maxWidth: "200px", 
+                  minWidth: "200px",
+                  height: "200px",
+                  maxHeight: "200px",
+                  minHeight: "200,
+                  verticalAlign: "top", 
+                  margin: "0 auto",
+                  position: "relative",
+                  pointerEvents: "auto"
+                }}
               />
             </div>
 
             {/* TopDoctors Widget - Hidden on mobile, shown on desktop */}
-            <div className="hidden sm:block" style={{ width: "245px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center" }}>
+            <div 
+              className="hidden sm:block hero-widget-wrapper" 
+              style={{ 
+                width: "245px", 
+                flexShrink: 0, 
+                display: "flex", 
+                alignItems: "flex-start", 
+                justifyContent: "center",
+                position: "relative",
+                isolation: "isolate"
+              }}
+            >
               <div
                 id="topdoctors-gb-widget-container-8"
                 style={{ 
                   width: "245px",
                   minWidth: "245px",
-                  maxWidth: "245px"
+                  maxWidth: "245px",
+                  height: "auto",
+                  position: "relative",
+                  pointerEvents: "auto"
                 }}
               ></div>
             </div>

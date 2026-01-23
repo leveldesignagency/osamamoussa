@@ -408,6 +408,19 @@ body {
   animation: growShrink 30s ease-in-out infinite;
 }
 
+/* Hero Widgets Container - Professional containment */
+.hero-widgets-container {
+  contain: layout style paint !important;
+  will-change: auto !important;
+}
+
+.hero-widget-wrapper {
+  contain: layout style paint !important;
+  transform: translateZ(0) !important;
+  backface-visibility: hidden !important;
+  -webkit-transform: translateZ(0) !important;
+}
+
 /* TopDoctors widget positioning and quality */
 #topdoctors-gb-widget-container-2,
 #topdoctors-gb-widget-container-8 {
@@ -419,12 +432,24 @@ body {
   image-rendering: crisp-edges !important;
   transform: translateZ(0) !important;
   -webkit-font-smoothing: antialiased !important;
+  contain: layout style paint !important;
+  will-change: auto !important;
 }
 
 #topdoctors-gb-widget-container-2 > *,
 #topdoctors-gb-widget-container-8 > * {
   image-rendering: -webkit-optimize-contrast !important;
   image-rendering: crisp-edges !important;
+  position: relative !important;
+  transform: translateZ(0) !important;
+}
+
+/* Doctify widget containment */
+#09in4nm9 {
+  contain: layout style paint !important;
+  transform: translateZ(0) !important;
+  -webkit-transform: translateZ(0) !important;
+  backface-visibility: hidden !important;
 }
 
 /* Insurance Logos Marquee Animation */
