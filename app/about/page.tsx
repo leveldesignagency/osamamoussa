@@ -76,9 +76,9 @@ export default function AboutPage() {
           </div>
         </div>
         
-        {/* Grey glass overlay on left - full height to match image */}
+        {/* Grey glass overlay on left - full height to match image - Hidden on mobile */}
         <div 
-          className="absolute backdrop-blur-xl z-10"
+          className="absolute backdrop-blur-xl z-10 hidden sm:block"
           style={{
             top: 0,
             left: 0,
@@ -97,22 +97,56 @@ export default function AboutPage() {
               About Osama Moussa
             </h1>
             
-            {/* Content */}
-            <div className="w-full lg:w-1/2 space-y-4 text-base sm:text-lg text-black leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24">
-            <p>
-              Mr. Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. His extensive training includes rotations through hospitals in Liverpool, Newcastle, Scotland, and Northwest London, culminating in his CCT.
-            </p>
-            <p>
-              Mr. Moussa has worked at prestigious institutions like Imperial College London, the Royal Marsden, University College London, and Chelsea & Westminster hospitals, gaining extensive experience in open, laparoscopic, and robotic Upper GI surgery, including benign, bariatric, and oncological procedures.
-            </p>
-            <p>
-              He holds a Postgraduate Diploma in Minimal Access Surgery and completed a research Medical Doctorate at Imperial College London in 2017. He also completed a Royal College of Surgeons-approved laparoscopic, anti-reflux, and bariatric surgery fellowship.
-            </p>
-            <p>
-              Mr. Moussa is actively involved in research, focusing on metabolic health in obesity. His work has been published in high-impact journals. His dedication to surgical excellence is pivotal in advancing benign Upper GI Surgery.
-            </p>
+            {/* Mobile: First paragraph only - larger text, black, over image */}
+            <div className="w-full space-y-4 text-xl sm:text-base text-black leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden">
+              <p>
+                Mr. Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. His extensive training includes rotations through hospitals in Liverpool, Newcastle, Scotland, and Northwest London, culminating in his CCT.
+              </p>
+            </div>
+            
+            {/* Desktop: All paragraphs */}
+            <div className="hidden sm:block w-full lg:w-1/2 space-y-4 text-base sm:text-lg text-black leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24">
+              <p>
+                Mr. Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. His extensive training includes rotations through hospitals in Liverpool, Newcastle, Scotland, and Northwest London, culminating in his CCT.
+              </p>
+              <p>
+                Mr. Moussa has worked at prestigious institutions like Imperial College London, the Royal Marsden, University College London, and Chelsea & Westminster hospitals, gaining extensive experience in open, laparoscopic, and robotic Upper GI surgery, including benign, bariatric, and oncological procedures.
+              </p>
+              <p>
+                He holds a Postgraduate Diploma in Minimal Access Surgery and completed a research Medical Doctorate at Imperial College London in 2017. He also completed a Royal College of Surgeons-approved laparoscopic, anti-reflux, and bariatric surgery fellowship.
+              </p>
+              <p>
+                Mr. Moussa is actively involved in research, focusing on metabolic health in obesity. His work has been published in high-impact journals. His dedication to surgical excellence is pivotal in advancing benign Upper GI Surgery.
+              </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Mobile: Second paragraph section - transparent background, white text */}
+      <section className="w-full py-12 px-4 sm:hidden bg-transparent">
+        <div className="container mx-auto">
+          <p className="text-xl text-white leading-relaxed text-center">
+            Mr. Moussa has worked at prestigious institutions like Imperial College London, the Royal Marsden, University College London, and Chelsea & Westminster hospitals, gaining extensive experience in open, laparoscopic, and robotic Upper GI surgery, including benign, bariatric, and oncological procedures.
+          </p>
+        </div>
+      </section>
+
+      {/* Mobile: Third paragraph section - transparent background, white text */}
+      <section className="w-full py-12 px-4 sm:hidden bg-transparent">
+        <div className="container mx-auto">
+          <p className="text-xl text-white leading-relaxed text-center">
+            He holds a Postgraduate Diploma in Minimal Access Surgery and completed a research Medical Doctorate at Imperial College London in 2017. He also completed a Royal College of Surgeons-approved laparoscopic, anti-reflux, and bariatric surgery fellowship.
+          </p>
+        </div>
+      </section>
+
+      {/* Mobile: Fourth paragraph section - transparent background, white text */}
+      <section className="w-full py-12 px-4 sm:hidden bg-transparent">
+        <div className="container mx-auto">
+          <p className="text-xl text-white leading-relaxed text-center">
+            Mr. Moussa is actively involved in research, focusing on metabolic health in obesity. His work has been published in high-impact journals. His dedication to surgical excellence is pivotal in advancing benign Upper GI Surgery.
+          </p>
         </div>
       </section>
 
