@@ -132,9 +132,9 @@ export default function ContactPage() {
                 </div>
               </div>
               {/* Contact Pills - Desktop only (overlaid on image) */}
-              <div className="absolute bottom-32 left-0 right-0 p-6 lg:p-8 space-y-4 lg:space-y-6 text-white z-10">
+              <div className="absolute bottom-32 left-0 space-y-4 lg:space-y-6 text-white z-10">
                 {/* Phone Number Pill */}
-                <div className="w-full max-w-md border-2 border-black bg-black/70 backdrop-blur-md rounded-full px-6 py-4">
+                <div className="w-fit border-2 border-black bg-black/70 backdrop-blur-md rounded-full px-6 py-4">
                   <a
                     href="tel:07352167642"
                     className="flex items-center gap-3 text-white text-xl font-sans font-semibold hover:opacity-60 transition-opacity"
@@ -152,7 +152,7 @@ export default function ContactPage() {
                 </div>
                 
                 {/* Email Pill */}
-                <div className="w-full max-w-md border-2 border-black bg-black/70 backdrop-blur-md rounded-full px-6 py-4">
+                <div className="w-fit border-2 border-black bg-black/70 backdrop-blur-md rounded-full px-6 py-4">
                   <a
                     href="mailto:pa@osamamoussa.co.uk"
                     className="flex items-center gap-3 text-white text-xl font-sans font-semibold hover:opacity-60 transition-opacity"

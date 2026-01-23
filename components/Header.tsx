@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 interface HeaderProps {
   backgroundColor?: string;
@@ -24,6 +24,10 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [transitionPageName, setTransitionPageName] = useState<string>("");
   const router = useRouter();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   const bgClass = "bg-transparent";
   // Menu items should always be white when menu is open
@@ -70,7 +74,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
         </div>
       )}
       <header className={`absolute top-0 left-0 right-0 z-50 ${bgClass}`}>
-      <div className="container mx-auto pl-4 sm:pl-4 lg:pl-6 pr-2 sm:pr-2 lg:pr-3">
+      <div className="container mx-auto pl-2 sm:pl-2 lg:pl-4 pr-1 sm:pr-1 lg:pr-2">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Left aligned on mobile and desktop */}
           <div className="flex-shrink-0 flex-1 sm:flex-none flex justify-start">
@@ -89,7 +93,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
           {/* Right Side - Phone, Social Icons, Hamburger - Wrapped in black pill on desktop */}
           <div className="flex items-center">
             {/* Desktop: All wrapped in pill with black border */}
-            <div className={`hidden sm:flex items-center gap-3 px-4 py-2 border-2 ${textColor === "text-black" ? "border-black" : "border-black"} rounded-full bg-transparent`}>
+            <div className={`hidden sm:flex items-center gap-3 px-4 py-2 border-2 ${!isHomePage ? "border-white" : (textColor === "text-black" ? "border-black" : "border-black")} rounded-full bg-transparent`}>
               {/* Phone Number */}
               <a
                 href="tel:07352167642"
@@ -188,7 +192,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
             <div className="sm:hidden relative flex-shrink-0">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`${textColor} hover:opacity-80 transition-opacity p-2`}
+                className={`${textColor} hover:opacity-80 transition-opacity p-2 border-2 ${!isHomePage ? "border-white" : "border-transparent"} rounded-full`}
                 aria-label="Menu"
                 aria-expanded={isMenuOpen}
                 style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}

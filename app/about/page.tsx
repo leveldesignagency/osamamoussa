@@ -102,13 +102,13 @@ export default function AboutPage() {
               <span className="hidden sm:inline">About Osama Moussa</span>
             </h1>
             
-            {/* Mobile: First paragraph only - larger text, black, over image, medium weight, simple fade-in */}
-            <div ref={firstParaRef} className={`w-full space-y-4 text-2xl sm:text-base text-black font-medium leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden fade-in-on-scroll ${firstParaVisible ? "visible" : ""}`} style={{ paddingBottom: '200px', marginTop: '0' }}>
+            {/* Mobile: First paragraph only - larger text, white, over image, medium weight, simple fade-in */}
+            <div ref={firstParaRef} className={`w-full space-y-4 text-2xl sm:text-base text-white font-medium leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden fade-in-on-scroll ${firstParaVisible ? "visible" : ""}`} style={{ paddingBottom: '200px', marginTop: '0' }}>
               <p>{firstParaText}</p>
             </div>
             
             {/* Desktop: All paragraphs - larger text, medium weight, simple fade-in */}
-            <div className="hidden sm:block w-full lg:w-1/2 space-y-6 text-xl sm:text-xl lg:text-2xl text-black font-medium leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24">
+            <div className="hidden sm:block w-full lg:w-1/2 space-y-6 text-xl sm:text-xl lg:text-2xl text-black font-medium leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24" style={{ marginTop: '-10vh' }}>
               <p ref={desktopFirstParaRef} className={`fade-in-on-scroll ${desktopFirstParaVisible ? "visible" : ""}`}>
                 {firstParaText}
               </p>
