@@ -125,7 +125,7 @@ export default function Hero() {
             A leader in Upper GI Surgery in London and Hertfordshire
           </h1>
           
-          <div className="flex flex-row gap-2 sm:gap-4 animate-fade-in-up justify-center sm:justify-start" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
+          <div className="flex flex-row gap-2 sm:gap-4 animate-fade-in-up justify-center sm:justify-start mb-24 sm:mb-0" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
                 {/* Mobile Buttons - White bg, black text, black on hover/click */}
                 <MobileButton href="/procedures/contact" className="sm:hidden">
                   Book Now
@@ -152,7 +152,7 @@ export default function Hero() {
       </div>
 
       {/* Widgets Overlay at Bottom - vertically stacked on mobile, horizontal on desktop */}
-      <div className="absolute bottom-20 sm:bottom-8 z-20 w-full">
+      <div className="absolute bottom-4 sm:bottom-8 z-20 w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-2 items-center justify-center sm:justify-start">
             {/* Doctify Widget - Top on mobile, first on desktop */}
