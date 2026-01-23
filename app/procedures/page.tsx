@@ -147,13 +147,56 @@ function PageTitleSection() {
 }
 
 function IntroductionSection() {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref: firstParaRef, isVisible: firstParaVisible } = useScrollAnimation();
+  const { ref: secondParaRef, isVisible: secondParaVisible } = useScrollAnimation();
+  const { ref: desktopRef, isVisible: desktopVisible } = useScrollAnimation();
   
   return (
     <section className="w-full py-16">
+      {/* Mobile: First paragraph - styled like about page */}
       <div 
-        ref={ref}
-        className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
+        ref={firstParaRef}
+        className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${firstParaVisible ? "visible" : ""}`}
+      >
+        <div className="container mx-auto">
+          <p className="text-2xl text-white font-medium leading-relaxed text-center">
+            Osama delivers Laparoscopic and Robotic surgical services at West
+            Hertfordshire NHS Teaching Trust. He is trained in various benign
+            Upper GI and General surgical procedures. Minimally invasive surgery
+            took a significant step forward with the introduction of robotically
+            assisted procedures. Osama is trained in not one but two robotic
+            modules (Versius and Intuitive). In the hands of Osama&apos;s skill set,
+            both robotic and laparoscopic surgery is very safe. Both have
+            significant benefits when compared to open surgery, including a
+            shorter hospital stay, shorter recovery as well as a lower risk of
+            incisional hernias, infection, blood loss and pain.
+          </p>
+        </div>
+      </div>
+      
+      {/* Mobile: Second paragraph - styled like about page */}
+      <div 
+        ref={secondParaRef}
+        className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${secondParaVisible ? "visible" : ""}`}
+      >
+        <div className="container mx-auto">
+          <p className="text-2xl text-white font-medium leading-relaxed text-center">
+            His special interest is benign oesophagogastric surgery, which
+            includes managing acid reflux disease through laparoscopic hiatus
+            hernia repair, fundoplication, paraesophageal hernia repair, and
+            achalasia cardia. He has trained in advanced oesophago-gastric units
+            around Northwest London and has extensive exposure to various
+            procedures. He performs various general surgical procedures such as
+            gallbladder surgery and inguinal hernia repairs and incisional
+            hernias. He also performs diagnostic endoscopy.
+          </p>
+        </div>
+      </div>
+      
+      {/* Desktop: Both paragraphs - original styling */}
+      <div 
+        ref={desktopRef}
+        className={`hidden sm:block container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${desktopVisible ? "visible" : ""}`}
       >
         <div className="space-y-8 text-lg sm:text-xl text-gray-200 leading-relaxed text-center lg:text-left">
             <p>

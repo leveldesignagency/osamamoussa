@@ -66,9 +66,28 @@ export default function ResearchPage() {
 
       {/* Research Description Section */}
       <section className="w-full py-16">
+        {/* Mobile: First paragraph - styled like about page */}
+        <div className="w-full py-20 px-4 sm:hidden bg-transparent">
+          <div className="container mx-auto">
+            <p className="text-2xl text-white font-medium leading-relaxed text-center">
+              Beyond his clinical endeavours, Mr Moussa is deeply invested in
+              pioneering research, particularly in metabolic health and obesity. His
+              scholarly pursuits have culminated in the publication of his work in
+              very high-impact journals, contributing significantly to the
+              advancement of medical knowledge in his field. Throughout his training,
+              he was proactive in endorsing his evidence-based approach to surgery
+              and continued to nurture his research skills. He finally undertook a
+              statistically-based postgraduate degree and he pushed his boundaries to
+              publish in very high-impact journals. Osama&apos;s work has also been
+              referenced and used in the most recent NICE guidelines change for better
+              Obesity management in the UK.
+            </p>
+          </div>
+        </div>
+        
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-white leading-relaxed text-center lg:text-left">
+            <div className="hidden sm:block space-y-4 sm:space-y-6 text-base sm:text-lg text-white leading-relaxed text-center lg:text-left">
               <p>
                 Beyond his clinical endeavours, Mr Moussa is deeply invested in
                 pioneering research, particularly in metabolic health and obesity. His
@@ -202,7 +221,7 @@ function MorePublicationsSection() {
   const { ref, isVisible } = useScrollAnimation();
   
   return (
-    <section className="w-full bg-white py-16">
+    <section className="w-full bg-white py-16 sm:py-16 min-h-screen sm:min-h-0">
       <div 
         ref={ref}
         className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
@@ -211,13 +230,13 @@ function MorePublicationsSection() {
           <h2 className="text-3xl font-sans font-bold text-gray-900 mb-6">
             More Publications
           </h2>
-          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+          <p className="text-2xl sm:text-lg text-gray-700 leading-relaxed mb-6">
             If you are interested in viewing many more of Osama Moussa&apos;s
             publications, please download this PDF which titles all of his
             publications and contributions over the years.
           </p>
           <Link
-            href="https://www.osamamoussa.co.uk/_files/ugd/ac3c0f_d8b35d56a8244ff7a4114e8c2242f65d.pdf"
+            href="/ac3c0f_d8b35d56a8244ff7a4114e8c2242f65d.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-8 py-4 border-2 border-[#6E6E6E] bg-[#6E6E6E] text-white font-medium transition-colors duration-200 button-swipe text-white"

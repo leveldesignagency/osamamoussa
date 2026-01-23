@@ -95,10 +95,10 @@ export default function AboutPage() {
         ></div>
         
         {/* Title and Content - aligned to left margin on desktop, centered on mobile */}
-        <div className="relative z-30 pt-32 pb-6">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-30 pb-6">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-[60vh] sm:pt-32">
             <h1 ref={titleRef} className={`text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-black uppercase tracking-tight mb-6 text-center lg:text-left fade-in-on-scroll ${titleVisible ? "visible" : ""}`}>
-              <span className="sm:hidden">About Osama Moussa</span>
+              <span className="sm:hidden text-white block">About Osama Moussa</span>
               <span className="hidden sm:inline">About Osama Moussa</span>
             </h1>
             

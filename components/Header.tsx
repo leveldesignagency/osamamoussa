@@ -73,7 +73,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
         </div>
       )}
       <header className={`absolute top-0 left-0 right-0 z-50 ${bgClass}`}>
-      <div className="container mx-auto pl-4 sm:pl-4 lg:pl-6 pr-4 sm:pr-4 lg:pr-6">
+      <div className="container mx-auto pl-2 sm:pl-2 lg:pl-3 pr-2 sm:pr-2 lg:pr-3">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Left aligned on mobile and desktop */}
           <div className="flex-shrink-0 flex-1 sm:flex-none flex justify-start">
@@ -83,7 +83,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                 alt="Osama Moussa Logo"
                 width={200}
                 height={50}
-                className={`h-12 w-auto ${textColorProp === "black" ? "" : (backgroundColor === "grey" ? "brightness-0 invert" : "")}`}
+                className={`h-12 w-auto ${textColorProp === "black" ? "" : (isAboutPage ? "brightness-0 invert" : (backgroundColor === "grey" ? "brightness-0 invert" : ""))}`}
                 priority
               />
             </Link>
@@ -112,7 +112,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
               </a>
 
               {/* Divider */}
-              <div className={`w-px h-5 ${textColor === "text-black" ? "bg-black/30" : "bg-black/30"}`}></div>
+              <div className={`w-px h-5 ${textColor === "text-black" ? "bg-black/30" : "bg-white/30"}`}></div>
 
               {/* Social Icons */}
               <div className="flex items-center gap-3">
@@ -151,7 +151,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
               </div>
 
               {/* Divider */}
-              <div className={`w-px h-5 ${textColor === "text-black" ? "bg-black/30" : "bg-black/30"}`}></div>
+              <div className={`w-px h-5 ${textColor === "text-black" ? "bg-black/30" : "bg-white/30"}`}></div>
 
               {/* Hamburger Menu - Inside pill on desktop */}
               <button

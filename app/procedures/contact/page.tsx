@@ -132,7 +132,7 @@ export default function ContactPage() {
                 </div>
               </div>
               {/* Contact Pills - Desktop only (overlaid on image) */}
-              <div className="absolute bottom-32 left-0 pl-4 sm:pl-6 lg:pl-8 space-y-4 lg:space-y-6 text-white z-10">
+              <div className="absolute bottom-32 left-0 pl-6 lg:pl-8 space-y-4 lg:space-y-6 text-white z-10">
                 {/* Phone Number Pill */}
                 <div className="w-fit border-2 border-black bg-black/70 backdrop-blur-md rounded-full px-6 py-4">
                   <a

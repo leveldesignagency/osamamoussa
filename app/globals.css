@@ -492,6 +492,15 @@ body {
   align-items: center;
   animation: marquee 8s linear infinite;
   will-change: transform;
+  width: max-content;
+}
+
+/* Mobile: Faster animation and ensure proper loop */
+@media (max-width: 640px) {
+  .marquee-content {
+    animation: marquee-mobile 3s linear infinite;
+    gap: 2rem;
+  }
 }
 
 .marquee-item {
@@ -503,6 +512,16 @@ body {
 }
 
 @keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Mobile marquee animation - faster and ensures complete loop */
+@keyframes marquee-mobile {
   0% {
     transform: translateX(0);
   }
