@@ -107,49 +107,55 @@ export default function AppointmentSection() {
           <div className="marquee-container">
             <div className="marquee-content">
               {/* First set of logos */}
-              {insuranceLogos.map((logo, index) => (
-                <div 
-                  key={`logo-1-${index}`}
-                  className="marquee-item"
-                >
-                  <Image
-                    src={logo}
-                    alt={`Insurance ${index + 1}`}
-                    width={100}
-                    height={50}
-                    className="object-contain"
-                    style={{ 
-                      maxWidth: '100px', 
-                      maxHeight: '50px', 
-                      width: 'auto', 
-                      height: 'auto',
-                      objectFit: 'contain'
-                    }}
-                  />
-                </div>
-              ))}
+              {insuranceLogos.map((logo, index) => {
+                const isAxa = logo === "/axa health.jpg";
+                return (
+                  <div 
+                    key={`logo-1-${index}`}
+                    className="marquee-item"
+                  >
+                    <Image
+                      src={logo}
+                      alt={`Insurance ${index + 1}`}
+                      width={isAxa ? 150 : 100}
+                      height={isAxa ? 75 : 50}
+                      className="object-contain"
+                      style={{ 
+                        maxWidth: isAxa ? '150px' : '100px', 
+                        maxHeight: isAxa ? '75px' : '50px', 
+                        width: 'auto', 
+                        height: 'auto',
+                        objectFit: 'contain'
+                      }}
+                    />
+                  </div>
+                );
+              })}
               {/* Duplicate set for seamless loop */}
-              {insuranceLogos.map((logo, index) => (
-                <div 
-                  key={`logo-2-${index}`}
-                  className="marquee-item"
-                >
-                  <Image
-                    src={logo}
-                    alt={`Insurance ${index + 1}`}
-                    width={100}
-                    height={50}
-                    className="object-contain"
-                    style={{ 
-                      maxWidth: '100px', 
-                      maxHeight: '50px', 
-                      width: 'auto', 
-                      height: 'auto',
-                      objectFit: 'contain'
-                    }}
-                  />
-                </div>
-              ))}
+              {insuranceLogos.map((logo, index) => {
+                const isAxa = logo === "/axa health.jpg";
+                return (
+                  <div 
+                    key={`logo-2-${index}`}
+                    className="marquee-item"
+                  >
+                    <Image
+                      src={logo}
+                      alt={`Insurance ${index + 1}`}
+                      width={isAxa ? 150 : 100}
+                      height={isAxa ? 75 : 50}
+                      className="object-contain"
+                      style={{ 
+                        maxWidth: isAxa ? '150px' : '100px', 
+                        maxHeight: isAxa ? '75px' : '50px', 
+                        width: 'auto', 
+                        height: 'auto',
+                        objectFit: 'contain'
+                      }}
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

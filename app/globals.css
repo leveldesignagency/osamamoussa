@@ -5,7 +5,7 @@
 /* Mobile image positioning for hero - center face */
 @media (max-width: 640px) {
   .hero-image-mobile {
-    object-position: center center !important;
+    object-position: 35% center !important;
   }
   .about-hero-image {
     object-position: center 30% !important;
@@ -427,7 +427,7 @@ body {
   display: flex;
   gap: 3rem;
   align-items: center;
-  animation: marquee 30s linear infinite;
+  animation: marquee 15s linear infinite;
   will-change: transform;
 }
 

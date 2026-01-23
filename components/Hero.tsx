@@ -86,7 +86,7 @@ export default function Hero() {
           style={{
             maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
             WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
-            objectPosition: 'center center',
+            objectPosition: '35% center',
           }}
           sizes="100vw"
         />
@@ -104,20 +104,20 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 h-full flex flex-col justify-center items-center sm:items-start">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-black mb-8 leading-tight max-w-3xl animate-fade-in-up text-center sm:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-8 leading-tight max-w-3xl animate-fade-in-up text-center sm:text-left">
             A leader in Upper GI Surgery in London and Hertfordshire
           </h1>
           
           <div className="flex flex-row gap-2 sm:gap-4 animate-fade-in-up justify-center sm:justify-start" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
                 <Link
                   href="/procedures/contact"
-                  className="inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-black bg-white text-black font-medium hover:border-black transition-all duration-300 text-center button-swipe text-sm sm:text-base"
+                  className="inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-white sm:border-black bg-white/10 sm:bg-white backdrop-blur-sm sm:backdrop-blur-none text-white sm:text-black font-medium hover:border-white sm:hover:border-black transition-all duration-300 text-center button-swipe text-sm sm:text-base"
                 >
                   Book Now
                 </Link>
                 <Link
                   href="mailto:pa@osamamoussa.co.uk?subject=Hi!%20Can%20you%20help%20me%3F"
-                  className="inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-black bg-white text-black font-medium hover:border-black transition-all duration-300 text-center button-swipe text-sm sm:text-base"
+                  className="inline-block px-4 sm:px-8 py-3 sm:py-4 border-2 border-white sm:border-black bg-white/10 sm:bg-white backdrop-blur-sm sm:backdrop-blur-none text-white sm:text-black font-medium hover:border-white sm:hover:border-black transition-all duration-300 text-center button-swipe text-sm sm:text-base"
                 >
                   Email Us
                 </Link>
@@ -125,21 +125,11 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Widgets Overlay at Bottom - centered on mobile, left on desktop */}
+      {/* Widgets Overlay at Bottom - vertically stacked, centered */}
       <div className="absolute bottom-8 z-20 w-full">
-        <div className="container mx-auto px-8 sm:px-6 lg:px-8 w-full">
-          <div className="flex flex-row gap-2 items-center justify-center sm:justify-start">
-            {/* TopDoctors Widget - Hidden on mobile, shown on desktop */}
-            <div className="hidden sm:block" style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center" }}>
-              <div
-                id="topdoctors-gb-widget-container-8"
-                style={{ 
-                  width: "200px"
-                }}
-              ></div>
-            </div>
-
-            {/* Doctify Widget - Always visible */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="flex flex-col gap-4 items-center justify-center">
+            {/* Doctify Widget - Top */}
             <div style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center", overflow: "hidden" }}>
               <iframe
                 id="09in4nm9"
@@ -152,6 +142,16 @@ export default function Hero() {
                 title="Doctify Rating Widget"
                 style={{ display: "block", border: "none", width: "200px", maxWidth: "200px", minWidth: "200px", verticalAlign: "top", margin: "0 auto" }}
               />
+            </div>
+
+            {/* TopDoctors Widget - Bottom */}
+            <div style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center" }}>
+              <div
+                id="topdoctors-gb-widget-container-8"
+                style={{ 
+                  width: "200px"
+                }}
+              ></div>
             </div>
           </div>
         </div>
