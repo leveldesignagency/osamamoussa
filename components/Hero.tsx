@@ -127,10 +127,10 @@ export default function Hero() {
 
       {/* Widgets Overlay at Bottom - centered on mobile, left on desktop */}
       <div className="absolute bottom-8 z-20 w-full">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="container mx-auto px-8 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-row gap-2 items-center justify-center sm:justify-start">
-            {/* TopDoctors Widget - first */}
-            <div style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center" }}>
+            {/* TopDoctors Widget - Hidden on mobile, shown on desktop */}
+            <div className="hidden sm:block" style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center" }}>
               <div
                 id="topdoctors-gb-widget-container-8"
                 style={{ 
@@ -139,7 +139,7 @@ export default function Hero() {
               ></div>
             </div>
 
-            {/* Doctify Widget - second, same size */}
+            {/* Doctify Widget - Always visible */}
             <div style={{ width: "200px", flexShrink: 0, display: "flex", alignItems: "flex-start", justifyContent: "center", overflow: "hidden" }}>
               <iframe
                 id="09in4nm9"

@@ -40,7 +40,7 @@ export default function TopDoctorsWidget() {
 
   return (
     <>
-      <section className="w-full bg-white py-12 px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-white py-12 px-4 sm:px-6 lg:px-8 hidden sm:block">
         <div className="container mx-auto max-w-7xl">
           <div
             ref={ref}
