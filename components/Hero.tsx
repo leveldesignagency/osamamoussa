@@ -134,16 +134,16 @@ export default function Hero() {
                   Email Us
                 </MobileButton>
                 
-                {/* Desktop Buttons - Transparent, black border, black text, white fill on hover */}
+                {/* Desktop Buttons - Transparent, black border, black text, black fill on hover */}
                 <Link
                   href="/procedures/contact"
-                  className="hidden sm:inline-block px-8 py-4 border-2 border-black bg-transparent text-black font-medium hover:bg-white transition-all duration-300 text-center button-swipe button-swipe-white-bg text-base"
+                  className="hidden sm:inline-block px-10 py-4 text-lg border-2 border-black text-black font-medium transition-colors duration-200 button-swipe button-swipe-black"
                 >
                   Book Now
                 </Link>
                 <Link
                   href="mailto:pa@osamamoussa.co.uk?subject=Hi!%20Can%20you%20help%20me%3F"
-                  className="hidden sm:inline-block px-8 py-4 border-2 border-black bg-transparent text-black font-medium hover:bg-white transition-all duration-300 text-center button-swipe button-swipe-white-bg text-base"
+                  className="hidden sm:inline-block px-10 py-4 text-lg border-2 border-black text-black font-medium transition-colors duration-200 button-swipe button-swipe-black"
                 >
                   Email Us
                 </Link>
@@ -155,7 +155,7 @@ export default function Hero() {
       <div className="absolute bottom-8 right-8 z-20 hidden sm:block" style={{ pointerEvents: "none" }}>
         <div className="signature-container">
           <Image
-            src="/signature.svg"
+            src="/Signatures-01.svg"
             alt="Osama Moussa Signature"
             width={200}
             height={80}
