@@ -70,7 +70,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
         </div>
       )}
       <header className={`absolute top-0 left-0 right-0 z-50 ${bgClass}`}>
-      <div className="container mx-auto pl-4 sm:pl-6 lg:pl-8 pr-2 sm:pr-3 lg:pr-4">
+      <div className="container mx-auto pl-4 sm:pl-4 lg:pl-6 pr-2 sm:pr-2 lg:pr-3">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Left aligned on mobile and desktop */}
           <div className="flex-shrink-0 flex-1 sm:flex-none flex justify-start">
@@ -86,74 +86,78 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
             </Link>
           </div>
 
-          {/* Right Side - Phone, Social Icons, Hamburger - All together on desktop */}
-          <div className="flex items-center gap-4 sm:gap-6">
-            {/* Phone and Social - Hidden on mobile */}
-            <div className="hidden sm:flex items-center gap-4 sm:gap-6">
-            {/* Phone Number */}
-            <a
-              href="tel:07352167642"
-              className={`${textColor} font-medium transition-opacity text-lg phone-number-bounce`}
-            >
-              {"07352167642".split("").map((char, index) => (
-                <span
-                  key={index}
-                  className="phone-char"
-                  style={{
-                    animationDelay: `${index * 0.04}s`,
-                  }}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </span>
-              ))}
-            </a>
-
-            {/* Social Icons */}
-            <div className="flex items-center gap-6">
+          {/* Right Side - Phone, Social Icons, Hamburger - Wrapped in black pill on desktop */}
+          <div className="flex items-center">
+            {/* Desktop: All wrapped in black pill */}
+            <div className="hidden sm:flex items-center gap-3 px-4 py-2 bg-black rounded-full">
+              {/* Phone Number */}
               <a
-                href="https://www.linkedin.com/in/osama-moussa-1610o/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${textColor} hover:opacity-60 transition-opacity duration-200`}
-                aria-label="LinkedIn"
+                href="tel:07352167642"
+                className="text-white font-medium transition-opacity text-base phone-number-bounce hover:opacity-80"
               >
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
+                {"07352167642".split("").map((char, index) => (
+                  <span
+                    key={index}
+                    className="phone-char"
+                    style={{
+                      animationDelay: `${index * 0.04}s`,
+                    }}
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </span>
+                ))}
               </a>
-              <a
-                href="https://x.com/mromoussa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${textColor} hover:opacity-60 transition-opacity duration-200`}
-                aria-label="X (Twitter)"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-            </div>
-            </div>
 
-            {/* Hamburger Menu - Always visible on all screens */}
-            <div className="relative flex-shrink-0">
+              {/* Divider */}
+              <div className="w-px h-5 bg-white/30"></div>
+
+              {/* Social Icons */}
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.linkedin.com/in/osama-moussa-1610o/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:opacity-60 transition-opacity duration-200"
+                  aria-label="LinkedIn"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://x.com/mromoussa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:opacity-60 transition-opacity duration-200"
+                  aria-label="X (Twitter)"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Divider */}
+              <div className="w-px h-5 bg-white/30"></div>
+
+              {/* Hamburger Menu - Inside pill on desktop */}
               <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`${textColor} hover:opacity-80 transition-opacity p-2`}
-              aria-label="Menu"
-              aria-expanded={isMenuOpen}
-              style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
-            >
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-white hover:opacity-80 transition-opacity p-1"
+                aria-label="Menu"
+                aria-expanded={isMenuOpen}
+                style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
+              >
                 <svg
                   className="w-8 h-8"
                   fill="none"
@@ -178,9 +182,48 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                   )}
                 </svg>
               </button>
+            </div>
 
-              {/* Desktop Menu - Right Aligned with Blur Backdrop */}
-              {isMenuOpen && (
+            {/* Mobile: Hamburger only */}
+            <div className="sm:hidden relative flex-shrink-0">
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className={`${textColor} hover:opacity-80 transition-opacity p-2`}
+                aria-label="Menu"
+                aria-expanded={isMenuOpen}
+                style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
+              >
+                <svg
+                  className="w-8 h-8"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  {isMenuOpen ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  )}
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        {/* Desktop Menu - Right Aligned with Blur Backdrop */}
+        {isMenuOpen && (
                 <>
                   {/* Mobile Menu - Full Screen White Background (below lg breakpoint) */}
                   <div
@@ -457,10 +500,6 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                   </div>
                 </>
               )}
-            </div>
-          </div>
-        </div>
-        </div>
       </header>
     </>
   );
