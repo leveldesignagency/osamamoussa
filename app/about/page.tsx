@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import AppointmentSection from "@/components/AppointmentSection";
 import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useWordReveal } from "@/hooks/useWordReveal";
 
 export default function AboutPage() {
   // Set page metadata
@@ -17,10 +18,26 @@ export default function AboutPage() {
   }, []);
 
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
-  const { ref: firstParaRef, isVisible: firstParaVisible } = useScrollAnimation();
-  const { ref: secondParaRef, isVisible: secondParaVisible } = useScrollAnimation();
-  const { ref: thirdParaRef, isVisible: thirdParaVisible } = useScrollAnimation();
-  const { ref: fourthParaRef, isVisible: fourthParaVisible } = useScrollAnimation();
+  
+  // Word-by-word reveal for paragraphs
+  const firstParaText = "Mr. Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. His extensive training includes rotations through hospitals in Liverpool, Newcastle, Scotland, and Northwest London, culminating in his CCT.";
+  const { ref: firstParaRef, displayText: firstParaDisplay } = useWordReveal(firstParaText, 40);
+  
+  const secondParaText = "Mr. Moussa has worked at prestigious institutions like Imperial College London, the Royal Marsden, University College London, and Chelsea & Westminster hospitals, gaining extensive experience in open, laparoscopic, and robotic Upper GI surgery, including benign, bariatric, and oncological procedures.";
+  const { ref: secondParaRef, displayText: secondParaDisplay } = useWordReveal(secondParaText, 40);
+  
+  const thirdParaText = "He holds a Postgraduate Diploma in Minimal Access Surgery and completed a research Medical Doctorate at Imperial College London in 2017. He also completed a Royal College of Surgeons-approved laparoscopic, anti-reflux, and bariatric surgery fellowship.";
+  const { ref: thirdParaRef, displayText: thirdParaDisplay } = useWordReveal(thirdParaText, 40);
+  
+  const fourthParaText = "Mr. Moussa is actively involved in research, focusing on metabolic health in obesity. His work has been published in high-impact journals. His dedication to surgical excellence is pivotal in advancing benign Upper GI Surgery.";
+  const { ref: fourthParaRef, displayText: fourthParaDisplay } = useWordReveal(fourthParaText, 40);
+  
+  // Desktop paragraphs - separate hooks
+  const { ref: desktopFirstParaRef, displayText: desktopFirstParaDisplay } = useWordReveal(firstParaText, 40);
+  const { ref: desktopSecondParaRef, displayText: desktopSecondParaDisplay } = useWordReveal(secondParaText, 40);
+  const { ref: desktopThirdParaRef, displayText: desktopThirdParaDisplay } = useWordReveal(thirdParaText, 40);
+  const { ref: desktopFourthParaRef, displayText: desktopFourthParaDisplay } = useWordReveal(fourthParaText, 40);
+  
   const { ref: accreditationsRef, isVisible: accreditationsVisible } = useScrollAnimation();
   const { ref: accreditationsImageRef, isVisible: accreditationsImageVisible } = useScrollAnimation();
   const { ref: accreditationsListRef, isVisible: accreditationsListVisible } = useScrollAnimation();
@@ -90,55 +107,63 @@ export default function AboutPage() {
               About Osama Moussa
             </h1>
             
-            {/* Mobile: First paragraph only - larger text, black, over image, medium weight */}
-            <div ref={firstParaRef} className={`w-full space-y-4 text-xl sm:text-base text-black font-medium leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden fade-in-on-scroll ${firstParaVisible ? "visible" : ""}`}>
+            {/* Mobile: First paragraph only - larger text, black, over image, medium weight, word reveal */}
+            <div ref={firstParaRef} className="w-full space-y-4 text-2xl sm:text-base text-black font-medium leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden">
               <p>
-                Mr. Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. His extensive training includes rotations through hospitals in Liverpool, Newcastle, Scotland, and Northwest London, culminating in his CCT.
+                {firstParaDisplay}
+                {firstParaDisplay.length < firstParaText.length && <span className="opacity-50">|</span>}
               </p>
             </div>
             
-            {/* Desktop: All paragraphs - medium weight */}
-            <div className="hidden sm:block w-full lg:w-1/2 space-y-4 text-base sm:text-lg text-black font-medium leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24">
-              <p>
-                Mr. Moussa is a distinguished Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust. His extensive training includes rotations through hospitals in Liverpool, Newcastle, Scotland, and Northwest London, culminating in his CCT.
+            {/* Desktop: All paragraphs - larger text, medium weight, word reveal */}
+            <div className="hidden sm:block w-full lg:w-1/2 space-y-6 text-xl sm:text-xl lg:text-2xl text-black font-medium leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24">
+              <p ref={desktopFirstParaRef}>
+                {desktopFirstParaDisplay}
+                {desktopFirstParaDisplay.length < firstParaText.length && <span className="opacity-50">|</span>}
               </p>
-              <p>
-                Mr. Moussa has worked at prestigious institutions like Imperial College London, the Royal Marsden, University College London, and Chelsea & Westminster hospitals, gaining extensive experience in open, laparoscopic, and robotic Upper GI surgery, including benign, bariatric, and oncological procedures.
+              <p ref={desktopSecondParaRef}>
+                {desktopSecondParaDisplay}
+                {desktopSecondParaDisplay.length < secondParaText.length && <span className="opacity-50">|</span>}
               </p>
-              <p>
-                He holds a Postgraduate Diploma in Minimal Access Surgery and completed a research Medical Doctorate at Imperial College London in 2017. He also completed a Royal College of Surgeons-approved laparoscopic, anti-reflux, and bariatric surgery fellowship.
+              <p ref={desktopThirdParaRef}>
+                {desktopThirdParaDisplay}
+                {desktopThirdParaDisplay.length < thirdParaText.length && <span className="opacity-50">|</span>}
               </p>
-              <p>
-                Mr. Moussa is actively involved in research, focusing on metabolic health in obesity. His work has been published in high-impact journals. His dedication to surgical excellence is pivotal in advancing benign Upper GI Surgery.
+              <p ref={desktopFourthParaRef}>
+                {desktopFourthParaDisplay}
+                {desktopFourthParaDisplay.length < fourthParaText.length && <span className="opacity-50">|</span>}
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mobile: Second paragraph section - transparent background, white text, medium weight, more gap */}
-      <section ref={secondParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${secondParaVisible ? "visible" : ""}`}>
+      {/* Mobile: Second paragraph section - transparent background, white text, medium weight, more gap, word reveal */}
+      <section ref={secondParaRef} className="w-full py-20 px-4 sm:hidden bg-transparent">
         <div className="container mx-auto">
-          <p className="text-xl text-white font-medium leading-relaxed text-center">
-            Mr. Moussa has worked at prestigious institutions like Imperial College London, the Royal Marsden, University College London, and Chelsea & Westminster hospitals, gaining extensive experience in open, laparoscopic, and robotic Upper GI surgery, including benign, bariatric, and oncological procedures.
+          <p className="text-2xl text-white font-medium leading-relaxed text-center">
+            {secondParaDisplay}
+            {secondParaDisplay.length < secondParaText.length && <span className="opacity-50">|</span>}
           </p>
         </div>
       </section>
 
-      {/* Mobile: Third paragraph section - transparent background, white text, medium weight, more gap */}
-      <section ref={thirdParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${thirdParaVisible ? "visible" : ""}`}>
+      {/* Mobile: Third paragraph section - transparent background, white text, medium weight, more gap, word reveal */}
+      <section ref={thirdParaRef} className="w-full py-20 px-4 sm:hidden bg-transparent">
         <div className="container mx-auto">
-          <p className="text-xl text-white font-medium leading-relaxed text-center">
-            He holds a Postgraduate Diploma in Minimal Access Surgery and completed a research Medical Doctorate at Imperial College London in 2017. He also completed a Royal College of Surgeons-approved laparoscopic, anti-reflux, and bariatric surgery fellowship.
+          <p className="text-2xl text-white font-medium leading-relaxed text-center">
+            {thirdParaDisplay}
+            {thirdParaDisplay.length < thirdParaText.length && <span className="opacity-50">|</span>}
           </p>
         </div>
       </section>
 
-      {/* Mobile: Fourth paragraph section - transparent background, white text, medium weight, more gap */}
-      <section ref={fourthParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${fourthParaVisible ? "visible" : ""}`}>
+      {/* Mobile: Fourth paragraph section - transparent background, white text, medium weight, more gap, word reveal */}
+      <section ref={fourthParaRef} className="w-full py-20 px-4 sm:hidden bg-transparent">
         <div className="container mx-auto">
-          <p className="text-xl text-white font-medium leading-relaxed text-center">
-            Mr. Moussa is actively involved in research, focusing on metabolic health in obesity. His work has been published in high-impact journals. His dedication to surgical excellence is pivotal in advancing benign Upper GI Surgery.
+          <p className="text-2xl text-white font-medium leading-relaxed text-center">
+            {fourthParaDisplay}
+            {fourthParaDisplay.length < fourthParaText.length && <span className="opacity-50">|</span>}
           </p>
         </div>
       </section>
