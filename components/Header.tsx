@@ -26,8 +26,6 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
   const router = useRouter();
   const pathname = usePathname();
   const isHomePage = pathname === "/";
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
 
   const bgClass = "bg-transparent";
   // Menu items should always be white when menu is open
@@ -74,7 +72,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
         </div>
       )}
       <header className={`absolute top-0 left-0 right-0 z-50 ${bgClass}`}>
-      <div className="container mx-auto pl-2 sm:pl-2 lg:pl-4 pr-1 sm:pr-1 lg:pr-2">
+      <div className="container mx-auto pl-2 sm:pl-3 lg:pl-4 pr-1 sm:pr-1.5 lg:pr-2">
         <div className="flex items-center justify-between h-20">
           {/* Logo - Left aligned on mobile and desktop */}
           <div className="flex-shrink-0 flex-1 sm:flex-none flex justify-start">
@@ -192,7 +190,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
             <div className="sm:hidden relative flex-shrink-0">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`${textColor} hover:opacity-80 transition-opacity p-2 border-2 ${!isHomePage ? "border-white" : "border-transparent"} rounded-full`}
+                className={`${isHomePage ? textColor : "text-white"} hover:opacity-80 transition-opacity p-2`}
                 aria-label="Menu"
                 aria-expanded={isMenuOpen}
                 style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
