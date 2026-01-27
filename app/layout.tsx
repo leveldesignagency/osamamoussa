@@ -303,7 +303,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="AL_dAbT3HMo2JGmN4fEc8t7K_WM8wfIRYQyMJcC0w7w"
         />
-        {/* SVG Favicon with dark/light mode support */}
+        {/* SVG Favicon with dark/light mode support - black in light mode, white in dark mode */}
         <link
           rel="icon"
           type="image/svg+xml"

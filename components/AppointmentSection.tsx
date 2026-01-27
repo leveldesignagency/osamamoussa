@@ -10,17 +10,6 @@ export default function AppointmentSection() {
   useEffect(() => {
     if (scriptsLoaded.current) return;
 
-    // Load TopDoctors widget script type 2
-    const existingTopDoctors2 = document.getElementById("topdoctors-widget-script-2");
-    if (!existingTopDoctors2) {
-      const topDoctorsScript2 = document.createElement("script");
-      topDoctorsScript2.type = "text/javascript";
-      topDoctorsScript2.src =
-        "https://staticnew-prod.topdoctors.co.uk/static/widgets/main.min.js#type=2&apikey=rKS7JLHPIxSPtYYUA9mvR9tedZB2MQ%3D%3D&environment=prod&config=dW5kZWZpbmVk&country=gb&storage=https%3A%2F%2Fstaticnew-prod.topdoctors.co.uk&apiurl=https%3A%2F%2Fwww.topdoctors.co.uk%2Fapi&hostname=https%3A%2F%2Fwww.topdoctors.co.uk";
-      topDoctorsScript2.async = true;
-      topDoctorsScript2.id = "topdoctors-widget-script-2";
-      document.body.appendChild(topDoctorsScript2);
-    }
 
     scriptsLoaded.current = true;
   }, []);
@@ -73,32 +62,6 @@ export default function AppointmentSection() {
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* TopDoctors Widget Section - White background, overlapping - Hidden on mobile */}
-      <section className="w-full bg-white py-8 relative hidden sm:block" style={{ padding: 0, margin: 0, overflow: 'visible' }}>
-        <div 
-          className="absolute left-1/2 transform -translate-x-1/2 sm:left-auto sm:transform-none"
-          style={{ 
-            top: '-65px',
-            left: 'calc(50% - 122.5px)',
-            zIndex: 30,
-            width: '245px'
-          }}
-        >
-          <div
-            id="topdoctors-gb-widget-container-2"
-            style={{ 
-              maxWidth: "245px", 
-              width: "245px",
-              minWidth: "245px",
-              margin: '0 auto',
-              padding: 0,
-              display: "block",
-              position: "relative"
-            }}
-          ></div>
         </div>
       </section>
 

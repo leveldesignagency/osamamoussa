@@ -5,7 +5,6 @@ import AboutSection from "@/components/AboutSection";
 import ValuesSection from "@/components/ValuesSection";
 import LogosSection from "@/components/LogosSection";
 import ReviewsSection from "@/components/ReviewsSection";
-import TopDoctorsWidget from "@/components/TopDoctorsWidget";
 import AppointmentSection from "@/components/AppointmentSection";
 
 export const metadata: Metadata = {
@@ -65,7 +64,6 @@ export default function Home() {
       <ValuesSection />
       <LogosSection />
       <ReviewsSection />
-      <TopDoctorsWidget />
       <AppointmentSection />
     </main>
   );

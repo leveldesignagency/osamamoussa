@@ -81,19 +81,6 @@ body.menu-open .bg-gradient-grey,
   );
 }
 
-/* Force widget to stay inside iPhone */
-#topdoctors-gb-widget-container-6 {
-  max-width: 100% !important;
-  width: 100% !important;
-  overflow: hidden !important;
-  position: relative !important;
-}
-
-#topdoctors-gb-widget-container-6 > * {
-  max-width: 100% !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -448,28 +435,6 @@ body {
   contain: strict !important;
 }
 
-/* TopDoctors widget positioning and quality */
-#topdoctors-gb-widget-container-2,
-#topdoctors-gb-widget-container-8 {
-  position: relative !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: block !important;
-  image-rendering: -webkit-optimize-contrast !important;
-  image-rendering: crisp-edges !important;
-  transform: translateZ(0) !important;
-  -webkit-font-smoothing: antialiased !important;
-  contain: layout style paint !important;
-  will-change: auto !important;
-}
-
-#topdoctors-gb-widget-container-2 > *,
-#topdoctors-gb-widget-container-8 > * {
-  image-rendering: -webkit-optimize-contrast !important;
-  image-rendering: crisp-edges !important;
-  position: relative !important;
-  transform: translateZ(0) !important;
-}
 
 /* Doctify widget containment */
 #09in4nm9 {

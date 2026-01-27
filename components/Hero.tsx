@@ -26,50 +26,6 @@ export default function Hero() {
       document.body.appendChild(doctifyScript);
     }
 
-    // Check if TopDoctors script (type 8) already exists
-    const existingTopDoctors8 = document.getElementById("topdoctors-widget-script-8");
-    if (!existingTopDoctors8) {
-      let retryCount = 0;
-      const maxRetries = 3;
-      
-      const loadTopDoctorsScript = () => {
-        const topDoctorsScript = document.createElement("script");
-        topDoctorsScript.type = "text/javascript";
-        topDoctorsScript.src =
-          "https://staticnew-prod.topdoctors.co.uk/static/widgets/main.min.js#type=8&apikey=IkCuQgS4Bq74_3NI8FWd4sRj58VWbQ%3D%3D&environment=prod&config=dW5kZWZpbmVk&country=gb&storage=https%3A%2F%2Fstaticnew-prod.topdoctors.co.uk&apiurl=https%3A%2F%2Fwww.topdoctors.co.uk%2Fapi&hostname=https%3A%2F%2Fwww.topdoctors.co.uk";
-        topDoctorsScript.async = true;
-        topDoctorsScript.id = "topdoctors-widget-script-8";
-        
-        topDoctorsScript.onload = () => {
-          // Widget should auto-initialize, but wait a bit and check
-          setTimeout(() => {
-            const widgetContainer = document.getElementById("topdoctors-gb-widget-container-8");
-            if (widgetContainer && widgetContainer.children.length === 0 && retryCount < maxRetries) {
-              // Widget didn't load, retry
-              retryCount++;
-              if (topDoctorsScript.parentNode) {
-                topDoctorsScript.parentNode.removeChild(topDoctorsScript);
-              }
-              setTimeout(loadTopDoctorsScript, 1000 * retryCount);
-            }
-          }, 2000);
-        };
-        
-        topDoctorsScript.onerror = () => {
-          if (retryCount < maxRetries) {
-            retryCount++;
-            if (topDoctorsScript.parentNode) {
-              topDoctorsScript.parentNode.removeChild(topDoctorsScript);
-            }
-            setTimeout(loadTopDoctorsScript, 1000 * retryCount);
-          }
-        };
-        
-        document.body.appendChild(topDoctorsScript);
-      };
-      
-      loadTopDoctorsScript();
-    }
 
     scriptsLoaded.current = true;
   }, []);
@@ -208,24 +164,6 @@ export default function Hero() {
               />
             </div>
 
-            {/* TopDoctors Widget - Desktop */}
-            <div 
-              style={{ 
-                width: "245px", 
-                flexShrink: 0, 
-                display: "flex", 
-                alignItems: "flex-start", 
-                justifyContent: "center",
-                position: "relative",
-                pointerEvents: "auto"
-              }}
-            >
-              <div
-                id="topdoctors-gb-widget-container-8"
-                style={{ 
-                  width: "245px",
-                  minWidth: "245px",
-                  maxWidth: "245px",
                   position: "relative"
                 }}
               ></div>

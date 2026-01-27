@@ -12,21 +12,10 @@ export default function WidgetsSection() {
     doctifyScript.async = true;
     document.body.appendChild(doctifyScript);
 
-    // Load TopDoctors widget script
-    const topDoctorsScript = document.createElement("script");
-    topDoctorsScript.type = "text/javascript";
-    topDoctorsScript.src =
-      "https://staticnew-prod.topdoctors.co.uk/static/widgets/main.min.js#type=8&apikey=IkCuQgS4Bq74_3NI8FWd4sRj58VWbQ%3D%3D&environment=prod&config=dW5kZWZpbmVk&country=gb&storage=https%3A%2F%2Fstaticnew-prod.topdoctors.co.uk&apiurl=https%3A%2F%2Fwww.topdoctors.co.uk%2Fapi&hostname=https%3A%2F%2Fwww.topdoctors.co.uk";
-    topDoctorsScript.async = true;
-    document.body.appendChild(topDoctorsScript);
-
     return () => {
       // Cleanup scripts on unmount
       if (doctifyScript.parentNode) {
         doctifyScript.parentNode.removeChild(doctifyScript);
-      }
-      if (topDoctorsScript.parentNode) {
-        topDoctorsScript.parentNode.removeChild(topDoctorsScript);
       }
     };
   }, []);
@@ -34,8 +23,8 @@ export default function WidgetsSection() {
   return (
     <section className="w-full bg-gradient-grey py-12 px-4 sm:px-6 lg:px-8 pb-24 sm:pb-12">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          {/* Doctify Widget - Only widget on mobile */}
+        <div className="flex justify-center">
+          {/* Doctify Widget */}
           <div className="flex justify-center">
             <iframe
               id="09in4nm9"
@@ -47,16 +36,6 @@ export default function WidgetsSection() {
               name="average-rating-widget"
               title="Doctify Rating Widget"
             />
-          </div>
-
-          {/* TopDoctors Widget - Hidden on mobile only */}
-          <div className="hidden md:block">
-            <div className="flex justify-center">
-              <div
-                id="topdoctors-gb-widget-container-8"
-                style={{ maxWidth: "245px" }}
-              ></div>
-            </div>
           </div>
         </div>
       </div>
