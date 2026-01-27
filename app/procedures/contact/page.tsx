@@ -220,7 +220,7 @@ export default function ContactPage() {
             </h2>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
               Dr. Moussa practices at multiple prestigious hospitals across London and Hertfordshire. 
-              Book your consultation directly through each hospital's website.
+              Book your consultation directly through each hospital&apos;s website.
             </p>
           </div>
           
