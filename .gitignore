@@ -38,3 +38,4 @@ next-env.d.ts
 # Allow compressed videos in public/ directory
 !/public/*.mp4
 
+
