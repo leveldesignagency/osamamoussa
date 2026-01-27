@@ -57,9 +57,9 @@ export default function ContactPage() {
       <Header backgroundColor="grey" textColor="white" />
       
       {/* Contact Information - Background Image Section */}
-      <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh' }}>
-        {/* Background Image Container - Full height from top, goes under header */}
-        <div className="absolute inset-0 overflow-hidden" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
+      <section className="relative w-full overflow-hidden bg-gradient-grey sm:min-h-screen">
+        {/* Background Image Container - Full height from top, goes under header - Hidden on mobile */}
+        <div className="absolute inset-0 overflow-hidden hidden sm:block" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
             <Image
             src="/OMCONTACT.JPG"
             alt="Contact Background"
@@ -82,9 +82,9 @@ export default function ContactPage() {
           ></div>
         </div>
         
-        {/* Subtle vignette overlay for depth */}
+        {/* Subtle vignette overlay for depth - Hidden on mobile */}
         <div 
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 pointer-events-none hidden sm:block"
           style={{
             background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.2) 100%)',
             maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
@@ -96,23 +96,23 @@ export default function ContactPage() {
         <div className="relative z-30 pb-6">
           <div 
             ref={titleRef}
-            className={`container mx-auto px-4 sm:px-6 lg:px-8 pt-[60vh] sm:pt-32 fade-in-on-scroll ${titleVisible ? "visible" : ""}`}
+            className={`container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 fade-in-on-scroll ${titleVisible ? "visible" : ""}`}
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black uppercase tracking-wide mb-6 text-center lg:text-left leading-tight" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white sm:text-black uppercase tracking-wide mb-6 text-center lg:text-left leading-tight" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
               Contact
             </h1>
           </div>
         </div>
         
         {/* Content Container - Buttons centered vertically */}
-        <div className="relative z-10 h-full flex items-center" style={{ minHeight: '100vh', paddingTop: '80px', marginTop: '-20vh' }}>
+        <div className="relative z-10 w-full sm:h-full sm:flex sm:items-center" style={{ minHeight: 'auto' }}>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
               {/* Spacer for layout */}
               <div className="hidden lg:block"></div>
 
               {/* Contact Buttons - Right side on desktop, centered on mobile */}
-              <div className="flex flex-col justify-center items-center lg:items-end space-y-6">
+              <div className="flex flex-col justify-center items-center lg:items-end space-y-6 pb-8 sm:pb-0">
               {/* Phone Number Button */}
               <a
                 href="tel:07352167642"

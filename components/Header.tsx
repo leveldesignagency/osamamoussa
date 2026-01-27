@@ -196,8 +196,11 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
             {/* Mobile: Hamburger only */}
             <div className="sm:hidden relative flex-shrink-0">
               <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                onMouseEnter={() => setIsMenuOpen(true)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setIsMenuOpen(!isMenuOpen);
+                }}
                 className={`${isContactPage ? "text-white" : (textColor === "text-black" ? "text-black" : (isHomePage ? textColor : "text-white"))} hover:opacity-80 transition-colors p-2 border-2 ${isContactPage ? "border-white" : (textColor === "text-black" ? "border-black" : (!isHomePage ? "border-white" : "border-transparent"))} rounded-full button-swipe ${textColor === "text-black" && !isContactPage ? "button-swipe-black" : ""} group`}
                 aria-label="Menu"
                 aria-expanded={isMenuOpen}
@@ -235,13 +238,13 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
         {/* Desktop Menu - Right Aligned with Blur Backdrop */}
         {isMenuOpen && (
                 <>
-                  {/* Mobile Menu - Full Screen White Background (below lg breakpoint) */}
+                  {/* Mobile Menu - Full Screen Grey Background (below lg breakpoint) */}
                   <div
-                    className="fixed inset-0 z-40 bg-white lg:hidden"
+                    className="fixed inset-0 z-40 bg-gradient-grey lg:hidden overflow-hidden"
                     style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, auto" }}
                   >
                     {/* Header Bar - Logo Left, Close Button Right */}
-                    <div className="absolute top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
+                    <div className="absolute top-0 left-0 right-0 z-50 bg-gradient-grey border-b border-white/20">
                       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="flex items-center justify-between h-20">
                           {/* Logo */}
@@ -251,7 +254,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                               alt="Osama Moussa Logo"
                               width={200}
                               height={50}
-                              className="h-12 w-auto"
+                              className="h-12 w-auto brightness-0 invert"
                               priority
                             />
                           </Link>
@@ -259,7 +262,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                           {/* Close Button */}
                           <button
                             onClick={() => setIsMenuOpen(false)}
-                            className="text-[#6E6E6E] hover:opacity-80 transition-all duration-200 p-2"
+                            className="text-white hover:opacity-80 transition-all duration-200 p-2"
                             aria-label="Close menu"
                             type="button"
                             style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
@@ -324,12 +327,12 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                                     }, 1000);
                                   }, 600);
                                 }}
-                                className={`text-black font-bold text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider mobile-menu-item mobile-menu-item-shimmer ${
+                                className={`text-white font-bold text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider mobile-menu-item mobile-menu-item-shimmer text-white ${
                                   shouldSlideOut ? 'mobile-menu-transitioning' : ''
                                 }`}
                                 style={{
                                   fontFamily: '"Plus Jakarta Sans", sans-serif',
-                                  transform: shouldSlideOut ? 'translateY(-20px) scale(0.95)' : 'translateY(0) scale(1)',
+                                  transform: shouldSlideOut ? 'translateX(100%)' : 'translateX(0)',
                                   opacity: shouldSlideOut ? 0 : 1,
                                   transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
                                   transitionDelay: shouldSlideOut ? `${slideDelay}ms` : '0ms',
@@ -351,7 +354,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                           {/* Email */}
                           <a
                             href="mailto:info@osamamoussa.co.uk"
-                            className="block text-black font-bold hover:opacity-70 transition-opacity text-base sm:text-lg"
+                            className="block text-white font-bold hover:opacity-70 transition-opacity text-base sm:text-lg"
                             style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                           >
                             info@osamamoussa.co.uk
@@ -360,19 +363,19 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                           {/* Phone */}
                           <a
                             href="tel:07352167642"
-                            className="block text-black font-bold hover:opacity-70 transition-opacity text-base sm:text-lg"
+                            className="block text-white font-bold hover:opacity-70 transition-opacity text-base sm:text-lg"
                             style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                           >
                             +44 (0)735 216 7642
                           </a>
                           
-                          {/* Social Icons - Black, Right Aligned */}
+                          {/* Social Icons - White, Right Aligned */}
                           <div className="flex items-center justify-end gap-3 pt-4">
                             <a
                               href="https://www.linkedin.com/in/osama-moussa-1610o/"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-black hover:text-white transition-all duration-200 text-black"
+                              className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border-2 border-white bg-transparent hover:bg-white hover:text-black transition-all duration-200 text-white"
                               aria-label="LinkedIn"
                               style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                             >
@@ -389,7 +392,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                               href="https://x.com/mromoussa"
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border-2 border-black bg-white hover:bg-black hover:text-white transition-all duration-200 text-black"
+                              className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border-2 border-white bg-transparent hover:bg-white hover:text-black transition-all duration-200 text-white"
                               aria-label="X (Twitter)"
                               style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                             >
