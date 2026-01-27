@@ -38,7 +38,7 @@ export default function AppointmentSection() {
               alt="Book Your Appointment"
               fill
               className="object-cover"
-              style={{ objectPosition: 'center center', width: 'auto' }}
+              style={{ objectPosition: 'center center' }}
               priority
               sizes="100vw"
             />
@@ -49,10 +49,10 @@ export default function AppointmentSection() {
         <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-center sm:justify-end">
             <div className="max-w-md text-center sm:text-right">
-              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-sans font-bold text-white mb-4 sm:mb-6">
-                Book Your<br />
-                Appointment<br />
-                Today!
+              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-wide uppercase" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+                BOOK YOUR<br />
+                APPOINTMENT<br />
+                TODAY!
               </p>
               <Link
                 href="/procedures/contact"

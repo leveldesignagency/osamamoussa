@@ -27,6 +27,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const isAboutPage = pathname === "/about";
+  const isContactPage = pathname === "/procedures/contact";
 
   const bgClass = "bg-transparent";
   // Menu items should always be white when menu is open
@@ -66,7 +67,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
           </div>
           {/* Page Name - Large, matching page title style */}
           <div className="animate-scale-in">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] font-sans font-bold text-white uppercase tracking-tight">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] font-bold text-white uppercase tracking-wide" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
               {transitionPageName}
             </h1>
           </div>
@@ -83,7 +84,11 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                 alt="Osama Moussa Logo"
                 width={200}
                 height={50}
-                className={`h-12 w-auto ${textColorProp === "black" ? "" : (isAboutPage ? "brightness-0 invert" : (backgroundColor === "grey" ? "brightness-0 invert" : ""))}`}
+                className={`h-12 w-auto ${
+                  isContactPage 
+                    ? "brightness-0 invert sm:brightness-100 sm:invert-0" // White on mobile, black on desktop
+                    : (textColorProp === "black" ? "" : (isAboutPage ? "brightness-0 invert" : (backgroundColor === "grey" ? "brightness-0 invert" : "")))
+                }`}
                 priority
               />
             </Link>
@@ -92,11 +97,11 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
           {/* Right Side - Phone, Social Icons, Hamburger - Wrapped in black pill on desktop */}
           <div className="flex items-center">
             {/* Desktop: All wrapped in pill with black border */}
-            <div className={`hidden sm:flex items-center gap-3 px-4 py-2 border-2 ${isAboutPage ? "border-black" : (!isHomePage ? "border-white" : (textColor === "text-black" ? "border-black" : "border-black"))} rounded-full bg-transparent`}>
+            <div className={`hidden sm:flex items-center gap-3 px-4 py-2 border-2 ${textColor === "text-black" ? "border-black" : (textColor === "text-white" ? "border-white" : (isAboutPage ? "border-black" : (!isHomePage ? "border-white" : "border-black")))} rounded-full bg-transparent button-swipe ${textColor === "text-black" ? "button-swipe-black" : ""} group`}>
               {/* Phone Number */}
               <a
                 href="tel:07352167642"
-                className={`${textColor} font-medium transition-opacity text-base phone-number-bounce hover:opacity-80`}
+                className={`${textColor} font-medium transition-colors text-base phone-number-bounce hover:opacity-80 ${textColor === "text-black" ? "group-hover:text-white" : "group-hover:text-black"}`}
               >
                 {"07352167642".split("").map((char, index) => (
                   <span
@@ -112,7 +117,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
               </a>
 
               {/* Divider */}
-              <div className={`w-px h-5 ${textColor === "text-black" ? "bg-black/30" : "bg-white/30"}`}></div>
+              <div className={`w-px h-5 ${textColor === "text-black" ? "bg-black/30" : "bg-white/30"} ${textColor === "text-black" ? "group-hover:bg-white/30" : "group-hover:bg-black/30"} transition-colors`}></div>
 
               {/* Social Icons */}
               <div className="flex items-center gap-3">
@@ -120,7 +125,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                   href="https://www.linkedin.com/in/osama-moussa-1610o/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${textColor} hover:opacity-60 transition-opacity duration-200`}
+                  className={`${textColor} hover:opacity-60 transition-colors duration-200 ${textColor === "text-black" ? "group-hover:text-white" : "group-hover:text-black"}`}
                   aria-label="LinkedIn"
                 >
                   <svg
@@ -136,7 +141,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                   href="https://x.com/mromoussa"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${textColor} hover:opacity-60 transition-opacity duration-200`}
+                  className={`${textColor} hover:opacity-60 transition-colors duration-200 ${textColor === "text-black" ? "group-hover:text-white" : "group-hover:text-black"}`}
                   aria-label="X (Twitter)"
                 >
                   <svg
@@ -151,12 +156,13 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
               </div>
 
               {/* Divider */}
-              <div className={`w-px h-5 ${textColor === "text-black" ? "bg-black/30" : "bg-white/30"}`}></div>
+              <div className={`w-px h-5 ${textColor === "text-black" ? "bg-black/30" : "bg-white/30"} ${textColor === "text-black" ? "group-hover:bg-white/30" : "group-hover:bg-black/30"} transition-colors`}></div>
 
               {/* Hamburger Menu - Inside pill on desktop */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`${textColor} hover:opacity-80 transition-opacity p-1`}
+                onMouseEnter={() => setIsMenuOpen(true)}
+                className={`${textColor} hover:opacity-80 transition-colors p-1 ${textColor === "text-black" ? "group-hover:text-white" : "group-hover:text-black"}`}
                 aria-label="Menu"
                 aria-expanded={isMenuOpen}
                 style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
@@ -191,13 +197,14 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
             <div className="sm:hidden relative flex-shrink-0">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`${isHomePage ? textColor : "text-white"} hover:opacity-80 transition-opacity p-2`}
+                onMouseEnter={() => setIsMenuOpen(true)}
+                className={`${isContactPage ? "text-white" : (textColor === "text-black" ? "text-black" : (isHomePage ? textColor : "text-white"))} hover:opacity-80 transition-colors p-2 border-2 ${isContactPage ? "border-white" : (textColor === "text-black" ? "border-black" : (!isHomePage ? "border-white" : "border-transparent"))} rounded-full button-swipe ${textColor === "text-black" && !isContactPage ? "button-swipe-black" : ""} group`}
                 aria-label="Menu"
                 aria-expanded={isMenuOpen}
                 style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
               >
                 <svg
-                  className="w-8 h-8"
+                  className={`w-8 h-8 transition-colors ${isContactPage ? "text-white group-hover:text-black" : (textColor === "text-black" ? "group-hover:text-white" : "group-hover:text-black")}`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -317,10 +324,11 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                                     }, 1000);
                                   }, 600);
                                 }}
-                                className={`text-black font-bold text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider mobile-menu-item ${
+                                className={`text-black font-bold text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider mobile-menu-item mobile-menu-item-shimmer ${
                                   shouldSlideOut ? 'mobile-menu-transitioning' : ''
                                 }`}
                                 style={{
+                                  fontFamily: '"Plus Jakarta Sans", sans-serif',
                                   transform: shouldSlideOut ? 'translateY(-20px) scale(0.95)' : 'translateY(0) scale(1)',
                                   opacity: shouldSlideOut ? 0 : 1,
                                   transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',
@@ -483,10 +491,11 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                                   }, 1000);
                                 }, 600);
                               }}
-                              className={`${textColor} font-bold text-right text-2xl sm:text-3xl lg:text-4xl uppercase tracking-wider relative group pb-2 menu-item ${
+                              className={`${textColor} font-bold text-right text-2xl sm:text-3xl lg:text-4xl uppercase tracking-wider relative group pb-2 menu-item menu-item-shimmer ${
                                 shouldSlideOut ? 'menu-transitioning' : ''
                               }`}
                               style={{
+                                fontFamily: '"Plus Jakarta Sans", sans-serif',
                                 transform: shouldSlideOut ? 'translateX(100%)' : 'translateX(0)',
                                 opacity: shouldSlideOut ? 0 : 1,
                                 transition: 'transform 0.5s ease-out, opacity 0.5s ease-out',

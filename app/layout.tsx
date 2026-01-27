@@ -3,7 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import { GlobalErrorHandler } from "./global-error-handler";
-import BackgroundMusic from "@/components/BackgroundMusic";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const viewport = {
   width: "device-width",
@@ -320,6 +320,10 @@ export default function RootLayout({
           rel="apple-touch-icon"
           href="/Logo_Osama_Moussa_Compartment-02.png"
         />
+        {/* Google Fonts - Plus Jakarta Sans */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -342,7 +346,7 @@ export default function RootLayout({
       </head>
       <body className="overflow-x-hidden">
         <GlobalErrorHandler />
-        <BackgroundMusic />
+        <SmoothScroll />
         {children}
         <Footer />
         <SpeedInsights />

@@ -27,8 +27,6 @@ function ValueCard({ videoSrc, title, description, index, audioEnabled }: ValueC
 
   const handleMouseEnter = async () => {
     setIsHovered(true);
-    // Dispatch event to pause background music
-    window.dispatchEvent(new CustomEvent("videoHoverStart"));
     
     if (videoRef.current) {
       try {
@@ -57,8 +55,6 @@ function ValueCard({ videoSrc, title, description, index, audioEnabled }: ValueC
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-    // Dispatch event to resume background music
-    window.dispatchEvent(new CustomEvent("videoHoverEnd"));
     
     if (videoRef.current) {
       videoRef.current.pause();

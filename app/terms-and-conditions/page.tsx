@@ -1,20 +1,18 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import AppointmentSection from "@/components/AppointmentSection";
 
-export const metadata: Metadata = {
-  title: "Terms and Conditions",
-  description: "Terms and Conditions for Mr Osama Moussa's medical practice website. Please read our terms of use before using this website.",
-  robots: {
-    index: false,
-    follow: true,
-  },
-  alternates: {
-    canonical: "https://www.osamamoussa.co.uk/terms-and-conditions",
-  },
-};
-
 export default function TermsAndConditionsPage() {
+  useEffect(() => {
+    document.title = "Terms and Conditions";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Terms and Conditions for Mr Osama Moussa\'s medical practice website. Please read our terms of use before using this website.');
+    }
+  }, []);
+
   return (
     <main className="min-h-screen bg-gradient-grey relative">
       {/* Smooth gradient overlay at top for header area */}
@@ -24,7 +22,7 @@ export default function TermsAndConditionsPage() {
       {/* Page Title */}
       <section className="w-full pt-32 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white uppercase tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-tight leading-tight" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
             Terms and Conditions
           </h1>
         </div>

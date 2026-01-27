@@ -82,7 +82,8 @@ export default function ReviewsPageContent() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h1
             ref={titleRef}
-            className={`text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white uppercase tracking-tight fade-in-on-scroll text-center lg:text-left ${titleVisible ? "visible" : ""}`}
+            className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-tight leading-tight fade-in-on-scroll text-center lg:text-left ${titleVisible ? "visible" : ""}`}
+            style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
             Reviews
           </h1>
@@ -147,11 +148,14 @@ export default function ReviewsPageContent() {
             ref={resourcesRef}
             className={`w-full border-2 border-white p-4 sm:p-6 lg:p-8 mb-8 fade-in-on-scroll ${resourcesVisible ? "visible" : ""}`}
           >
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-sans font-bold text-white mb-4 sm:mb-6 text-center lg:text-left">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6 text-center lg:text-left leading-tight" style={{ fontFamily: '"Work Sans", sans-serif' }}>
+              Useful Resources
+            </h2>
+            <p className="text-white mb-6 text-center lg:text-left">
               Here are some resources for you to look through which can aid in your
               understanding of Osama&apos;s Medical Background, and any queries or concerns
               you have based around your surgery...
-            </h2>
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {resources.map((resource, index) => (
                 <Link

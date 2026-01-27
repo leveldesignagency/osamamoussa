@@ -154,7 +154,8 @@ function TitleSection() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <h1 
             ref={titleRef}
-            className={`text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white uppercase tracking-tight fade-in-on-scroll text-center lg:text-left ${titleVisible ? "visible" : ""}`}
+            className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wide leading-tight fade-in-on-scroll text-center lg:text-left ${titleVisible ? "visible" : ""}`}
+            style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
             Research
           </h1>
@@ -200,7 +201,7 @@ function PublicationItem({ pub, index }: { pub: Publication, index: number }) {
       className={`grid grid-cols-1 lg:grid-cols-2 gap-6 items-center pb-4 sm:pb-8 border-b border-white/20 last:border-0 hover:bg-white/5 transition-colors duration-200 rounded-lg px-4 sm:px-6 py-3 sm:py-4 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
-      <h2 className="text-xl sm:text-2xl font-sans font-bold text-white text-center lg:text-left">
+      <h2 className="text-xl sm:text-2xl font-bold text-white text-center lg:text-left leading-tight" style={{ fontFamily: '"Work Sans", sans-serif' }}>
         {pub.title}
       </h2>
       <div className="flex justify-center lg:justify-end">
@@ -227,7 +228,7 @@ function MorePublicationsSection() {
         className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       >
         <div className="max-w-3xl text-center sm:text-left">
-          <h2 className="text-3xl font-sans font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 leading-tight" style={{ fontFamily: '"Work Sans", sans-serif' }}>
             More Publications
           </h2>
           <p className="text-2xl sm:text-lg text-gray-700 leading-relaxed mb-6">

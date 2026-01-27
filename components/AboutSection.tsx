@@ -31,9 +31,10 @@ export default function AboutSection() {
       >
         {/* Main Heading - Serif font, larger, elegant */}
         <h1 
-          className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6 leading-tight font-light transition-all duration-1000 ease-out ${
+          className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-wide transition-all duration-1000 ease-out ${
             headingVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
+          style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
         >
           A steady hand, a sharp mind, a compassionate heart: Your health in safe and skilled hands
         </h1>

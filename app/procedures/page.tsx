@@ -138,7 +138,7 @@ function PageTitleSection() {
         ref={ref}
         className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       >
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-white uppercase tracking-tight text-center lg:text-left">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wide text-center lg:text-left leading-tight" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
           Procedures
         </h1>
       </div>
@@ -262,7 +262,7 @@ function ProcedureCard({ procedure, index }: { procedure: Procedure, index: numb
       {/* Mobile: Always text first, then image. Desktop: Follow imageLeft prop */}
       {/* Text Content - Always first on mobile */}
       <div className={procedure.imageLeft ? "lg:order-1" : "lg:order-2"}>
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-sans font-bold text-white mb-3 sm:mb-4 text-center lg:text-left">
+        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 text-center lg:text-left leading-tight tracking-wide" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
           {procedure.title}
         </h2>
         <p className="text-base sm:text-lg text-white leading-relaxed text-center lg:text-left">

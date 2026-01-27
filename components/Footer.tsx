@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-transparent text-white py-8 sm:py-12" style={{ background: 'transparent' }}>
+    <footer className="w-full bg-transparent text-white py-4 sm:py-6" style={{ background: 'transparent' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Mobile Layout - Full Height */}
-        <div className="flex flex-col sm:hidden min-h-screen justify-between py-12">
+        <div className="flex flex-col sm:hidden justify-between py-8">
           {/* Logo - Centered */}
           <div className="flex justify-center">
             <Link href="/" className="inline-block">
@@ -23,41 +23,46 @@ export default function Footer() {
           </div>
 
           {/* Navigation Links - Vertical Stack - Enlarged */}
-          <nav className="flex flex-col items-center gap-6 flex-1 justify-center">
+          <nav className="flex flex-col items-center gap-3 flex-1 justify-center">
             <Link
               href="/about"
-              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-medium"
+              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-bold"
+              style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               About
             </Link>
             <Link
               href="/procedures"
-              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-medium"
+              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-bold"
+              style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               Procedures
             </Link>
             <Link
               href="/research"
-              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-medium"
+              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-bold"
+              style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               Research
             </Link>
             <Link
               href="/reviews"
-              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-medium"
+              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-bold"
+              style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               Reviews
             </Link>
             <Link
               href="/procedures/contact"
-              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-medium"
+              className="text-white hover:text-black uppercase tracking-wide transition-colors duration-200 text-2xl font-bold"
+              style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
             >
               Contact
             </Link>
           </nav>
 
           {/* Accreditations - Centered */}
-          <div className="flex justify-center mt-2">
+          <div className="flex justify-center mt-3">
             <Image
               src="/Osama Moussa Accreditations.png"
               alt="Osama Moussa Accreditations"
@@ -68,7 +73,7 @@ export default function Footer() {
           </div>
 
           {/* Social Icons - Centered */}
-          <div className="flex items-center justify-center gap-4 mt-2">
+          <div className="flex items-center justify-center gap-4 mt-3">
             <a
               href="https://www.linkedin.com/in/osama-moussa-1610o/"
               target="_blank"
@@ -104,8 +109,8 @@ export default function Footer() {
           </div>
 
           {/* Design Credit - Centered */}
-          <div className="text-xs text-center mt-2">
-            <p className="mb-2 text-white/70">
+          <div className="text-xs text-center mt-3">
+            <p className="mb-1 text-white/70">
               Designed by{" "}
               <Link
                 href="http://www.leveldesignagency.com"
@@ -135,19 +140,19 @@ export default function Footer() {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-4">
           {/* Logo */}
           <div className="flex flex-col">
             <Link
               href="/"
-              className="mb-6 inline-block"
+              className="mb-3 inline-block"
             >
               <Image
                 src="/Osama Moussa Logo-01.svg"
                 alt="Osama Moussa Logo"
                 width={200}
                 height={50}
-                className="h-12 w-auto brightness-0 invert"
+                className="h-9 w-auto brightness-0 invert"
               />
             </Link>
           </div>
@@ -158,7 +163,8 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200"
+                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200 font-bold text-sm sm:text-base"
+                  style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                 >
                   About
                   <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
@@ -168,7 +174,8 @@ export default function Footer() {
               <li>
                 <Link
                   href="/procedures"
-                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200"
+                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200 font-bold text-sm sm:text-base"
+                  style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                 >
                   Procedures
                   <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
@@ -178,7 +185,8 @@ export default function Footer() {
               <li>
                 <Link
                   href="/research"
-                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200"
+                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200 font-bold text-sm sm:text-base"
+                  style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                 >
                   Research
                   <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
@@ -188,7 +196,8 @@ export default function Footer() {
               <li>
                 <Link
                   href="/reviews"
-                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200"
+                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200 font-bold text-sm sm:text-base"
+                  style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                 >
                   Reviews
                   <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
@@ -198,7 +207,8 @@ export default function Footer() {
               <li>
                 <Link
                   href="/procedures/contact"
-                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200"
+                  className="relative text-white hover:text-black uppercase tracking-wide group pb-1 transition-colors duration-200 font-bold text-sm sm:text-base"
+                  style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                 >
                   Contact
                   <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
@@ -206,13 +216,13 @@ export default function Footer() {
               </li>
             </ul>
             {/* Accreditations */}
-            <div className="mt-8 flex justify-center">
+            <div className="mt-4 flex justify-center">
               <Image
                 src="/Osama Moussa Accreditations.png"
                 alt="Osama Moussa Accreditations"
                 width={1600}
                 height={400}
-                className="w-full max-w-7xl h-auto"
+                className="w-full max-w-5xl h-auto"
                 style={{ maxWidth: '100%' }}
               />
             </div>
@@ -221,7 +231,7 @@ export default function Footer() {
           {/* Social Media & Design Credit */}
           <div className="flex flex-col justify-between items-end">
             {/* Social Icons */}
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-3">
               <a
                 href="https://www.linkedin.com/in/osama-moussa-1610o/"
                 target="_blank"
@@ -257,8 +267,8 @@ export default function Footer() {
             </div>
 
             {/* Design Credit */}
-            <div className="text-sm text-right">
-              <p className="mb-2 text-white/70">
+            <div className="text-xs text-right">
+              <p className="mb-1 text-white/70">
                 Designed by{" "}
                 <Link
                   href="http://www.leveldesignagency.com"
@@ -269,7 +279,7 @@ export default function Footer() {
                   LEVEL DESIGN AGENCY LTD
                 </Link>
               </p>
-              <div className="text-xs text-white/70 space-x-3">
+              <div className="text-xs text-white/70 space-x-2">
                 <Link
                   href="/terms-and-conditions"
                   className="hover:text-black transition-colors duration-200"

@@ -97,7 +97,7 @@ export default function AboutPage() {
         {/* Title and Content - aligned to left margin on desktop, centered on mobile */}
         <div className="relative z-30 pb-6">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-[60vh] sm:pt-32">
-            <h1 ref={titleRef} className={`text-4xl sm:text-5xl lg:text-6xl font-sans font-bold text-black uppercase tracking-tight mb-6 text-center lg:text-left fade-in-on-scroll ${titleVisible ? "visible" : ""}`}>
+            <h1 ref={titleRef} className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-black uppercase tracking-wide mb-6 text-center lg:text-left leading-tight fade-in-on-scroll ${titleVisible ? "visible" : ""}`} style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
               <span className="sm:hidden text-white block">About Osama Moussa</span>
               <span className="hidden sm:inline">About Osama Moussa</span>
             </h1>
@@ -156,8 +156,8 @@ export default function AboutPage() {
       {/* Accreditations Section */}
       <section ref={accreditationsRef} className={`w-full py-16 fade-in-on-scroll ${accreditationsVisible ? "visible" : ""}`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl font-sans font-bold text-white mb-12 uppercase text-center lg:text-left">
-            Accreditations
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12 uppercase tracking-wide text-center lg:text-left leading-tight fade-in-on-scroll" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            Accreditations & Memberships
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
