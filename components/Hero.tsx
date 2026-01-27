@@ -163,11 +163,6 @@ export default function Hero() {
                 }}
               />
             </div>
-
-                  position: "relative"
-                }}
-              ></div>
-            </div>
           </div>
         </div>
       </div>
