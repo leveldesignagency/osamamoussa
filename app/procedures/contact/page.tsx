@@ -191,44 +191,44 @@ export default function ContactPage() {
                   ></iframe>
                 </div>
                 {/* Hospital Info */}
-                <div className="p-6">
-                  <h3 className="text-2xl font-sans font-bold text-black mb-4">
+                <div className="p-6 overflow-hidden">
+                  <h3 className="text-2xl font-sans font-bold text-black mb-4 break-words">
                     <Link
                       href={hospital.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative group hover:opacity-80 transition-opacity"
+                      className="relative group hover:opacity-80 transition-opacity break-words"
                     >
                       {hospital.name}
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300"></span>
                     </Link>
                   </h3>
-                  <p className="text-[#6E6E6E] mb-2">
+                  <p className="text-[#6E6E6E] mb-2 break-words">
                     <Link
                       href={hospital.mapUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative group hover:opacity-80 transition-opacity inline-block"
+                      className="relative group hover:opacity-80 transition-opacity break-words"
                     >
                       {hospital.address}
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#6E6E6E] group-hover:w-full transition-all duration-300"></span>
                     </Link>
                   </p>
-                  <p className="text-[#6E6E6E] mb-2">
+                  <p className="text-[#6E6E6E] mb-2 break-words">
                     <a
                       href={`tel:${hospital.phone.replace(/\s/g, "")}`}
-                      className="relative group hover:opacity-80 transition-opacity inline-block"
+                      className="relative group hover:opacity-80 transition-opacity break-words"
                     >
                       {hospital.phone}
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#6E6E6E] group-hover:w-full transition-all duration-300"></span>
                     </a>
                   </p>
-                  <p className="text-[#6E6E6E]">
+                  <p className="text-[#6E6E6E] break-words">
                     <Link
                       href={hospital.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="relative group hover:opacity-80 transition-opacity inline-block"
+                      className="relative group hover:opacity-80 transition-opacity break-words break-all"
                     >
                       {hospital.website.replace(/^https?:\/\//, '')}
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#6E6E6E] group-hover:w-full transition-all duration-300"></span>
