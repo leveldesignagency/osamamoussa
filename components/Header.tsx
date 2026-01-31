@@ -84,7 +84,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                 alt="Osama Moussa Logo"
                 width={200}
                 height={50}
-                className={`h-14 w-auto ${
+                className={`h-16 w-auto ${
                   isContactPage 
                     ? "brightness-0 invert sm:brightness-100 sm:invert-0" // White on mobile, black on desktop
                     : (textColorProp === "black" ? "" : (isAboutPage ? "brightness-0 invert" : (backgroundColor === "grey" ? "brightness-0 invert" : "")))
@@ -254,7 +254,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                               alt="Osama Moussa Logo"
                               width={200}
                               height={50}
-                              className="h-14 w-auto brightness-0 invert"
+                              className="h-16 w-auto brightness-0 invert"
                               priority
                             />
                           </Link>

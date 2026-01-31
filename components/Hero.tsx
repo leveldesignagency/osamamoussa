@@ -77,7 +77,7 @@ export default function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 h-full flex flex-col justify-end sm:justify-center items-center sm:items-start pb-32 sm:pb-0">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <h1 className="text-[27px] sm:text-[33px] md:text-[45px] lg:text-[57px] font-bold text-white sm:text-black mb-8 leading-tight max-w-3xl animate-fade-in-up text-center sm:text-left tracking-wide" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 700 }}>
+          <h1 className="text-[27px] sm:text-[33px] md:text-[45px] lg:text-[57px] font-bold text-white sm:text-black mb-8 leading-snug max-w-3xl animate-fade-in-up text-center sm:text-left tracking-wide" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 700, lineHeight: 1.4 }}>
             A leader in Upper GI Surgery in London and Hertfordshire
           </h1>
           
