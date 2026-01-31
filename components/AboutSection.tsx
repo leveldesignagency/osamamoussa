@@ -36,7 +36,7 @@ export default function AboutSection() {
           }`}
           style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
         >
-          A steady hand, a sharp mind, a compassionate heart: Your health in safe and skilled hands
+          A steady hand, a sharp mind, a compassionate heart: Your health in safe & skilled hands
         </h1>
         
         {/* Descriptive Text - Sans-serif, smaller */}
