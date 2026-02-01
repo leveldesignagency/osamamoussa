@@ -97,8 +97,8 @@ export default function AboutPage() {
         {/* Title and content */}
         <div className="relative z-30 pb-6">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-[60vh] sm:pt-32">
-            <div ref={titleRef} className={`mb-6 fade-in-on-scroll ${titleVisible ? "visible" : ""}`}>
-              <div className="bg-black block w-full sm:inline-block sm:w-auto px-6 py-4">
+            <div ref={titleRef} className={`mb-6 fade-in-on-scroll text-center sm:text-left ${titleVisible ? "visible" : ""}`}>
+              <div className="bg-black inline-block px-6 py-4">
                 <h1 className="page-title page-title-main font-bold text-white text-center sm:text-left leading-tight">
                   About
                 </h1>

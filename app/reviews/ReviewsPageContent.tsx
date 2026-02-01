@@ -123,8 +123,8 @@ export default function ReviewsPageContent() {
     <>
       {/* Page Title */}
       <section className="w-full pt-32 pb-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-black block w-full sm:inline-block sm:w-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+          <div className="bg-black inline-block px-6 py-4">
             <h1
               ref={titleRef}
               className={`page-title page-title-main font-bold text-white leading-tight fade-in-on-scroll text-center sm:text-left ${titleVisible ? "visible" : ""}`}

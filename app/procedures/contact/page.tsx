@@ -96,9 +96,9 @@ export default function ContactPage() {
         <div className="relative z-30 pb-6">
           <div 
             ref={titleRef}
-            className={`container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 fade-in-on-scroll ${titleVisible ? "visible" : ""}`}
+            className={`container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 fade-in-on-scroll text-center sm:text-left ${titleVisible ? "visible" : ""}`}
           >
-            <div className="bg-black block w-full sm:inline-block sm:w-auto px-6 py-4 mb-6">
+            <div className="bg-black inline-block px-6 py-4 mb-6">
               <h1 className="page-title page-title-main font-bold text-white text-center sm:text-left leading-tight">
                 Contact
               </h1>

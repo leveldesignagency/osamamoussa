@@ -139,6 +139,17 @@ body.menu-open .bg-gradient-grey,
   max-width: none;
 }
 
+/* Mobile: paragraphs center-aligned, no max-width wrapping */
+@media (max-width: 639px) {
+  .paragraph-block p,
+  .paragraph-block-full p,
+  .paragraph-block.paragraph-block-full p {
+    max-width: none;
+    text-align: center;
+    text-justify: auto;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-color: #6E6E6E;

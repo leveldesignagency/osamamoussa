@@ -136,9 +136,9 @@ function PageTitleSection() {
     <section className="w-full pt-32 pb-12">
       <div 
         ref={ref}
-        className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
+        className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll text-center sm:text-left ${isVisible ? "visible" : ""}`}
       >
-        <div className="bg-black block w-full sm:inline-block sm:w-auto px-6 py-4">
+        <div className="bg-black inline-block px-6 py-4">
           <h1 className="page-title page-title-main font-bold text-white text-center sm:text-left leading-tight">
             Procedures
           </h1>
