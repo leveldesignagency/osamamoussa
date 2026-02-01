@@ -135,8 +135,8 @@ export default function ReviewsPageContent() {
         </div>
       </section>
 
-      {/* Introduction - ~10px under title on mobile */}
-      <section className="w-full pt-0 sm:pt-16 pb-16">
+      {/* Introduction - same title-to-paragraph gap as Procedures page */}
+      <section className="w-full py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 paragraph-block">
           <p
             ref={introRef}

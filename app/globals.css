@@ -111,6 +111,11 @@ body.menu-open .bg-gradient-grey,
   width: 100%;
 }
 
+/* Override uppercase when title should be normal/title case (e.g. publication titles) */
+.page-title.normal-case {
+  text-transform: none !important;
+}
+
 /* Main page title (Procedures, Research, Reviews, Contact) - larger, in black bar */
 .page-title-main {
   font-size: 28px !important;
@@ -592,11 +597,11 @@ body {
   width: max-content;
 }
 
-/* Mobile: Slower animation so full set of logos scrolls through before loop */
+/* Mobile: Faster animation so full cycle completes in reasonable time */
 @media (max-width: 640px) {
   .marquee-content {
-    animation: marquee-mobile 25s linear infinite;
-    gap: 2rem;
+    animation: marquee-mobile 12s linear infinite;
+    gap: 1.5rem;
   }
 }
 
@@ -617,7 +622,7 @@ body {
   }
 }
 
-/* Mobile marquee animation - faster and ensures complete loop */
+/* Mobile marquee - same -50% loop as desktop, faster duration */
 @keyframes marquee-mobile {
   0% {
     transform: translateX(0);
