@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import MobileButton from "./MobileButton";
 
 export default function Hero() {
   const scriptsLoaded = useRef(false);
@@ -83,15 +82,17 @@ export default function Hero() {
             & Robotic Surgery
           </h1>
           
-          <div className="flex flex-row flex-wrap gap-2 sm:gap-4 animate-fade-in-up justify-center sm:justify-start mb-8 items-stretch" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
-                {/* Mobile - Book Now + Call Now */}
-                <MobileButton href="/procedures/contact" className="sm:hidden">
+          <div className="flex flex-row flex-wrap gap-3 sm:gap-4 animate-fade-in-up justify-center sm:justify-start mb-8 items-stretch" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
+                {/* Mobile - Book Now + Call Now: horizontal, slightly bigger, no phone-reveal (Book Now → contact, Call Now → tel) */}
+                <Link
+                  href="/procedures/contact"
+                  className="sm:hidden inline-flex items-center justify-center px-6 py-4 text-base border-2 border-white bg-black text-white font-medium transition-all duration-300 hover:bg-white hover:text-black active:bg-white active:text-black rounded-full"
+                >
                   Book Now
-                </MobileButton>
+                </Link>
                 <a
                   href="tel:07352167642"
-                  className="sm:hidden inline-flex items-center justify-center px-4 py-3 border-2 border-white bg-black text-white font-medium transition-all duration-300 text-sm sm:text-base hover:bg-white hover:text-black active:bg-white active:text-black rounded-full"
-                  style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}
+                  className="sm:hidden inline-flex items-center justify-center px-6 py-4 text-base border-2 border-white bg-black text-white font-medium transition-all duration-300 hover:bg-white hover:text-black active:bg-white active:text-black rounded-full"
                 >
                   Call Now
                 </a>
