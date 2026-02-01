@@ -67,7 +67,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
           </div>
           {/* Page Name - mobile: smaller text, no black container; desktop: large text */}
           <div className="animate-scale-in w-full max-w-full px-4 sm:px-0 flex justify-center">
-            <h1 className="sm:hidden text-2xl font-bold text-white uppercase tracking-wide text-center" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            <h1 className="sm:hidden text-5xl font-bold text-white uppercase tracking-wide text-center" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
               {transitionPageName}
             </h1>
             <h1 className="hidden sm:block text-6xl md:text-7xl lg:text-8xl font-bold text-white uppercase tracking-wide" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontSize: 'clamp(2.5rem, 10vw, 5rem)' }}>

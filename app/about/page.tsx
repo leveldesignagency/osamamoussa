@@ -104,8 +104,8 @@ export default function AboutPage() {
                 </h1>
               </div>
             </div>
-            {/* Mobile: First paragraph only - white, normal weight */}
-            <div ref={firstParaRef} className={`w-full space-y-4 text-lg sm:text-base text-white font-normal leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden fade-in-on-scroll paragraph-block ${firstParaVisible ? "visible" : ""}`} style={{ paddingBottom: '200px', marginTop: '0' }}>
+            {/* Mobile: First paragraph only - match procedures text size (text-2xl) */}
+            <div ref={firstParaRef} className={`w-full space-y-4 text-2xl sm:text-base text-white font-medium leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden fade-in-on-scroll paragraph-block ${firstParaVisible ? "visible" : ""}`} style={{ paddingBottom: '200px', marginTop: '0' }}>
               <p>{firstParaText}</p>
             </div>
             
@@ -128,28 +128,28 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mobile: Second paragraph section - transparent background, white text, medium weight, more gap, simple fade-in */}
+      {/* Mobile: Second paragraph section - match procedures text size (text-2xl) */}
       <section ref={secondParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${secondParaVisible ? "visible" : ""}`}>
         <div className="container mx-auto paragraph-block">
-          <p className="text-lg text-white font-normal leading-relaxed text-center">
+          <p className="text-2xl text-white font-medium leading-relaxed text-center">
             {secondParaText}
           </p>
         </div>
       </section>
 
-      {/* Mobile: Third paragraph section - transparent background, white text, medium weight, more gap, simple fade-in */}
+      {/* Mobile: Third paragraph section - match procedures text size (text-2xl) */}
       <section ref={thirdParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${thirdParaVisible ? "visible" : ""}`}>
         <div className="container mx-auto paragraph-block">
-          <p className="text-lg text-white font-normal leading-relaxed text-center">
+          <p className="text-2xl text-white font-medium leading-relaxed text-center">
             {thirdParaText}
           </p>
         </div>
       </section>
 
-      {/* Mobile: Fourth paragraph section - transparent background, white text, medium weight, more gap, simple fade-in */}
+      {/* Mobile: Fourth paragraph section - match procedures text size (text-2xl) */}
       <section ref={fourthParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${fourthParaVisible ? "visible" : ""}`}>
         <div className="container mx-auto paragraph-block">
-          <p className="text-lg text-white font-normal leading-relaxed text-center">
+          <p className="text-2xl text-white font-medium leading-relaxed text-center">
             {fourthParaText}
           </p>
         </div>

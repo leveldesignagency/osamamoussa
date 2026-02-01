@@ -149,9 +149,9 @@ export default function ContactPage() {
                 <span>pa@osamamoussa.co.uk</span>
               </a>
               
-              {/* Contact Paragraph Card - Below buttons */}
+              {/* Contact Paragraph Card - Below buttons; match procedures paragraph size */}
               <div className="w-full lg:w-[400px] border-2 border-white bg-white/10 backdrop-blur-sm p-6 text-white rounded-lg">
-                <p className="text-base leading-relaxed text-center lg:text-left">
+                <p className="text-2xl sm:text-lg font-medium sm:font-normal leading-relaxed text-center lg:text-left">
                   You can contact my Personal Assistant directly, alternatively you can make a booking via the hospitals websites
                   from the list below.
                 </p>
@@ -162,7 +162,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Additional Information Section - full viewport per card on mobile */}
+      {/* Additional Information Section - stacked on mobile with normal spacing, 3-col on desktop */}
       <section className="w-full bg-black relative overflow-hidden">
         {/* Bottom feathering overlay - desktop only */}
         <div 
@@ -174,10 +174,9 @@ export default function ContactPage() {
         ></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
-            {/* Mobile: full-height sections, one per card. Desktop: 3-column grid */}
-            <div className="flex flex-col md:grid md:grid-cols-3 gap-0 md:gap-8 py-8 md:py-16 text-center">
-              {/* Quick Response - full viewport on mobile */}
-              <div className="min-h-[100dvh] md:min-h-0 flex items-center justify-center py-12 md:py-0">
+            <div className="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-8 py-8 md:py-16 text-center">
+              {/* Quick Response */}
+              <div className="flex justify-center md:py-0">
                 <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border-2 border-white/30 hover:border-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer w-full max-w-sm mx-auto">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -185,12 +184,12 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Quick Response</h3>
-                  <p className="text-white/80 text-xs sm:text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">We aim to respond to all enquiries within 24 hours</p>
+                  <p className="text-white/80 text-2xl sm:text-base leading-relaxed group-hover:text-white/90 transition-colors duration-300">We aim to respond to all enquiries within 24 hours</p>
                 </div>
               </div>
 
-              {/* Expert Consultation - full viewport on mobile */}
-              <div className="min-h-[100dvh] md:min-h-0 flex items-center justify-center py-12 md:py-0">
+              {/* Expert Consultation */}
+              <div className="flex justify-center md:py-0">
                 <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border-2 border-white/30 hover:border-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer w-full max-w-sm mx-auto">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -198,12 +197,12 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Expert Consultation</h3>
-                  <p className="text-white/80 text-xs sm:text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Comprehensive assessment and personalized treatment plans</p>
+                  <p className="text-white/80 text-2xl sm:text-base leading-relaxed group-hover:text-white/90 transition-colors duration-300">Comprehensive assessment and personalized treatment plans</p>
                 </div>
               </div>
 
-              {/* Multiple Locations - full viewport on mobile */}
-              <div className="min-h-[100dvh] md:min-h-0 flex items-center justify-center py-12 md:py-0">
+              {/* Multiple Locations */}
+              <div className="flex justify-center md:py-0">
                 <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border-2 border-white/30 hover:border-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer w-full max-w-sm mx-auto">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -212,7 +211,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Multiple Locations</h3>
-                  <p className="text-white/80 text-xs sm:text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Convenient access across London and Hertfordshire</p>
+                  <p className="text-white/80 text-2xl sm:text-base leading-relaxed group-hover:text-white/90 transition-colors duration-300">Convenient access across London and Hertfordshire</p>
                 </div>
               </div>
             </div>
@@ -227,7 +226,7 @@ export default function ContactPage() {
             <h2 className="page-title font-bold text-white mb-4 leading-tight fade-in-on-scroll">
               Hospital Locations
             </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
+            <p className="text-white/80 text-2xl sm:text-lg max-w-2xl mx-auto leading-relaxed">
               Dr. Moussa practices at multiple prestigious hospitals across London and Hertfordshire. 
               Book your consultation directly through each hospital&apos;s website.
             </p>

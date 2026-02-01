@@ -69,7 +69,7 @@ export default function ResearchPage() {
         {/* Mobile: First paragraph - styled like about page, less top gap */}
         <div className="w-full pt-4 pb-12 px-4 sm:hidden bg-transparent">
           <div className="container mx-auto paragraph-block">
-            <p className="text-lg text-white font-normal leading-relaxed text-center">
+            <p className="text-2xl text-white font-medium leading-relaxed text-center">
               Beyond his clinical endeavours, Mr Moussa is deeply invested in
               pioneering research, particularly in metabolic health and obesity. His
               scholarly pursuits have culminated in the publication of his work in

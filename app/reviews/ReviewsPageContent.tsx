@@ -140,7 +140,7 @@ export default function ReviewsPageContent() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 paragraph-block">
           <p
             ref={introRef}
-            className={`text-lg text-white leading-relaxed fade-in-on-scroll text-center lg:text-left ${introVisible ? "visible" : ""}`}
+            className={`text-2xl sm:text-lg text-white font-medium sm:font-normal leading-relaxed fade-in-on-scroll text-center lg:text-left ${introVisible ? "visible" : ""}`}
           >
             Mr Moussa is a distinguished Consultant General Surgeon, deeply committed
             to delivering surgical excellence in Upper GI Surgery. His wealth of
@@ -186,22 +186,24 @@ export default function ReviewsPageContent() {
         </div>
       </section>
 
-      {/* Resources Section - Full Width */}
+      {/* Resources Section - title in black container outside border; paragraph + links inside border */}
       <section className="w-full py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            ref={resourcesRef}
-            className={`w-full border-2 border-white p-4 sm:p-6 lg:p-8 mb-8 fade-in-on-scroll ${resourcesVisible ? "visible" : ""}`}
-          >
-            <h2 className="page-title font-bold text-white mb-4 sm:mb-6 text-center lg:text-left leading-tight">
-              Useful Resources
-            </h2>
-            <p className="text-white mb-6 text-center lg:text-left">
-              Here are some resources for you to look through which can aid in your
-              understanding of Osama&apos;s Medical Background, and any queries or concerns
-              you have based around your surgery...
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          <div ref={resourcesRef} className={`fade-in-on-scroll ${resourcesVisible ? "visible" : ""}`}>
+            <div className="mb-4 sm:mb-6 text-center sm:text-left">
+              <div className="bg-black inline-block px-6 py-4">
+                <h2 className="page-title page-title-main font-bold text-white leading-tight">
+                  Useful Resources
+                </h2>
+              </div>
+            </div>
+            <div className="w-full border-2 border-white p-4 sm:p-6 lg:p-8 mb-8">
+              <p className="text-white mb-6 text-2xl sm:text-lg font-medium sm:font-normal leading-relaxed text-center lg:text-left">
+                Here are some resources for you to look through which can aid in your
+                understanding of Osama&apos;s Medical Background, and any queries or concerns
+                you have based around your surgery...
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {resources.map((resource, index) => (
                 <Link
                   key={index}
@@ -214,6 +216,7 @@ export default function ReviewsPageContent() {
                   <p className="text-sm font-sans font-bold">{resource.title}</p>
                 </Link>
               ))}
+              </div>
             </div>
           </div>
         </div>
