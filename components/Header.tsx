@@ -271,7 +271,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                     {/* Menu Content - Right Aligned Vertical Links */}
                     <div className="flex flex-col h-full pt-32 sm:pt-40 pb-32">
                       <nav 
-                        className="flex-1 flex flex-col items-end justify-center px-6 sm:px-8"
+                        className="flex-1 flex flex-col items-end justify-center px-6 sm:px-8 pt-16 sm:pt-0"
                         style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                       >
                         <div className="flex flex-col gap-2 sm:gap-3 text-right mobile-menu-nav-group w-full max-w-xs">
@@ -330,8 +330,8 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                         </div>
                       </nav>
                       
-                      {/* Contact Info - Bottom Right Aligned */}
-                      <div className="px-6 sm:px-8 pb-8">
+                      {/* Contact Info - Bottom Right Aligned (on mobile: pushed down, menu position unchanged) */}
+                      <div className="px-6 sm:px-8 pb-8 mt-16 sm:mt-0">
                         <div className="max-w-xs ml-auto text-right space-y-4">
                           {/* Email */}
                           <a

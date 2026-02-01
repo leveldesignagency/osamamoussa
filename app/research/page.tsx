@@ -64,8 +64,8 @@ export default function ResearchPage() {
       {/* Page Title with Links */}
       <TitleSection />
 
-      {/* Research Description Section */}
-      <section className="w-full pt-0 sm:pt-16 pb-16">
+      {/* Research Description Section - extra gap below buttons, above first paragraph */}
+      <section className="w-full pt-8 sm:pt-16 pb-16">
         {/* Mobile: First paragraph - ~10px under title */}
         <div className="w-full pt-0 pb-12 px-4 sm:hidden bg-transparent">
           <div className="container mx-auto paragraph-block">

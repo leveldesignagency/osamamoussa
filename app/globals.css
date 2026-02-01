@@ -111,9 +111,10 @@ body.menu-open .bg-gradient-grey,
   width: 100%;
 }
 
-/* Override uppercase when title should be normal/title case (e.g. publication titles) */
+/* Override uppercase and letter-spacing for publication titles (normal/title case) */
 .page-title.normal-case {
   text-transform: none !important;
+  letter-spacing: 0.02em;
 }
 
 /* Main page title (Procedures, Research, Reviews, Contact) - larger, in black bar */
