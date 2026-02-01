@@ -38,7 +38,7 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen bg-gradient-grey relative">
-      <Header backgroundColor="grey" textColor="black" />
+      <Header backgroundColor="grey" textColor="white" />
 
       {/* About Section */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh' }}>
@@ -94,21 +94,23 @@ export default function AboutPage() {
           }}
         ></div>
         
-        {/* Title and Content - aligned to left margin on desktop, centered on mobile */}
+        {/* Title and content */}
         <div className="relative z-30 pb-6">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-[60vh] sm:pt-32">
-            <h1 ref={titleRef} className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-black uppercase tracking-wide mb-6 text-center lg:text-left leading-tight fade-in-on-scroll ${titleVisible ? "visible" : ""}`} style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
-              <span className="sm:hidden text-white block">About Osama Moussa</span>
-              <span className="hidden sm:inline">About Osama Moussa</span>
-            </h1>
-            
-            {/* Mobile: First paragraph only - larger text, white, over image, medium weight, simple fade-in */}
-            <div ref={firstParaRef} className={`w-full space-y-4 text-2xl sm:text-base text-white font-medium leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden fade-in-on-scroll ${firstParaVisible ? "visible" : ""}`} style={{ paddingBottom: '200px', marginTop: '0' }}>
+            <div ref={titleRef} className={`mb-6 fade-in-on-scroll ${titleVisible ? "visible" : ""}`}>
+              <div className="bg-black block w-full sm:inline-block sm:w-auto px-6 py-4">
+                <h1 className="page-title page-title-main font-bold text-white text-center sm:text-left leading-tight">
+                  About
+                </h1>
+              </div>
+            </div>
+            {/* Mobile: First paragraph only - white, normal weight */}
+            <div ref={firstParaRef} className={`w-full space-y-4 text-lg sm:text-base text-white font-normal leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden fade-in-on-scroll paragraph-block ${firstParaVisible ? "visible" : ""}`} style={{ paddingBottom: '200px', marginTop: '0' }}>
               <p>{firstParaText}</p>
             </div>
             
-            {/* Desktop: All paragraphs - larger text, medium weight, simple fade-in */}
-            <div className="hidden sm:block w-full lg:w-1/2 space-y-6 text-xl sm:text-xl lg:text-2xl text-black font-medium leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24">
+            {/* Desktop: All paragraphs - paragraph-block, normal weight */}
+            <div className="hidden sm:block w-full lg:w-1/2 space-y-6 text-base sm:text-lg lg:text-xl text-black font-normal leading-relaxed pr-0 lg:pr-12 xl:pr-16 2xl:pr-24 text-center lg:text-left mx-auto lg:mx-0 pb-16 sm:pb-24 paragraph-block">
               <p ref={desktopFirstParaRef} className={`fade-in-on-scroll ${desktopFirstParaVisible ? "visible" : ""}`}>
                 {firstParaText}
               </p>
@@ -128,8 +130,8 @@ export default function AboutPage() {
 
       {/* Mobile: Second paragraph section - transparent background, white text, medium weight, more gap, simple fade-in */}
       <section ref={secondParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${secondParaVisible ? "visible" : ""}`}>
-        <div className="container mx-auto">
-          <p className="text-2xl text-white font-medium leading-relaxed text-center">
+        <div className="container mx-auto paragraph-block">
+          <p className="text-lg text-white font-normal leading-relaxed text-center">
             {secondParaText}
           </p>
         </div>
@@ -137,8 +139,8 @@ export default function AboutPage() {
 
       {/* Mobile: Third paragraph section - transparent background, white text, medium weight, more gap, simple fade-in */}
       <section ref={thirdParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${thirdParaVisible ? "visible" : ""}`}>
-        <div className="container mx-auto">
-          <p className="text-2xl text-white font-medium leading-relaxed text-center">
+        <div className="container mx-auto paragraph-block">
+          <p className="text-lg text-white font-normal leading-relaxed text-center">
             {thirdParaText}
           </p>
         </div>
@@ -146,21 +148,25 @@ export default function AboutPage() {
 
       {/* Mobile: Fourth paragraph section - transparent background, white text, medium weight, more gap, simple fade-in */}
       <section ref={fourthParaRef} className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${fourthParaVisible ? "visible" : ""}`}>
-        <div className="container mx-auto">
-          <p className="text-2xl text-white font-medium leading-relaxed text-center">
+        <div className="container mx-auto paragraph-block">
+          <p className="text-lg text-white font-normal leading-relaxed text-center">
             {fourthParaText}
           </p>
         </div>
       </section>
 
-      {/* Accreditations Section */}
+      {/* Accreditations & Memberships Section */}
       <section ref={accreditationsRef} className={`w-full py-16 fade-in-on-scroll ${accreditationsVisible ? "visible" : ""}`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-12 uppercase tracking-wide text-center lg:text-left leading-tight fade-in-on-scroll" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
-            Accreditations & Memberships
-          </h2>
+          <div className="mb-12">
+            <div className="bg-black inline-block px-6 py-4">
+              <h2 className="page-title page-title-main font-bold text-white text-center lg:text-left leading-tight">
+                Accreditations & Memberships
+              </h2>
+            </div>
+          </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start paragraph-block">
             {/* Image - Left side, no left padding, rounded corners with shadows */}
             <div ref={accreditationsImageRef} className={`relative h-[400px] sm:h-[500px] lg:h-[800px] overflow-hidden -mx-4 sm:-mx-6 lg:-ml-8 lg:mr-0 rounded-3xl fade-in-on-scroll ${accreditationsImageVisible ? "visible" : ""}`} style={{ 
               width: 'calc(100% + 2rem)', 
@@ -189,7 +195,7 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-sans font-bold text-white mb-4">
                   Postgraduate
                 </h3>
-                <p className="text-lg text-white leading-relaxed">
+                <p className="text-base text-white leading-relaxed">
                   Fellow of the Royal College of Surgeons of England (F.R.C.S. Gen)
                   <br />
                   Diploma in Minimal Access Surgery (Northeast Laparoscopic Centre)
@@ -202,10 +208,10 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-sans font-bold text-white mb-4">
                   Qualifications
                 </h3>
-                <p className="text-lg text-white leading-relaxed mb-2">
+                <p className="text-base text-white leading-relaxed mb-2">
                   Bachelor of Sciences (Honours)
                 </p>
-                <p className="text-lg text-white leading-relaxed">
+                <p className="text-base text-white leading-relaxed">
                   Bachelor of Medicine and Bachelor of Surgery M.B.B.S.
                 </p>
               </div>
@@ -214,10 +220,10 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-sans font-bold text-white mb-4">
                   Registration
                 </h3>
-                <p className="text-lg text-white leading-relaxed mb-2">
+                <p className="text-base text-white leading-relaxed mb-2">
                   The General Medical Council (6043402)
                 </p>
-                <p className="text-lg text-white leading-relaxed">
+                <p className="text-base text-white leading-relaxed">
                   Royal College of Surgeons
                 </p>
               </div>
@@ -226,7 +232,7 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-sans font-bold text-white mb-4">
                   Speciality
                 </h3>
-                <p className="text-lg text-white leading-relaxed">
+                <p className="text-base text-white leading-relaxed">
                   Laparoscopic Surgery, Robotic Surgery, Benign Upper GI Surgery,
                   Anti-reflux surgery, General Surgery
                 </p>
@@ -236,7 +242,7 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-sans font-bold text-white mb-4">
                   Professional Memberships
                 </h3>
-                <p className="text-lg text-white leading-relaxed">
+                <p className="text-base text-white leading-relaxed">
                   Fellow of the Royal College of Surgeons of England
                   <br />
                   British Medical Association (BMA)

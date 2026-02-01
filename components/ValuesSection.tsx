@@ -84,14 +84,14 @@ function ValueCard({ videoSrc, title, description, index, audioEnabled }: ValueC
         />
         
         {/* Text Card - Overlaying bottom of video, responsive sizing */}
-        <div className="absolute bottom-0 left-0 right-0 w-full bg-black/95 backdrop-blur-sm pt-3 sm:pt-4 md:pt-6 lg:pt-8 px-3 sm:px-4 md:px-6 pb-3 sm:pb-4 md:pb-6 rounded-b-2xl shadow-lg z-10 flex flex-col" style={{ minHeight: '30%', maxHeight: '40%' }}>
+        <div className="absolute bottom-0 left-0 right-0 w-full bg-black/95 backdrop-blur-sm pt-3 sm:pt-4 md:pt-6 lg:pt-8 px-3 sm:px-4 md:px-6 pb-3 sm:pb-4 md:pb-6 rounded-b-2xl shadow-lg z-10 flex flex-col min-h-[30%]">
           {/* Title */}
-          <h3 className="text-white font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-1 sm:mb-2 text-left line-clamp-2">
+          <h3 className="text-white font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-1 sm:mb-2 text-left">
             {title}
           </h3>
 
-          {/* Description - Always visible, responsive sizing */}
-          <p className="text-white text-xs sm:text-sm md:text-base text-left leading-relaxed line-clamp-2 sm:line-clamp-2">
+          {/* Description - full text visible */}
+          <p className="text-white text-xs sm:text-sm md:text-base text-left leading-relaxed">
             {description}
           </p>
         </div>

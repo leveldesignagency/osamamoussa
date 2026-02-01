@@ -74,58 +74,67 @@ export default function Hero() {
         }}
       ></div>
       
-      {/* Hero Content */}
-      <div className="relative z-10 h-full flex flex-col justify-end sm:justify-center items-center sm:items-start pb-32 sm:pb-0">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      {/* Hero Content - left align matches header logo (pl-2 sm:pl-2 lg:pl-3) */}
+      <div className="relative z-10 h-full flex flex-col justify-end sm:justify-center items-center sm:items-start pb-32 sm:pb-0 sm:pt-40">
+        <div className="container mx-auto pl-2 sm:pl-2 lg:pl-3 pr-4 sm:pr-6 lg:pr-8 w-full">
           <h1 className="text-[27px] sm:text-[33px] md:text-[45px] lg:text-[57px] font-bold text-white sm:text-black mb-8 max-w-3xl animate-fade-in-up text-center sm:text-left tracking-wide" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 700, lineHeight: 1 }}>
-            A leader in Upper GI Surgery in London & Hertfordshire
+            A Leader in Upper GI
+            <br />
+            & Robotic Surgery
           </h1>
           
-          <div className="flex flex-row gap-2 sm:gap-4 animate-fade-in-up justify-center sm:justify-start mb-8" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
-                {/* Mobile Buttons - White bg, black text, black on hover/click */}
+          <div className="flex flex-row flex-wrap gap-2 sm:gap-4 animate-fade-in-up justify-center sm:justify-start mb-8 items-stretch" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
+                {/* Mobile - Book Now + Call Now */}
                 <MobileButton href="/procedures/contact" className="sm:hidden">
                   Book Now
                 </MobileButton>
-                <MobileButton href="mailto:pa@osamamoussa.co.uk?subject=Hi!%20Can%20you%20help%20me%3F" className="sm:hidden">
-                  Email Us
-                </MobileButton>
-                
-                {/* Desktop Buttons - Transparent, black border, black text, black fill on hover */}
+                <a
+                  href="tel:07352167642"
+                  className="sm:hidden inline-flex items-center justify-center px-4 py-3 border-2 border-white bg-black text-white font-medium transition-all duration-300 text-sm sm:text-base hover:bg-white hover:text-black active:bg-white active:text-black rounded-full"
+                  style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}
+                >
+                  Call Now
+                </a>
+                {/* Desktop - Book Now + Call Now (expands on hover to show number) */}
                 <Link
                   href="/procedures/contact"
-                  className="hidden sm:inline-block px-10 py-4 text-lg border-2 border-black text-black font-medium transition-colors duration-200 button-swipe button-swipe-black"
+                  className="hidden sm:inline-flex items-center px-10 py-4 text-lg border-2 border-black text-black font-medium transition-all duration-300 button-swipe button-swipe-black"
                 >
                   Book Now
                 </Link>
-                <Link
-                  href="mailto:pa@osamamoussa.co.uk?subject=Hi!%20Can%20you%20help%20me%3F"
-                  className="hidden sm:inline-block px-10 py-4 text-lg border-2 border-black text-black font-medium transition-colors duration-200 button-swipe button-swipe-black"
+                <a
+                  href="tel:07352167642"
+                  className="hidden sm:inline-flex items-center py-4 px-10 overflow-hidden border-2 border-black text-black font-medium transition-all duration-300 button-swipe button-swipe-black group/call text-lg"
                 >
-                  Email Us
-                </Link>
+                  <span className="whitespace-nowrap flex-shrink-0">Call Now</span>
+                  <span className="inline-flex items-center overflow-hidden max-w-0 group-hover/call:max-w-[160px] transition-[max-width] duration-300 ease-out flex-shrink-0">
+                    <span className="min-w-px w-px h-5 bg-black/50 group-hover/call:bg-white flex-shrink-0 mx-2 transition-colors duration-300" aria-hidden />
+                    <span className="whitespace-nowrap pl-0 ml-0">07352167642</span>
+                  </span>
+                </a>
               </div>
         </div>
       </div>
 
-      {/* Signature - Desktop only, bottom right */}
+      {/* Signature - Desktop only, bottom right, bigger and white */}
       <div className="absolute bottom-24 right-16 z-20 hidden sm:block" style={{ pointerEvents: "none" }}>
         <div className="signature-container">
           <Image
             src="/Signatures-01.svg"
             alt="Osama Moussa Signature"
-            width={400}
-            height={160}
-            className="signature-image"
+            width={500}
+            height={220}
+            className="signature-image signature-white"
             priority={false}
-            style={{ width: 'auto', height: '160px' }}
+            style={{ width: 'auto', height: '220px' }}
           />
         </div>
       </div>
 
-      {/* Widgets Overlay at Bottom - Desktop only, inside hero */}
-      <div className="absolute bottom-8 z-20 w-full hidden sm:block" style={{ pointerEvents: "none" }}>
+      {/* Widgets Overlay at Bottom - Desktop only (down 20px, left 20px from previous position) */}
+      <div className="absolute bottom-[12px] left-0 z-20 w-full hidden sm:block" style={{ pointerEvents: "none" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex flex-row gap-2 items-center justify-start" style={{ position: "relative" }}>
+          <div className="flex flex-row gap-2 items-center justify-start" style={{ position: "relative", marginLeft: '-20px' }}>
             {/* Doctify Widget - Desktop */}
             <div 
               style={{ 

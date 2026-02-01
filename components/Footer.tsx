@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-transparent text-white py-4 sm:py-6" style={{ background: 'transparent' }}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Mobile Layout - Full Height */}
-        <div className="flex flex-col sm:hidden justify-between py-8">
+    <footer className="w-full bg-transparent text-white py-4 sm:py-6 min-h-[100dvh] sm:min-h-0" style={{ background: 'transparent' }}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full sm:h-auto">
+        {/* Mobile Layout - Full viewport height, content spread with justify-between */}
+        <div className="flex flex-col sm:hidden justify-between min-h-[calc(100dvh-2rem)] py-8 sm:py-0">
           {/* Logo - Centered */}
           <div className="flex justify-center">
             <Link href="/" className="inline-block">

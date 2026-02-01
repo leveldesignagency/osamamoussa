@@ -138,9 +138,11 @@ function PageTitleSection() {
         ref={ref}
         className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       >
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wide text-center lg:text-left leading-tight" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
-          Procedures
-        </h1>
+        <div className="bg-black block w-full sm:inline-block sm:w-auto px-6 py-4">
+          <h1 className="page-title page-title-main font-bold text-white text-center sm:text-left leading-tight">
+            Procedures
+          </h1>
+        </div>
       </div>
     </section>
   );
@@ -158,7 +160,7 @@ function IntroductionSection() {
         ref={firstParaRef}
         className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${firstParaVisible ? "visible" : ""}`}
       >
-        <div className="container mx-auto">
+        <div className="container mx-auto paragraph-block paragraph-block-full">
           <p className="text-2xl text-white font-medium leading-relaxed text-center">
             Osama delivers Laparoscopic and Robotic surgical services at West
             Hertfordshire NHS Teaching Trust. He is trained in various benign
@@ -179,7 +181,7 @@ function IntroductionSection() {
         ref={secondParaRef}
         className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${secondParaVisible ? "visible" : ""}`}
       >
-        <div className="container mx-auto">
+        <div className="container mx-auto paragraph-block paragraph-block-full">
           <p className="text-2xl text-white font-medium leading-relaxed text-center">
             His special interest is benign oesophagogastric surgery, which
             includes managing acid reflux disease through laparoscopic hiatus
@@ -198,7 +200,7 @@ function IntroductionSection() {
         ref={desktopRef}
         className={`hidden sm:block container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${desktopVisible ? "visible" : ""}`}
       >
-        <div className="space-y-8 text-lg sm:text-xl text-gray-200 leading-relaxed text-center lg:text-left">
+        <div className="space-y-8 text-lg sm:text-xl text-gray-200 leading-relaxed text-center lg:text-left paragraph-block paragraph-block-full">
             <p>
               Osama delivers Laparoscopic and Robotic surgical services at West
               Hertfordshire NHS Teaching Trust. He is trained in various benign
@@ -238,7 +240,7 @@ function ProceduresGrid({ procedures }: { procedures: Procedure[] }) {
   return (
     <section className="w-full py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 lg:gap-x-10 gap-y-14 lg:gap-y-20">
           {procedures.map((procedure, index) => (
             <ProcedureCard key={index} procedure={procedure} index={index} />
           ))}
@@ -254,23 +256,11 @@ function ProcedureCard({ procedure, index }: { procedure: Procedure, index: numb
   return (
     <div
       ref={ref}
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center fade-in-on-scroll ${isVisible ? "visible" : ""} ${
-        procedure.imageLeft ? "" : "lg:flex-row-reverse"
-      }`}
-      style={{ transitionDelay: `${index * 0.1}s` }}
+      className={`flex flex-col fade-in-on-scroll pb-4 ${isVisible ? "visible" : ""}`}
+      style={{ transitionDelay: `${index * 0.05}s` }}
     >
-      {/* Mobile: Always text first, then image. Desktop: Follow imageLeft prop */}
-      {/* Text Content - Always first on mobile */}
-      <div className={procedure.imageLeft ? "lg:order-1" : "lg:order-2"}>
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4 text-center lg:text-left leading-tight tracking-wide" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
-          {procedure.title}
-        </h2>
-        <p className="text-base sm:text-lg text-white leading-relaxed text-center lg:text-left">
-          {procedure.description}
-        </p>
-      </div>
-      {/* Image - Always second on mobile */}
-      <div className={`relative w-full rounded-lg overflow-hidden ${procedure.image === "/linx-procedure.png" ? "h-64 sm:h-72 lg:h-96" : "h-56 sm:h-64 lg:h-80"} ${procedure.imageLeft ? "lg:order-2" : "lg:order-1"}`} style={{ 
+      {/* Image on top - reduced height (3:2 aspect) */}
+      <div className="relative w-full rounded-lg overflow-hidden aspect-[3/2]" style={{ 
         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
       }}>
         <Image
@@ -280,11 +270,19 @@ function ProcedureCard({ procedure, index }: { procedure: Procedure, index: numb
           className="object-cover rounded-lg"
           style={procedure.image === "/linx-procedure.png" ? { objectPosition: "center 30%" } : {}}
         />
-        {/* Inner shadow overlay - above the image */}
         <div className="absolute inset-0 rounded-lg pointer-events-none" style={{ 
           boxShadow: 'inset 0 4px 12px 0 rgba(0, 0, 0, 0.25), inset 0 0 40px 0 rgba(0, 0, 0, 0.15)',
           zIndex: 10
         }}></div>
+      </div>
+      {/* Text underneath, left aligned */}
+      <div className="mt-6 sm:mt-8 text-left paragraph-block text-left">
+        <h2 className="page-title font-bold text-white mb-2 sm:mb-3 leading-tight uppercase">
+          {procedure.title}
+        </h2>
+        <p className="text-base sm:text-lg text-white leading-relaxed">
+          {procedure.description}
+        </p>
       </div>
     </div>
   );

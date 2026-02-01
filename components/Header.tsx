@@ -65,9 +65,14 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
               priority
             />
           </div>
-          {/* Page Name - Large, matching page title style */}
-          <div className="animate-scale-in">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] font-bold text-white uppercase tracking-wide" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+          {/* Page Name - mobile: smaller text in black container; desktop: large text */}
+          <div className="animate-scale-in w-full max-w-full px-4 sm:px-0 flex justify-center">
+            <div className="sm:hidden bg-black inline-block px-6 py-4">
+              <h1 className="text-2xl font-bold text-white uppercase tracking-wide" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+                {transitionPageName}
+              </h1>
+            </div>
+            <h1 className="hidden sm:block text-6xl md:text-7xl lg:text-8xl font-bold text-white uppercase tracking-wide" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontSize: 'clamp(2.5rem, 10vw, 5rem)' }}>
               {transitionPageName}
             </h1>
           </div>
@@ -98,27 +103,6 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
           <div className="flex items-center">
             {/* Desktop: All wrapped in pill with black border */}
             <div className={`hidden sm:flex items-center gap-3 px-4 py-2 border-2 ${textColor === "text-black" ? "border-black" : (textColor === "text-white" ? "border-white" : (isAboutPage ? "border-black" : (!isHomePage ? "border-white" : "border-black")))} rounded-full bg-transparent button-swipe ${textColor === "text-black" ? "button-swipe-black" : ""} group`}>
-              {/* Phone Number */}
-              <a
-                href="tel:07352167642"
-                className={`${textColor} font-medium transition-colors text-base phone-number-bounce hover:opacity-80 ${textColor === "text-black" ? "group-hover:text-white" : "group-hover:text-black"}`}
-              >
-                {"07352167642".split("").map((char, index) => (
-                  <span
-                    key={index}
-                    className="phone-char"
-                    style={{
-                      animationDelay: `${index * 0.04}s`,
-                    }}
-                  >
-                    {char === " " ? "\u00A0" : char}
-                  </span>
-                ))}
-              </a>
-
-              {/* Divider */}
-              <div className={`w-px h-5 ${textColor === "text-black" ? "bg-black/30" : "bg-white/30"} ${textColor === "text-black" ? "group-hover:bg-white/30" : "group-hover:bg-black/30"} transition-colors`}></div>
-
               {/* Social Icons */}
               <div className="flex items-center gap-3">
                 <a
@@ -353,11 +337,11 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                         <div className="max-w-xs ml-auto text-right space-y-4">
                           {/* Email */}
                           <a
-                            href="mailto:info@osamamoussa.co.uk"
+                            href="mailto:pa@osamamoussa.co.uk"
                             className="block text-white font-bold hover:opacity-70 transition-opacity text-base sm:text-lg"
                             style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                           >
-                            info@osamamoussa.co.uk
+                            pa@osamamoussa.co.uk
                           </a>
                           
                           {/* Phone */}

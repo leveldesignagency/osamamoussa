@@ -24,7 +24,8 @@
 **Change to:**
 - Type: `A`
 - Hostname: (empty/blank)
-- Value: `216.198.79.1` ← **Change this to Vercel's IP**
+- Value: `
+216.198.79.1` ← **Change this to Vercel's IP**
 
 ### 2. WWW Subdomain
 **Current:**

@@ -65,11 +65,11 @@ export default function ResearchPage() {
       <TitleSection />
 
       {/* Research Description Section */}
-      <section className="w-full py-16">
-        {/* Mobile: First paragraph - styled like about page */}
-        <div className="w-full py-20 px-4 sm:hidden bg-transparent">
-          <div className="container mx-auto">
-            <p className="text-2xl text-white font-medium leading-relaxed text-center">
+      <section className="w-full pt-6 pb-16 sm:pt-16 sm:pb-16">
+        {/* Mobile: First paragraph - styled like about page, less top gap */}
+        <div className="w-full pt-4 pb-12 px-4 sm:hidden bg-transparent">
+          <div className="container mx-auto paragraph-block">
+            <p className="text-lg text-white font-normal leading-relaxed text-center">
               Beyond his clinical endeavours, Mr Moussa is deeply invested in
               pioneering research, particularly in metabolic health and obesity. His
               scholarly pursuits have culminated in the publication of his work in
@@ -87,7 +87,7 @@ export default function ResearchPage() {
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            <div className="hidden sm:block space-y-4 sm:space-y-6 text-base sm:text-lg text-white leading-relaxed text-center lg:text-left">
+            <div className="hidden sm:block space-y-4 sm:space-y-6 text-base sm:text-lg text-white leading-relaxed text-center lg:text-left paragraph-block">
               <p>
                 Beyond his clinical endeavours, Mr Moussa is deeply invested in
                 pioneering research, particularly in metabolic health and obesity. His
@@ -152,23 +152,24 @@ function TitleSection() {
     <section className="w-full pt-32 pb-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-          <h1 
-            ref={titleRef}
-            className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-wide leading-tight fade-in-on-scroll text-center lg:text-left ${titleVisible ? "visible" : ""}`}
-            style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
-          >
-            Research
-          </h1>
+          <div className="bg-black block w-full sm:inline-block sm:w-auto px-6 py-4">
+            <h1 
+              ref={titleRef}
+              className={`page-title page-title-main font-bold text-white leading-tight fade-in-on-scroll text-center sm:text-left ${titleVisible ? "visible" : ""}`}
+            >
+              Research
+            </h1>
+          </div>
           <div 
             ref={linksRef}
-            className={`flex flex-col sm:flex-row gap-4 fade-in-on-scroll ${linksVisible ? "visible" : ""}`}
+            className={`flex flex-col sm:flex-row gap-4 fade-in-on-scroll items-center sm:items-stretch ${linksVisible ? "visible" : ""}`}
             style={{ transitionDelay: "0.2s" }}
           >
             <Link
               href="https://www.researchgate.net/profile/Osama-Moussa-7"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white"
+              className="w-fit inline-block px-4 py-2.5 sm:px-6 sm:py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white text-sm sm:text-base"
             >
               Researchgate
             </Link>
@@ -176,7 +177,7 @@ function TitleSection() {
               href="https://scholargps.com/scholars/40596147119067/osama-moussa"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white"
+              className="w-fit inline-block px-4 py-2.5 sm:px-6 sm:py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white text-sm sm:text-base"
             >
               Scholargps
             </Link>
@@ -201,7 +202,7 @@ function PublicationItem({ pub, index }: { pub: Publication, index: number }) {
       className={`grid grid-cols-1 lg:grid-cols-2 gap-6 items-center pb-4 sm:pb-8 border-b border-white/20 last:border-0 hover:bg-white/5 transition-colors duration-200 rounded-lg px-4 sm:px-6 py-3 sm:py-4 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
-      <h2 className="text-xl sm:text-2xl font-bold text-white text-center lg:text-left leading-tight" style={{ fontFamily: '"Work Sans", sans-serif' }}>
+      <h2 className="page-title font-bold text-white text-center lg:text-left leading-tight">
         {pub.title}
       </h2>
       <div className="flex justify-center lg:justify-end">
@@ -227,11 +228,11 @@ function MorePublicationsSection() {
         ref={ref}
         className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       >
-        <div className="max-w-3xl text-center sm:text-left">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 leading-tight" style={{ fontFamily: '"Work Sans", sans-serif' }}>
+        <div className="max-w-3xl text-center sm:text-left paragraph-block">
+          <h2 className="page-title font-bold text-gray-900 mb-6 leading-tight">
             More Publications
           </h2>
-          <p className="text-2xl sm:text-lg text-gray-700 leading-relaxed mb-6">
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
             If you are interested in viewing many more of Osama Moussa&apos;s
             publications, please download this PDF which titles all of his
             publications and contributions over the years.

@@ -73,6 +73,50 @@ export default function ReviewsPageContent() {
       text: 'Mr Moussa was the only surgeon that listened to me and I cannot thank him enough! I am no longer in any pain after my surgery, after many months in excruciating pain. Thank you',
       rating: 5,
     },
+    {
+      text: "I was admitted via A&E. Dr Moussa made the decision to remove my gallbladder despite me being 87 years old. It was the right decision as my gallbladder had ruptured. His bedside manner was extremely caring, he explained everything in detail and I felt completely confident under his care. During my follow up appointment he took his time assessing my health and treated me like I was one of his family. I have never experienced such wonderful care from any other health professionals.",
+      rating: 5,
+    },
+    {
+      text: "For the past two years I was in so much pain it was absolutely horrendous and my quality of life was affected. After a few appointments with my GP I was finally referred to see Mr Osama Moussa and within a matter of weeks I had my surgery to remove my gallbladder. I have to say a very big thank you to Mr Moussa, who in my opinion is an exceptional surgeon and a really nice person, he is very easy to talk with. Mr Moussa you have now taken away all that pain that made my life so uncomfortable, I am very grateful to you.",
+      rating: 5,
+    },
+    {
+      text: "Dr Moussa is a great surgeon who listens to everything you tell him. I am truly grateful for him doing my surgery after suffering badly for 2 years or more.",
+      rating: 5,
+    },
+    {
+      text: "The surgery was very efficient and I recovered well. I did find some of the administration was confusing. However Dr Moussa's secretary was extremely efficient and helpful. All the staff I saw were helpful and caring and working under a great deal of pressure.",
+      rating: 4,
+    },
+    {
+      text: "I immediately felt that I was in good hands. He took on board all I said and how I presented and gave a clear explanation as to what the issue was.",
+      rating: 5,
+    },
+    {
+      text: "Husband underwent Laparoscopic cholecystectomy by Dr Moussa and Team. Excellent care and bedside manner. Professional throughout. The healing went exactly as they said it would. Recovered quickly. Fantastic!",
+      rating: 5,
+    },
+    {
+      text: "Dr Moussa is an excellent surgeon and he did my surgery for gallbladder at Wellington Hospital and there after I had seen him twice. I will recommend consultant Dr Moussa—a wonderful surgeon. I am very happy.",
+      rating: 5,
+    },
+    {
+      text: "I had the pleasure of seeing Mr Moussa for a pre- and post-consultation in relation to the hernia repair he recently performed on me. I have nothing but the highest regard for his professionalism from start to finish and the genuine care he showed at all times.",
+      rating: 5,
+    },
+    {
+      text: "Very professional and lovely person.",
+      rating: 5,
+    },
+    {
+      text: "Mr Moussa was very reassuring and really understood what I was trying to say. He has explained everything to me and I am very reassured. His admin team were helpful and quick to respond to my queries.",
+      rating: 5,
+    },
+    {
+      text: "Mr Moussa showed me great concern and care. I could not have been treated any better. Very pleased with outcome!",
+      rating: 5,
+    },
   ];
 
   return (
@@ -80,19 +124,20 @@ export default function ReviewsPageContent() {
       {/* Page Title */}
       <section className="w-full pt-32 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1
-            ref={titleRef}
-            className={`text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-tight leading-tight fade-in-on-scroll text-center lg:text-left ${titleVisible ? "visible" : ""}`}
-            style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
-          >
-            Reviews
-          </h1>
+          <div className="bg-black block w-full sm:inline-block sm:w-auto px-6 py-4">
+            <h1
+              ref={titleRef}
+              className={`page-title page-title-main font-bold text-white leading-tight fade-in-on-scroll text-center sm:text-left ${titleVisible ? "visible" : ""}`}
+            >
+              Reviews
+            </h1>
+          </div>
         </div>
       </section>
 
       {/* Introduction - Full Width, No Container */}
       <section className="w-full py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 paragraph-block">
           <p
             ref={introRef}
             className={`text-lg text-white leading-relaxed fade-in-on-scroll text-center lg:text-left ${introVisible ? "visible" : ""}`}
@@ -106,24 +151,24 @@ export default function ReviewsPageContent() {
         </div>
       </section>
 
-      {/* Reviews Grid */}
+      {/* Reviews - masonry-style so card heights are natural */}
       <section className="w-full py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div
             ref={reviewsRef}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className={`columns-1 md:columns-2 lg:columns-3 gap-8 fade-in-on-scroll ${reviewsVisible ? "visible" : ""}`}
           >
             {reviews.map((review, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-lg shadow-lg px-4 sm:px-6 lg:px-8 py-6 fade-in-on-scroll ${reviewsVisible ? "visible" : ""}`}
-                style={{ transitionDelay: `${index * 0.1}s` }}
+                className={`break-inside-avoid bg-white rounded-lg shadow-lg px-4 sm:px-6 lg:px-8 py-6 mb-8 fade-in-on-scroll ${reviewsVisible ? "visible" : ""}`}
+                style={{ transitionDelay: `${index * 0.05}s` }}
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
                     <svg
                       key={i}
-                      className="w-5 h-5 text-yellow-400"
+                      className="w-5 h-5 text-yellow-400 shrink-0"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -148,7 +193,7 @@ export default function ReviewsPageContent() {
             ref={resourcesRef}
             className={`w-full border-2 border-white p-4 sm:p-6 lg:p-8 mb-8 fade-in-on-scroll ${resourcesVisible ? "visible" : ""}`}
           >
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6 text-center lg:text-left leading-tight" style={{ fontFamily: '"Work Sans", sans-serif' }}>
+            <h2 className="page-title font-bold text-white mb-4 sm:mb-6 text-center lg:text-left leading-tight">
               Useful Resources
             </h2>
             <p className="text-white mb-6 text-center lg:text-left">

@@ -86,6 +86,58 @@ body.menu-open .bg-gradient-grey,
   );
 }
 
+/* Page titles: clear title presence, all caps, hover underline from center */
+.page-title {
+  font-size: 22px !important;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  position: relative;
+  display: inline-block;
+}
+.page-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background: currentColor;
+  transition: width 0.3s ease;
+  transform: translateX(-50%);
+}
+.page-title:hover::after {
+  width: 100%;
+}
+
+/* Main page title (Procedures, Research, Reviews, Contact) - larger, in black bar */
+.page-title-main {
+  font-size: 28px !important;
+}
+
+@media (min-width: 640px) {
+  .page-title-main {
+    font-size: 32px !important;
+  }
+}
+
+/* Paragraph block styling - even wrapping, no ragged indents */
+.paragraph-block p {
+  text-align: justify;
+  text-justify: inter-word;
+  max-width: 90ch;
+  hyphens: none;
+}
+/* Left-aligned variant (e.g. procedure cards) */
+.paragraph-block.text-left p {
+  text-align: left;
+}
+/* Full-width paragraphs (e.g. procedures intro) */
+.paragraph-block-full p,
+.paragraph-block.paragraph-block-full p {
+  max-width: none;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -467,6 +519,10 @@ body {
 
 .signature-image {
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.signature-image.signature-white {
+  filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
 }
 
 /* If signature is an SVG with paths, this will animate the drawing */

@@ -98,9 +98,11 @@ export default function ContactPage() {
             ref={titleRef}
             className={`container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 fade-in-on-scroll ${titleVisible ? "visible" : ""}`}
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white sm:text-black uppercase tracking-wide mb-6 text-center lg:text-left leading-tight" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
-              Contact
-            </h1>
+            <div className="bg-black block w-full sm:inline-block sm:w-auto px-6 py-4 mb-6">
+              <h1 className="page-title page-title-main font-bold text-white text-center sm:text-left leading-tight">
+                Contact
+              </h1>
+            </div>
           </div>
         </div>
         
@@ -160,11 +162,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Additional Information Section */}
-      <section className="w-full py-8 sm:py-12 md:py-16 bg-black relative overflow-hidden">
-        {/* Bottom feathering overlay */}
+      {/* Additional Information Section - full viewport per card on mobile */}
+      <section className="w-full bg-black relative overflow-hidden">
+        {/* Bottom feathering overlay - desktop only */}
         <div 
-          className="absolute bottom-0 left-0 right-0 pointer-events-none"
+          className="absolute bottom-0 left-0 right-0 pointer-events-none hidden md:block"
           style={{
             height: '100px',
             background: 'linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.3) 60%, transparent 100%)',
@@ -172,39 +174,46 @@ export default function ContactPage() {
         ></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-center">
-              {/* Response Time */}
-              <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border-2 border-white/30 hover:border-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+            {/* Mobile: full-height sections, one per card. Desktop: 3-column grid */}
+            <div className="flex flex-col md:grid md:grid-cols-3 gap-0 md:gap-8 py-8 md:py-16 text-center">
+              {/* Quick Response - full viewport on mobile */}
+              <div className="min-h-[100dvh] md:min-h-0 flex items-center justify-center py-12 md:py-0">
+                <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border-2 border-white/30 hover:border-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer w-full max-w-sm mx-auto">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Quick Response</h3>
+                  <p className="text-white/80 text-xs sm:text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">We aim to respond to all enquiries within 24 hours</p>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Quick Response</h3>
-                <p className="text-white/80 text-xs sm:text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">We aim to respond to all enquiries within 24 hours</p>
               </div>
 
-              {/* Consultation */}
-              <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border-2 border-white/30 hover:border-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+              {/* Expert Consultation - full viewport on mobile */}
+              <div className="min-h-[100dvh] md:min-h-0 flex items-center justify-center py-12 md:py-0">
+                <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border-2 border-white/30 hover:border-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer w-full max-w-sm mx-auto">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Expert Consultation</h3>
+                  <p className="text-white/80 text-xs sm:text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Comprehensive assessment and personalized treatment plans</p>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Expert Consultation</h3>
-                <p className="text-white/80 text-xs sm:text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Comprehensive assessment and personalized treatment plans</p>
               </div>
 
-              {/* Multiple Locations */}
-              <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border-2 border-white/30 hover:border-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
+              {/* Multiple Locations - full viewport on mobile */}
+              <div className="min-h-[100dvh] md:min-h-0 flex items-center justify-center py-12 md:py-0">
+                <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border-2 border-white/30 hover:border-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer w-full max-w-sm mx-auto">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Multiple Locations</h3>
+                  <p className="text-white/80 text-xs sm:text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Convenient access across London and Hertfordshire</p>
                 </div>
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Multiple Locations</h3>
-                <p className="text-white/80 text-xs sm:text-sm leading-relaxed group-hover:text-white/90 transition-colors duration-300">Convenient access across London and Hertfordshire</p>
               </div>
             </div>
           </div>
@@ -215,7 +224,7 @@ export default function ContactPage() {
       <section className="w-full pt-8 pb-16 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white uppercase tracking-wide mb-4 leading-tight fade-in-on-scroll" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+            <h2 className="page-title font-bold text-white mb-4 leading-tight fade-in-on-scroll">
               Hospital Locations
             </h2>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">

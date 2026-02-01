@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
       {/* Page Title */}
       <section className="w-full pt-32 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-tight leading-tight" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
+          <h1 className="page-title font-bold text-white leading-tight">
             Privacy Policy
           </h1>
         </div>
@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
       {/* Content */}
       <section className="w-full py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-white space-y-6 sm:space-y-8">
+          <div className="max-w-4xl mx-auto text-white space-y-6 sm:space-y-8 paragraph-block">
             <div>
               <h2 className="text-xl sm:text-2xl font-sans font-bold mb-3 sm:mb-4">1. Introduction</h2>
               <p className="text-base sm:text-lg leading-relaxed">
