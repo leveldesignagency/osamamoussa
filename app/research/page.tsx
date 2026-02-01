@@ -65,9 +65,9 @@ export default function ResearchPage() {
       <TitleSection />
 
       {/* Research Description Section */}
-      <section className="w-full pt-6 pb-16 sm:pt-16 sm:pb-16">
-        {/* Mobile: First paragraph - styled like about page, less top gap */}
-        <div className="w-full pt-4 pb-12 px-4 sm:hidden bg-transparent">
+      <section className="w-full pt-0 sm:pt-16 pb-16">
+        {/* Mobile: First paragraph - ~10px under title */}
+        <div className="w-full pt-0 pb-12 px-4 sm:hidden bg-transparent">
           <div className="container mx-auto paragraph-block">
             <p className="text-2xl text-white font-medium leading-relaxed text-center">
               Beyond his clinical endeavours, Mr Moussa is deeply invested in
@@ -149,7 +149,7 @@ function TitleSection() {
   const { ref: linksRef, isVisible: linksVisible } = useScrollAnimation();
   
   return (
-    <section className="w-full pt-32 pb-12">
+    <section className="w-full pt-32 pb-2 sm:pb-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 items-center sm:items-stretch">
           <div className="bg-black inline-block px-6 py-4">
@@ -162,14 +162,14 @@ function TitleSection() {
           </div>
           <div 
             ref={linksRef}
-            className={`flex flex-col sm:flex-row gap-4 fade-in-on-scroll items-center sm:items-stretch ${linksVisible ? "visible" : ""}`}
+            className={`flex flex-row gap-4 fade-in-on-scroll items-stretch justify-center sm:justify-end ${linksVisible ? "visible" : ""}`}
             style={{ transitionDelay: "0.2s" }}
           >
             <Link
               href="https://www.researchgate.net/profile/Osama-Moussa-7"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-fit inline-block px-4 py-2.5 sm:px-6 sm:py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white text-sm sm:text-base"
+              className="flex-1 sm:flex-none min-w-0 sm:min-w-0 sm:w-fit inline-flex items-center justify-center px-4 py-2.5 sm:px-6 sm:py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white text-sm sm:text-base"
             >
               Researchgate
             </Link>
@@ -177,7 +177,7 @@ function TitleSection() {
               href="https://scholargps.com/scholars/40596147119067/osama-moussa"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-fit inline-block px-4 py-2.5 sm:px-6 sm:py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white text-sm sm:text-base"
+              className="flex-1 sm:flex-none min-w-0 sm:min-w-0 sm:w-fit inline-flex items-center justify-center px-4 py-2.5 sm:px-6 sm:py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white text-sm sm:text-base"
             >
               Scholargps
             </Link>
@@ -202,7 +202,7 @@ function PublicationItem({ pub, index }: { pub: Publication, index: number }) {
       className={`grid grid-cols-1 lg:grid-cols-2 gap-6 items-center pb-4 sm:pb-8 border-b border-white/20 last:border-0 hover:bg-white/5 transition-colors duration-200 rounded-lg px-4 sm:px-6 py-3 sm:py-4 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       style={{ transitionDelay: `${index * 0.1}s` }}
     >
-      <h2 className="page-title font-bold text-white text-center lg:text-left leading-tight">
+      <h2 className="page-title font-bold text-white text-center lg:text-left leading-tight normal-case">
         {pub.title}
       </h2>
       <div className="flex justify-center lg:justify-end">
@@ -223,7 +223,7 @@ function MorePublicationsSection() {
   const { ref, isVisible } = useScrollAnimation();
   
   return (
-    <section className="w-full bg-white py-16 sm:py-16 min-h-screen sm:min-h-0">
+    <section className="w-full bg-white pt-16 pb-8 sm:py-16 min-h-0">
       <div 
         ref={ref}
         className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${isVisible ? "visible" : ""}`}

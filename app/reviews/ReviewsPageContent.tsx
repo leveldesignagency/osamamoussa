@@ -122,7 +122,7 @@ export default function ReviewsPageContent() {
   return (
     <>
       {/* Page Title */}
-      <section className="w-full pt-32 pb-12">
+      <section className="w-full pt-32 pb-2 sm:pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
           <div className="bg-black inline-block px-6 py-4">
             <h1
@@ -135,8 +135,8 @@ export default function ReviewsPageContent() {
         </div>
       </section>
 
-      {/* Introduction - Full Width, No Container */}
-      <section className="w-full py-16">
+      {/* Introduction - ~10px under title on mobile */}
+      <section className="w-full pt-0 sm:pt-16 pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 paragraph-block">
           <p
             ref={introRef}
@@ -177,7 +177,7 @@ export default function ReviewsPageContent() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-black leading-relaxed italic font-serif">
+                <p className="text-black leading-relaxed italic font-serif text-lg sm:text-base">
                   &quot;{review.text}&quot;
                 </p>
               </div>
@@ -198,7 +198,7 @@ export default function ReviewsPageContent() {
               </div>
             </div>
             <div className="w-full border-2 border-white p-4 sm:p-6 lg:p-8 mb-8">
-              <p className="text-white mb-6 text-2xl sm:text-lg font-medium sm:font-normal leading-relaxed text-center lg:text-left">
+              <p className="text-white mb-6 text-2xl sm:text-lg font-medium sm:font-normal leading-snug text-center lg:text-left">
                 Here are some resources for you to look through which can aid in your
                 understanding of Osama&apos;s Medical Background, and any queries or concerns
                 you have based around your surgery...

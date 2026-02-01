@@ -133,7 +133,7 @@ function PageTitleSection() {
   const { ref, isVisible } = useScrollAnimation();
   
   return (
-    <section className="w-full pt-32 pb-12">
+    <section className="w-full pt-32 pb-2 sm:pb-12">
       <div 
         ref={ref}
         className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll text-center sm:text-left ${isVisible ? "visible" : ""}`}
@@ -155,10 +155,10 @@ function IntroductionSection() {
   
   return (
     <section className="w-full py-16">
-      {/* Mobile: First paragraph - styled like about page */}
+      {/* Mobile: First paragraph - ~10px under title */}
       <div 
         ref={firstParaRef}
-        className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${firstParaVisible ? "visible" : ""}`}
+        className={`w-full pt-0 pb-12 px-4 sm:hidden bg-transparent fade-in-on-scroll ${firstParaVisible ? "visible" : ""}`}
       >
         <div className="container mx-auto paragraph-block paragraph-block-full">
           <p className="text-2xl text-white font-medium leading-relaxed text-center">
