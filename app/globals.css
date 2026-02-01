@@ -584,6 +584,7 @@ body {
 
 .marquee-content {
   display: flex;
+  flex-wrap: nowrap;
   gap: 3rem;
   align-items: center;
   animation: marquee 8s linear infinite;
@@ -591,10 +592,10 @@ body {
   width: max-content;
 }
 
-/* Mobile: Faster animation and ensure proper loop */
+/* Mobile: Slower animation so full set of logos scrolls through before loop */
 @media (max-width: 640px) {
   .marquee-content {
-    animation: marquee-mobile 3s linear infinite;
+    animation: marquee-mobile 25s linear infinite;
     gap: 2rem;
   }
 }
