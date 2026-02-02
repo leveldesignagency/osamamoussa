@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     description: "Consultant General Surgeon specialising in Upper GI and General Surgery. Expert in laparoscopic, robotic, and open surgery. Serving London and Hertfordshire.",
     images: [
       {
-        url: "/Osama Moussa Logo-01.svg",
+        url: "/Osama Moussa Social Share.png",
         width: 1200,
         height: 630,
         alt: "Mr Osama Moussa - Consultant General Surgeon",
@@ -105,7 +105,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mr Osama Moussa | Consultant General Surgeon",
     description: "Consultant General Surgeon specialising in Upper GI and General Surgery. Expert in laparoscopic, robotic, and open surgery.",
-    images: ["/Osama Moussa Logo-01.svg"],
+    images: ["/Osama Moussa Social Share.png"],
   },
   alternates: {
     canonical: "https://www.osamamoussa.co.uk",
