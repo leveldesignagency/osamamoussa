@@ -9,8 +9,11 @@ import AppointmentSection from "@/components/AppointmentSection";
 
 export const metadata: Metadata = {
   title: "Osama Moussa",
-  description: "Mr Osama Moussa - Leading Upper GI Surgeon in London (Chelsea, Belgravia, Fitzrovia, Holland Park, West London) and Hertfordshire. Expert Consultant General Surgeon specialising in acid reflux, GORD, laparoscopic, robotic, and open surgery. Available at Spire Bushey, Circle Health Group hospitals, and West Hertfordshire NHS Trust. Book your consultation today.",
+  description: "Mr Osama Moussa - Leading Upper GI and Robotic Surgery specialist in London (Chelsea, Belgravia, Fitzrovia, Holland Park, West London) and Hertfordshire. Expert in robotic surgery, laparoscopic surgery, hernia repair, gallbladder surgery, GORD treatment, and fundoplication. Available at Spire Bushey, Circle Health Group, and West Hertfordshire NHS Trust. Book your consultation today.",
   keywords: [
+    "Robotic Surgery London",
+    "Robotic Surgery Hertfordshire",
+    "Robotic Surgeon London",
     "Upper GI Surgeon London",
     "Upper GI Doctor London",
     "Upper GI Specialist London",
@@ -29,13 +32,17 @@ export const metadata: Metadata = {
     "Upper GI Surgeon Hemel Hempstead",
     "General Surgeon Hertfordshire",
     "Laparoscopic Surgeon Watford",
-    "Robotic Surgery London",
+    "Laparoscopic Surgery London",
     "Bariatric Surgeon UK",
     "Gastric Surgeon London",
     "Hernia Surgeon Hertfordshire",
+    "Hernia Repair Surgery",
     "Gallbladder Surgeon",
+    "Cholecystectomy",
+    "Fundoplication",
     "GORD Surgeon",
     "Anti-reflux Surgery",
+    "LINX Device",
     "West Hertfordshire Hospitals",
     "Spire Bushey",
     "Circle Health Group",
@@ -45,8 +52,8 @@ export const metadata: Metadata = {
     "Private Surgeon London"
   ],
   openGraph: {
-    title: "Mr Osama Moussa | Consultant General Surgeon | Upper GI Surgery London & Hertfordshire",
-    description: "A leader in Upper GI Surgery in London and Hertfordshire. Expert Consultant General Surgeon specialising in laparoscopic, robotic, and open surgery.",
+    title: "Mr Osama Moussa | Upper GI & Robotic Surgery | London & Hertfordshire",
+    description: "A leader in Upper GI and Robotic Surgery in London and Hertfordshire. Expert in robotic surgery, laparoscopic surgery, hernia repair, gallbladder surgery, GORD treatment, and fundoplication.",
     url: "https://www.osamamoussa.co.uk",
     type: "website",
   },

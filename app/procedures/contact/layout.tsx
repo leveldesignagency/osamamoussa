@@ -2,15 +2,17 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact & Book Appointment",
-  description: "Contact Mr Osama Moussa to book your Upper GI surgery consultation. Available at Spire Bushey, Circle Health Group hospitals (Bishops Wood Hospital, The Wellington Hospital), and West Hertfordshire NHS Trust. Serving London (Chelsea, Belgravia, Fitzrovia, Holland Park, West London), Hertfordshire, Watford, Hemel Hempstead, and surrounding areas. Book your appointment today.",
+  description: "Contact Mr Osama Moussa to book your Upper GI or Robotic Surgery consultation. Available at Spire Bushey, Circle Health Group hospitals (Bishops Wood Hospital, The Wellington Hospital), and West Hertfordshire NHS Trust. Serving London (Chelsea, Belgravia, Fitzrovia, Holland Park, West London), Hertfordshire, Watford, Hemel Hempstead. Book robotic surgery, hernia repair, gallbladder surgery, or GORD treatment today.",
   keywords: [
     "Book appointment Osama Moussa",
     "Contact surgeon London",
+    "Robotic surgery consultation",
     "Upper GI consultation",
     "Upper GI consultation London",
     "Acid Reflux consultation London",
     "GORD consultation London",
     "Book surgery consultation",
+    "Book robotic surgery",
     "Watford surgeon contact",
     "Hertfordshire surgeon",
     "Chelsea surgeon contact",
@@ -33,8 +35,8 @@ export const metadata: Metadata = {
     "Surgical appointment"
   ],
   openGraph: {
-    title: "Contact & Book Appointment | Mr Osama Moussa",
-    description: "Book your consultation with Mr Osama Moussa. Available at Spire Bushey, Circle Health Group hospitals, and West Hertfordshire NHS Trust. Serving London (Chelsea, Belgravia, Fitzrovia, Holland Park, West London), Hertfordshire, Watford, and Hemel Hempstead.",
+    title: "Contact & Book Appointment | Mr Osama Moussa - Robotic & Upper GI Surgery",
+    description: "Book your Upper GI or Robotic Surgery consultation with Mr Osama Moussa. Available at Spire Bushey, Circle Health Group, and West Hertfordshire NHS Trust. London and Hertfordshire.",
     url: "https://www.osamamoussa.co.uk/procedures/contact",
     type: "website",
   },

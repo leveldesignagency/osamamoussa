@@ -14,14 +14,19 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.osamamoussa.co.uk"),
   title: {
-    default: "Mr Osama Moussa | Consultant General Surgeon | Upper GI Surgery | London & Hertfordshire",
+    default: "Mr Osama Moussa | Consultant General Surgeon | Upper GI & Robotic Surgery | London & Hertfordshire",
     template: "%s | Mr Osama Moussa - Consultant General Surgeon"
   },
-  description: "Mr Osama Moussa is a Consultant General Surgeon specialising in Upper GI and General Surgery. Expert in laparoscopic, robotic, and open surgery for benign, bariatric, and oncological procedures. Serving London (Chelsea, Belgravia, Fitzrovia, Holland Park, West London), Hertfordshire, Watford, Hemel Hempstead, and surrounding areas. Available at Spire Bushey, Circle Health Group hospitals, and West Hertfordshire NHS Trust.",
+  description: "Mr Osama Moussa is a Consultant General Surgeon specialising in Upper GI and Robotic Surgery. Expert in robotic surgery, laparoscopic surgery, hernia repair, gallbladder surgery (cholecystectomy), GORD treatment, fundoplication, LINX device, and benign Upper GI procedures. Serving London (Chelsea, Belgravia, Fitzrovia, Holland Park, West London), Hertfordshire, Watford, Hemel Hempstead. Available at Spire Bushey, Circle Health Group, and West Hertfordshire NHS Trust.",
   keywords: [
     "Osama Moussa",
     "Consultant General Surgeon",
     "Upper GI Surgeon",
+    "Robotic Surgery",
+    "Robotic Surgery London",
+    "Robotic Surgery Hertfordshire",
+    "Robotic Surgeon",
+    "Robotic Surgeon London",
     "Upper GI Surgeon London",
     "Upper GI Doctor London",
     "Upper GI Specialist London",
@@ -30,11 +35,18 @@ export const metadata: Metadata = {
     "GORD Doctor London",
     "GERD Doctor London",
     "Laparoscopic Surgeon",
-    "Robotic Surgeon",
+    "Laparoscopic Surgery London",
     "Bariatric Surgeon",
     "Gastric Surgeon",
     "Hernia Surgeon",
+    "Hernia Repair Surgery",
     "Gallbladder Surgeon",
+    "Cholecystectomy",
+    "Fundoplication",
+    "Hiatal Hernia Repair",
+    "LINX Device GORD",
+    "Inguinal Hernia Surgery",
+    "TAPP Hernia Surgery",
     "London Surgeon",
     "Hertfordshire Surgeon",
     "Watford Surgeon",
@@ -54,8 +66,6 @@ export const metadata: Metadata = {
     "Anti-reflux Surgery",
     "Gastric Bypass",
     "Sleeve Gastrectomy",
-    "Hiatal Hernia Repair",
-    "Fundoplication",
     "Gastric Cancer Surgery",
     "Oesophageal Surgery",
     "General Surgery London",
@@ -69,7 +79,10 @@ export const metadata: Metadata = {
     "Upper GI Surgeon Hemel Hempstead",
     "Acid Reflux Specialist London",
     "GORD Specialist London",
-    "GERD Specialist London"
+    "GERD Specialist London",
+    "Ventral Hernia Surgery",
+    "Umbilical Hernia Surgery",
+    "Abdominal Wall Reconstruction"
   ],
   authors: [{ name: "Mr Osama Moussa" }],
   creator: "Mr Osama Moussa",
@@ -90,8 +103,8 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "https://www.osamamoussa.co.uk",
     siteName: "Mr Osama Moussa - Consultant General Surgeon",
-    title: "Mr Osama Moussa | Consultant General Surgeon | Upper GI Surgery",
-    description: "Consultant General Surgeon specialising in Upper GI and General Surgery. Expert in laparoscopic, robotic, and open surgery. Serving London and Hertfordshire.",
+    title: "Mr Osama Moussa | Upper GI & Robotic Surgery | London & Hertfordshire",
+    description: "Consultant General Surgeon specialising in Upper GI and Robotic Surgery. Expert in robotic surgery, laparoscopic surgery, hernia repair, gallbladder surgery, GORD treatment, and fundoplication. Serving London and Hertfordshire.",
     images: [
       {
         url: "/Osama Moussa Social Share.png",
@@ -103,8 +116,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mr Osama Moussa | Consultant General Surgeon",
-    description: "Consultant General Surgeon specialising in Upper GI and General Surgery. Expert in laparoscopic, robotic, and open surgery.",
+    title: "Mr Osama Moussa | Upper GI & Robotic Surgery | London & Hertfordshire",
+    description: "Consultant General Surgeon specialising in Upper GI and Robotic Surgery. Expert in robotic surgery, laparoscopic surgery, hernia repair, GORD treatment, and fundoplication.",
     images: ["/Osama Moussa Social Share.png"],
   },
   alternates: {
@@ -124,7 +137,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Mr Osama Moussa - Consultant General Surgeon",
-    "description": "Consultant General Surgeon specialising in Upper GI and General Surgery",
+    "description": "Consultant General Surgeon specialising in Upper GI and Robotic Surgery. Expert in robotic surgery, laparoscopic surgery, hernia repair, gallbladder surgery (cholecystectomy), GORD treatment, fundoplication, LINX device, and benign Upper GI procedures in London and Hertfordshire.",
     "url": "https://www.osamamoussa.co.uk",
     "logo": "https://www.osamamoussa.co.uk/Osama Moussa Logo-01.svg",
     "image": "https://www.osamamoussa.co.uk/Osama Moussa Logo-01.svg",
@@ -193,7 +206,16 @@ export default function RootLayout({
       "GERD Treatment",
       "Hernia Surgery",
       "Gallbladder Surgery",
-      "Gastric Surgery"
+      "Cholecystectomy",
+      "Fundoplication",
+      "Hiatal Hernia Repair",
+      "Inguinal Hernia Surgery",
+      "Ventral Hernia Surgery",
+      "Umbilical Hernia Surgery",
+      "Abdominal Wall Reconstruction",
+      "Gastric Surgery",
+      "LINX Device",
+      "Minimal Access Surgery"
     ],
     "priceRange": "$$"
   };
@@ -203,7 +225,7 @@ export default function RootLayout({
     "@type": "Physician",
     "name": "Mr Osama Moussa",
     "jobTitle": "Consultant General Surgeon",
-    "description": "Consultant General Surgeon specialising in Upper GI and General Surgery at West Hertfordshire Hospitals NHS Trust",
+    "description": "Consultant General Surgeon specialising in Upper GI and Robotic Surgery at West Hertfordshire Hospitals NHS Trust. Expert in robotic surgery, laparoscopic surgery, hernia repair, gallbladder surgery, GORD treatment, and fundoplication.",
     "url": "https://www.osamamoussa.co.uk",
     "image": "https://www.osamamoussa.co.uk/Osama Moussa Logo-01.svg",
     "email": "pa@osamamoussa.co.uk",
@@ -271,7 +293,16 @@ export default function RootLayout({
       "GERD Treatment",
       "Hernia Surgery",
       "Gallbladder Surgery",
-      "Gastric Surgery"
+      "Cholecystectomy",
+      "Fundoplication",
+      "Hiatal Hernia Repair",
+      "Inguinal Hernia Surgery",
+      "Ventral Hernia Surgery",
+      "Umbilical Hernia Surgery",
+      "Abdominal Wall Reconstruction",
+      "Gastric Surgery",
+      "LINX Device",
+      "Minimal Access Surgery"
     ],
     "alumniOf": [
       {
