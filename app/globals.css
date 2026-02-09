@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ITC Avant Garde Gothic – place .woff2 in public/fonts/ (e.g. from Adobe Fonts or licensed webfont kit) */
+@font-face {
+  font-family: "ITC Avant Garde Gothic";
+  src: url("/fonts/ITCAvantGardeGothic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Mobile image positioning for hero - center face */
 @media (max-width: 640px) {
   .hero-image-mobile {

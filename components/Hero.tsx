@@ -76,7 +76,7 @@ export default function Hero() {
       {/* Hero Content - left align matches header logo (pl-2 sm:pl-2 lg:pl-3) */}
       <div className="relative z-10 h-full flex flex-col justify-end sm:justify-center items-center sm:items-start pb-32 sm:pb-0 sm:pt-40">
         <div className="container mx-auto pl-2 sm:pl-2 lg:pl-3 pr-4 sm:pr-6 lg:pr-8 w-full">
-          <h1 className="text-[27px] sm:text-[33px] md:text-[45px] lg:text-[57px] font-normal text-white sm:text-black mb-8 max-w-3xl animate-fade-in-up text-center sm:text-left tracking-wide" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', fontWeight: 400, lineHeight: 1 }}>
+          <h1 className="text-[22px] sm:text-[26px] md:text-[34px] lg:text-[42px] font-bold text-white sm:text-black mb-8 max-w-3xl animate-fade-in-up text-center sm:text-left tracking-wide uppercase" style={{ fontFamily: '"ITC Avant Garde Gothic", "Century Gothic", sans-serif', fontWeight: 700, lineHeight: 1.2 }}>
             A Leader in Upper GI
             <br />
             & Robotic Surgery
