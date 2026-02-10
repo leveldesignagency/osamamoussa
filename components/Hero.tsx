@@ -96,13 +96,40 @@ export default function Hero() {
                 >
                   Call Now
                 </a>
-                {/* Desktop - Book Now + Call Now (expands on hover to show number) */}
+                {/* Desktop - Book Now + Doctify widget + Call Now */}
                 <Link
                   href="/procedures/contact"
                   className="hidden sm:inline-flex items-center px-10 py-4 text-lg border-2 border-black text-black font-medium transition-all duration-300 button-swipe button-swipe-black"
                 >
                   Book Now
                 </Link>
+                {/* Doctify Widget - Desktop only, between buttons */}
+                <div
+                  className="hidden sm:flex flex-shrink-0 items-center justify-center overflow-hidden"
+                  style={{ width: "100px", height: "100px" }}
+                >
+                  <iframe
+                    id="09in4nm9"
+                    className="doctify-widget"
+                    src="https://www.doctify.com/wv2/average-rating-widget?containerId=09in4nm9&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=darkNavy&widgetName=average-rating-widget"
+                    width="100"
+                    height="100"
+                    frameBorder="0"
+                    scrolling="no"
+                    name="average-rating-widget"
+                    title="Doctify Rating Widget"
+                    style={{
+                      display: "block",
+                      border: "none",
+                      width: "100px",
+                      maxWidth: "100px",
+                      minWidth: "100px",
+                      height: "100px",
+                      maxHeight: "100px",
+                      minHeight: "100px",
+                    }}
+                  />
+                </div>
                 <a
                   href="tel:07352167642"
                   className="hidden sm:inline-flex items-center py-4 px-10 overflow-hidden border-2 border-black text-black font-medium transition-all duration-300 button-swipe button-swipe-black group/call text-lg"
@@ -132,50 +159,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Widgets Overlay at Bottom - Desktop only (down 20px, left 20px from previous position) */}
-      <div className="absolute bottom-[12px] left-0 z-20 w-full hidden sm:block" style={{ pointerEvents: "none" }}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex flex-row gap-2 items-center justify-start" style={{ position: "relative", marginLeft: '-20px' }}>
-            {/* Doctify Widget - Desktop */}
-            <div 
-              style={{ 
-                width: "200px", 
-                flexShrink: 0, 
-                display: "flex", 
-                alignItems: "flex-start", 
-                justifyContent: "center", 
-                overflow: "hidden",
-                position: "relative",
-                pointerEvents: "auto"
-              }}
-            >
-              <iframe
-                id="09in4nm9"
-                className="doctify-widget"
-                src="https://www.doctify.com/wv2/average-rating-widget?containerId=09in4nm9&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=darkNavy&widgetName=average-rating-widget"
-                width="200"
-                height="200"
-                frameBorder="0"
-                scrolling="no"
-                name="average-rating-widget"
-                title="Doctify Rating Widget"
-                style={{ 
-                  display: "block", 
-                  border: "none", 
-                  width: "200px", 
-                  maxWidth: "200px", 
-                  minWidth: "200px",
-                  height: "200px",
-                  maxHeight: "200px",
-                  minHeight: "200px",
-                  verticalAlign: "top", 
-                  margin: "0 auto"
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Desktop: Doctify widget now sits between Book Now and Call Now in hero content (no bottom overlay) */}
     </section>
   );
 }
