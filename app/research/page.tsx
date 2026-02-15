@@ -5,55 +5,9 @@ import AppointmentSection from "@/components/AppointmentSection";
 import Link from "next/link";
 import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { publications } from "./publications-data";
 
 export default function ResearchPage() {
-  const publications = [
-    {
-      title:
-        "Effect of perioperative FLOT versus ECF/ECX on short-term outcomes after surgery for resectable oesophagogastric adenocarcinoma: propensity score-matched study",
-      url: "https://doi.org/10.1093/bjsopen/zrac003",
-    },
-    {
-      title:
-        "Long-term incidence and outcomes of obesity-related peripheral vascular disease after bariatric surgery",
-      url: "https://doi.org/10.1007/s00423-020-02066-9",
-    },
-    {
-      title:
-        "Obstructive Sleep Apnea in Obese Patients: a UK Population Analysis",
-      url: "https://doi.org/10.1007/s11695-020-05196-7",
-    },
-    {
-      title:
-        "Impact of COVID-19 on Obesity Management Services in the United Kingdom (The COMS-UK study)",
-      url: "https://doi.org/10.1007/s11695-020-05005-1",
-    },
-    {
-      title:
-        "Effect of bariatric surgery long-term cardiovascular outcomes: a nationwide nested cohort study",
-      url: "https://doi.org/10.1093/eurheartj/ehaa069",
-    },
-    {
-      title:
-        "Atrial fibrillation and obesity: Long-term incidence and outcomes after bariatric surgery. Eur J Prev Cardiol",
-      url: "https://doi.org/10.1177/2047487320904515",
-    },
-    {
-      title:
-        "Long-term Impact of Bariatric Surgery on Venous Thromboembolic Risk: A Matched Cohort Study. Ann Surg",
-      url: "https://doi.org/10.1097/SLA.0000000000003750",
-    },
-    {
-      title:
-        "Effect of body mass index on depression in a UK cohort of 363037 obese patients: A longitudinal analysis of transition",
-      url: "https://doi.org/10.1111/cob.12305",
-    },
-    {
-      title:
-        "Fate of the metabolically healthy obese-is this term a misnomer? A study from the Clinical Practice Research Datalink",
-      url: "https://doi.org/10.1038/s41366-018-0096-z",
-    },
-  ];
 
   return (
     <main className="min-h-screen bg-gradient-grey relative">
@@ -188,14 +142,14 @@ function TitleSection() {
   );
 }
 
-type Publication = {
-  title: string;
-  url: string;
+type PublicationItemProps = {
+  pub: { title: string; slug: string; url: string };
+  index: number;
 };
 
-function PublicationItem({ pub, index }: { pub: Publication, index: number }) {
+function PublicationItem({ pub, index }: PublicationItemProps) {
   const { ref, isVisible } = useScrollAnimation();
-  
+
   return (
     <div
       ref={ref}
@@ -205,15 +159,21 @@ function PublicationItem({ pub, index }: { pub: Publication, index: number }) {
       <h2 className="page-title font-bold text-white text-center lg:text-left leading-tight normal-case">
         {pub.title}
       </h2>
-      <div className="flex justify-center lg:justify-end">
+      <div className="flex flex-wrap justify-center lg:justify-end gap-3">
         <Link
-          href={pub.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-6 py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white"
+          href={`/research/publications/${pub.slug}`}
+          className="inline-block px-6 py-3 rounded-full border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white"
         >
           View Publication
         </Link>
+        <a
+          href={pub.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-6 py-3 rounded-full border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white"
+        >
+          Visit
+        </a>
       </div>
     </div>
   );
