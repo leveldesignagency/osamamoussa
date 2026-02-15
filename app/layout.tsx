@@ -335,17 +335,12 @@ export default function RootLayout({
           name="google-site-verification"
           content="AL_dAbT3HMo2JGmN4fEc8t7K_WM8wfIRYQyMJcC0w7w"
         />
-        {/* SVG Favicon with dark/light mode support - black in light mode, white in dark mode */}
-        <link
-          rel="icon"
-          type="image/svg+xml"
-          href="/cursor.svg"
-        />
-        {/* Fallback PNG favicon */}
+        {/* Browser tab favicon (Chrome, etc.) - 32x32 from favicon2026.png */}
         <link
           rel="icon"
           type="image/png"
-          href="/Logo_Osama_Moussa_Compartment-02.png"
+          sizes="32x32"
+          href="/favicon.png"
         />
         {/* Apple touch icon */}
         <link
