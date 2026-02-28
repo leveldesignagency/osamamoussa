@@ -46,28 +46,50 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Accreditations - horizontal on mobile, bigger logos */}
+          {/* Accreditations - mobile: 2 rows (3 top, 2 bottom), bigger; desktop has its own band below */}
           <div className="flex flex-col items-center py-6">
             <p className="text-[10px] uppercase tracking-[0.2em] text-white/50 mb-4">Accreditations & memberships</p>
-            <div className="flex flex-wrap justify-center items-center gap-5">
-              {ACCREDITATION_LINKS.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={item.name}
-                  className="transition-all duration-200 hover:opacity-90 hover:scale-105"
-                >
-                  <Image
-                    src={item.src}
-                    alt={item.name}
-                    width={200}
-                    height={108}
-                    className="h-16 w-auto max-w-[130px] object-contain brightness-0 invert"
-                  />
-                </a>
-              ))}
+            <div className="flex flex-col items-center gap-6">
+              <div className="flex justify-center items-center gap-4 sm:gap-5">
+                {ACCREDITATION_LINKS.slice(0, 3).map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.name}
+                    className="transition-all duration-200 hover:opacity-90 hover:scale-105"
+                  >
+                    <Image
+                      src={item.src}
+                      alt={item.name}
+                      width={200}
+                      height={108}
+                      className="h-20 w-auto max-w-[140px] object-contain brightness-0 invert"
+                    />
+                  </a>
+                ))}
+              </div>
+              <div className="flex justify-center items-center gap-4 sm:gap-5">
+                {ACCREDITATION_LINKS.slice(3, 5).map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.name}
+                    className="transition-all duration-200 hover:opacity-90 hover:scale-105"
+                  >
+                    <Image
+                      src={item.src}
+                      alt={item.name}
+                      width={200}
+                      height={108}
+                      className="h-20 w-auto max-w-[140px] object-contain brightness-0 invert"
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
