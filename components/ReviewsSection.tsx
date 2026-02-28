@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function ReviewsSection() {
@@ -117,7 +118,22 @@ export default function ReviewsSection() {
             </Link>
           </div>
         </div>
+
+        {/* Doctify average rating carousel widget */}
+        <div className="mt-16 w-full">
+          <iframe
+            id="0maa9lzc"
+            className="doctify-widget w-full border-0"
+            src="https://www.doctify.com/wv2/average-carousel-rating-widget?containerId=0maa9lzc&dotsArrowsColor=4C5870&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=transparent&widgetName=average-carousel-rating-widget"
+            scrolling="no"
+            title="Doctify reviews"
+          />
+        </div>
       </div>
+      <Script
+        src="https://www.doctify.com/wv2/doctify-widget-autoresize-plugin.js?tenantId=athena-uk&widgetName=average-carousel-rating-widget&containerId=0maa9lzc"
+        strategy="afterInteractive"
+      />
     </section>
   );
 }

@@ -1,8 +1,17 @@
 import { MetadataRoute } from 'next'
+import { getProcedureSlugs } from './procedures/procedures-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.osamamoussa.co.uk'
-  
+  const procedureSlugs = getProcedureSlugs()
+
+  const procedureEntries: MetadataRoute.Sitemap = procedureSlugs.map((slug) => ({
+    url: `${baseUrl}/procedures/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }))
+
   return [
     {
       url: baseUrl,
@@ -22,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    ...procedureEntries,
     {
       url: `${baseUrl}/procedures/contact`,
       lastModified: new Date(),

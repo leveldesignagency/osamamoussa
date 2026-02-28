@@ -6,6 +6,7 @@ import AppointmentSection from "@/components/AppointmentSection";
 import Image from "next/image";
 import Link from "next/link";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { trackContact, getDevice } from "@/lib/contact-analytics";
 
 export default function ContactPage() {
   const scriptsLoaded = useRef(false);
@@ -118,6 +119,7 @@ export default function ContactPage() {
               {/* Phone Number Button */}
               <a
                 href="tel:07352167642"
+                onClick={() => trackContact("call", getDevice(), "contact_page")}
                 className="w-full lg:w-[400px] border-2 border-white bg-white/10 backdrop-blur-sm rounded-full px-8 py-5 flex items-center justify-center gap-4 text-white text-xl font-semibold hover:border-black transition-all duration-300 text-center button-swipe text-white group"
                 style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
               >
@@ -135,6 +137,7 @@ export default function ContactPage() {
               {/* Email Button */}
               <a
                 href="mailto:pa@osamamoussa.co.uk"
+                onClick={() => trackContact("email", getDevice(), "contact_page")}
                 className="w-full lg:w-[400px] border-2 border-white bg-white/10 backdrop-blur-sm rounded-full px-8 py-5 flex items-center justify-center gap-4 text-white text-xl font-semibold hover:border-black transition-all duration-300 text-center button-swipe text-white group"
                 style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
               >

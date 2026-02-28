@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
+import { trackContact, getDevice } from "@/lib/contact-analytics";
 
 interface HeaderProps {
   backgroundColor?: string;
@@ -336,6 +337,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                           {/* Email */}
                           <a
                             href="mailto:pa@osamamoussa.co.uk"
+                            onClick={() => trackContact("email", getDevice(), "header")}
                             className="block text-white font-bold hover:opacity-70 transition-opacity text-base sm:text-lg"
                             style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                           >
@@ -345,6 +347,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                           {/* Phone */}
                           <a
                             href="tel:07352167642"
+                            onClick={() => trackContact("call", getDevice(), "header")}
                             className="block text-white font-bold hover:opacity-70 transition-opacity text-base sm:text-lg"
                             style={{ cursor: "url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer" }}
                           >

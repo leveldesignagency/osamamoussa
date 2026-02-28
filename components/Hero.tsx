@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { trackContact } from "@/lib/contact-analytics";
 
 export default function Hero() {
   const scriptsLoaded = useRef(false);
@@ -73,7 +74,7 @@ export default function Hero() {
         }}
       ></div>
       
-      {/* Hero Content - left align matches header logo (pl-2 sm:pl-2 lg:pl-3) */}
+      {/* Hero Content - left align */}
       <div className="relative z-10 h-full flex flex-col justify-end sm:justify-center items-center sm:items-start pb-32 sm:pb-0 sm:pt-40">
         <div className="container mx-auto pl-2 sm:pl-2 lg:pl-3 pr-4 sm:pr-6 lg:pr-8 w-full">
           <h1 className="text-[22px] sm:text-[26px] md:text-[34px] lg:text-[42px] font-bold text-white sm:text-black mb-8 max-w-3xl animate-fade-in-up text-center sm:text-left tracking-wide uppercase" style={{ fontFamily: '"ITC Avant Garde Gothic", "Century Gothic", sans-serif', fontWeight: 700, lineHeight: 1.2 }}>
@@ -83,7 +84,7 @@ export default function Hero() {
           </h1>
           
           <div className="flex flex-row flex-wrap gap-3 sm:gap-4 animate-fade-in-up justify-center sm:justify-start mb-8 items-stretch" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
-                {/* Mobile - Book Now + Call Now: horizontal, slightly bigger, no phone-reveal (Book Now → contact, Call Now → tel) */}
+                {/* Mobile - Book Now + Call Now */}
                 <Link
                   href="/procedures/contact"
                   className="sm:hidden inline-flex items-center justify-center px-6 py-4 text-base border-2 border-white bg-black text-white font-medium transition-all duration-300 hover:bg-white hover:text-black active:bg-white active:text-black rounded-full"
@@ -105,6 +106,7 @@ export default function Hero() {
                 </Link>
                 <a
                   href="tel:07352167642"
+                  onClick={() => trackContact("call", "desktop", "hero")}
                   className="hidden sm:inline-flex items-center py-4 px-10 overflow-hidden border-2 border-black text-black font-medium transition-all duration-300 button-swipe button-swipe-black group/call text-lg"
                 >
                   <span className="whitespace-nowrap flex-shrink-0">Call Now</span>
@@ -114,6 +116,31 @@ export default function Hero() {
                   </span>
                 </a>
               </div>
+
+            {/* Doctify Widget - Desktop only, under buttons; left padding so badge sits between Book Now and Call Now */}
+            <div className="hidden sm:block mt-6 pl-[6.5rem]">
+            <iframe
+              id="09in4nm9"
+              className="doctify-widget"
+              src="https://www.doctify.com/wv2/average-rating-widget?containerId=09in4nm9&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=darkNavy&widgetName=average-rating-widget"
+              width="200"
+              height="200"
+              frameBorder="0"
+              scrolling="no"
+              name="average-rating-widget"
+              title="Doctify Rating Widget"
+              style={{
+                display: "block",
+                border: "none",
+                width: "200px",
+                maxWidth: "200px",
+                minWidth: "200px",
+                height: "200px",
+                maxHeight: "200px",
+                minHeight: "200px",
+              }}
+            />
+          </div>
         </div>
       </div>
 
@@ -132,49 +159,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Doctify Widget - Desktop only, same bottom row; nudged right to align between Book Now and Call Now */}
-      <div className="absolute bottom-[12px] left-0 z-20 w-full hidden sm:block" style={{ pointerEvents: "none" }}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="flex flex-row gap-2 items-center justify-start pl-2 sm:pl-2 lg:pl-3" style={{ marginLeft: "40px" }}>
-            <div
-              style={{
-                width: "200px",
-                flexShrink: 0,
-                display: "flex",
-                alignItems: "flex-start",
-                justifyContent: "center",
-                overflow: "hidden",
-                position: "relative",
-                pointerEvents: "auto",
-              }}
-            >
-              <iframe
-                id="09in4nm9"
-                className="doctify-widget"
-                src="https://www.doctify.com/wv2/average-rating-widget?containerId=09in4nm9&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=darkNavy&widgetName=average-rating-widget"
-                width="200"
-                height="200"
-                frameBorder="0"
-                scrolling="no"
-                name="average-rating-widget"
-                title="Doctify Rating Widget"
-                style={{
-                  display: "block",
-                  border: "none",
-                  width: "200px",
-                  maxWidth: "200px",
-                  minWidth: "200px",
-                  height: "200px",
-                  maxHeight: "200px",
-                  minHeight: "200px",
-                  verticalAlign: "top",
-                  margin: "0 auto",
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 }

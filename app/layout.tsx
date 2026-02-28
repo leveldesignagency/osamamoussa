@@ -5,6 +5,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import { GlobalErrorHandler } from "./global-error-handler";
 import SmoothScroll from "@/components/SmoothScroll";
+import MobileFAB from "@/components/MobileFAB";
 
 export const viewport = {
   width: "device-width",
@@ -376,22 +377,7 @@ export default function RootLayout({
         <SmoothScroll />
         {children}
         <Footer />
-        {/* Sticky Call button - mobile only, icon only */}
-        <a
-          href="tel:07352167642"
-          aria-label="Call now"
-          className="fixed bottom-6 right-6 z-[60] sm:hidden flex items-center justify-center w-14 h-14 rounded-full bg-black text-white shadow-lg hover:bg-gray-800 active:scale-95 transition-all duration-200"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden
-          >
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-          </svg>
-        </a>
+        <MobileFAB />
         <Analytics />
         <SpeedInsights />
       </body>

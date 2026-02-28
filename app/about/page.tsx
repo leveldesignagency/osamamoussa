@@ -224,7 +224,9 @@ export default function AboutPage() {
                   The General Medical Council (6043402)
                 </p>
                 <p className="text-base text-white leading-relaxed">
-                  Royal College of Surgeons
+                  <a href="https://www.rcseng.ac.uk/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/90 transition-colors">
+                    Royal College of Surgeons
+                  </a>
                 </p>
               </div>
 
@@ -243,15 +245,26 @@ export default function AboutPage() {
                   Professional Memberships
                 </h3>
                 <p className="text-base text-white leading-relaxed">
-                  Fellow of the Royal College of Surgeons of England
+                  Fellow of the{" "}
+                  <a href="https://www.rcseng.ac.uk/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/90 transition-colors">
+                    Royal College of Surgeons of England
+                  </a>
                   <br />
-                  British Medical Association (BMA)
+                  <a href="https://www.bma.org.uk/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/90 transition-colors">
+                    British Medical Association (BMA)
+                  </a>
                   <br />
-                  Association of Upper GI Surgeons (AUGIS)
+                  <a href="https://www.augis.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/90 transition-colors">
+                    Association of Upper GI Surgeons (AUGIS)
+                  </a>
                   <br />
-                  British Obesity and Metabolic Surgery Society (BOMSS)
+                  <a href="https://bomss.org/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/90 transition-colors">
+                    British Obesity and Metabolic Surgery Society (BOMSS)
+                  </a>
                   <br />
-                  Federation of Surgical Obesity
+                  <a href="https://www.ifso.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/90 transition-colors">
+                    International Federation for the Surgery of Obesity (IFSO)
+                  </a>
                 </p>
               </div>
             </div>
