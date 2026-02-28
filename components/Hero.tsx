@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { trackContact } from "@/lib/contact-analytics";
+import { trackContact, trackCTAClick } from "@/lib/contact-analytics";
 
 export default function Hero() {
   const scriptsLoaded = useRef(false);
@@ -87,12 +87,14 @@ export default function Hero() {
                 {/* Mobile - Book Now + Call Now */}
                 <Link
                   href="/procedures/contact"
+                  onClick={() => trackCTAClick("Book Now", "hero")}
                   className="sm:hidden inline-flex items-center justify-center px-6 py-4 text-base border-2 border-white bg-black text-white font-medium transition-all duration-300 hover:bg-white hover:text-black active:bg-white active:text-black rounded-full"
                 >
                   Book Now
                 </Link>
                 <a
                   href="tel:07352167642"
+                  onClick={() => trackContact("call", "mobile", "hero")}
                   className="sm:hidden inline-flex items-center justify-center px-6 py-4 text-base border-2 border-white bg-black text-white font-medium transition-all duration-300 hover:bg-white hover:text-black active:bg-white active:text-black rounded-full"
                 >
                   Call Now
@@ -100,6 +102,7 @@ export default function Hero() {
                 {/* Desktop - Book Now + Call Now (expands on hover to show number) */}
                 <Link
                   href="/procedures/contact"
+                  onClick={() => trackCTAClick("Book Now", "hero")}
                   className="hidden sm:inline-flex items-center px-10 py-4 text-lg border-2 border-black text-black font-medium transition-all duration-300 button-swipe button-swipe-black"
                 >
                   Book Now
