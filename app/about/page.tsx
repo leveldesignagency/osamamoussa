@@ -176,7 +176,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 image-slide overflow-hidden rounded-3xl">
                 <Image
                   src="/OM7.jpg"
-                  alt="Osama Moussa Accreditations"
+                  alt="Mr Osama Moussa – Accreditations and memberships: GMC registered (6043402), Royal College of Surgeons of England, BMA, BOMSS, AUGIS, IFSO"
                   fill
                   className="object-cover rounded-3xl about-accred-image"
                   style={{ objectPosition: 'center center' }}
@@ -221,7 +221,7 @@ export default function AboutPage() {
                   Registration
                 </h3>
                 <p className="text-base text-white leading-relaxed mb-2">
-                  The General Medical Council (6043402)
+                  <a href="https://www.gmc-uk.org/registration-and-licensing/register-search" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/90 transition-colors" title="Verify Mr Osama Moussa on the GMC register">The General Medical Council (6043402)</a>
                 </p>
                 <p className="text-base text-white leading-relaxed">
                   <a href="https://www.rcseng.ac.uk/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/90 transition-colors">

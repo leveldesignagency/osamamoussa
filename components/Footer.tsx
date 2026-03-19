@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ACCREDITATION_LINKS = [
-  { url: "https://www.rcseng.ac.uk/", name: "Royal College of Surgeons of England", src: "/VECTORS-01.png" },
-  { url: "https://www.bma.org.uk/", name: "British Medical Association", src: "/VECTORS-02.png" },
-  { url: "https://bomss.org/", name: "BOMSS", src: "/VECTORS-03.png" },
-  { url: "https://www.augis.org/", name: "AUGIS", src: "/VECTORS-04.png" },
-  { url: "https://www.ifso.com/", name: "IFSO", src: "/VECTORS-05.png" },
+  { url: "https://www.rcseng.ac.uk/", name: "Royal College of Surgeons of England", fullName: "Royal College of Surgeons of England – Fellow (F.R.C.S.)", src: "/VECTORS-01.png" },
+  { url: "https://www.bma.org.uk/", name: "British Medical Association", fullName: "British Medical Association – Member", src: "/VECTORS-02.png" },
+  { url: "https://bomss.org/", name: "BOMSS", fullName: "BOMSS – British Obesity and Metabolic Surgery Society", src: "/VECTORS-03.png" },
+  { url: "https://www.augis.org/", name: "AUGIS", fullName: "AUGIS – Association of Upper Gastrointestinal Surgeons", src: "/VECTORS-04.png" },
+  { url: "https://www.ifso.com/", name: "IFSO", fullName: "IFSO – International Federation for the Surgery of Obesity", src: "/VECTORS-05.png" },
 ];
 
 export default function Footer() {
@@ -57,12 +57,13 @@ export default function Footer() {
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={item.name}
+                    aria-label={item.fullName}
+                    title={`Mr Osama Moussa – ${item.fullName}`}
                     className="transition-all duration-200 hover:opacity-90 hover:scale-105"
                   >
                     <Image
                       src={item.src}
-                      alt={item.name}
+                      alt={item.fullName}
                       width={200}
                       height={108}
                       className="h-20 w-auto max-w-[140px] object-contain brightness-0 invert"
@@ -77,12 +78,13 @@ export default function Footer() {
                     href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={item.name}
+                    aria-label={item.fullName}
+                    title={`Mr Osama Moussa – ${item.fullName}`}
                     className="transition-all duration-200 hover:opacity-90 hover:scale-105"
                   >
                     <Image
                       src={item.src}
-                      alt={item.name}
+                      alt={item.fullName}
                       width={200}
                       height={108}
                       className="h-20 w-auto max-w-[140px] object-contain brightness-0 invert"
@@ -170,12 +172,13 @@ export default function Footer() {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={item.name}
+                  aria-label={item.fullName}
+                  title={`Mr Osama Moussa – ${item.fullName}`}
                   className="transition-all duration-200 hover:opacity-90 hover:scale-105"
                 >
                   <Image
                     src={item.src}
-                    alt={item.name}
+                    alt={item.fullName}
                     width={240}
                     height={130}
                     className="h-20 lg:h-24 xl:h-28 w-auto object-contain brightness-0 invert"

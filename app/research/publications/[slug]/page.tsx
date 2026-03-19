@@ -21,9 +21,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!pub) return { title: "Publication" };
   const shortTitle =
     pub.title.length > 60 ? pub.title.slice(0, 57) + "…" : pub.title;
+  const description = pub.abstract || `Publication: ${shortTitle}`;
+  const pageUrl = `https://www.osamamoussa.co.uk/research/publications/${slug}`;
   return {
     title: shortTitle,
-    description: pub.abstract || `Publication: ${shortTitle}`,
+    description,
+    alternates: { canonical: pageUrl },
+    openGraph: {
+      title: `${shortTitle} | Mr Osama Moussa - Research`,
+      description,
+      url: pageUrl,
+      type: "article",
+    },
   };
 }
 
@@ -64,8 +73,46 @@ export default async function PublicationPage({ params }: Props) {
   const pub = getPublicationBySlug(slug);
   if (!pub) notFound();
 
+  const baseUrl = "https://www.osamamoussa.co.uk";
+  const pageUrl = `${baseUrl}/research/publications/${slug}`;
+  const scholarlySchema = {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    headline: pub.title,
+    description: pub.abstract || pub.title,
+    url: pageUrl,
+    author: {
+      "@type": "Person",
+      name: pub.authors || "Mr Osama Moussa",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Mr Osama Moussa - Consultant General Surgeon",
+      url: baseUrl,
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: baseUrl },
+      { "@type": "ListItem", position: 2, name: "Research & Publications", item: `${baseUrl}/research` },
+      { "@type": "ListItem", position: 3, name: pub.title, item: pageUrl },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-gradient-grey relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(scholarlySchema) }}
+      />
       <div className="absolute top-0 left-0 right-0 h-32 header-gradient-overlay z-40 pointer-events-none" />
       <Header backgroundColor="grey" />
 

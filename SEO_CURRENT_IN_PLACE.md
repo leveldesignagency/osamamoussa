@@ -70,10 +70,24 @@ A list of every SEO element on the site and what it does for search and visibili
 ## 6. Sitemap
 
 **What’s in place**
-- XML sitemap at `/sitemap.xml` with: homepage (priority 1), About, Procedures, Contact, Research, Reviews (priorities 0.7–0.9), Terms and Conditions, Privacy Policy (priority 0.3). Each entry has `lastModified` and `changeFrequency` (monthly/weekly/yearly).
+- XML sitemap at `/sitemap.xml` with: homepage (priority 1), About, Procedures hub, **all 14 procedure pages** (priority 0.85, monthly), Contact, Research, Reviews (priorities 0.7–0.9), Terms and Conditions, Privacy Policy (priority 0.3). Each entry has `lastModified` and `changeFrequency` (monthly/weekly/yearly).
+- Procedure URLs included dynamically from `getProcedureSlugs()`, so every dedicated procedure page (including Robotic Surgery, GORD, LINX, hernia types, gallbladder, etc.) is discoverable by Google.
 
 **How it helps**
 - Gives Google a full list of important pages so they can be discovered and recrawled. Priorities and change frequency hint which URLs matter most and how often to check them. Submission in Search Console speeds up discovery.
+
+---
+
+## 6b. Dedicated procedure pages (14 pages)
+
+**What’s in place**
+- **14 dedicated procedure pages**, each with its own URL, e.g. `/procedures/robotic-surgery`, `/procedures/gastroesophageal-reflux-disease-gord`, `/procedures/linx-device-gord-treatment`, `/procedures/gallbladder-surgery-cholecystectomy`, `/procedures/hernia-repair-surgery`, plus inguinal, TAPP, epigastric, ventral, umbilical/paraumbilical hernia, abdominal wall reconstruction, advanced Upper GI, laparoscopic surgery, skin lumps/lipomas.
+- **Robotic surgery** has its own page: `/procedures/robotic-surgery` with title “Robotic Surgery”, description, full-width hero, H1, expanded content sections, and internal links (sidebar to Contact and other procedures).
+- Each procedure page has: **unique title and meta description** (from `generateMetadata`), **canonical URL**, **Open Graph** (title, description, url), **BreadcrumbList** JSON-LD (Home → Procedures → [Procedure name]), **MedicalWebPage** and **MedicalProcedure** JSON-LD so Google understands the page is about a specific medical procedure.
+- All procedure pages are **statically generated** (`generateStaticParams`) and linked from the Procedures hub; images and titles link through to the full page.
+
+**How it helps**
+- One topic per page: Google can show the right page for “robotic surgery London”, “acid reflux doctor”, “LINX”, “hernia repair”, etc. Dedicated pages with clear H1s, schema, and canonicals are exactly what SEO best practice recommends. The other agency’s claim that “there is no SEO” or that “dedicated procedure pages” are missing is incorrect for this site.
 
 ---
 
@@ -157,13 +171,14 @@ A list of every SEO element on the site and what it does for search and visibili
 |--------------------------|------------------------|--------------|
 | Default title/description| `app/layout.tsx`      | Strong snippet and relevance for core terms (Upper GI, robotic, London, etc.) |
 | Page-specific metadata   | Home, Procedures, Contact, Research, Reviews, layout | Each section targets the right searches and has a clear snippet |
+| **Procedure page metadata & schema** | `app/procedures/[slug]/page.tsx`, `procedures-data.ts` | **14 dedicated procedure pages** (incl. Robotic Surgery, GORD, LINX, hernias, gallbladder) with unique title/description, canonical, OG, BreadcrumbList, MedicalWebPage/MedicalProcedure JSON-LD |
 | Meta keywords            | Layout, Contact       | Thematic targeting; minor for Google, useful elsewhere |
-| Canonical URLs           | Layout, Contact       | Consolidates signals on the correct URL |
-| Open Graph / Twitter     | Layout, Contact       | Good-looking, on-brand links when shared |
+| Canonical URLs           | Layout, Contact, **every procedure page** | Consolidates signals on the correct URL |
+| Open Graph / Twitter     | Layout, Contact, **every procedure page** | Good-looking, on-brand links when shared |
 | MedicalBusiness schema   | Layout (JSON-LD)      | Tells Google about practice, areas, specialties |
 | Physician schema         | Layout (JSON-LD)      | Tells Google about the surgeon and hospitals |
 | Organization schema      | Layout (JSON-LD)      | Links profile to external authority (ResearchGate, Top Doctors, etc.) |
-| Sitemap                 | `app/sitemap.ts`     | Helps Google find and prioritise all main pages |
+| Sitemap                 | `app/sitemap.ts`     | **Includes all main pages + all 14 procedure URLs**; helps Google find and prioritise everything |
 | robots.txt              | `app/robots.ts`      | Allows crawling, points to sitemap, blocks tech paths |
 | Meta robots              | Layout                | Index and follow; full snippets and images for Googlebot |
 | GSC verification        | Layout `<head>`       | Enables Search Console and sitemap submission |
@@ -177,6 +192,12 @@ A list of every SEO element on the site and what it does for search and visibili
 ## What’s not in the sitemap yet
 
 - **Publication URLs** (`/research/publications/[slug]`) are not currently added to the sitemap. Adding them (e.g. by generating entries from your publications data) would help Google discover and index each article.
+
+---
+
+## Backlinks (off-site)
+
+Backlinks are links from other websites (e.g. hospitals, Doctify, Top Doctors, directories, press) to this site. They are not “in the code” but the site is built to support them: clear URLs, canonical URLs, strong on-page SEO, and schema so that when others link to e.g. `/procedures/robotic-surgery` or the homepage, Google understands the content and can attribute value correctly. Building backlinks is a separate marketing/outreach activity (listings, partnerships, content syndication, etc.).
 
 ---
 

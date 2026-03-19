@@ -3,19 +3,32 @@ export type ProcedureSection = {
   paragraphs: string[];
 };
 
+export type ProcedureFAQ = {
+  question: string;
+  answer: string;
+};
+
 export type ProcedureItem = {
   slug: string;
   title: string;
   description: string;
+  /** Optional keyword-rich title for <title> and OG (e.g. "Hernia Surgeon London & Hertfordshire") */
+  seoTitle?: string;
+  /** Optional meta description with target keywords and location */
+  seoDescription?: string;
   image: string;
   imageLeft: boolean;
   expandedContent: ProcedureSection[];
+  /** Optional FAQs for FAQPage schema and on-page content */
+  faqs?: ProcedureFAQ[];
 };
 
 export const procedures: ProcedureItem[] = [
   {
     slug: "advanced-upper-gastrointestinal-gi-surgery",
     title: "Advanced Upper Gastrointestinal (GI) Surgery",
+    seoTitle: "Upper GI Surgeon London & Hertfordshire | Advanced Upper GI Surgery",
+    seoDescription: "Mr Osama Moussa – Upper GI surgeon London and Hertfordshire. Expert in advanced Upper GI surgery, laparoscopic and robotic techniques. Treating GORD, hiatus hernia, gallbladder and hernia. Spire Bushey, Circle Health Group, West Herts NHS. Book a consultation.",
     description:
       "Specialising in Upper Gastrointestinal (GI) Surgery, Osama offers advanced surgical solutions to address a wide range of conditions affecting the upper digestive tract with precision and expertise. With a commitment to patient-centred care and the latest surgical techniques, he ensures that each procedure is tailored to meet the unique needs of the patient while promoting optimal outcomes and improved quality of life.",
     image: "/Advanced UGI surgery.jpg",
@@ -42,10 +55,17 @@ export const procedures: ProcedureItem[] = [
         ],
       },
     ],
+    faqs: [
+      { question: "What does an Upper GI surgeon do?", answer: "An Upper GI surgeon specialises in operations on the oesophagus, stomach, and upper part of the small intestine. Mr Moussa focuses on benign (non-cancer) conditions including acid reflux (GORD), hiatus hernia, gallbladder disease, and hernias. He uses laparoscopic and robotic techniques for minimally invasive care." },
+      { question: "Where can I see an Upper GI surgeon in London or Hertfordshire?", answer: "Mr Osama Moussa sees patients at Spire Bushey, Circle Health Group hospitals (Bishops Wood, The Wellington Hospital), and West Hertfordshire NHS Trust. Appointments can be made via the contact page or by phone." },
+      { question: "What is the difference between laparoscopic and robotic Upper GI surgery?", answer: "Both are minimally invasive. Laparoscopic surgery uses a camera and instruments controlled directly by the surgeon. Robotic surgery uses a console where the surgeon controls instruments with enhanced precision and 3D vision. Mr Moussa is trained in both and will recommend the best approach for your condition." },
+    ],
   },
   {
     slug: "laparoscopic-surgery",
     title: "Laparoscopic Surgery",
+    seoTitle: "Laparoscopic Surgeon London & Hertfordshire | Keyhole Surgery",
+    seoDescription: "Laparoscopic (keyhole) surgery in London and Hertfordshire with Mr Osama Moussa. Gallbladder, hernia repair, anti-reflux surgery. Minimally invasive, faster recovery. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
     description:
       "Osama utilises laparoscopic surgery to perform minimally invasive procedures on the upper gastrointestinal tract, including conditions such as hernias and gallbladder issues. With smaller incisions and advanced technology, laparoscopic surgery offers patients faster recovery times and reduced post-operative pain.",
     image: "/laparoscopic-surgery.jpeg",
@@ -71,10 +91,17 @@ export const procedures: ProcedureItem[] = [
         ],
       },
     ],
+    faqs: [
+      { question: "What is keyhole surgery?", answer: "Keyhole surgery (laparoscopic surgery) uses a small camera and thin instruments passed through small cuts in the abdomen. The surgeon views the operation on a screen. It usually means less pain, a shorter hospital stay, and a quicker recovery than open surgery for many procedures." },
+      { question: "Which operations can be done laparoscopically?", answer: "Mr Moussa performs many Upper GI and general surgical procedures laparoscopically: gallbladder removal (cholecystectomy), inguinal and other hernia repairs, fundoplication and hiatus hernia repair for acid reflux, and other benign Upper GI operations. He will advise whether keyhole surgery is suitable for you." },
+      { question: "How long does recovery take after laparoscopic surgery?", answer: "Recovery depends on the procedure. Many patients go home within a day or two and can return to light activities within 1–2 weeks. You will get personalised advice on wound care, driving, and when you can return to work and exercise." },
+    ],
   },
   {
     slug: "robotic-surgery",
     title: "Robotic Surgery",
+    seoTitle: "Robotic Surgery London & Hertfordshire | Robotic Surgeon Specialist",
+    seoDescription: "Robotic surgery in London and Hertfordshire with Mr Osama Moussa. Versius and da Vinci. Upper GI and hernia surgery with enhanced precision. Spire Bushey, Circle Health Group, West Herts NHS. Book a consultation.",
     description:
       "Employing state-of-the-art robotic technology, Osama performs complex upper GI surgeries with enhanced precision and control. Robotic surgery allows for intricate procedures with minimal trauma to surrounding tissues, resulting in shorter hospital stays and improved patient outcomes.",
     image: "/Robotic surgery.webp",
@@ -100,10 +127,17 @@ export const procedures: ProcedureItem[] = [
         ],
       },
     ],
+    faqs: [
+      { question: "What is robotic surgery?", answer: "Robotic surgery uses a console where the surgeon controls precise instruments inside the body. The system gives a magnified 3D view and instruments that can bend and rotate more than the human hand, allowing very precise movements. Mr Moussa is trained on Versius and da Vinci systems." },
+      { question: "Is robotic surgery better than keyhole surgery?", answer: "For some procedures and patients, robotic surgery can offer advantages in precision and recovery. It is not always the best option—Mr Moussa will discuss whether robotic, standard laparoscopic, or open surgery is most appropriate for your condition." },
+      { question: "Where can I have robotic surgery in London or Hertfordshire?", answer: "Mr Osama Moussa offers robotic Upper GI and general surgery at West Hertfordshire NHS Trust and at selected private hospitals including Spire Bushey and Circle Health Group. Book a consultation to discuss your options." },
+    ],
   },
   {
     slug: "gallbladder-surgery-cholecystectomy",
     title: "Gallbladder Surgery / Cholecystectomy",
+    seoTitle: "Gallbladder Surgery London & Hertfordshire | Cholecystectomy Specialist",
+    seoDescription: "Gallbladder surgery (cholecystectomy) in London and Hertfordshire. Mr Osama Moussa – gallbladder surgery specialist UK. Laparoscopic keyhole removal for gallstones. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
     description:
       "Specialising in gallbladder surgery, Osama offers cholecystectomy procedures to patients suffering from gallstones or other gallbladder-related conditions. Using advanced laparoscopic techniques, he ensures safe and effective removal of the gallbladder, relieving symptoms and restoring digestive health.",
     image: "/Gallbladder_Gallstone.jpg",
@@ -130,10 +164,17 @@ export const procedures: ProcedureItem[] = [
         ],
       },
     ],
+    faqs: [
+      { question: "When do you need gallbladder surgery?", answer: "Gallbladder removal (cholecystectomy) is usually recommended when you have symptomatic gallstones (recurrent pain, inflammation, or complications such as jaundice or pancreatitis). If you have repeated biliary colic or cholecystitis, your doctor or surgeon will discuss whether surgery is the right option." },
+      { question: "Is gallbladder surgery done by keyhole?", answer: "Yes. Mr Moussa performs cholecystectomy almost always by laparoscopic (keyhole) surgery. This typically means less pain, a shorter stay in hospital, and a quicker recovery than open surgery. In a small number of cases, open surgery may be needed for safety." },
+      { question: "Where can I have gallbladder surgery in London or Hertfordshire?", answer: "Mr Osama Moussa performs gallbladder surgery at Spire Bushey, Circle Health Group hospitals, and West Hertfordshire NHS Trust. Book a consultation via the contact page or by phone to discuss your options." },
+    ],
   },
   {
     slug: "gastroesophageal-reflux-disease-gord",
     title: "Gastroesophageal Reflux Disease/GORD",
+    seoTitle: "Acid Reflux Surgery London | GORD & Reflux Surgery Specialist",
+    seoDescription: "Acid reflux surgery London and Hertfordshire. Mr Osama Moussa – acid reflux surgery specialist. GORD treatment, fundoplication, LINX, hiatus hernia repair. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
     description:
       "Osama offers comprehensive treatments for Gastroesophageal Reflux Disease (GORD), including minimally invasive procedures like laparoscopic hiatus hernia repair and fundoplication. With his expertise in benign oesophagogastric surgery, he provides effective solutions to manage GORD symptoms and improve patients' quality of life.",
     image: "/Gastrooesophageal reflux disease.webp",
@@ -160,10 +201,17 @@ export const procedures: ProcedureItem[] = [
         ],
       },
     ],
+    faqs: [
+      { question: "What are the symptoms of a hiatus hernia?", answer: "Hiatus hernia symptoms often include heartburn, regurgitation, chest pain, difficulty swallowing, and sometimes cough or hoarseness. Many people with a hiatus hernia also have GORD. If you have persistent symptoms, see your GP or a specialist for assessment." },
+      { question: "When do you need acid reflux surgery?", answer: "Surgery may be considered when acid reflux (GORD) continues despite medication and lifestyle changes, when you want to reduce long-term medication, or when there are complications such as a large hiatus hernia. Assessment with endoscopy and sometimes pH and pressure studies helps determine if surgery is appropriate." },
+      { question: "What is the best treatment for chronic acid reflux?", answer: "Treatment depends on severity and your preference. Options include lifestyle changes, acid-suppressing medication (e.g. PPIs), and surgery (fundoplication or LINX device). Mr Moussa will discuss the pros and cons of each after reviewing your symptoms and tests." },
+    ],
   },
   {
     slug: "hernia-repair-surgery",
     title: "Hernia Repair Surgery",
+    seoTitle: "Hernia Surgeon London & Hertfordshire | Hernia Repair Surgery",
+    seoDescription: "Hernia surgeon London and Hertfordshire. Mr Osama Moussa – hernia repair surgery: inguinal, ventral, umbilical, hiatal, TAPP. Laparoscopic and robotic options. Spire Bushey, Watford, West Herts. Book a consultation.",
     description:
       "Specialising in hernia repair surgery, Osama offers various techniques, including laparoscopic and robotic approaches, to address different types of hernias affecting the upper GI tract. With a focus on patient safety and optimal outcomes, he ensures each procedure is tailored to meet the individual needs of the patient.",
     image: "/Hernia repair surgery.png",
@@ -190,10 +238,17 @@ export const procedures: ProcedureItem[] = [
         ],
       },
     ],
+    faqs: [
+      { question: "What are the symptoms of a hernia?", answer: "Common hernia symptoms include a visible lump or bulge (especially when coughing or straining), discomfort or pain in the area, and sometimes a dragging sensation. Groin hernias may cause pain when lifting. If the hernia becomes very painful, red, or you cannot push it back, seek urgent medical attention." },
+      { question: "How long is recovery after laparoscopic hernia surgery?", answer: "Recovery varies by hernia type and size. Many patients go home the same day or after a short stay. Light activities can often resume within 1–2 weeks; heavier lifting and sport are usually avoided for several weeks. Mr Moussa will give you personalised advice at your consultation and after surgery." },
+      { question: "Where can I see a hernia surgeon in London or Hertfordshire?", answer: "Mr Osama Moussa sees patients at Spire Bushey, Circle Health Group hospitals (including Bishops Wood, The Wellington Hospital), and West Hertfordshire NHS Trust. Book a consultation via the contact page or by phone." },
+    ],
   },
   {
     slug: "linx-device-gord-treatment",
     title: "LINX Device for GORD Treatment",
+    seoTitle: "LINX Device London & Hertfordshire | Acid Reflux Surgery Specialist",
+    seoDescription: "LINX device for GORD in London and Hertfordshire. Mr Osama Moussa – acid reflux surgery specialist. Minimally invasive LINX for reflux. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
     description:
       "Osama provides innovative treatments like the LINX device for GORD, offering patients a minimally invasive solution to manage reflux symptoms. By implanting the LINX device, he helps restore the natural function of the oesophagus and provides long-term relief from GORD-related issues.",
     image: "/linx-procedure.png",
@@ -219,10 +274,17 @@ export const procedures: ProcedureItem[] = [
         ],
       },
     ],
+    faqs: [
+      { question: "What is the LINX device?", answer: "LINX is a small ring of magnetic titanium beads placed around the lower oesophagus during keyhole surgery. It opens when you swallow and closes at other times to reduce reflux. It is an alternative to fundoplication for selected patients with GORD who want to reduce or stop long-term medication." },
+      { question: "Who is suitable for LINX?", answer: "LINX is suitable for some patients with GORD who have responded to medication but want to reduce or stop it. Assessment includes endoscopy and often pH and pressure (manometry) studies. Large hiatus hernias or certain motility issues may make fundoplication or other treatments more appropriate. Mr Moussa will advise after reviewing your results." },
+      { question: "How long does LINX last?", answer: "LINX is designed for long-term use. Many patients have significant improvement in reflux symptoms and can reduce or stop acid-suppressing medication. Long-term follow-up helps ensure the device continues to work well. Mr Moussa will discuss what to expect at your consultation." },
+    ],
   },
   {
     slug: "inguinal-hernia-surgery",
     title: "Inguinal Hernia Surgery",
+    seoTitle: "Inguinal Hernia Surgeon London & Hertfordshire | Groin Hernia Repair",
+    seoDescription: "Inguinal hernia surgery in London and Hertfordshire. Mr Osama Moussa – inguinal hernia surgeon. Laparoscopic (TAPP) and open repair. Spire Bushey, Watford, West Herts. Book a consultation.",
     description:
       "Osama specialises in inguinal hernia surgery, offering both traditional and minimally invasive approaches to repair hernias in the groin area. With his expertise, patients can expect safe and effective hernia repair procedures that minimize post-operative discomfort and promote swift recovery.",
     image: "/Laparoscopic inguinal hernia surgery.jpg",
@@ -247,6 +309,11 @@ export const procedures: ProcedureItem[] = [
           "Recovery is usually quick. You will be advised on wound care, driving, and when you can return to work and physical activity. Follow-up is arranged to check the wound and ensure you are comfortable.",
         ],
       },
+    ],
+    faqs: [
+      { question: "What is an inguinal hernia?", answer: "An inguinal hernia is when bowel or fatty tissue pushes through a weakness in the groin canal. It is more common in men and can cause a lump, discomfort, or pain when lifting, coughing, or straining. Repair is usually recommended when the hernia is symptomatic." },
+      { question: "What is TAPP repair for inguinal hernia?", answer: "TAPP (transabdominal preperitoneal) repair is a laparoscopic (keyhole) technique for groin hernias. Mesh is placed to reinforce the defect. It often allows a quicker return to normal activities and less post-operative pain than open repair. Mr Moussa will advise whether TAPP or open repair is best for you." },
+      { question: "When can I drive after inguinal hernia surgery?", answer: "You will be advised at discharge. Typically driving is avoided for 1–2 weeks or until you can perform an emergency stop comfortably. Your surgeon will give you personalised advice based on your repair and recovery." },
     ],
   },
   {
@@ -277,6 +344,11 @@ export const procedures: ProcedureItem[] = [
         ],
       },
     ],
+    faqs: [
+      { question: "What is TAPP hernia surgery?", answer: "TAPP (transabdominal preperitoneal) repair is a keyhole technique for groin (inguinal) hernias. The surgeon places a mesh in the preperitoneal space to reinforce the hernia. It is associated with less post-operative pain and a quicker return to normal activities for many patients." },
+      { question: "Is TAPP suitable for recurrent hernias?", answer: "Yes. TAPP can be used for recurrent inguinal hernias after previous open repair. Mr Moussa will assess your hernia and general health to decide whether TAPP is the best option. In some cases, open repair may be recommended instead." },
+      { question: "How long is the stay after TAPP surgery?", answer: "Many patients go home the same day or after a short stay. You will receive advice on wound care, driving, and activity. Follow-up is arranged to check you are recovering well." },
+    ],
   },
   {
     slug: "epigastric-hernia-surgery",
@@ -299,6 +371,10 @@ export const procedures: ProcedureItem[] = [
           "Repair typically involves closing the defect and often reinforcing it with mesh to reduce the risk of recurrence. You will receive advice on wound care and activity. Recovery is usually straightforward, and follow-up is arranged to check your progress.",
         ],
       },
+    ],
+    faqs: [
+      { question: "What is an epigastric hernia?", answer: "An epigastric hernia is a bulge through the midline of the upper abdomen, between the breastbone and the navel. Fatty tissue or sometimes bowel pushes through a weakness in the abdominal wall. It can cause discomfort or pain when straining or lifting. Repair is usually recommended when symptomatic or enlarging." },
+      { question: "How is an epigastric hernia repaired?", answer: "Mr Moussa repairs epigastric hernias using open or laparoscopic (keyhole) techniques depending on the size and your circumstances. The defect is closed and often reinforced with mesh to reduce recurrence. You will get advice on wound care and activity." },
     ],
   },
   {
@@ -329,6 +405,11 @@ export const procedures: ProcedureItem[] = [
         ],
       },
     ],
+    faqs: [
+      { question: "What is a ventral hernia?", answer: "Ventral hernia is a general term for hernias in the front abdominal wall: umbilical (at the navel), paraumbilical (near the navel), epigastric (upper midline), and incisional (through a previous surgical scar). They can cause a bulge, discomfort, or pain and may enlarge over time." },
+      { question: "Can ventral hernias be repaired by keyhole surgery?", answer: "Yes. Many ventral hernias can be repaired laparoscopically. Smaller hernias may be closed with or without mesh; larger or incisional hernias usually need mesh to reinforce the wall. Mr Moussa will explain the best approach for your hernia." },
+      { question: "When should I have my ventral hernia repaired?", answer: "Repair is usually recommended when the hernia is symptomatic, enlarging, or when there is concern about complications. Mr Moussa will assess the size, position, and your general health and recommend the most appropriate repair and timing." },
+    ],
   },
   {
     slug: "umbilical-paraumbilical-hernia-surgery",
@@ -351,6 +432,11 @@ export const procedures: ProcedureItem[] = [
           "Repair can be done by open surgery or laparoscopically depending on the size and your circumstances. Mesh may be used to reinforce the defect. Recovery is usually straightforward with advice on wound care and gradual return to activity. Follow-up ensures you are healing well.",
         ],
       },
+    ],
+    faqs: [
+      { question: "What is an umbilical hernia?", answer: "An umbilical hernia is a bulge at the navel; a paraumbilical hernia is near but not exactly at the navel. Both occur when tissue pushes through a weakness in the abdominal wall. They are common in adults and can develop due to increased pressure (e.g. obesity, pregnancy, heavy lifting)." },
+      { question: "When should an umbilical or paraumbilical hernia be repaired?", answer: "Repair is usually recommended when the hernia causes symptoms, is enlarging, or when there is a risk of complications. Mr Moussa will assess the hernia and discuss the best approach—open or laparoscopic—and whether mesh is needed." },
+      { question: "How long is recovery after umbilical hernia repair?", answer: "Recovery is usually straightforward. You will get advice on wound care and gradual return to activity. Follow-up ensures you are healing well. Heavy lifting is typically avoided for several weeks." },
     ],
   },
   {
@@ -381,6 +467,11 @@ export const procedures: ProcedureItem[] = [
         ],
       },
     ],
+    faqs: [
+      { question: "What is abdominal wall reconstruction?", answer: "Abdominal wall reconstruction restores the structure and function of the abdominal wall when it has been weakened or damaged by previous surgery (e.g. large incisional hernias), trauma, or infection. The aim is to close the defect, reinforce the wall (often with mesh), and improve comfort, appearance, and function." },
+      { question: "Who needs abdominal wall reconstruction?", answer: "Patients with large or complex incisional hernias, or damage to the abdominal wall from previous surgery, trauma, or infection, may benefit. Assessment includes examining the abdomen, reviewing previous operations and imaging, and considering your general health. Mr Moussa will discuss the procedure and what to expect." },
+      { question: "How long is recovery after abdominal wall reconstruction?", answer: "Recovery depends on the extent of surgery. You will get clear advice on wound care, activity, and follow-up. Supporting the abdomen when moving and avoiding heavy lifting for the period advised helps the repair heal and reduces the risk of recurrence." },
+    ],
   },
   {
     slug: "skin-lumps-lipomas",
@@ -403,6 +494,11 @@ export const procedures: ProcedureItem[] = [
           "Removal is usually done under local or general anaesthetic depending on the size and site. Incisions are kept as small as possible to minimise scarring. You will receive advice on wound care and follow-up. Most procedures are straightforward with a quick recovery.",
         ],
       },
+    ],
+    faqs: [
+      { question: "What is a lipoma?", answer: "A lipoma is a benign (non-cancerous) fatty lump under the skin. It is usually soft, mobile, and painless. Lipomas can be removed if they cause discomfort, are enlarging, or for cosmetic reasons. Mr Moussa assesses skin and soft tissue lumps and can arrange removal when appropriate." },
+      { question: "Should I have my lipoma removed?", answer: "Removal is optional unless the lump is causing symptoms, enlarging, or you want it removed for cosmetic reasons. If there is any doubt about the diagnosis, further investigation or referral may be recommended. Mr Moussa will advise after examining the lump." },
+      { question: "How is a lipoma removed?", answer: "Removal is usually under local or general anaesthetic depending on size and site. The incision is kept as small as possible to minimise scarring. Recovery is typically quick with advice on wound care and follow-up." },
     ],
   },
 ];

@@ -36,7 +36,7 @@ export default function Hero() {
         {/* Mobile Image */}
         <Image
           src="/OsamaHeroMobile.png"
-          alt="Osama Moussa"
+          alt="Mr Osama Moussa – Consultant General Surgeon, Upper GI and Robotic Surgery, London and Hertfordshire"
           fill
           className="object-cover hero-breathe hero-image-mobile sm:hidden"
           priority
@@ -51,7 +51,7 @@ export default function Hero() {
         {/* Desktop Image */}
         <Image
           src="/1-2.jpg"
-          alt="Osama Moussa"
+          alt="Mr Osama Moussa – Consultant General Surgeon, Upper GI and Robotic Surgery, London and Hertfordshire"
           fill
           className="object-cover hero-breathe hidden sm:block"
           priority

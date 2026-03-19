@@ -3,13 +3,14 @@ import Header from "@/components/Header";
 import Hero, { MobileWidgetsSection } from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import ValuesSection from "@/components/ValuesSection";
+import KeyProceduresSection from "@/components/KeyProceduresSection";
 import LogosSection from "@/components/LogosSection";
 import ReviewsSection from "@/components/ReviewsSection";
 import AppointmentSection from "@/components/AppointmentSection";
 
 export const metadata: Metadata = {
-  title: "Osama Moussa",
-  description: "Mr Osama Moussa - Leading Upper GI and Robotic Surgery specialist in London (Chelsea, Belgravia, Fitzrovia, Holland Park, West London) and Hertfordshire. Expert in robotic surgery, laparoscopic surgery, hernia repair, gallbladder surgery, GORD treatment, and fundoplication. Available at Spire Bushey, Circle Health Group, and West Hertfordshire NHS Trust. Book your consultation today.",
+  title: "Mr Osama Moussa – Upper GI & Hernia Surgeon London | Robotic Surgery Specialist",
+  description: "Mr Osama Moussa – Upper GI and hernia surgeon London and Hertfordshire. Robotic surgery specialist. Expert in laparoscopic surgery, gallbladder surgery, acid reflux (GORD) and hernia repair. Spire Bushey, Circle Health Group, West Herts NHS. Book your consultation today.",
   keywords: [
     "Robotic Surgery London",
     "Robotic Surgery Hertfordshire",
@@ -52,8 +53,8 @@ export const metadata: Metadata = {
     "Private Surgeon London"
   ],
   openGraph: {
-    title: "Mr Osama Moussa | Upper GI & Robotic Surgery | London & Hertfordshire",
-    description: "A leader in Upper GI and Robotic Surgery in London and Hertfordshire. Expert in robotic surgery, laparoscopic surgery, hernia repair, gallbladder surgery, GORD treatment, and fundoplication.",
+    title: "Mr Osama Moussa – Upper GI & Hernia Surgeon London | Robotic Surgery Specialist",
+    description: "Upper GI and hernia surgeon London and Hertfordshire. Robotic surgery specialist. Expert in laparoscopic surgery, gallbladder surgery, acid reflux and hernia repair. Book your consultation.",
     url: "https://www.osamamoussa.co.uk",
     type: "website",
   },
@@ -69,6 +70,7 @@ export default function Home() {
       <Hero />
       <AboutSection />
       <ValuesSection />
+      <KeyProceduresSection />
       <LogosSection />
       <ReviewsSection />
       <AppointmentSection />

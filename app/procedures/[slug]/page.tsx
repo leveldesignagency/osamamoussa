@@ -17,12 +17,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const procedure = getProcedureBySlug(slug);
   if (!procedure) return { title: "Procedure" };
+  const title = procedure.seoTitle ?? `${procedure.title} London & Hertfordshire`;
+  const description = procedure.seoDescription ?? procedure.description;
   return {
-    title: procedure.title,
-    description: procedure.description,
+    title: title,
+    description: description,
     openGraph: {
-      title: `${procedure.title} | Mr Osama Moussa - Consultant General Surgeon`,
-      description: procedure.description,
+      title: `${title} | Mr Osama Moussa - Consultant General Surgeon`,
+      description: description,
       url: `https://www.osamamoussa.co.uk/procedures/${slug}`,
       type: "website",
     },
@@ -82,6 +84,22 @@ export default async function ProcedurePage({ params }: Props) {
     },
   };
 
+  const faqSchema =
+    procedure.faqs && procedure.faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: procedure.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }
+      : null;
+
   return (
     <main className="min-h-screen bg-gradient-grey relative">
       {/* Structured data for Google */}
@@ -93,6 +111,12 @@ export default async function ProcedurePage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalWebPageSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       <div className="absolute top-0 left-0 right-0 h-32 header-gradient-overlay z-40 pointer-events-none" />
       <Header backgroundColor="grey" />
@@ -104,7 +128,7 @@ export default async function ProcedurePage({ params }: Props) {
         <div className="relative w-full aspect-[21/9] sm:aspect-[3/1] max-h-[50vh]">
           <Image
             src={procedure.image}
-            alt=""
+            alt={`${procedure.title} – Mr Osama Moussa, Consultant General Surgeon`}
             fill
             className="object-cover"
             priority
@@ -140,6 +164,23 @@ export default async function ProcedurePage({ params }: Props) {
                 </div>
               ))}
             </div>
+
+            {/* FAQ section (when present) - patient-focused content for SEO */}
+            {procedure.faqs && procedure.faqs.length > 0 && (
+              <div className="space-y-6 text-center lg:text-left">
+                <h2 className="page-title font-bold text-white mb-4 sm:mb-6 uppercase">
+                  Frequently asked questions
+                </h2>
+                <ul className="space-y-6">
+                  {procedure.faqs.map((faq, i) => (
+                    <li key={i} className="space-y-2">
+                      <h3 className="text-lg font-semibold text-white">{faq.question}</h3>
+                      <p className="text-gray-200 leading-relaxed">{faq.answer}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Right sidebar - sticky on desktop; centred on mobile when stacked */}
             <ProcedureSidebar slug={slug} procedures={procedures} />

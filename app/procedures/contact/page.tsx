@@ -63,7 +63,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 overflow-hidden hidden sm:block" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
             <Image
             src="/OMCONTACT.JPG"
-            alt="Contact Background"
+            alt="Contact Mr Osama Moussa – Book a consultation for Upper GI and robotic surgery in London and Hertfordshire"
             fill
             className="object-cover image-grow-shrink"
             style={{ 

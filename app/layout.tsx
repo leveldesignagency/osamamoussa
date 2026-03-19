@@ -17,7 +17,7 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.osamamoussa.co.uk"),
   title: {
-    default: "Mr Osama Moussa | Consultant General Surgeon | Upper GI & Robotic Surgery | London & Hertfordshire",
+    default: "Mr Osama Moussa – Upper GI & Hernia Surgeon London | Robotic Surgery Specialist",
     template: "%s | Mr Osama Moussa - Consultant General Surgeon"
   },
   description: "Mr Osama Moussa is a Consultant General Surgeon specialising in Upper GI and Robotic Surgery. Expert in robotic surgery, laparoscopic surgery, hernia repair, gallbladder surgery (cholecystectomy), GORD treatment, fundoplication, LINX device, and benign Upper GI procedures. Serving London (Chelsea, Belgravia, Fitzrovia, Holland Park, West London), Hertfordshire, Watford, Hemel Hempstead. Available at Spire Bushey, Circle Health Group, and West Hertfordshire NHS Trust.",
@@ -312,6 +312,21 @@ export default function RootLayout({
         "@type": "EducationalOrganization",
         "name": "Imperial College London"
       }
+    ],
+    "identifier": [
+      {
+        "@type": "PropertyValue",
+        "name": "GMC Number",
+        "value": "6043402",
+        "url": "https://www.gmc-uk.org/registration-and-licensing/register-search"
+      }
+    ],
+    "memberOf": [
+      { "@type": "Organization", "name": "Royal College of Surgeons of England", "url": "https://www.rcseng.ac.uk/" },
+      { "@type": "Organization", "name": "British Medical Association", "url": "https://www.bma.org.uk/" },
+      { "@type": "Organization", "name": "BOMSS", "url": "https://bomss.org/" },
+      { "@type": "Organization", "name": "AUGIS", "url": "https://www.augis.org/" },
+      { "@type": "Organization", "name": "IFSO", "url": "https://www.ifso.com/" }
     ]
   };
 
@@ -325,7 +340,8 @@ export default function RootLayout({
       "https://www.researchgate.net/profile/Osama-Moussa-7",
       "https://scholargps.com/scholars/40596147119067/osama-moussa",
       "https://www.iwantgreatcare.org/doctors/mr-osama-m-moussa",
-      "https://www.topdoctors.co.uk/doctor/osama-moussa"
+      "https://www.topdoctors.co.uk/doctor/osama-moussa",
+      "https://www.gmc-uk.org/registration-and-licensing/register-search"
     ]
   };
 
