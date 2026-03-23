@@ -149,7 +149,7 @@ export default async function ProcedurePage({ params }: Props) {
       <section className="w-full py-10 sm:py-16">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10 lg:gap-10 xl:gap-12">
-            {/* Main content - centred on mobile */}
+            {/* Main content + FAQ (left column) */}
             <div className="space-y-10 sm:space-y-16 text-center lg:text-left">
               {procedure.expandedContent.map((block, i) => (
                 <div key={i} className="space-y-4 sm:space-y-6">
@@ -163,24 +163,24 @@ export default async function ProcedurePage({ params }: Props) {
                   </div>
                 </div>
               ))}
-            </div>
 
-            {/* FAQ section (when present) - patient-focused content for SEO */}
-            {procedure.faqs && procedure.faqs.length > 0 && (
-              <div className="space-y-6 text-center lg:text-left">
-                <h2 className="page-title font-bold text-white mb-4 sm:mb-6 uppercase">
-                  Frequently asked questions
-                </h2>
-                <ul className="space-y-6">
-                  {procedure.faqs.map((faq, i) => (
-                    <li key={i} className="space-y-2">
-                      <h3 className="text-lg font-semibold text-white">{faq.question}</h3>
-                      <p className="text-gray-200 leading-relaxed">{faq.answer}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+              {/* FAQ section (when present) - under main article content */}
+              {procedure.faqs && procedure.faqs.length > 0 && (
+                <div className="space-y-6 text-center lg:text-left">
+                  <h2 className="page-title font-bold text-white mb-4 sm:mb-6 uppercase">
+                    Frequently asked questions
+                  </h2>
+                  <ul className="space-y-6">
+                    {procedure.faqs.map((faq, i) => (
+                      <li key={i} className="space-y-2">
+                        <h3 className="text-lg font-semibold text-white">{faq.question}</h3>
+                        <p className="text-gray-200 leading-relaxed">{faq.answer}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
 
             {/* Right sidebar - sticky on desktop; centred on mobile when stacked */}
             <ProcedureSidebar slug={slug} procedures={procedures} />
