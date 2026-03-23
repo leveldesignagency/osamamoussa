@@ -1,11 +1,13 @@
 import { MetadataRoute } from 'next'
 import { getProcedureSlugs } from './procedures/procedures-data'
 import { getPublicationSlugs } from './research/publications-data'
+import { getLocationSlugs } from './locations/location-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.osamamoussa.co.uk'
   const procedureSlugs = getProcedureSlugs()
   const publicationSlugs = getPublicationSlugs()
+  const locationSlugs = getLocationSlugs()
 
   const procedureEntries: MetadataRoute.Sitemap = procedureSlugs.map((slug) => ({
     url: `${baseUrl}/procedures/${slug}`,
@@ -58,6 +60,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/locations`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    ...locationSlugs.map((slug) => ({
+      url: `${baseUrl}/locations/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
     {
       url: `${baseUrl}/terms-and-conditions`,
       lastModified: new Date(),

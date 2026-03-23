@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { trackContact, getDevice } from "@/lib/contact-analytics";
+import { hospitals, locationPages } from "@/app/locations/location-data";
 
 export default function ContactPage() {
   const scriptsLoaded = useRef(false);
@@ -15,43 +16,6 @@ export default function ContactPage() {
   useEffect(() => {
     scriptsLoaded.current = true;
   }, []);
-
-  const hospitals = [
-    {
-      name: "West Hertfordshire NHS Trust",
-      address: "Vicarage Road, Watford, WD18 0HB",
-      phone: "01923 244 366",
-      website: "https://www.westhertshospitals.nhs.uk/",
-      mapUrl:
-        "https://www.google.com/maps/place/Watford+General+Hospital/@51.6495051,-0.4062333,17z/data=!4m9!1m2!2m1!1sVicarage+Road+Watford+WDS8+0HB!3m5!1s0x48766add427ddfd1:0xe6737457e2df3710!8m2!3d51.6482886!4d-0.4038784!16s%2Fm%2F0m0q811?entry=ttu",
-    },
-    {
-      name: "Spire Bushey Healthcare",
-      address: "Heathbourne Rd, Bushey, WD23 1RD",
-      phone: "020 8950 9090",
-      website: "https://www.spirehealthcare.com/spire-bushey-hospital/",
-      mapUrl:
-        "https://www.google.com/maps?sca_esv=5916dc4a4d004541&rlz=1C5CHFA_enGB1104GB1104&biw=1728&bih=993&sxsrf=ADLYWIL5DwE835fzPeMuhnIpY9M8z28RpQ:1719416946508&uact=5&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgDIjJidXNoZXkgaGVhbHRoY2FyZSBIZWF0aGJvdXJuZSBSb2FkIEJ1c2hleSBXRDIzIDFSRDIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogQyCBAAGKIEGIkFSNkbUIIGWP0acAF4AZABAJgBpAKgAdAOqgEGMTAuNy4xuAEDyAEA-AEBmAIQoALFCsICChAAGLADGNYEGEfCAgcQIxiwAhgnwgIIEAAYBxgIGB7CAggQABgFGAcYHsICCBAAGAgYDRgewgILEAAYgAQYhgMYigXCAgYQABgIGB7CAgQQIRgKmAMAiAYBkAYIkgcEMTAuNqAH5IQB&um=1&ie=UTF-8&fb=1&gl=uk&sa=X&geocode=KSkYbmX_FHZIMULZu5UksWQY&daddr=Heathbourne+Rd,+Bushey+WD23+1RD",
-    },
-    {
-      name: "Bishops Wood Hospital",
-      address: "Rickmansworth Road, Northwood, HA6 2JW",
-      phone: "01923 835 814",
-      website:
-        "https://www.circlehealthgroup.co.uk/hospitals/bishops-wood-hospital",
-      mapUrl:
-        "https://www.google.com/maps?rlz=1C5CHFA_enGB1104GB1104&gs_lcrp=EgZjaHJvbWUqFQgBEC4YJxivARjHARiABBiKBRiOBTIPCAAQIxgnGOMCGIAEGIoFMhUIARAuGCcYrwEYxwEYgAQYigUYjgUyBggCEEUYOTIGCAMQRRg7MgcIBBAAGIAEMgcIBRAuGIAEMhAIBhAuGK8BGMcBGIAEGI4FMgYIBxBFGDzSAQgyNTY0ajFqNKgCALACAQ&um=1&ie=UTF-8&fb=1&gl=uk&sa=X&geocode=Kc1Nr_iUa3ZIMcHNagAmeXaS&daddr=Rickmansworth+Rd,+Northwood+HA6+2JW",
-    },
-    {
-      name: "The Wellington Hospital",
-      address: "8A Wellington Place, London, NW8 9LE",
-      phone: "020 3733 5344",
-      website:
-        "https://www.circlehealthgroup.co.uk/hospitals/bishops-wood-hospital",
-      mapUrl:
-        "https://www.google.com/maps?rlz=1C5CHFA_enGB1104GB1104&gs_lcrp=EgZjaHJvbWUqFQgBEC4YJxivARjHARiABBiKBRiOBTIPCAAQIxgnGOMCGIAEGIoFMhUIARAuGCcYrwEYxwEYgAQYigUYjgUyBggCEEUYOTIGCAMQRRg7MgcIBBAAGIAEMgcIBRAuGIAEMhAIBhAuGK8BGMcBGIAEGI4FMgYIBxBFGDzSAQgyNTY0ajFqNKgCALACAQ&um=1&ie=UTF-8&fb=1&gl=uk&sa=X&geocode=Kc1Nr_iUa3ZIMcHNagAmeXaS&daddr=Rickmansworth+Rd,+Northwood+HA6+2JW",
-    },
-  ];
 
   return (
     <main className="min-h-screen bg-gradient-grey relative">
@@ -233,6 +197,17 @@ export default function ContactPage() {
               Dr. Moussa practices at multiple prestigious hospitals across London and Hertfordshire. 
               Book your consultation directly through each hospital&apos;s website.
             </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+              {locationPages.map((location) => (
+                <Link
+                  key={location.slug}
+                  href={`/locations/${location.slug}`}
+                  className="inline-block px-4 py-2 border border-white/40 rounded-full text-white/90 hover:text-white hover:border-white transition-all text-sm sm:text-base"
+                >
+                  {location.title}
+                </Link>
+              ))}
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
