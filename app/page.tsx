@@ -4,13 +4,15 @@ import Hero, { MobileWidgetsSection } from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import ValuesSection from "@/components/ValuesSection";
 import KeyProceduresSection from "@/components/KeyProceduresSection";
+import HomeLocationsTrustSection from "@/components/HomeLocationsTrustSection";
 import LogosSection from "@/components/LogosSection";
 import ReviewsSection from "@/components/ReviewsSection";
 import AppointmentSection from "@/components/AppointmentSection";
 
 export const metadata: Metadata = {
   title: "Mr Osama Moussa – Upper GI & Hernia Surgeon London | Robotic Surgery Specialist",
-  description: "Mr Osama Moussa – Upper GI and hernia surgeon London and Hertfordshire. Robotic surgery specialist. Expert in laparoscopic surgery, gallbladder surgery, acid reflux (GORD) and hernia repair. Spire Bushey, Circle Health Group, West Herts NHS. Book your consultation today.",
+  description:
+    "Mr Osama Moussa – Consultant Upper GI surgeon London & Hertfordshire. Hernia repair, gallstones & gallbladder surgery, acid reflux (GORD), minimally invasive laparoscopic and robotic surgery. Spire Bushey, Circle Health Group, West Herts NHS. Book a consultation.",
   keywords: [
     "Robotic Surgery London",
     "Robotic Surgery Hertfordshire",
@@ -54,7 +56,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Mr Osama Moussa – Upper GI & Hernia Surgeon London | Robotic Surgery Specialist",
-    description: "Upper GI and hernia surgeon London and Hertfordshire. Robotic surgery specialist. Expert in laparoscopic surgery, gallbladder surgery, acid reflux and hernia repair. Book your consultation.",
+    description:
+      "Consultant Upper GI surgeon London & Hertfordshire. Hernia, gallbladder & gallstones, acid reflux, laparoscopic and robotic surgery. Book a consultation.",
     url: "https://www.osamamoussa.co.uk",
     type: "website",
   },
@@ -68,9 +71,11 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-grey overflow-x-hidden">
       <Header />
       <Hero />
+      <KeyProceduresSection />
+      <HomeLocationsTrustSection />
+      <MobileWidgetsSection />
       <AboutSection />
       <ValuesSection />
-      <KeyProceduresSection />
       <LogosSection />
       <ReviewsSection />
       <AppointmentSection />

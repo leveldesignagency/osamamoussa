@@ -2,9 +2,11 @@ import Link from "next/link";
 
 const KEY_PROCEDURES = [
   { href: "/procedures/robotic-surgery", label: "Robotic Surgery" },
+  { href: "/procedures/laparoscopic-surgery", label: "Laparoscopic (Keyhole)" },
   { href: "/procedures/gastroesophageal-reflux-disease-gord", label: "Acid Reflux & GORD" },
   { href: "/procedures/hernia-repair-surgery", label: "Hernia Repair" },
-  { href: "/procedures/gallbladder-surgery-cholecystectomy", label: "Gallbladder Surgery" },
+  { href: "/procedures/inguinal-hernia-surgery", label: "Inguinal Hernia" },
+  { href: "/procedures/gallbladder-surgery-cholecystectomy", label: "Gallbladder & Gallstones" },
   { href: "/procedures/linx-device-gord-treatment", label: "LINX Device" },
 ];
 
@@ -15,8 +17,13 @@ export default function KeyProceduresSection() {
         <h2 className="text-2xl sm:text-3xl font-bold text-white uppercase tracking-wide mb-2" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>
           Key treatments
         </h2>
-        <p className="text-white/80 text-sm sm:text-base mb-8">
-          Upper GI and general surgical procedures in London and Hertfordshire
+        <p className="text-white/80 text-sm sm:text-base mb-8 max-w-3xl mx-auto leading-relaxed">
+          Minimally invasive and robotic Upper GI surgery — including{" "}
+          <strong className="text-white/95 font-semibold">hernia repair</strong>,{" "}
+          <strong className="text-white/95 font-semibold">gallstones (cholecystectomy)</strong>,{" "}
+          <strong className="text-white/95 font-semibold">acid reflux</strong> and{" "}
+          <strong className="text-white/95 font-semibold">laparoscopic</strong> procedures —{" "}
+          <span className="text-white/60">across London and Hertfordshire.</span>
         </p>
         <ul className="flex flex-wrap justify-center gap-3 sm:gap-4">
           {KEY_PROCEDURES.map((item) => (

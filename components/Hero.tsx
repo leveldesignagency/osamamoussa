@@ -77,11 +77,23 @@ export default function Hero() {
       {/* Hero Content - left align */}
       <div className="relative z-10 h-full flex flex-col justify-end sm:justify-center items-center sm:items-start pb-32 sm:pb-0 sm:pt-40">
         <div className="container mx-auto pl-2 sm:pl-2 lg:pl-3 pr-4 sm:pr-6 lg:pr-8 w-full">
-          <h1 className="text-[22px] sm:text-[26px] md:text-[34px] lg:text-[42px] font-bold text-white sm:text-black mb-8 max-w-3xl animate-fade-in-up text-center sm:text-left tracking-wide uppercase" style={{ fontFamily: '"ITC Avant Garde Gothic", "Century Gothic", sans-serif', fontWeight: 700, lineHeight: 1.2 }}>
-            A Leader in Upper GI
+          <h1 className="text-[20px] sm:text-[24px] md:text-[32px] lg:text-[40px] font-bold text-white sm:text-black mb-4 max-w-3xl animate-fade-in-up text-center sm:text-left tracking-wide uppercase" style={{ fontFamily: '"ITC Avant Garde Gothic", "Century Gothic", sans-serif', fontWeight: 700, lineHeight: 1.2 }}>
+            Consultant Upper GI
             <br />
-            & Robotic Surgery
+            & Robotic Surgeon
           </h1>
+          <p
+            className="text-[13px] sm:text-sm md:text-base lg:text-lg font-semibold text-white sm:text-black/90 mb-6 max-w-2xl animate-fade-in-up text-center sm:text-left tracking-wide uppercase opacity-95"
+            style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', lineHeight: 1.35 }}
+          >
+            London &amp; Hertfordshire
+          </p>
+          <p
+            className="text-xs sm:text-sm md:text-base text-white/95 sm:text-black/80 mb-8 max-w-2xl animate-fade-in-up text-center sm:text-left leading-snug"
+            style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
+          >
+            Hernia repair · Gallbladder &amp; gallstones · Acid reflux (GORD) · Minimally invasive laparoscopic surgery
+          </p>
           
           <div className="flex flex-row flex-wrap gap-3 sm:gap-4 animate-fade-in-up justify-center sm:justify-start mb-8 items-stretch" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
                 {/* Mobile - Book Now + Call Now */}

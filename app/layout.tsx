@@ -138,6 +138,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  /** Canonical portrait for entity / GEO (PNG/JPEG — not SVG logo). Matches OG social share image. */
+  const siteOrigin = "https://www.osamamoussa.co.uk";
+  const physicianPortraitUrl = `${siteOrigin}/Osama%20Moussa%20Social%20Share.png`;
+  const physicianPortraitImageObject = {
+    "@type": "ImageObject",
+    url: physicianPortraitUrl,
+    caption: "Mr Osama Moussa — Consultant General Surgeon (official website photo)",
+  };
+
   // Structured Data (JSON-LD) for Medical Practice
   const medicalPracticeSchema = {
     "@context": "https://schema.org",
@@ -146,7 +155,7 @@ export default function RootLayout({
     "description": "Consultant General Surgeon specialising in Upper GI and Robotic Surgery. Expert in robotic surgery, laparoscopic surgery, hernia repair, gallbladder surgery (cholecystectomy), GORD treatment, fundoplication, LINX device, and benign Upper GI procedures in London and Hertfordshire.",
     "url": "https://www.osamamoussa.co.uk",
     "logo": "https://www.osamamoussa.co.uk/Osama Moussa Logo-01.svg",
-    "image": "https://www.osamamoussa.co.uk/Osama Moussa Logo-01.svg",
+    "image": physicianPortraitImageObject,
     "telephone": "+44-20-8216-4000",
     "email": "pa@osamamoussa.co.uk",
     "address": {
@@ -229,11 +238,16 @@ export default function RootLayout({
   const physicianSchema = {
     "@context": "https://schema.org",
     "@type": "Physician",
+    "@id": `${siteOrigin}/#physician`,
     "name": "Mr Osama Moussa",
     "jobTitle": "Consultant General Surgeon",
     "description": "Consultant General Surgeon specialising in Upper GI and Robotic Surgery at West Hertfordshire Hospitals NHS Trust. Expert in robotic surgery, laparoscopic surgery, hernia repair, gallbladder surgery, GORD treatment, and fundoplication.",
     "url": "https://www.osamamoussa.co.uk",
-    "image": "https://www.osamamoussa.co.uk/Osama Moussa Logo-01.svg",
+    "image": physicianPortraitImageObject,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${siteOrigin}/`,
+    },
     "email": "pa@osamamoussa.co.uk",
     "telephone": "+44-20-8216-4000",
     "address": {
@@ -330,6 +344,11 @@ export default function RootLayout({
       { "@type": "Organization", "name": "BOMSS", "url": "https://bomss.org/" },
       { "@type": "Organization", "name": "AUGIS", "url": "https://www.augis.org/" },
       { "@type": "Organization", "name": "IFSO", "url": "https://www.ifso.com/" }
+    ],
+    "sameAs": [
+      "https://www.iwantgreatcare.org/doctors/mr-osama-m-moussa",
+      "https://www.topdoctors.co.uk/doctor/osama-moussa",
+      "https://www.researchgate.net/profile/Osama-Moussa-7"
     ]
   };
 
@@ -339,6 +358,7 @@ export default function RootLayout({
     "name": "Mr Osama Moussa - Consultant General Surgeon",
     "url": "https://www.osamamoussa.co.uk",
     "logo": "https://www.osamamoussa.co.uk/Osama Moussa Logo-01.svg",
+    "image": physicianPortraitUrl,
     "sameAs": [
       "https://www.researchgate.net/profile/Osama-Moussa-7",
       "https://scholargps.com/scholars/40596147119067/osama-moussa",

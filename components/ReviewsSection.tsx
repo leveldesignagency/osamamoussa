@@ -27,7 +27,7 @@ export default function ReviewsSection() {
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
 
   return (
-    <section id="reviews-section" className="w-full bg-white py-24 px-4 sm:px-6 lg:px-8 relative">
+    <section id="reviews-section" className="w-full bg-white pt-24 pb-32 sm:pb-40 px-4 sm:px-6 lg:px-8 relative overflow-visible">
       {/* Feathered top fade - blends with values section above */}
       <div
         className="absolute top-0 left-0 right-0 h-32 pointer-events-none z-10"
@@ -36,7 +36,7 @@ export default function ReviewsSection() {
         }}
       ></div>
       <div className="container mx-auto max-w-7xl relative z-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left Side - Image with feathered bottom */}
           <div
             ref={imageRef}
@@ -107,6 +107,18 @@ export default function ReviewsSection() {
               </div>
             </div>
 
+            {/* Doctify average rating carousel — higher in column + room so it is not clipped */}
+            <div className="w-full max-w-xl lg:max-w-none mt-10 mb-10 min-h-[min(360px,50vh)] overflow-visible">
+              <iframe
+                id="0maa9lzc"
+                className="doctify-widget w-full max-w-full border-0 block"
+                style={{ minHeight: 320 }}
+                src="https://www.doctify.com/wv2/average-carousel-rating-widget?containerId=0maa9lzc&dotsArrowsColor=4C5870&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=transparent&widgetName=average-carousel-rating-widget"
+                scrolling="no"
+                title="Doctify reviews"
+              />
+            </div>
+
             {/* More Reviews Button */}
             <Link
               href="https://www.iwantgreatcare.org/doctors/mr-osama-m-moussa?page=2"
@@ -117,17 +129,6 @@ export default function ReviewsSection() {
               More Reviews
             </Link>
           </div>
-        </div>
-
-        {/* Doctify average rating carousel widget */}
-        <div className="mt-16 w-full">
-          <iframe
-            id="0maa9lzc"
-            className="doctify-widget w-full border-0"
-            src="https://www.doctify.com/wv2/average-carousel-rating-widget?containerId=0maa9lzc&dotsArrowsColor=4C5870&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=transparent&widgetName=average-carousel-rating-widget"
-            scrolling="no"
-            title="Doctify reviews"
-          />
         </div>
       </div>
       <Script
