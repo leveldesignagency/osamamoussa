@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
-import Hero, { MobileWidgetsSection } from "@/components/Hero";
+import Hero from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import ValuesSection from "@/components/ValuesSection";
-import KeyProceduresSection from "@/components/KeyProceduresSection";
 import HomeLocationsTrustSection from "@/components/HomeLocationsTrustSection";
 import LogosSection from "@/components/LogosSection";
 import ReviewsSection from "@/components/ReviewsSection";
@@ -71,11 +70,9 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-grey overflow-x-hidden">
       <Header />
       <Hero />
-      <KeyProceduresSection />
-      <HomeLocationsTrustSection />
-      <MobileWidgetsSection />
       <AboutSection />
       <ValuesSection />
+      <HomeLocationsTrustSection />
       <LogosSection />
       <ReviewsSection />
       <AppointmentSection />

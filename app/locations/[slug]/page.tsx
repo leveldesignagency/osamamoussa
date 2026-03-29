@@ -90,15 +90,15 @@ export default async function LocationPage({ params }: Props) {
       <Header backgroundColor="grey" />
 
       <section className="w-full pt-32 pb-8">
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6 flex flex-col gap-4">
           <Link
             href="/locations"
-            className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors font-medium mb-6"
+            className="inline-flex w-fit items-center gap-2 text-white/90 hover:text-white transition-colors font-medium"
           >
             <span aria-hidden>←</span>
             All locations
           </Link>
-          <div className="bg-black inline-block px-6 py-4 mb-8">
+          <div className="bg-black inline-block px-6 py-4 w-fit max-w-full">
             <h1 className="page-title page-title-main font-bold text-white">
               {location.title}
             </h1>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
@@ -25,6 +25,36 @@ export default function ReviewsSection() {
 
   const { ref: imageRef, isVisible: imageVisible } = useScrollAnimation();
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
+  const doctifyCarouselRef = useRef<HTMLDivElement>(null);
+
+  /** Doctify autoresize often under-measures until layout settles; nudge when visible + delayed retries. */
+  useEffect(() => {
+    const nudgeResize = () => {
+      window.dispatchEvent(new Event("resize"));
+    };
+    const timeouts: ReturnType<typeof setTimeout>[] = [];
+    const runNudges = () => {
+      nudgeResize();
+      [120, 400, 900, 1800].forEach((ms) => {
+        timeouts.push(setTimeout(nudgeResize, ms));
+      });
+    };
+
+    const el = doctifyCarouselRef.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) runNudges();
+      },
+      { threshold: 0.05, rootMargin: "0px 0px 120px 0px" }
+    );
+    if (el) observer.observe(el);
+    runNudges();
+
+    return () => {
+      observer.disconnect();
+      timeouts.forEach(clearTimeout);
+    };
+  }, []);
 
   return (
     <section id="reviews-section" className="w-full bg-white pt-24 pb-32 sm:pb-40 px-4 sm:px-6 lg:px-8 relative overflow-visible">
@@ -35,7 +65,7 @@ export default function ReviewsSection() {
           background: "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0.7) 70%, rgba(255,255,255,1) 100%)",
         }}
       ></div>
-      <div className="container mx-auto max-w-7xl relative z-0">
+      <div className="container relative z-20 mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left Side - Image with feathered bottom */}
           <div
@@ -107,18 +137,6 @@ export default function ReviewsSection() {
               </div>
             </div>
 
-            {/* Doctify average rating carousel — higher in column + room so it is not clipped */}
-            <div className="w-full max-w-xl lg:max-w-none mt-10 mb-10 min-h-[min(360px,50vh)] overflow-visible">
-              <iframe
-                id="0maa9lzc"
-                className="doctify-widget w-full max-w-full border-0 block"
-                style={{ minHeight: 320 }}
-                src="https://www.doctify.com/wv2/average-carousel-rating-widget?containerId=0maa9lzc&dotsArrowsColor=4C5870&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=transparent&widgetName=average-carousel-rating-widget"
-                scrolling="no"
-                title="Doctify reviews"
-              />
-            </div>
-
             {/* More Reviews Button */}
             <Link
               href="https://www.iwantgreatcare.org/doctors/mr-osama-m-moussa?page=2"
@@ -128,6 +146,27 @@ export default function ReviewsSection() {
             >
               More Reviews
             </Link>
+          </div>
+        </div>
+
+        {/* Doctify carousel — full width below the two-column block (horizontal strip) */}
+        <div className="mt-14 w-full sm:mt-20">
+          <div
+            ref={doctifyCarouselRef}
+            className="doctify-carousel-slot w-full overflow-visible pb-1"
+          >
+            <iframe
+              id="0maa9lzc"
+              className="doctify-widget block w-full border-0"
+              style={{
+                minHeight: 300,
+                width: "100%",
+                maxWidth: "100%",
+              }}
+              src="https://www.doctify.com/wv2/average-carousel-rating-widget?containerId=0maa9lzc&dotsArrowsColor=4C5870&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=transparent&widgetName=average-carousel-rating-widget"
+              scrolling="no"
+              title="Doctify reviews"
+            />
           </div>
         </div>
       </div>

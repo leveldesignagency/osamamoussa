@@ -4,15 +4,14 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { trackContact, trackCTAClick } from "@/lib/contact-analytics";
+import HeroKeyTreatmentsStrip from "@/components/HeroKeyTreatmentsStrip";
 
 export default function Hero() {
   const scriptsLoaded = useRef(false);
 
   useEffect(() => {
-    // Prevent duplicate script loading
     if (scriptsLoaded.current) return;
 
-    // Check if Doctify script already exists
     const existingDoctify = document.querySelector(
       'script[src*="doctify-widget-autoresize-plugin"]'
     );
@@ -26,202 +25,155 @@ export default function Hero() {
       document.body.appendChild(doctifyScript);
     }
 
-
     scriptsLoaded.current = true;
   }, []);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden" style={{ overflow: 'hidden' }}>
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Mobile Image */}
+    <section className="relative flex h-auto min-h-[130dvh] w-full flex-col overflow-x-hidden sm:h-screen sm:min-h-screen sm:overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden animate-fade-in">
         <Image
           src="/OsamaHeroMobile.png"
-          alt="Mr Osama Moussa – Consultant General Surgeon, Upper GI and Robotic Surgery, London and Hertfordshire"
+          alt="Mr Osama Moussa – Consultant Upper GI and Robotic Surgeon, London and Hertfordshire"
           fill
           className="object-cover hero-breathe hero-image-mobile sm:hidden"
           priority
           quality={90}
           style={{
-            maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
-            objectPosition: 'center center',
+            maskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
           }}
           sizes="100vw"
         />
-        {/* Desktop Image */}
         <Image
           src="/1-2.jpg"
-          alt="Mr Osama Moussa – Consultant General Surgeon, Upper GI and Robotic Surgery, London and Hertfordshire"
+          alt="Mr Osama Moussa – Consultant Upper GI and Robotic Surgeon, London and Hertfordshire"
           fill
           className="object-cover hero-breathe hidden sm:block"
           priority
           quality={90}
           style={{
-            maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
-            objectPosition: '50% center',
+            maskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
+            objectPosition: "50% center",
           }}
           sizes="100vw"
         />
       </div>
-      {/* Subtle vignette overlay for depth */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
+      <div
+        className="pointer-events-none absolute inset-0 animate-fade-in"
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.2) 100%)',
-          maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)'
+          animationDelay: "0.15s",
+          background:
+            "radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0.2) 100%)",
+          maskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
         }}
-      ></div>
-      
-      {/* Hero Content - left align */}
-      <div className="relative z-10 h-full flex flex-col justify-end sm:justify-center items-center sm:items-start pb-32 sm:pb-0 sm:pt-40">
-        <div className="container mx-auto pl-2 sm:pl-2 lg:pl-3 pr-4 sm:pr-6 lg:pr-8 w-full">
-          <h1 className="text-[20px] sm:text-[24px] md:text-[32px] lg:text-[40px] font-bold text-white sm:text-black mb-4 max-w-3xl animate-fade-in-up text-center sm:text-left tracking-wide uppercase" style={{ fontFamily: '"ITC Avant Garde Gothic", "Century Gothic", sans-serif', fontWeight: 700, lineHeight: 1.2 }}>
-            Consultant Upper GI
-            <br />
-            & Robotic Surgeon
-          </h1>
-          <p
-            className="text-[13px] sm:text-sm md:text-base lg:text-lg font-semibold text-white sm:text-black/90 mb-6 max-w-2xl animate-fade-in-up text-center sm:text-left tracking-wide uppercase opacity-95"
-            style={{ fontFamily: '"Plus Jakarta Sans", sans-serif', lineHeight: 1.35 }}
-          >
-            London &amp; Hertfordshire
-          </p>
-          <p
-            className="text-xs sm:text-sm md:text-base text-white/95 sm:text-black/80 mb-8 max-w-2xl animate-fade-in-up text-center sm:text-left leading-snug"
-            style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
-          >
-            Hernia repair · Gallbladder &amp; gallstones · Acid reflux (GORD) · Minimally invasive laparoscopic surgery
-          </p>
-          
-          <div className="flex flex-row flex-wrap gap-3 sm:gap-4 animate-fade-in-up justify-center sm:justify-start mb-8 items-stretch" style={{ animationDelay: "0.2s", opacity: 0, animationFillMode: "forwards" }}>
-                {/* Mobile - Book Now + Call Now */}
-                <Link
-                  href="/procedures/contact"
-                  onClick={() => trackCTAClick("Book Now", "hero")}
-                  className="sm:hidden inline-flex items-center justify-center px-6 py-4 text-base border-2 border-white bg-black text-white font-medium transition-all duration-300 hover:bg-white hover:text-black active:bg-white active:text-black rounded-full"
-                >
-                  Book Now
-                </Link>
-                <a
-                  href="tel:07352167642"
-                  onClick={() => trackContact("call", "mobile", "hero")}
-                  className="sm:hidden inline-flex items-center justify-center px-6 py-4 text-base border-2 border-white bg-black text-white font-medium transition-all duration-300 hover:bg-white hover:text-black active:bg-white active:text-black rounded-full"
-                >
-                  Call Now
-                </a>
-                {/* Desktop - Book Now + Call Now (expands on hover to show number) */}
-                <Link
-                  href="/procedures/contact"
-                  onClick={() => trackCTAClick("Book Now", "hero")}
-                  className="hidden sm:inline-flex items-center px-10 py-4 text-lg border-2 border-black text-black font-medium transition-all duration-300 button-swipe button-swipe-black"
-                >
-                  Book Now
-                </Link>
-                <a
-                  href="tel:07352167642"
-                  onClick={() => trackContact("call", "desktop", "hero")}
-                  className="hidden sm:inline-flex items-center py-4 px-10 overflow-hidden border-2 border-black text-black font-medium transition-all duration-300 button-swipe button-swipe-black group/call text-lg"
-                >
-                  <span className="whitespace-nowrap flex-shrink-0">Call Now</span>
-                  <span className="inline-flex items-center overflow-hidden max-w-0 group-hover/call:max-w-[160px] transition-[max-width] duration-300 ease-out flex-shrink-0">
-                    <span className="min-w-px w-px h-5 bg-black/50 group-hover/call:bg-white flex-shrink-0 mx-2 transition-colors duration-300" aria-hidden />
-                    <span className="whitespace-nowrap pl-0 ml-0">07352167642</span>
-                  </span>
-                </a>
-              </div>
+      />
 
-            {/* Doctify Widget - Desktop only, under buttons; left padding so badge sits between Book Now and Call Now */}
-            <div className="hidden sm:block mt-6 pl-[6.5rem]">
-            <iframe
-              id="09in4nm9"
-              className="doctify-widget"
-              src="https://www.doctify.com/wv2/average-rating-widget?containerId=09in4nm9&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=darkNavy&widgetName=average-rating-widget"
-              width="200"
-              height="200"
-              frameBorder="0"
-              scrolling="no"
-              name="average-rating-widget"
-              title="Doctify Rating Widget"
+      {/* Mobile: flex spacer pushes copy + key treatments below the portrait; sm+: bottom-anchored as before */}
+      <div className="relative z-10 flex min-h-0 flex-1 flex-col sm:justify-end">
+        <div
+          className="min-h-[44dvh] flex-1 sm:hidden"
+          aria-hidden
+        />
+        <div className="container mx-auto w-full px-4 pb-[max(2.5rem,env(safe-area-inset-bottom,0px))] pt-[max(4rem,env(safe-area-inset-top,0px))] sm:px-2 sm:pb-3 sm:pt-16 lg:pl-3 lg:pr-3">
+          <div className="flex w-full flex-col items-center gap-4 text-center sm:items-start sm:text-left">
+            <h1
+              className="animate-fade-in-up max-w-3xl text-[26px] font-bold tracking-tight text-white sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[52px] sm:text-black"
               style={{
-                display: "block",
-                border: "none",
-                width: "200px",
-                maxWidth: "200px",
-                minWidth: "200px",
-                height: "200px",
-                maxHeight: "200px",
-                minHeight: "200px",
+                fontFamily: '"ITC Avant Garde Gothic", "Century Gothic", sans-serif',
+                fontWeight: 700,
+                lineHeight: 1.15,
+                animationDelay: "0s",
               }}
-            />
+            >
+              Consultant Upper GI
+              <br />
+              &amp; Robotic Surgeon
+            </h1>
+            <p
+              className="animate-fade-in-up max-w-2xl text-base font-semibold tracking-tight text-white opacity-95 sm:text-lg sm:text-black/90 md:text-xl lg:text-2xl"
+              style={{
+                fontFamily: '"Plus Jakarta Sans", sans-serif',
+                lineHeight: 1.35,
+                animationDelay: "0.12s",
+              }}
+            >
+              London &amp; Hertfordshire
+            </p>
+            <p
+              className="animate-fade-in-up max-w-2xl text-xs leading-snug text-white/95 sm:text-sm sm:text-black/80 md:text-base"
+              style={{
+                fontFamily: '"Plus Jakarta Sans", sans-serif',
+                animationDelay: "0.24s",
+              }}
+            >
+              Specialising in hernia repair, gallbladder and gallstone surgery,
+              <br />
+              acid reflux (GORD), and minimally invasive laparoscopic surgery.
+            </p>
+
+            <div
+              className="animate-fade-in-up flex flex-row flex-wrap items-stretch justify-center gap-3 sm:justify-start sm:gap-4"
+              style={{ animationDelay: "0.36s" }}
+            >
+              <Link
+                href="/procedures/contact"
+                onClick={() => trackCTAClick("Book Now", "hero")}
+                className="inline-flex items-center justify-center rounded-full border-2 border-white bg-black px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-white hover:text-black active:bg-white active:text-black sm:hidden"
+              >
+                Book Now
+              </Link>
+              <a
+                href="tel:07352167642"
+                onClick={() => trackContact("call", "mobile", "hero")}
+                className="inline-flex items-center justify-center rounded-full border-2 border-white bg-black px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-white hover:text-black active:bg-white active:text-black sm:hidden"
+              >
+                Call Now
+              </a>
+              <Link
+                href="/procedures/contact"
+                onClick={() => trackCTAClick("Book Now", "hero")}
+                className="button-swipe button-swipe-black hidden border-2 border-black px-7 py-2.5 text-sm font-medium text-black transition-all duration-300 sm:inline-flex sm:items-center md:px-8 md:text-base"
+              >
+                Book Now
+              </Link>
+              <a
+                href="tel:07352167642"
+                onClick={() => trackContact("call", "desktop", "hero")}
+                className="group/call button-swipe button-swipe-black relative hidden overflow-hidden border-2 border-black py-2.5 pl-8 pr-8 text-sm font-medium text-black transition-all duration-300 sm:inline-flex sm:items-center md:py-3 md:pl-9 md:pr-9 md:text-base"
+              >
+                <span className="flex-shrink-0 whitespace-nowrap">Call Now</span>
+                <span className="inline-flex max-w-0 flex-shrink-0 items-center overflow-hidden transition-[max-width] duration-300 ease-out group-hover/call:max-w-[160px]">
+                  <span
+                    className="mx-2 h-5 min-w-px w-px flex-shrink-0 bg-black/50 transition-colors duration-300 group-hover/call:bg-white"
+                    aria-hidden
+                  />
+                  <span className="ml-0 whitespace-nowrap pl-0">07352167642</span>
+                </span>
+              </a>
+            </div>
+
+            <div className="animate-fade-in-up w-full" style={{ animationDelay: "0.48s" }}>
+              <HeroKeyTreatmentsStrip />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Signature - Desktop only, bottom right, bigger and white */}
-      <div className="absolute bottom-24 right-16 z-20 hidden sm:block" style={{ pointerEvents: "none" }}>
+      {/* Signature: positioned from top/right so it never participates in the bottom stack with Doctify */}
+      <div className="pointer-events-none absolute right-10 top-[24%] z-20 hidden w-[min(38vw,200px)] sm:right-12 sm:block md:right-16 md:top-[23%] lg:right-20 lg:top-[22%] lg:w-[min(34vw,220px)]">
         <div className="signature-container">
           <Image
             src="/Signatures-01.svg"
             alt="Osama Moussa Signature"
-            width={500}
-            height={220}
-            className="signature-image signature-white"
+            width={360}
+            height={160}
+            className="signature-image signature-black h-auto w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px]"
             priority={false}
-            style={{ width: 'auto', height: '220px' }}
           />
         </div>
       </div>
-
     </section>
   );
 }
-
-// Mobile Widgets Section - Separate section below hero
-export function MobileWidgetsSection() {
-  return (
-    <section className="w-full bg-transparent py-8 sm:hidden">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col gap-4 items-center justify-center">
-          {/* Doctify Widget - Mobile */}
-          <div 
-            style={{ 
-              width: "200px", 
-              flexShrink: 0, 
-              display: "flex", 
-              alignItems: "flex-start", 
-              justifyContent: "center", 
-              overflow: "hidden"
-            }}
-          >
-            <iframe
-              id="09in4nm9-mobile"
-              className="doctify-widget"
-              src="https://www.doctify.com/wv2/average-rating-widget?containerId=09in4nm9&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=darkNavy&widgetName=average-rating-widget"
-              width="200"
-              height="200"
-              frameBorder="0"
-              scrolling="no"
-              name="average-rating-widget-mobile"
-              title="Doctify Rating Widget"
-              style={{ 
-                display: "block", 
-                border: "none", 
-                width: "200px", 
-                maxWidth: "200px", 
-                minWidth: "200px",
-                height: "200px",
-                maxHeight: "200px",
-                minHeight: "200px",
-                verticalAlign: "top", 
-                margin: "0 auto"
-              }}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-

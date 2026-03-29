@@ -116,14 +116,14 @@ function TitleSection() {
           </div>
           <div 
             ref={linksRef}
-            className={`flex flex-row gap-4 fade-in-on-scroll items-stretch justify-center sm:justify-end ${linksVisible ? "visible" : ""}`}
+            className={`flex flex-row gap-3 sm:gap-4 fade-in-on-scroll items-center justify-center sm:justify-end ${linksVisible ? "visible" : ""}`}
             style={{ transitionDelay: "0.2s" }}
           >
             <Link
               href="https://www.researchgate.net/profile/Osama-Moussa-7"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 sm:flex-none min-w-0 sm:min-w-0 sm:w-fit inline-flex items-center justify-center px-4 py-2.5 sm:px-6 sm:py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white text-sm sm:text-base"
+              className="inline-flex min-w-0 flex-1 items-center justify-center border-2 border-white bg-white/10 px-7 py-2.5 text-center text-sm font-medium text-white backdrop-blur-sm transition-colors duration-200 button-swipe text-white sm:w-fit sm:flex-none md:px-8 md:text-base"
             >
               Researchgate
             </Link>
@@ -131,7 +131,7 @@ function TitleSection() {
               href="https://scholargps.com/scholars/40596147119067/osama-moussa"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 sm:flex-none min-w-0 sm:min-w-0 sm:w-fit inline-flex items-center justify-center px-4 py-2.5 sm:px-6 sm:py-3 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium transition-colors duration-200 text-center button-swipe text-white text-sm sm:text-base"
+              className="inline-flex min-w-0 flex-1 items-center justify-center border-2 border-white bg-white/10 px-7 py-2.5 text-center text-sm font-medium text-white backdrop-blur-sm transition-colors duration-200 button-swipe text-white sm:w-fit sm:flex-none md:px-8 md:text-base"
             >
               Scholargps
             </Link>
@@ -201,7 +201,7 @@ function MorePublicationsSection() {
             href="/ac3c0f_d8b35d56a8244ff7a4114e8c2242f65d.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-8 py-4 border-2 border-[#6E6E6E] bg-[#6E6E6E] text-white font-medium transition-colors duration-200 button-swipe text-white"
+            className="button-swipe button-swipe-black inline-flex items-center justify-center border-2 border-black bg-transparent px-7 py-2.5 text-sm font-medium text-black transition-all duration-300 md:px-8 md:text-base"
           >
             Download
           </Link>
