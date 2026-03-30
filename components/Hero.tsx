@@ -154,32 +154,7 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Doctify average-rating widget — desktop: under CTAs (original placement before key-treatments grid) */}
-            <div className="animate-fade-in-up hidden sm:block mt-6 pl-[6.5rem]" style={{ animationDelay: "0.42s" }}>
-              <iframe
-                id="09in4nm9"
-                className="doctify-widget"
-                src="https://www.doctify.com/wv2/average-rating-widget?containerId=09in4nm9&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=darkNavy&widgetName=average-rating-widget"
-                width={200}
-                height={200}
-                frameBorder={0}
-                scrolling="no"
-                name="average-rating-widget"
-                title="Doctify Rating Widget"
-                style={{
-                  display: "block",
-                  border: "none",
-                  width: "200px",
-                  maxWidth: "200px",
-                  minWidth: "200px",
-                  height: "200px",
-                  maxHeight: "200px",
-                  minHeight: "200px",
-                }}
-              />
-            </div>
-
-            <div className="animate-fade-in-up w-full" style={{ animationDelay: "0.48s" }}>
+            <div className="animate-fade-in-up w-full" style={{ animationDelay: "0.42s" }}>
               <HeroKeyTreatmentsStrip />
             </div>
           </div>
@@ -223,6 +198,7 @@ export function MobileWidgetsSection() {
               id="09in4nm9-mobile"
               className="doctify-widget"
               src="https://www.doctify.com/wv2/average-rating-widget?containerId=09in4nm9&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=darkNavy&widgetName=average-rating-widget"
+              referrerPolicy="no-referrer-when-downgrade"
               width={200}
               height={200}
               frameBorder={0}
