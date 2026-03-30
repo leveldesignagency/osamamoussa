@@ -100,6 +100,9 @@ export default function InsurancePage() {
                     style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                   >
                     {p.linkLabel}
+                    <span className="ml-1.5 hidden sm:inline" aria-hidden>
+                      ↗
+                    </span>
                   </a>
                 </li>
               );

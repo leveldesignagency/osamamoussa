@@ -116,8 +116,8 @@ export const metadata: Metadata = {
         url: "/og-social-share.jpg",
         width: 1200,
         height: 720,
+        alt: "Mr Osama Moussa - Consultant General Surgeon",
         type: "image/jpeg",
-        alt: "Mr Osama Moussa — Consultant Upper GI & Robotic Surgeon, London & Hertfordshire",
       },
     ],
   },
@@ -139,7 +139,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  /** Canonical portrait for entity / GEO (PNG/JPEG — not SVG logo). Matches OG social share image. */
+  /** Canonical portrait for entity / GEO (JPEG share card — not SVG logo). Same asset as og:image. */
   const siteOrigin = "https://www.osamamoussa.co.uk";
   const physicianPortraitUrl = `${siteOrigin}/og-social-share.jpg`;
   const physicianPortraitImageObject = {
@@ -372,18 +372,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* WhatsApp / crawlers: explicit OG image first (large PNGs often time out → fallback to favicon/logo) */}
-        <meta
-          property="og:image"
-          content="https://www.osamamoussa.co.uk/og-social-share.jpg?v=2"
-        />
-        <meta
-          property="og:image:secure_url"
-          content="https://www.osamamoussa.co.uk/og-social-share.jpg?v=2"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="720" />
-        <meta property="og:image:type" content="image/jpeg" />
         {/* Google Search Console Verification */}
         <meta
           name="google-site-verification"

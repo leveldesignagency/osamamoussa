@@ -164,7 +164,6 @@ export default function ReviewsSection() {
                 maxWidth: "100%",
               }}
               src="https://www.doctify.com/wv2/average-carousel-rating-widget?containerId=0maa9lzc&dotsArrowsColor=4C5870&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=transparent&widgetName=average-carousel-rating-widget"
-              referrerPolicy="no-referrer-when-downgrade"
               scrolling="no"
               title="Doctify reviews"
             />

@@ -6,6 +6,7 @@ import { KEY_TREATMENT_LINKS } from "@/lib/key-treatments";
 export default function HeroKeyTreatmentsStrip() {
   return (
     <div className="mt-20 w-full shrink-0 sm:mt-20 md:mt-24 lg:mt-28">
+      {/* Title + pills MUST live in one column — never items-end/grid-align a 200px Doctify next to only the ul (that was the huge gap). */}
       <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-[minmax(0,1fr)_168px] sm:items-start sm:gap-x-5 md:grid-cols-[minmax(0,1fr)_180px]">
         <div className="flex min-w-0 flex-col items-center gap-2 sm:items-start sm:gap-2.5">
           <p
@@ -33,10 +34,9 @@ export default function HeroKeyTreatmentsStrip() {
               id="09in4nm9"
               className="doctify-widget"
               src="https://www.doctify.com/wv2/average-rating-widget?containerId=09in4nm9&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=darkNavy&widgetName=average-rating-widget"
-              referrerPolicy="no-referrer-when-downgrade"
-              width={200}
-              height={200}
-              frameBorder={0}
+              width="200"
+              height="200"
+              frameBorder="0"
               scrolling="no"
               name="average-rating-widget"
               title="Doctify Rating Widget"

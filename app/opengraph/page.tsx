@@ -4,7 +4,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 
 const baseUrl = "https://www.osamamoussa.co.uk";
-/** Same asset as root layout OG / Twitter / Physician schema — replace file in public/ to update everywhere. */
+/** Same asset as root layout OG / Twitter / Physician schema — replace `public/og-social-share.jpg` to update everywhere. */
 const officialOgImagePath = "/og-social-share.jpg";
 const officialOgImageUrl = `${baseUrl}/og-social-share.jpg`;
 
@@ -88,11 +88,11 @@ export default function OpenGraphPage() {
           This is the canonical <strong className="text-white">1200 × 720</strong> image used for{" "}
           <strong className="text-white">Open Graph</strong> (link previews),{" "}
           <strong className="text-white">Twitter/X cards</strong>, and{" "}
-          <strong className="text-white">structured data</strong> on this website. Updating the file{" "}
+          <strong className="text-white">structured data</strong> on this website. Replace{" "}
           <code className="text-white/90 bg-white/10 px-1.5 py-0.5 rounded text-sm">
-            og-social-share.jpg
+            public/og-social-share.jpg
           </code>{" "}
-          in the site&apos;s public folder updates previews everywhere they reference it.
+          to update previews (keep under ~1–2&nbsp;MB so WhatsApp and other apps fetch it reliably).
         </p>
 
         <div className="rounded-xl overflow-hidden border border-white/20 bg-black/30 shadow-xl">
