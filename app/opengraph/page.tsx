@@ -5,8 +5,8 @@ import Header from "@/components/Header";
 
 const baseUrl = "https://www.osamamoussa.co.uk";
 /** Same asset as root layout OG / Twitter / Physician schema — replace file in public/ to update everywhere. */
-const officialOgImagePath = "/Osama Moussa Social Share.png";
-const officialOgImageUrl = `${baseUrl}/Osama%20Moussa%20Social%20Share.png`;
+const officialOgImagePath = "/og-social-share.jpg";
+const officialOgImageUrl = `${baseUrl}/og-social-share.jpg`;
 
 export const metadata: Metadata = {
   title: "Official image — search & social preview",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       {
         url: officialOgImagePath,
         width: 1200,
-        height: 630,
+        height: 720,
         alt: "Mr Osama Moussa — Consultant Upper GI & Robotic Surgeon, London & Hertfordshire",
       },
     ],
@@ -62,7 +62,7 @@ export default function OpenGraphPage() {
       "@type": "ImageObject",
       url: officialOgImageUrl,
       width: 1200,
-      height: 630,
+      height: 720,
       caption:
         "Mr Osama Moussa — Consultant Upper GI & Robotic Surgeon (official website preview image)",
     },
@@ -85,12 +85,12 @@ export default function OpenGraphPage() {
           </h1>
         </div>
         <p className="text-gray-200 text-lg leading-relaxed mb-8 paragraph-block">
-          This is the canonical <strong className="text-white">1200 × 630</strong> image used for{" "}
+          This is the canonical <strong className="text-white">1200 × 720</strong> image used for{" "}
           <strong className="text-white">Open Graph</strong> (link previews),{" "}
           <strong className="text-white">Twitter/X cards</strong>, and{" "}
           <strong className="text-white">structured data</strong> on this website. Updating the file{" "}
           <code className="text-white/90 bg-white/10 px-1.5 py-0.5 rounded text-sm">
-            Osama Moussa Social Share.png
+            og-social-share.jpg
           </code>{" "}
           in the site&apos;s public folder updates previews everywhere they reference it.
         </p>
@@ -100,7 +100,7 @@ export default function OpenGraphPage() {
             src={officialOgImagePath}
             alt="Mr Osama Moussa — Consultant Upper GI & Robotic Surgeon, London & Hertfordshire (official Open Graph image)"
             width={1200}
-            height={630}
+            height={720}
             className="w-full h-auto object-cover"
             priority
             sizes="(max-width: 896px) 100vw, 896px"

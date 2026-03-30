@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import Hero, { MobileWidgetsSection } from "@/components/Hero";
 import AboutSection from "@/components/AboutSection";
 import ValuesSection from "@/components/ValuesSection";
 import HomeLocationsTrustSection from "@/components/HomeLocationsTrustSection";
@@ -59,6 +59,19 @@ export const metadata: Metadata = {
       "Consultant Upper GI surgeon London & Hertfordshire. Hernia, gallbladder & gallstones, acid reflux, laparoscopic and robotic surgery. Book a consultation.",
     url: "https://www.osamamoussa.co.uk",
     type: "website",
+    images: [
+      {
+        url: "https://www.osamamoussa.co.uk/og-social-share.jpg?v=2",
+        width: 1200,
+        height: 720,
+        type: "image/jpeg",
+        alt: "Mr Osama Moussa — Consultant Upper GI & Robotic Surgeon, London & Hertfordshire",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://www.osamamoussa.co.uk/og-social-share.jpg?v=2"],
   },
   alternates: {
     canonical: "https://www.osamamoussa.co.uk",
@@ -70,6 +83,7 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-grey overflow-x-hidden">
       <Header />
       <Hero />
+      <MobileWidgetsSection />
       <AboutSection />
       <ValuesSection />
       <HomeLocationsTrustSection />

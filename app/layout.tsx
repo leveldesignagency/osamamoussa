@@ -113,10 +113,11 @@ export const metadata: Metadata = {
     description: "Consultant General Surgeon specialising in Upper GI and Robotic Surgery. Expert in robotic surgery, laparoscopic surgery, hernia repair, gallbladder surgery, GORD treatment, and fundoplication. Serving London and Hertfordshire.",
     images: [
       {
-        url: "/Osama Moussa Social Share.png",
+        url: "/og-social-share.jpg",
         width: 1200,
-        height: 630,
-        alt: "Mr Osama Moussa - Consultant General Surgeon",
+        height: 720,
+        type: "image/jpeg",
+        alt: "Mr Osama Moussa — Consultant Upper GI & Robotic Surgeon, London & Hertfordshire",
       },
     ],
   },
@@ -124,7 +125,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mr Osama Moussa | Upper GI & Robotic Surgery | London & Hertfordshire",
     description: "Consultant General Surgeon specialising in Upper GI and Robotic Surgery. Expert in robotic surgery, laparoscopic surgery, hernia repair, GORD treatment, and fundoplication.",
-    images: ["/Osama Moussa Social Share.png"],
+    images: ["/og-social-share.jpg"],
   },
   alternates: {
     canonical: "https://www.osamamoussa.co.uk",
@@ -140,7 +141,7 @@ export default function RootLayout({
 }>) {
   /** Canonical portrait for entity / GEO (PNG/JPEG — not SVG logo). Matches OG social share image. */
   const siteOrigin = "https://www.osamamoussa.co.uk";
-  const physicianPortraitUrl = `${siteOrigin}/Osama%20Moussa%20Social%20Share.png`;
+  const physicianPortraitUrl = `${siteOrigin}/og-social-share.jpg`;
   const physicianPortraitImageObject = {
     "@type": "ImageObject",
     url: physicianPortraitUrl,
@@ -371,6 +372,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* WhatsApp / crawlers: explicit OG image first (large PNGs often time out → fallback to favicon/logo) */}
+        <meta
+          property="og:image"
+          content="https://www.osamamoussa.co.uk/og-social-share.jpg?v=2"
+        />
+        <meta
+          property="og:image:secure_url"
+          content="https://www.osamamoussa.co.uk/og-social-share.jpg?v=2"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="720" />
+        <meta property="og:image:type" content="image/jpeg" />
         {/* Google Search Console Verification */}
         <meta
           name="google-site-verification"

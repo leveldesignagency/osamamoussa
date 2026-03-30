@@ -154,6 +154,31 @@ export default function Hero() {
               </a>
             </div>
 
+            {/* Doctify average-rating widget — desktop: under CTAs (original placement before key-treatments grid) */}
+            <div className="animate-fade-in-up hidden sm:block mt-6 pl-[6.5rem]" style={{ animationDelay: "0.42s" }}>
+              <iframe
+                id="09in4nm9"
+                className="doctify-widget"
+                src="https://www.doctify.com/wv2/average-rating-widget?containerId=09in4nm9&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=darkNavy&widgetName=average-rating-widget"
+                width={200}
+                height={200}
+                frameBorder={0}
+                scrolling="no"
+                name="average-rating-widget"
+                title="Doctify Rating Widget"
+                style={{
+                  display: "block",
+                  border: "none",
+                  width: "200px",
+                  maxWidth: "200px",
+                  minWidth: "200px",
+                  height: "200px",
+                  maxHeight: "200px",
+                  minHeight: "200px",
+                }}
+              />
+            </div>
+
             <div className="animate-fade-in-up w-full" style={{ animationDelay: "0.48s" }}>
               <HeroKeyTreatmentsStrip />
             </div>
@@ -161,7 +186,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Signature: positioned from top/right so it never participates in the bottom stack with Doctify */}
+      {/* Signature: positioned from top/right so it never participates in the bottom stack with key treatments */}
       <div className="pointer-events-none absolute right-10 top-[24%] z-20 hidden w-[min(38vw,200px)] sm:right-12 sm:block md:right-16 md:top-[23%] lg:right-20 lg:top-[22%] lg:w-[min(34vw,220px)]">
         <div className="signature-container">
           <Image
@@ -172,6 +197,52 @@ export default function Hero() {
             className="signature-image signature-black h-auto w-full max-w-[180px] sm:max-w-[200px] md:max-w-[220px]"
             priority={false}
           />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** Doctify widget below hero on small screens only (desktop widget lives in Hero). */
+export function MobileWidgetsSection() {
+  return (
+    <section className="w-full bg-transparent py-8 sm:hidden">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-center justify-center gap-4">
+          <div
+            style={{
+              width: "200px",
+              flexShrink: 0,
+              display: "flex",
+              alignItems: "flex-start",
+              justifyContent: "center",
+              overflow: "hidden",
+            }}
+          >
+            <iframe
+              id="09in4nm9-mobile"
+              className="doctify-widget"
+              src="https://www.doctify.com/wv2/average-rating-widget?containerId=09in4nm9&language=en&profileType=specialist&slugs=osama-moussa&tenantId=athena-uk&theme=darkNavy&widgetName=average-rating-widget"
+              width={200}
+              height={200}
+              frameBorder={0}
+              scrolling="no"
+              name="average-rating-widget-mobile"
+              title="Doctify Rating Widget"
+              style={{
+                display: "block",
+                border: "none",
+                width: "200px",
+                maxWidth: "200px",
+                minWidth: "200px",
+                height: "200px",
+                maxHeight: "200px",
+                minHeight: "200px",
+                verticalAlign: "top",
+                margin: "0 auto",
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>
