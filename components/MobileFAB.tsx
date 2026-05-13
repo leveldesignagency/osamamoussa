@@ -44,7 +44,7 @@ export default function MobileFAB() {
     >
       {/* List modal - above FAB; glassmorphic, full-width within safe margin */}
       {open && (
-        <div className="absolute bottom-full right-0 mb-2 rounded-2xl min-w-[260px] w-[min(320px,calc(100vw-2rem))] overflow-hidden border border-white/20 bg-white/10 shadow-xl backdrop-blur-xl">
+        <div className="absolute bottom-full right-0 mb-2 w-[min(20rem,calc(100svw-3rem))] min-w-[240px] overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-xl backdrop-blur-xl">
           <a
             href={`tel:${PHONE}`}
             className="flex items-center gap-3 w-full px-5 py-4 text-left text-white hover:bg-white/10 active:bg-white/15 transition-colors"

@@ -76,7 +76,7 @@ export default function Hero() {
           className="min-h-[44dvh] flex-1 sm:hidden"
           aria-hidden
         />
-        <div className="container mx-auto w-full px-4 pb-[max(2.5rem,env(safe-area-inset-bottom,0px))] pt-[max(4rem,env(safe-area-inset-top,0px))] sm:px-2 sm:pb-3 sm:pt-16 lg:pl-3 lg:pr-3">
+        <div className="container mx-auto w-full min-w-0 px-4 pb-[max(2.5rem,env(safe-area-inset-bottom,0px))] pt-[max(4rem,env(safe-area-inset-top,0px))] sm:px-2 sm:pb-3 sm:pt-16 lg:pl-3 lg:pr-3">
           <div className="flex w-full flex-col items-center gap-4 text-center sm:items-start sm:text-left">
             <h1
               className="animate-fade-in-up max-w-3xl text-[26px] font-bold tracking-tight text-white sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[52px] sm:text-black"

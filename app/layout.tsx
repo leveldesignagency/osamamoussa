@@ -370,7 +370,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className="h-full max-w-full overflow-x-clip">
       <head>
         {/* Google Search Console Verification */}
         <meta
@@ -413,11 +413,13 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="overflow-x-hidden">
+      <body className="min-w-0 overflow-x-clip">
         <GlobalErrorHandler />
         <SmoothScroll />
-        {children}
-        <Footer />
+        <div className="min-w-0 overflow-x-clip">
+          {children}
+          <Footer />
+        </div>
         <MobileFAB />
         <Analytics />
         <SpeedInsights />

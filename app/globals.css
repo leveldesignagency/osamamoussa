@@ -24,18 +24,43 @@
   }
 }
 
-/* Disable horizontal scrolling on mobile */
+/*
+ * Horizontal scroll: avoid max-width: 100vw on html/body — 100vw includes the
+ * scrollbar gutter on many browsers and becomes slightly wider than the layout,
+ * which reintroduces sideways scroll. Use 100% + clip instead.
+ */
 html {
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
-  max-width: 100vw;
+  background: var(--background-color);
+}
+
+@supports (overflow-x: clip) {
+  html {
+    overflow-x: clip;
+  }
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
   overflow-x: hidden;
-  max-width: 100vw;
+  min-width: 0;
+  color: rgb(var(--foreground-rgb));
+  background: transparent;
 }
 
-* {
+@supports (overflow-x: clip) {
+  body {
+    overflow-x: clip;
+  }
+}
+
+/* Contain replaced elements; avoid * { max-width: 100% } (breaks flex min-width math). */
+img,
+video,
+iframe {
   max-width: 100%;
 }
 
@@ -222,15 +247,6 @@ button[class*="absolute"] *,
 svg, svg *,
 path, line, circle, rect, polygon {
   cursor: url('/cursor.svg') 16 16, url('/cursor.png') 16 16, pointer !important;
-}
-
-html {
-  background: var(--background-color);
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: transparent;
 }
 
 @keyframes letterBounce {
