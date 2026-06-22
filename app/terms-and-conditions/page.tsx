@@ -22,8 +22,8 @@ export default function TermsAndConditionsPage() {
       {/* Page Title */}
       <section className="w-full pt-32 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="page-title font-bold text-white leading-tight">
-            Terms and Conditions
+          <h1 className="page-title page-title-main font-bold leading-tight text-white">
+            Terms and conditions
           </h1>
         </div>
       </section>

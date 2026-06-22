@@ -124,14 +124,12 @@ export default function ReviewsPageContent() {
       {/* Page Title */}
       <section className="w-full pt-32 pb-2 sm:pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
-          <div className="bg-black inline-block px-6 py-4">
-            <h1
-              ref={titleRef}
-              className={`page-title page-title-main font-bold text-white leading-tight fade-in-on-scroll text-center sm:text-left ${titleVisible ? "visible" : ""}`}
-            >
-              Reviews
-            </h1>
-          </div>
+          <h1
+            ref={titleRef}
+            className={`page-title page-title-main mx-auto font-bold leading-tight text-white fade-in-on-scroll sm:mx-0 ${titleVisible ? "visible" : ""}`}
+          >
+            Reviews
+          </h1>
         </div>
       </section>
 
@@ -191,11 +189,9 @@ export default function ReviewsPageContent() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={resourcesRef} className={`fade-in-on-scroll ${resourcesVisible ? "visible" : ""}`}>
             <div className="mb-4 sm:mb-6 text-center sm:text-left">
-              <div className="bg-black inline-block px-6 py-4">
-                <h2 className="page-title page-title-main font-bold text-white leading-tight">
-                  Useful Resources
-                </h2>
-              </div>
+              <h2 className="page-title page-title-main font-bold leading-tight text-white">
+                Useful resources
+              </h2>
             </div>
             <div className="w-full border-2 border-white p-4 sm:p-6 lg:p-8 mb-8">
               <p className="text-white mb-6 text-2xl sm:text-lg font-medium sm:font-normal leading-snug text-center lg:text-left">

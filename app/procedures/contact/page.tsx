@@ -5,13 +5,45 @@ import Header from "@/components/Header";
 import AppointmentSection from "@/components/AppointmentSection";
 import Image from "next/image";
 import Link from "next/link";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { trackContact, getDevice } from "@/lib/contact-analytics";
 import { hospitals, locationPages } from "@/app/locations/location-data";
 
+const contactHighlights = [
+  {
+    title: "Quick response",
+    description:
+      "Enquiries are usually answered within one working day. Phone and email both reach the practice team directly.",
+    icon: (
+      <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Expert consultation",
+    description:
+      "A full assessment of your symptoms, scans where needed, and a clear discussion of surgical and non-surgical options.",
+    icon: (
+      <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Multiple locations",
+    description:
+      "Consultations and surgery at NHS and private hospitals across Hertfordshire and London, with booking via each hospital site.",
+    icon: (
+      <svg className="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+  },
+] as const;
+
 export default function ContactPage() {
   const scriptsLoaded = useRef(false);
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
 
   useEffect(() => {
     scriptsLoaded.current = true;
@@ -22,18 +54,18 @@ export default function ContactPage() {
       <Header backgroundColor="grey" textColor="white" />
       
       {/* Contact Information - Background Image Section */}
-      <section className="relative w-full overflow-hidden bg-gradient-grey sm:min-h-screen">
+      <section className="relative flex min-h-screen w-full flex-col overflow-hidden bg-gradient-grey">
         {/* Background Image Container - Full height from top, goes under header - Hidden on mobile */}
-        <div className="absolute inset-0 overflow-hidden hidden sm:block" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
+        <div className="absolute inset-0 overflow-hidden hidden sm:block">
             <Image
             src="/OMCONTACT.JPG"
             alt="Contact Mr Osama Moussa – Book a consultation for Upper GI and robotic surgery in London and Hertfordshire"
             fill
             className="object-cover image-grow-shrink"
             style={{ 
-              objectPosition: 'center center',
-              maskImage: 'linear-gradient(to right, black 0%, black 30%, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.2) 60%, transparent 70%)',
-              WebkitMaskImage: 'linear-gradient(to right, black 0%, black 30%, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.2) 60%, transparent 70%)',
+              objectPosition: '18% center',
+              maskImage: 'linear-gradient(to right, black 0%, black 42%, rgba(0, 0, 0, 0.75) 52%, rgba(0, 0, 0, 0.35) 62%, rgba(0, 0, 0, 0.08) 72%, transparent 82%)',
+              WebkitMaskImage: 'linear-gradient(to right, black 0%, black 42%, rgba(0, 0, 0, 0.75) 52%, rgba(0, 0, 0, 0.35) 62%, rgba(0, 0, 0, 0.08) 72%, transparent 82%)',
             }}
             priority
             sizes="100vw"
@@ -57,131 +89,155 @@ export default function ContactPage() {
           }}
         ></div>
         
-        {/* Title Section - matches about page */}
-        <div className="relative z-30 pb-6">
-          <div 
-            ref={titleRef}
-            className={`container mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-32 fade-in-on-scroll text-center sm:text-left ${titleVisible ? "visible" : ""}`}
-          >
-            <div className="bg-black inline-block px-6 py-4 mb-6">
-              <h1 className="page-title page-title-main font-bold text-white text-center sm:text-left leading-tight">
-                Contact
-              </h1>
-            </div>
-          </div>
-        </div>
-        
-        {/* Content Container - Buttons centered vertically */}
-        <div className="relative z-10 w-full sm:h-full sm:flex sm:items-center" style={{ minHeight: 'auto' }}>
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-              {/* Spacer for layout */}
-              <div className="hidden lg:block"></div>
+        <div className="relative z-10 flex min-h-screen w-full flex-col">
+          <div className="container mx-auto flex flex-1 flex-col px-4 pb-8 pt-28 sm:px-6 sm:pb-10 sm:pt-32 lg:px-8 lg:pb-12">
+            <div className="grid flex-1 grid-cols-1 md:grid-cols-[minmax(0,44%)_minmax(0,56%)] md:gap-x-8 xl:grid-cols-[minmax(0,46%)_minmax(0,54%)] xl:gap-x-10">
+              {/* Portrait column — keep clear */}
+              <div className="hidden md:block" aria-hidden />
 
-              {/* Contact Buttons - Right side on desktop, centered on mobile */}
-              <div className="flex flex-col justify-center items-center lg:items-end space-y-6 pb-8 sm:pb-0">
-              {/* Phone Number Button */}
-              <a
-                href="tel:07352167642"
-                onClick={() => trackContact("call", getDevice(), "contact_page")}
-                className="w-full lg:w-[400px] border-2 border-white bg-white/10 backdrop-blur-sm rounded-full px-8 py-5 flex items-center justify-center gap-4 text-white text-xl font-semibold hover:border-black transition-all duration-300 text-center button-swipe text-white group"
-                style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
-              >
-                <svg
-                  className="w-7 h-7 text-white group-hover:text-black transition-colors duration-300 group-hover:scale-110"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+              {/* Right column */}
+              <div className="flex w-full max-w-lg flex-col items-start space-y-5 pt-4 md:col-start-2 md:justify-self-start md:pt-10 lg:max-w-xl lg:pt-14">
+                <a
+                  href="tel:07352167642"
+                  onClick={() => trackContact("call", getDevice(), "contact_page")}
+                  className="group inline-flex w-fit items-center gap-3 text-lg font-semibold text-white transition-all duration-300 sm:text-xl"
+                  style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                 >
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                </svg>
-                <span>07352167642</span>
-              </a>
-              
-              {/* Email Button */}
-              <a
-                href="mailto:pa@osamamoussa.co.uk"
-                onClick={() => trackContact("email", getDevice(), "contact_page")}
-                className="w-full lg:w-[400px] border-2 border-white bg-white/10 backdrop-blur-sm rounded-full px-8 py-5 flex items-center justify-center gap-4 text-white text-xl font-semibold hover:border-black transition-all duration-300 text-center button-swipe text-white group"
-                style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
-              >
-                <svg 
-                  className="w-7 h-7 text-white group-hover:text-black transition-colors duration-300 group-hover:scale-110" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
+                  <svg
+                    className="h-6 w-6 shrink-0 text-white transition-colors duration-300 group-hover:text-white/80 sm:h-7 sm:w-7"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden
+                  >
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                  </svg>
+                  <span className="underline decoration-white/40 underline-offset-4 transition-colors group-hover:decoration-white">
+                    07352167642
+                  </span>
+                </a>
+
+                <a
+                  href="mailto:pa@osamamoussa.co.uk"
+                  onClick={() => trackContact("email", getDevice(), "contact_page")}
+                  className="group inline-flex w-fit items-center gap-3 text-lg font-semibold text-white transition-all duration-300 sm:text-xl"
+                  style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span>pa@osamamoussa.co.uk</span>
-              </a>
-              
-              {/* Contact Paragraph Card - Below buttons; match procedures paragraph size */}
-              <div className="w-full lg:w-[400px] border-2 border-white bg-white/10 backdrop-blur-sm p-6 text-white rounded-lg">
-                <p className="text-2xl sm:text-lg font-medium sm:font-normal leading-relaxed text-center lg:text-left">
-                  You can contact my Personal Assistant directly, alternatively you can make a booking via the hospitals websites
-                  from the list below.
-                </p>
+                  <svg
+                    className="h-6 w-6 shrink-0 text-white transition-colors duration-300 group-hover:text-white/80 sm:h-7 sm:w-7"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span className="underline decoration-white/40 underline-offset-4 transition-colors group-hover:decoration-white">
+                    pa@osamamoussa.co.uk
+                  </span>
+                </a>
+
+                <div className="max-w-xl space-y-5 pt-4 text-left lg:max-w-2xl">
+                  <p
+                    className="text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]"
+                    style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
+                  >
+                    <span className="block whitespace-nowrap">Book a consultation with</span>
+                    <span className="block">Mr Osama Moussa</span>
+                  </p>
+                  <p className="text-base leading-relaxed text-white/85 sm:text-lg">
+                    Consultant Upper GI and Robotic Surgeon serving London and Hertfordshire.
+                    Contact the practice team by phone or email, or book directly through one
+                    of the hospital locations below.
+                  </p>
+                  <ul className="space-y-3 text-left text-sm leading-relaxed text-white/80 sm:text-base">
+                    <li className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white/70" aria-hidden />
+                      <span>Enquiries are usually answered within one working day</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white/70" aria-hidden />
+                      <span>NHS and private appointments across Watford, Bushey, Northwood, and central London</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white/70" aria-hidden />
+                      <span>
+                        Private medical insurance accepted{" "}
+                        <Link href="/insurance" className="underline underline-offset-2 hover:text-white">
+                          view providers
+                        </Link>
+                      </span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
+
+            {/* Book via hospital — full width, bottom-left */}
+            <div className="mt-auto border-t border-white/15 pt-6 sm:pt-8">
+              <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-2">
+                <p className="shrink-0 text-sm font-semibold uppercase tracking-wide text-white/70">
+                  Book via hospital
+                </p>
+                <ul className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-5 sm:gap-y-2">
+                  {hospitals.map((hospital) => (
+                    <li key={hospital.name}>
+                      <Link
+                        href={hospital.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm text-white/90 underline decoration-white/30 underline-offset-4 transition-colors hover:text-white hover:decoration-white sm:text-base"
+                      >
+                        {hospital.name}
+                        <span aria-hidden>↗</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Additional Information Section - stacked on mobile with normal spacing, 3-col on desktop */}
-      <section className="w-full bg-black relative overflow-hidden">
-        {/* Bottom feathering overlay - desktop only */}
-        <div 
-          className="absolute bottom-0 left-0 right-0 pointer-events-none hidden md:block"
-          style={{
-            height: '100px',
-            background: 'linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 30%, rgba(0, 0, 0, 0.3) 60%, transparent 100%)',
-          }}
-        ></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-8 py-8 md:py-16 text-center">
-              {/* Quick Response */}
-              <div className="flex justify-center md:py-0">
-                <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border-2 border-white/30 hover:border-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer w-full max-w-sm mx-auto">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Quick Response</h3>
-                  <p className="text-white/80 text-2xl sm:text-base leading-relaxed group-hover:text-white/90 transition-colors duration-300">We aim to respond to all enquiries within 24 hours</p>
-                </div>
-              </div>
+      {/* What to expect */}
+      <section className="relative w-full overflow-hidden border-y border-white/10 bg-black">
+        <div className="container relative z-10 mx-auto px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+          <div className="mb-10 text-center lg:mb-12 lg:text-left">
+            <h2
+              className="text-2xl font-bold leading-tight text-white sm:text-3xl lg:text-4xl"
+              style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
+            >
+              What to expect
+            </h2>
+            <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-white/75 sm:text-lg lg:mx-0">
+              From first contact through to booking, this is how the practice supports new
+              and existing patients.
+            </p>
+          </div>
 
-              {/* Expert Consultation */}
-              <div className="flex justify-center md:py-0">
-                <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border-2 border-white/30 hover:border-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer w-full max-w-sm mx-auto">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Expert Consultation</h3>
-                  <p className="text-white/80 text-2xl sm:text-base leading-relaxed group-hover:text-white/90 transition-colors duration-300">Comprehensive assessment and personalized treatment plans</p>
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 lg:gap-6 xl:gap-8">
+            {contactHighlights.map((item) => (
+              <article
+                key={item.title}
+                className="flex h-full flex-col gap-5 rounded-2xl border border-white/15 bg-white/[0.04] p-6 transition-colors duration-300 hover:border-white/30 hover:bg-white/[0.07] sm:flex-row sm:items-start sm:p-8 lg:flex-col lg:gap-6"
+              >
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white">
+                  {item.icon}
                 </div>
-              </div>
-
-              {/* Multiple Locations */}
-              <div className="flex justify-center md:py-0">
-                <div className="bg-black/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border-2 border-white/30 hover:border-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer w-full max-w-sm mx-auto">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 uppercase tracking-wide group-hover:text-white transition-colors duration-300" style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}>Multiple Locations</h3>
-                  <p className="text-white/80 text-2xl sm:text-base leading-relaxed group-hover:text-white/90 transition-colors duration-300">Convenient access across London and Hertfordshire</p>
+                <div className="min-w-0 flex-1 text-left">
+                  <h3
+                    className="text-xl font-bold leading-snug text-white sm:text-2xl"
+                    style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-relaxed text-white/75 sm:text-lg">
+                    {item.description}
+                  </p>
                 </div>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -190,12 +246,15 @@ export default function ContactPage() {
       <section className="w-full pt-8 pb-16 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <h2 className="page-title font-bold text-white mb-4 leading-tight fade-in-on-scroll">
-              Hospital Locations
+            <h2
+              className="mx-auto mb-4 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl"
+              style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
+            >
+              Hospital locations
             </h2>
-            <p className="text-white/80 text-2xl sm:text-lg max-w-2xl mx-auto leading-relaxed">
-              Dr. Moussa practices at multiple prestigious hospitals across London and Hertfordshire. 
-              Book your consultation directly through each hospital&apos;s website.
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl">
+              Full details, maps, and direct booking links for each hospital Mr Moussa
+              practises at across London and Hertfordshire.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               {locationPages.map((location) => (
@@ -293,15 +352,24 @@ export default function ContactPage() {
                     </div>
                   </div>
                   
-                  <div className="mt-6 pt-6 border-t border-gray-200 flex justify-center lg:justify-start">
+                  <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-gray-200 pt-6">
                     <Link
                       href={hospital.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block w-fit px-2.5 py-3 text-center border-2 border-black bg-white/10 backdrop-blur-sm text-black rounded-full font-semibold hover:border-black transition-all duration-300 button-swipe button-swipe-black"
+                      className="inline-block min-w-[220px] px-8 py-3 text-center border-2 border-black bg-white/10 backdrop-blur-sm text-black rounded-full font-semibold hover:border-black transition-all duration-300 button-swipe button-swipe-black sm:min-w-[240px] sm:px-10"
                       style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                     >
                       Book Appointment
+                    </Link>
+                    <Link
+                      href={hospital.mapUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="shrink-0 text-base font-semibold text-[#6E6E6E] underline decoration-[#6E6E6E]/50 underline-offset-4 transition-colors hover:text-black hover:decoration-black"
+                      style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
+                    >
+                      View on map
                     </Link>
                   </div>
                 </div>

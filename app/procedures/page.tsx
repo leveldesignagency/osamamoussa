@@ -38,11 +38,9 @@ function PageTitleSection() {
         ref={ref}
         className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll text-center sm:text-left ${isVisible ? "visible" : ""}`}
       >
-        <div className="bg-black inline-block px-6 py-4">
-          <h1 className="page-title page-title-main font-bold text-white text-center sm:text-left leading-tight">
-            Procedures
-          </h1>
-        </div>
+        <h1 className="page-title page-title-main mx-auto font-bold leading-tight text-white sm:mx-0">
+          Procedures
+        </h1>
       </div>
     </section>
   );
@@ -182,7 +180,7 @@ function ProcedureCard({ procedure, index }: { procedure: Procedure, index: numb
       </Link>
       {/* Text underneath - title clickable */}
       <div className="mt-6 sm:mt-8 text-left paragraph-block text-left">
-        <h2 className="page-title font-bold text-white mb-2 sm:mb-3 leading-tight uppercase">
+        <h2 className="page-title mb-2 font-bold leading-tight text-white sm:mb-3">
           <Link
             href={`/procedures/${procedure.slug}`}
             className="text-white hover:underline focus:outline-none focus-visible:underline"

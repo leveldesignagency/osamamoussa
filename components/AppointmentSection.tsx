@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { trackContact, trackCTAClick } from "@/lib/contact-analytics";
 import { INSURANCE_PROVIDERS, isAxaLogo } from "@/lib/insurance-providers";
 
 export default function AppointmentSection() {
@@ -36,21 +37,33 @@ export default function AppointmentSection() {
         {/* Content */}
         <div className="relative z-10 flex h-full items-center">
           <div className="container mx-auto flex w-full justify-center px-4 sm:justify-end sm:px-6 lg:px-8">
-            <div className="max-w-md text-center sm:text-right">
+            <div className="max-w-lg text-center sm:max-w-xl sm:text-right">
               <p
-                className="mb-4 text-2xl font-bold uppercase tracking-wide text-white sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+                className="mb-4 text-3xl font-bold leading-tight text-white sm:mb-6 sm:text-4xl lg:text-5xl"
                 style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
               >
-                BOOK YOUR<br />
-                APPOINTMENT<br />
-                TODAY!
+                Book your
+                <br />
+                appointment
+                <br />
+                today
               </p>
-              <Link
-                href="/procedures/contact"
-                className="inline-block px-6 sm:px-8 py-3 sm:py-4 border-2 border-white bg-white/10 backdrop-blur-sm text-white font-medium hover:border-black transition-all duration-300 text-center button-swipe text-white text-sm sm:text-base"
-              >
-                Book Now
-              </Link>
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-end sm:gap-4">
+                <Link
+                  href="/procedures/contact"
+                  onClick={() => trackCTAClick("Book Now", "appointment-banner")}
+                  className="button-swipe inline-block border-2 border-white bg-white/10 px-6 py-3 text-center text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-black sm:px-8 sm:py-4 sm:text-base"
+                >
+                  Book Now
+                </Link>
+                <a
+                  href="tel:07352167642"
+                  onClick={() => trackContact("call", "mobile", "appointment-banner")}
+                  className="button-swipe inline-block border-2 border-white bg-white/10 px-6 py-3 text-center text-sm font-medium text-white backdrop-blur-sm transition-all duration-300 hover:border-black sm:px-8 sm:py-4 sm:text-base"
+                >
+                  Call Now
+                </a>
+              </div>
             </div>
           </div>
         </div>

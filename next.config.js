@@ -6,6 +6,15 @@ const nextConfig = {
   images: {
     domains: [],
   },
+  async redirects() {
+    return [
+      {
+        source: "/da-vinci",
+        destination: "/procedures/robotic-surgery",
+        permanent: true,
+      },
+    ];
+  },
 }
 
 module.exports = nextConfig

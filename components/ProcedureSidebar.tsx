@@ -13,7 +13,7 @@ export default function ProcedureSidebar({ slug, procedures }: Props) {
     <aside className="lg:sticky lg:top-28 lg:self-start space-y-6 text-center lg:text-left">
       {/* Book / Contact CTA */}
       <div className="bg-white/10 border border-white/20 rounded-lg p-5 text-white">
-        <h3 className="font-bold text-white uppercase tracking-wide mb-3 text-sm">
+        <h3 className="page-title mb-3 text-sm font-bold text-white">
           Book a consultation
         </h3>
         <p className="text-sm text-gray-200 mb-4">
@@ -36,7 +36,7 @@ export default function ProcedureSidebar({ slug, procedures }: Props) {
 
       {/* Related procedures */}
       <div className="bg-white/10 border border-white/20 rounded-lg p-5 text-white">
-        <h3 className="font-bold text-white uppercase tracking-wide mb-3 text-sm">
+        <h3 className="page-title mb-3 text-sm font-bold text-white">
           Other procedures
         </h3>
         <ul className="space-y-2 lg:text-left">

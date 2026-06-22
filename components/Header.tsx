@@ -90,9 +90,15 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
                 width={200}
                 height={50}
                 className={`h-16 w-auto ${
-                  isContactPage 
-                    ? "brightness-0 invert sm:brightness-100 sm:invert-0" // White on mobile, black on desktop
-                    : (textColorProp === "black" ? "" : (isAboutPage ? "brightness-0 invert" : (backgroundColor === "grey" ? "brightness-0 invert" : "")))
+                  isContactPage
+                    ? "brightness-0 invert"
+                    : textColorProp === "black"
+                      ? ""
+                      : isAboutPage
+                        ? "brightness-0 invert"
+                        : backgroundColor === "grey"
+                          ? "brightness-0 invert"
+                          : ""
                 }`}
                 priority
               />

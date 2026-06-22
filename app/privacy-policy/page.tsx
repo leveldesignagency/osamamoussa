@@ -22,8 +22,8 @@ export default function PrivacyPolicyPage() {
       {/* Page Title */}
       <section className="w-full pt-32 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="page-title font-bold text-white leading-tight">
-            Privacy Policy
+          <h1 className="page-title page-title-main font-bold leading-tight text-white">
+            Privacy policy
           </h1>
         </div>
       </section>

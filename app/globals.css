@@ -120,46 +120,48 @@ body.menu-open .bg-gradient-grey,
   );
 }
 
-/* Page titles: clear title presence, all caps, hover underline from center */
+/* Page titles: sentence case, left border accent (no black bar) */
 .page-title {
   font-size: 22px !important;
   font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  text-transform: none;
   font-family: "Plus Jakarta Sans", sans-serif;
-  position: relative;
-  display: inline-block;
-}
-.page-title::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -2px;
-  height: 2px;
-  width: 0;
-  background: currentColor;
-  transition: width 0.3s ease;
-  transform: translateX(-50%);
-}
-.page-title:hover::after {
-  width: 100%;
+  border-left: 3px solid currentColor;
+  padding-left: 1rem;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
 }
 
-/* Override uppercase and letter-spacing for publication titles (normal/title case) */
-.page-title.normal-case {
-  text-transform: none !important;
-  letter-spacing: 0.02em;
-}
-
-/* Main page title (Procedures, Research, Reviews, Contact) - larger, in black bar */
 .page-title-main {
-  font-size: 28px !important;
+  font-size: 2.25rem !important;
+  border-left-width: 4px;
+  padding-left: 1.25rem;
 }
 
 @media (min-width: 640px) {
   .page-title-main {
-    font-size: 32px !important;
+    font-size: 3rem !important;
   }
+}
+
+@media (min-width: 1024px) {
+  .page-title-main {
+    font-size: 3.75rem !important;
+  }
+}
+
+.page-title-hero {
+  font-size: clamp(1.875rem, 4.5vw, 3.75rem) !important;
+  border-left-width: 4px;
+  padding-left: 1.25rem;
+}
+
+/* Legacy alias — same as base now */
+.page-title.normal-case {
+  text-transform: none !important;
+  letter-spacing: 0.01em;
 }
 
 /* Paragraph block styling - even wrapping, no ragged indents */

@@ -38,7 +38,7 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen bg-gradient-grey relative">
-      <Header backgroundColor="grey" textColor="white" />
+      <Header backgroundColor="grey" textColor="black" />
 
       {/* About Section */}
       <section className="relative w-full overflow-hidden" style={{ minHeight: '100vh' }}>
@@ -98,14 +98,12 @@ export default function AboutPage() {
         <div className="relative z-30 pb-6">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-[60vh] sm:pt-32">
             <div ref={titleRef} className={`mb-6 fade-in-on-scroll text-center sm:text-left ${titleVisible ? "visible" : ""}`}>
-              <div className="bg-black inline-block px-6 py-4">
-                <h1 className="page-title page-title-main font-bold text-white text-center sm:text-left leading-tight">
-                  About
-                </h1>
-              </div>
+              <h1 className="page-title page-title-main mx-auto font-bold leading-tight text-black sm:mx-0">
+                About
+              </h1>
             </div>
             {/* Mobile: First paragraph only - match procedures text size (text-2xl) */}
-            <div ref={firstParaRef} className={`w-full space-y-4 text-2xl sm:text-base text-white font-medium leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden fade-in-on-scroll paragraph-block ${firstParaVisible ? "visible" : ""}`} style={{ paddingBottom: '200px', marginTop: '0' }}>
+            <div ref={firstParaRef} className={`w-full space-y-4 text-2xl sm:text-base text-black font-medium leading-relaxed text-center sm:text-left mx-auto sm:mx-0 pb-8 sm:hidden fade-in-on-scroll paragraph-block ${firstParaVisible ? "visible" : ""}`} style={{ paddingBottom: '200px', marginTop: '0' }}>
               <p>{firstParaText}</p>
             </div>
             
@@ -159,11 +157,9 @@ export default function AboutPage() {
       <section ref={accreditationsRef} className={`w-full py-16 fade-in-on-scroll ${accreditationsVisible ? "visible" : ""}`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <div className="bg-black inline-block px-6 py-4">
-              <h2 className="page-title page-title-main font-bold text-white text-center lg:text-left leading-tight">
-                Accreditations & Memberships
-              </h2>
-            </div>
+            <h2 className="page-title page-title-main mx-auto font-bold leading-tight text-white lg:mx-0">
+              Accreditations & memberships
+            </h2>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start paragraph-block">

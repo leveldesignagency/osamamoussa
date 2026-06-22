@@ -79,11 +79,9 @@ export default function OpenGraphPage() {
       />
 
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 max-w-4xl">
-        <div className="bg-black inline-block px-6 py-4 mb-8">
-          <h1 className="page-title page-title-main font-bold text-white text-center sm:text-left leading-tight">
-            Official preview image
-          </h1>
-        </div>
+        <h1 className="page-title page-title-main mb-8 font-bold leading-tight text-white">
+          Official preview image
+        </h1>
         <p className="text-gray-200 text-lg leading-relaxed mb-8 paragraph-block">
           This is the canonical <strong className="text-white">1200 × 720</strong> image used for{" "}
           <strong className="text-white">Open Graph</strong> (link previews),{" "}

@@ -21,11 +21,9 @@ export default function LocationsIndexPage() {
 
       <section className="w-full pt-32 pb-12">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="bg-black inline-block px-6 py-4 mb-8">
-            <h1 className="page-title page-title-main font-bold text-white">
-              Locations
-            </h1>
-          </div>
+          <h1 className="page-title page-title-main mb-8 font-bold text-white">
+            Locations
+          </h1>
           <p className="text-lg sm:text-xl text-gray-200 leading-relaxed paragraph-block max-w-4xl">
             Explore location-specific pages for Upper GI, hernia, reflux, and
             gallbladder surgery services. Each page includes local context and

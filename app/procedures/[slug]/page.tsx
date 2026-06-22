@@ -10,7 +10,9 @@ import ProcedureSidebar from "@/components/ProcedureSidebar";
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateStaticParams() {
-  return getProcedureSlugs().map((slug) => ({ slug }));
+  return getProcedureSlugs()
+    .filter((slug) => slug !== "robotic-surgery")
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -139,8 +141,10 @@ export default async function ProcedurePage({ params }: Props) {
             className="absolute inset-0 flex items-center justify-center bg-black/40"
             aria-hidden
           />
-          <h1 className="absolute inset-0 flex items-center justify-center text-white text-center font-bold px-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl uppercase tracking-wide drop-shadow-lg">
-            {procedure.title}
+          <h1 className="absolute inset-0 flex items-center justify-center px-4">
+            <span className="page-title page-title-main page-title-hero max-w-5xl text-center font-bold text-white drop-shadow-lg">
+              {procedure.title}
+            </span>
           </h1>
         </div>
       </section>
@@ -153,7 +157,7 @@ export default async function ProcedurePage({ params }: Props) {
             <div className="space-y-10 sm:space-y-16 text-center lg:text-left">
               {procedure.expandedContent.map((block, i) => (
                 <div key={i} className="space-y-4 sm:space-y-6">
-                  <h2 className="page-title font-bold text-white mb-4 sm:mb-6 uppercase">
+                  <h2 className="page-title mb-4 font-bold text-white sm:mb-6">
                     {block.heading}
                   </h2>
                   <div className="space-y-4 text-lg text-gray-200 leading-relaxed paragraph-block">
@@ -161,13 +165,24 @@ export default async function ProcedurePage({ params }: Props) {
                       <p key={j}>{para}</p>
                     ))}
                   </div>
+                  {block.link && (
+                    <p className="pt-2">
+                      <Link
+                        href={block.link.href}
+                        className="button-swipe button-swipe-black inline-flex items-center gap-2 border-2 border-white px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 sm:text-base"
+                      >
+                        {block.link.label}
+                        <span aria-hidden>→</span>
+                      </Link>
+                    </p>
+                  )}
                 </div>
               ))}
 
               {/* FAQ section (when present) - under main article content */}
               {procedure.faqs && procedure.faqs.length > 0 && (
                 <div className="space-y-6 text-center lg:text-left">
-                  <h2 className="page-title font-bold text-white mb-4 sm:mb-6 uppercase">
+                  <h2 className="page-title mb-4 font-bold text-white sm:mb-6">
                     Frequently asked questions
                   </h2>
                   <ul className="space-y-6">

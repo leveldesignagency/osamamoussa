@@ -106,14 +106,12 @@ function TitleSection() {
     <section className="w-full pt-32 pb-2 sm:pb-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 items-center sm:items-stretch">
-          <div className="bg-black inline-block px-6 py-4">
-            <h1 
-              ref={titleRef}
-              className={`page-title page-title-main font-bold text-white leading-tight fade-in-on-scroll text-center sm:text-left ${titleVisible ? "visible" : ""}`}
-            >
-              Research
-            </h1>
-          </div>
+          <h1
+            ref={titleRef}
+            className={`page-title page-title-main mx-auto font-bold leading-tight text-white fade-in-on-scroll sm:mx-0 ${titleVisible ? "visible" : ""}`}
+          >
+            Research
+          </h1>
           <div 
             ref={linksRef}
             className={`flex flex-row gap-3 sm:gap-4 fade-in-on-scroll items-center justify-center sm:justify-end ${linksVisible ? "visible" : ""}`}
@@ -189,8 +187,8 @@ function MorePublicationsSection() {
         className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${isVisible ? "visible" : ""}`}
       >
         <div className="max-w-3xl text-center sm:text-left paragraph-block">
-          <h2 className="page-title font-bold text-gray-900 mb-6 leading-tight">
-            More Publications
+          <h2 className="page-title mb-6 font-bold leading-tight text-gray-900">
+            More publications
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-6">
             If you are interested in viewing many more of Osama Moussa&apos;s

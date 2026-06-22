@@ -1,6 +1,7 @@
 export type ProcedureSection = {
   heading: string;
   paragraphs: string[];
+  link?: { href: string; label: string };
 };
 
 export type ProcedureFAQ = {
@@ -104,7 +105,7 @@ export const procedures: ProcedureItem[] = [
     seoDescription: "Robotic surgery in London and Hertfordshire with Mr Osama Moussa. Versius and da Vinci. Upper GI and hernia surgery with enhanced precision. Spire Bushey, Circle Health Group, West Herts NHS. Book a consultation.",
     description:
       "Employing state-of-the-art robotic technology, Osama performs complex upper GI surgeries with enhanced precision and control. Robotic surgery allows for intricate procedures with minimal trauma to surrounding tissues, resulting in shorter hospital stays and improved patient outcomes.",
-    image: "/Robotic surgery.webp",
+    image: "/davinci/da-vinci-5-console-or.jpg",
     imageLeft: true,
     expandedContent: [
       {

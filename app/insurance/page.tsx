@@ -22,11 +22,9 @@ export default function InsurancePage() {
       {/* Page title — matches /procedures PageTitleSection */}
       <section className="w-full pt-32 pb-2 sm:pb-12">
         <div className="container mx-auto px-4 text-center sm:px-6 sm:text-left lg:px-8">
-          <div className="inline-block bg-black px-6 py-4">
-            <h1 className="page-title page-title-main font-bold leading-tight text-white normal-case">
-              Private medical insurance
-            </h1>
-          </div>
+          <h1 className="page-title page-title-main mx-auto font-bold leading-tight text-white sm:mx-0">
+            Private medical insurance
+          </h1>
         </div>
       </section>
 

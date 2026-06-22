@@ -98,11 +98,9 @@ export default async function LocationPage({ params }: Props) {
             <span aria-hidden>←</span>
             All locations
           </Link>
-          <div className="bg-black inline-block px-6 py-4 w-fit max-w-full">
-            <h1 className="page-title page-title-main font-bold text-white">
-              {location.title}
-            </h1>
-          </div>
+          <h1 className="page-title page-title-main w-fit max-w-full font-bold text-white">
+            {location.title}
+          </h1>
         </div>
       </section>
 
@@ -120,7 +118,7 @@ export default async function LocationPage({ params }: Props) {
               ))}
 
               <div>
-                <h2 className="page-title font-bold text-white mb-4 uppercase">
+                <h2 className="page-title mb-4 font-bold text-white">
                   Nearby areas
                 </h2>
                 <p className="text-gray-200 leading-relaxed">
@@ -129,7 +127,7 @@ export default async function LocationPage({ params }: Props) {
               </div>
 
               <div>
-                <h2 className="page-title font-bold text-white mb-4 uppercase">
+                <h2 className="page-title mb-4 font-bold text-white">
                   Why patients choose this service
                 </h2>
                 <ul className="space-y-3">
@@ -143,7 +141,7 @@ export default async function LocationPage({ params }: Props) {
 
               {location.faqs.length > 0 && (
                 <div>
-                  <h2 className="page-title font-bold text-white mb-6 uppercase">
+                  <h2 className="page-title mb-6 font-bold text-white">
                     Frequently asked questions
                   </h2>
                   <ul className="space-y-6">
