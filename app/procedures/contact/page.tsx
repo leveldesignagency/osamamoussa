@@ -96,7 +96,7 @@ export default function ContactPage() {
               <div className="hidden md:block" aria-hidden />
 
               {/* Right column — centred between left and right */}
-              <div className="flex w-full max-w-lg flex-col items-start space-y-5 pt-4 md:col-start-2 md:max-w-xl md:justify-self-center md:pt-10 lg:pt-14">
+              <div className="flex w-full max-w-lg flex-col items-start space-y-5 pt-4 md:col-start-2 md:max-w-xl md:translate-x-10 md:justify-self-center md:pt-10 lg:translate-x-14 lg:pt-14 xl:translate-x-16">
                 <a
                   href="tel:07352167642"
                   onClick={() => trackContact("call", getDevice(), "contact_page")}
