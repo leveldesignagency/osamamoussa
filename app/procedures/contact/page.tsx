@@ -91,12 +91,12 @@ export default function ContactPage() {
         
         <div className="relative z-10 flex min-h-screen w-full flex-col">
           <div className="container mx-auto flex flex-1 flex-col px-4 pb-8 pt-28 sm:px-6 sm:pb-10 sm:pt-32 lg:px-8 lg:pb-12">
-            <div className="grid flex-1 grid-cols-1 md:grid-cols-[minmax(0,44%)_minmax(0,56%)] md:gap-x-8 xl:grid-cols-[minmax(0,46%)_minmax(0,54%)] xl:gap-x-10">
+            <div className="grid flex-1 grid-cols-1 md:grid-cols-[minmax(0,50%)_minmax(0,50%)] md:gap-x-6 lg:gap-x-8 xl:grid-cols-[minmax(0,52%)_minmax(0,48%)] xl:gap-x-10">
               {/* Portrait column — keep clear */}
               <div className="hidden md:block" aria-hidden />
 
-              {/* Right column */}
-              <div className="flex w-full max-w-lg flex-col items-start space-y-5 pt-4 md:col-start-2 md:justify-self-start md:pt-10 lg:max-w-xl lg:pt-14">
+              {/* Right column — aligned right */}
+              <div className="flex w-full max-w-lg flex-col items-start space-y-5 pt-4 md:col-start-2 md:max-w-xl md:justify-self-end md:pt-10 lg:pt-14 xl:max-w-[28rem]">
                 <a
                   href="tel:07352167642"
                   onClick={() => trackContact("call", getDevice(), "contact_page")}
