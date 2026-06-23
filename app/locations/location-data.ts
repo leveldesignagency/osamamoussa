@@ -4,8 +4,14 @@ export type HospitalLocation = {
   phone: string;
   website: string;
   mapUrl: string;
+  mapLat: number;
+  mapLng: number;
   areasServed: string[];
 };
+
+export function getHospitalMapEmbedSrc(hospital: HospitalLocation): string {
+  return `https://www.google.com/maps?q=${hospital.mapLat},${hospital.mapLng}&hl=en&z=16&output=embed`;
+}
 
 export type LocationPage = {
   slug: string;
@@ -27,6 +33,8 @@ export const hospitals: HospitalLocation[] = [
     website: "https://www.westhertshospitals.nhs.uk/",
     mapUrl:
       "https://www.google.com/maps/place/Watford+General+Hospital/@51.6495051,-0.4062333,17z/data=!4m9!1m2!2m1!1sVicarage+Road+Watford+WDS8+0HB!3m5!1s0x48766add427ddfd1:0xe6737457e2df3710!8m2!3d51.6482886!4d-0.4038784!16s%2Fm%2F0m0q811?entry=ttu",
+    mapLat: 51.6482886,
+    mapLng: -0.4038784,
     areasServed: [
       "hertfordshire",
       "watford",
@@ -43,6 +51,8 @@ export const hospitals: HospitalLocation[] = [
     website: "https://www.spirehealthcare.com/spire-bushey-hospital/",
     mapUrl:
       "https://www.google.com/maps?sca_esv=5916dc4a4d004541&rlz=1C5CHFA_enGB1104GB1104&biw=1728&bih=993&sxsrf=ADLYWIL5DwE835fzPeMuhnIpY9M8z28RpQ:1719416946508&uact=5&gs_lp=Egxnd3Mtd2l6LXNlcnAaAhgDIjJidXNoZXkgaGVhbHRoY2FyZSBIZWF0aGJvdXJuZSBSb2FkIEJ1c2hleSBXRDIzIDFSRDIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogQyCBAAGKIEGIkFSNkbUIIGWP0acAF4AZABAJgBpAKgAdAOqgEGMTAuNy4xuAEDyAEA-AEBmAIQoALFCsICChAAGLADGNYEGEfCAgcQIxiwAhgnwgIIEAAYBxgIGB7CAggQABgFGAcYHsICCBAAGAgYDRgewgILEAAYgAQYhgMYigXCAgYQABgIGB7CAgQQIRgKmAMAiAYBkAYIkgcEMTAuNqAH5IQB&um=1&ie=UTF-8&fb=1&gl=uk&sa=X&geocode=KSkYbmX_FHZIMULZu5UksWQY&daddr=Heathbourne+Rd,+Bushey+WD23+1RD",
+    mapLat: 51.653659,
+    mapLng: -0.360278,
     areasServed: ["hertfordshire", "watford", "bushey", "st-albans"],
   },
   {
@@ -53,6 +63,8 @@ export const hospitals: HospitalLocation[] = [
       "https://www.circlehealthgroup.co.uk/hospitals/bishops-wood-hospital",
     mapUrl:
       "https://www.google.com/maps?rlz=1C5CHFA_enGB1104GB1104&gs_lcrp=EgZjaHJvbWUqFQgBEC4YJxivARjHARiABBiKBRiOBTIPCAAQIxgnGOMCGIAEGIoFMhUIARAuGCcYrwEYxwEYgAQYigUYjgUyBggCEEUYOTIGCAMQRRg7MgcIBBAAGIAEMgcIBRAuGIAEMhAIBhAuGK8BGMcBGIAEGI4FMgYIBxBFGDzSAQgyNTY0ajFqNKgCALACAQ&um=1&ie=UTF-8&fb=1&gl=uk&sa=X&geocode=Kc1Nr_iUa3ZIMcHNagAmeXaS&daddr=Rickmansworth+Rd,+Northwood+HA6+2JW",
+    mapLat: 51.622849,
+    mapLng: -0.419722,
     areasServed: [
       "west-london",
       "hertfordshire",
@@ -69,6 +81,8 @@ export const hospitals: HospitalLocation[] = [
     website: "https://www.hcahealthcare.co.uk/facilities/the-wellington-hospital",
     mapUrl:
       "https://www.google.com/maps/place/The+Wellington+Hospital/@51.5356281,-0.1750156,17z",
+    mapLat: 51.5356281,
+    mapLng: -0.1750156,
     areasServed: [
       "west-london",
       "chelsea",

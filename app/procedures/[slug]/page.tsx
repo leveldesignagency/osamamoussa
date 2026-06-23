@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function BackToProcedures() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-4 sm:pb-6 flex justify-center sm:justify-start">
+    <div className="container mx-auto px-4 sm:px-6 pt-24 sm:pt-28 pb-4 sm:pb-6 flex justify-start">
       <Link
         href="/procedures"
         className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors font-medium"
@@ -141,8 +141,8 @@ export default async function ProcedurePage({ params }: Props) {
             className="absolute inset-0 flex items-center justify-center bg-black/40"
             aria-hidden
           />
-          <h1 className="absolute inset-0 flex items-center justify-center px-4">
-            <span className="page-title page-title-main page-title-hero max-w-5xl text-center font-bold text-white drop-shadow-lg">
+          <h1 className="absolute inset-0 flex items-center justify-start px-4 sm:justify-center sm:px-6">
+            <span className="page-title page-title-main page-title-hero max-w-5xl text-left font-bold text-white drop-shadow-lg sm:text-center">
               {procedure.title}
             </span>
           </h1>
@@ -154,13 +154,13 @@ export default async function ProcedurePage({ params }: Props) {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10 lg:gap-10 xl:gap-12">
             {/* Main content + FAQ (left column) */}
-            <div className="space-y-10 sm:space-y-16 text-center lg:text-left">
+            <div className="space-y-10 text-left sm:space-y-16">
               {procedure.expandedContent.map((block, i) => (
                 <div key={i} className="space-y-4 sm:space-y-6">
                   <h2 className="page-title mb-4 font-bold text-white sm:mb-6">
                     {block.heading}
                   </h2>
-                  <div className="space-y-4 text-lg text-gray-200 leading-relaxed paragraph-block">
+                  <div className="paragraph-block space-y-4 text-left text-lg leading-relaxed text-gray-200">
                     {block.paragraphs.map((para, j) => (
                       <p key={j}>{para}</p>
                     ))}
@@ -181,7 +181,7 @@ export default async function ProcedurePage({ params }: Props) {
 
               {/* FAQ section (when present) - under main article content */}
               {procedure.faqs && procedure.faqs.length > 0 && (
-                <div className="space-y-6 text-center lg:text-left">
+                <div className="space-y-6 text-left">
                   <h2 className="page-title mb-4 font-bold text-white sm:mb-6">
                     Frequently asked questions
                   </h2>
@@ -204,7 +204,7 @@ export default async function ProcedurePage({ params }: Props) {
       </section>
 
       {/* Back to procedures - bottom */}
-      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 flex justify-center sm:justify-start">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 flex justify-start">
         <Link
           href="/procedures"
           className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors font-medium"

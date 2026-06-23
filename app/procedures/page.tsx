@@ -36,9 +36,9 @@ function PageTitleSection() {
     <section className="w-full pt-32 pb-2 sm:pb-12">
       <div 
         ref={ref}
-        className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll text-center sm:text-left ${isVisible ? "visible" : ""}`}
+        className={`container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll text-left ${isVisible ? "visible" : ""}`}
       >
-        <h1 className="page-title page-title-main mx-auto font-bold leading-tight text-white sm:mx-0">
+        <h1 className="page-title page-title-main font-bold leading-tight text-white">
           Procedures
         </h1>
       </div>
@@ -58,8 +58,8 @@ function IntroductionSection() {
         ref={firstParaRef}
         className={`w-full pt-0 pb-12 px-4 sm:hidden bg-transparent fade-in-on-scroll ${firstParaVisible ? "visible" : ""}`}
       >
-        <div className="container mx-auto paragraph-block paragraph-block-full">
-          <p className="text-2xl text-white font-medium leading-relaxed text-center">
+        <div className="container mx-auto paragraph-block paragraph-block-full text-left">
+          <p className="text-2xl font-medium leading-relaxed text-white text-left">
             Osama delivers Laparoscopic and Robotic surgical services at West
             Hertfordshire NHS Teaching Trust. He is trained in various benign
             Upper GI and General surgical procedures. Minimally invasive surgery
@@ -79,8 +79,8 @@ function IntroductionSection() {
         ref={secondParaRef}
         className={`w-full py-20 px-4 sm:hidden bg-transparent fade-in-on-scroll ${secondParaVisible ? "visible" : ""}`}
       >
-        <div className="container mx-auto paragraph-block paragraph-block-full">
-          <p className="text-2xl text-white font-medium leading-relaxed text-center">
+        <div className="container mx-auto paragraph-block paragraph-block-full text-left">
+          <p className="text-2xl font-medium leading-relaxed text-white text-left">
             His special interest is benign oesophagogastric surgery, which
             includes managing acid reflux disease through laparoscopic hiatus
             hernia repair, fundoplication, paraesophageal hernia repair, and
@@ -98,7 +98,7 @@ function IntroductionSection() {
         ref={desktopRef}
         className={`hidden sm:block container mx-auto px-4 sm:px-6 lg:px-8 fade-in-on-scroll ${desktopVisible ? "visible" : ""}`}
       >
-        <div className="space-y-8 text-lg sm:text-xl text-gray-200 leading-relaxed text-center lg:text-left paragraph-block paragraph-block-full">
+        <div className="space-y-8 text-left text-lg leading-relaxed text-gray-200 sm:text-xl lg:text-left paragraph-block paragraph-block-full">
             <p>
               Osama delivers Laparoscopic and Robotic surgical services at West
               Hertfordshire NHS Teaching Trust. He is trained in various benign

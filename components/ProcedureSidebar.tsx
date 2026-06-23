@@ -10,7 +10,7 @@ export default function ProcedureSidebar({ slug, procedures }: Props) {
   const others = procedures.filter((p) => p.slug !== slug).slice(0, 5);
 
   return (
-    <aside className="lg:sticky lg:top-28 lg:self-start space-y-6 text-center lg:text-left">
+    <aside className="space-y-6 text-left lg:sticky lg:top-28 lg:self-start">
       {/* Book / Contact CTA */}
       <div className="bg-white/10 border border-white/20 rounded-lg p-5 text-white">
         <h3 className="page-title mb-3 text-sm font-bold text-white">
@@ -39,7 +39,7 @@ export default function ProcedureSidebar({ slug, procedures }: Props) {
         <h3 className="page-title mb-3 text-sm font-bold text-white">
           Other procedures
         </h3>
-        <ul className="space-y-2 lg:text-left">
+        <ul className="space-y-2 text-left">
           {others.map((p) => (
             <li key={p.slug}>
               <Link

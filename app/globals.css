@@ -190,6 +190,12 @@ body.menu-open .bg-gradient-grey,
     text-align: center;
     text-justify: auto;
   }
+
+  .paragraph-block.text-left p,
+  .paragraph-block.text-left.paragraph-block-full p {
+    text-align: left;
+    text-justify: auto;
+  }
 }
 
 :root {

@@ -6,7 +6,7 @@ import AppointmentSection from "@/components/AppointmentSection";
 import Image from "next/image";
 import Link from "next/link";
 import { trackContact, getDevice } from "@/lib/contact-analytics";
-import { hospitals, locationPages } from "@/app/locations/location-data";
+import { hospitals, locationPages, getHospitalMapEmbedSrc } from "@/app/locations/location-data";
 
 const contactHighlights = [
   {
@@ -273,16 +273,17 @@ export default function ContactPage() {
             {hospitals.map((hospital, index) => (
               <div key={index} className="bg-white rounded-lg shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] group">
                 {/* Map Embed */}
-                <div className="w-full h-48 sm:h-64 relative overflow-hidden">
+                <div className="relative h-52 w-full overflow-hidden sm:h-64">
                   <iframe
+                    title={`Map showing ${hospital.name}`}
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    src={`https://www.google.com/maps?q=${encodeURIComponent(hospital.address)}&output=embed&zoom=15`}
-                    className="group-hover:scale-110 transition-transform duration-500"
+                    src={getHospitalMapEmbedSrc(hospital)}
+                    className="absolute inset-0 h-full w-full sm:group-hover:scale-110 sm:transition-transform sm:duration-500"
                   ></iframe>
                   <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
                 </div>
