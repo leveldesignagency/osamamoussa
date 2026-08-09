@@ -446,12 +446,6 @@ export const procedures: ProcedureItem[] = [
       { question: "What is an umbilical hernia?", answer: "An umbilical hernia is a bulge at the navel; a paraumbilical hernia is near but not exactly at the navel. Both occur when tissue pushes through a weakness in the abdominal wall. They are common in adults and can develop due to increased pressure (e.g. obesity, pregnancy, heavy lifting)." },
       { question: "When should an umbilical or paraumbilical hernia be repaired?", answer: "Repair is usually recommended when the hernia causes symptoms, is enlarging, or when there is a risk of complications. Mr Moussa will assess the hernia and discuss the best approach—open or laparoscopic—and whether mesh is needed." },
       { question: "How long is recovery after umbilical hernia repair?", answer: "Recovery is usually straightforward. You will get advice on wound care and gradual return to activity. Follow-up ensures you are healing well. Heavy lifting is typically avoided for several weeks." },
-    ],
-  },
-    faqs: [
-      { question: "What is an umbilical hernia?", answer: "An umbilical hernia is a bulge at the navel; a paraumbilical hernia is near but not exactly at the navel. Both occur when tissue pushes through a weakness in the abdominal wall. They are common in adults and can develop due to increased pressure (e.g. obesity, pregnancy, heavy lifting)." },
-      { question: "When should an umbilical or paraumbilical hernia be repaired?", answer: "Repair is usually recommended when the hernia causes symptoms, is enlarging, or when there is a risk of complications. Mr Moussa will assess the hernia and discuss the best approach—open or laparoscopic—and whether mesh is needed." },
-      { question: "How long is recovery after umbilical hernia repair?", answer: "Recovery is usually straightforward. You will get advice on wound care and gradual return to activity. Follow-up ensures you are healing well. Heavy lifting is typically avoided for several weeks." },
       { question: "Is umbilical hernia repair available in Hertfordshire or Hemel Hempstead?", answer: "Yes. Mr Osama Moussa provides umbilical and paraumbilical hernia repair for patients in Hertfordshire and near Hemel Hempstead, with clinics at Spire Bushey, Circle Health Group, and West Hertfordshire NHS Trust." },
     ],
   },
