@@ -66,7 +66,7 @@ export const procedures: ProcedureItem[] = [
     slug: "laparoscopic-surgery",
     title: "Laparoscopic Surgery",
     seoTitle: "Laparoscopic Surgeon London & Hertfordshire | Keyhole Surgery",
-    seoDescription: "Laparoscopic (keyhole) surgery in London and Hertfordshire with Mr Osama Moussa. Gallbladder, hernia repair, anti-reflux surgery. Minimally invasive, faster recovery. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
+    seoDescription: "Laparoscopic (keyhole) surgery in London and Hertfordshire with Mr Osama Moussa. Gallbladder, hernia repair, anti-reflux surgery. Minimally invasive, faster recovery. Also searched as key hole surgery. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
     description:
       "Osama utilises laparoscopic surgery to perform minimally invasive procedures on the upper gastrointestinal tract, including conditions such as hernias and gallbladder issues. With smaller incisions and advanced technology, laparoscopic surgery offers patients faster recovery times and reduced post-operative pain.",
     image: "/laparoscopic-surgery.jpeg",
@@ -102,7 +102,7 @@ export const procedures: ProcedureItem[] = [
     slug: "robotic-surgery",
     title: "Robotic Surgery",
     seoTitle: "Robotic Surgery London & Hertfordshire | Robotic Surgeon Specialist",
-    seoDescription: "Robotic surgery in London and Hertfordshire with Mr Osama Moussa. Versius and da Vinci. Upper GI and hernia surgery with enhanced precision. Spire Bushey, Circle Health Group, West Herts NHS. Book a consultation.",
+    seoDescription: "Robotic surgery London and Hertfordshire with Mr Osama Moussa. Versius and da Vinci console surgery. Upper GI and hernia surgery with enhanced precision. Spire Bushey, Circle Health Group, West Herts NHS. Book a consultation.",
     description:
       "Employing state-of-the-art robotic technology, Osama performs complex upper GI surgeries with enhanced precision and control. Robotic surgery allows for intricate procedures with minimal trauma to surrounding tissues, resulting in shorter hospital stays and improved patient outcomes.",
     image: "/davinci/da-vinci-5-console-or.jpg",
@@ -138,7 +138,7 @@ export const procedures: ProcedureItem[] = [
     slug: "gallbladder-surgery-cholecystectomy",
     title: "Gallbladder Surgery / Cholecystectomy",
     seoTitle: "Gallbladder Surgery London & Hertfordshire | Cholecystectomy Specialist",
-    seoDescription: "Gallbladder surgery (cholecystectomy) in London and Hertfordshire. Mr Osama Moussa – gallbladder surgery specialist UK. Laparoscopic keyhole removal for gallstones. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
+    seoDescription: "Gallbladder surgery (cholecystectomy) and gallstone treatment in London and Hertfordshire, including Hemel Hempstead. Mr Osama Moussa – gallbladder removal surgery specialist. Laparoscopic keyhole removal for gallstones. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
     description:
       "Specialising in gallbladder surgery, Osama offers cholecystectomy procedures to patients suffering from gallstones or other gallbladder-related conditions. Using advanced laparoscopic techniques, he ensures safe and effective removal of the gallbladder, relieving symptoms and restoring digestive health.",
     image: "/Gallbladder_Gallstone.jpg",
@@ -169,6 +169,7 @@ export const procedures: ProcedureItem[] = [
       { question: "When do you need gallbladder surgery?", answer: "Gallbladder removal (cholecystectomy) is usually recommended when you have symptomatic gallstones (recurrent pain, inflammation, or complications such as jaundice or pancreatitis). If you have repeated biliary colic or cholecystitis, your doctor or surgeon will discuss whether surgery is the right option." },
       { question: "Is gallbladder surgery done by keyhole?", answer: "Yes. Mr Moussa performs cholecystectomy almost always by laparoscopic (keyhole) surgery. This typically means less pain, a shorter stay in hospital, and a quicker recovery than open surgery. In a small number of cases, open surgery may be needed for safety." },
       { question: "Where can I have gallbladder surgery in London or Hertfordshire?", answer: "Mr Osama Moussa performs gallbladder surgery at Spire Bushey, Circle Health Group hospitals, and West Hertfordshire NHS Trust. Book a consultation via the contact page or by phone to discuss your options." },
+      { question: "Is gallstone treatment available near Hemel Hempstead?", answer: "Yes. Patients near Hemel Hempstead can see Mr Osama Moussa for gallstone treatment and gallbladder removal surgery (cholecystectomy). Assessment covers symptoms, scans, and whether keyhole gallbladder surgery is appropriate." },
     ],
   },
   {
@@ -212,7 +213,7 @@ export const procedures: ProcedureItem[] = [
     slug: "hernia-repair-surgery",
     title: "Hernia Repair Surgery",
     seoTitle: "Hernia Surgeon London & Hertfordshire | Hernia Repair Surgery",
-    seoDescription: "Hernia surgeon London and Hertfordshire. Mr Osama Moussa – hernia repair surgery: inguinal, ventral, umbilical, hiatal, TAPP. Laparoscopic and robotic options. Spire Bushey, Watford, West Herts. Book a consultation.",
+    seoDescription: "Hernia surgeon London and Hertfordshire. Private hernia surgery specialists Hertfordshire – inguinal, ventral, umbilical, femoral, hiatal, TAPP. Hernia specialist near me options at Spire Bushey, Watford, West Herts. Laparoscopic and robotic. Book a consultation.",
     description:
       "Specialising in hernia repair surgery, Osama offers various techniques, including laparoscopic and robotic approaches, to address different types of hernias affecting the upper GI tract. With a focus on patient safety and optimal outcomes, he ensures each procedure is tailored to meet the individual needs of the patient.",
     image: "/Hernia repair surgery.png",
@@ -243,13 +244,15 @@ export const procedures: ProcedureItem[] = [
       { question: "What are the symptoms of a hernia?", answer: "Common hernia symptoms include a visible lump or bulge (especially when coughing or straining), discomfort or pain in the area, and sometimes a dragging sensation. Groin hernias may cause pain when lifting. If the hernia becomes very painful, red, or you cannot push it back, seek urgent medical attention." },
       { question: "How long is recovery after laparoscopic hernia surgery?", answer: "Recovery varies by hernia type and size. Many patients go home the same day or after a short stay. Light activities can often resume within 1–2 weeks; heavier lifting and sport are usually avoided for several weeks. Mr Moussa will give you personalised advice at your consultation and after surgery." },
       { question: "Where can I see a hernia surgeon in London or Hertfordshire?", answer: "Mr Osama Moussa sees patients at Spire Bushey, Circle Health Group hospitals (including Bishops Wood, The Wellington Hospital), and West Hertfordshire NHS Trust. Book a consultation via the contact page or by phone." },
+      { question: "Do you offer private hernia surgery in Hertfordshire?", answer: "Yes. Mr Moussa provides private hernia surgery for patients across Hertfordshire, including Hemel Hempstead, Watford, Bushey, and St Albans. He also sees NHS patients at West Hertfordshire NHS Trust. Both laparoscopic and open hernia repair options are available." },
+      { question: "Can I see a hernia specialist near me in Hertfordshire?", answer: "Yes. If you are searching for a hernia specialist near you in Hertfordshire or around Hemel Hempstead, Mr Osama Moussa offers consultant-led hernia assessment and repair for inguinal, umbilical, epigastric, femoral, and other abdominal wall hernias." },
     ],
   },
   {
     slug: "linx-device-gord-treatment",
     title: "LINX Device for GORD Treatment",
     seoTitle: "LINX Device London & Hertfordshire | Acid Reflux Surgery Specialist",
-    seoDescription: "LINX device for GORD in London and Hertfordshire. Mr Osama Moussa – acid reflux surgery specialist. Minimally invasive LINX for reflux. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
+    seoDescription: "LINX device for GORD treatment in London and Hertfordshire. Mr Osama Moussa – acid reflux surgery specialist. Minimally invasive LINX reflux implant. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
     description:
       "Osama provides innovative treatments like the LINX device for GORD, offering patients a minimally invasive solution to manage reflux symptoms. By implanting the LINX device, he helps restore the natural function of the oesophagus and provides long-term relief from GORD-related issues.",
     image: "/linx-procedure.png",
@@ -285,7 +288,7 @@ export const procedures: ProcedureItem[] = [
     slug: "inguinal-hernia-surgery",
     title: "Inguinal Hernia Surgery",
     seoTitle: "Inguinal Hernia Surgeon London & Hertfordshire | Groin Hernia Repair",
-    seoDescription: "Inguinal hernia surgery in London and Hertfordshire. Mr Osama Moussa – inguinal hernia surgeon. Laparoscopic (TAPP) and open repair. Spire Bushey, Watford, West Herts. Book a consultation.",
+    seoDescription: "Inguinal hernia repair Hertfordshire and Hemel Hempstead. Mr Osama Moussa – inguinal hernia surgery specialist. Laparoscopic (TAPP) and open repair. Spire Bushey, Watford, West Herts. Book a consultation.",
     description:
       "Osama specialises in inguinal hernia surgery, offering both traditional and minimally invasive approaches to repair hernias in the groin area. With his expertise, patients can expect safe and effective hernia repair procedures that minimize post-operative discomfort and promote swift recovery.",
     image: "/Laparoscopic inguinal hernia surgery.jpg",
@@ -354,6 +357,8 @@ export const procedures: ProcedureItem[] = [
   {
     slug: "epigastric-hernia-surgery",
     title: "Epigastric Hernia Surgery",
+    seoTitle: "Epigastric Hernia Repair Hertfordshire & Hemel Hempstead",
+    seoDescription: "Epigastric hernia repair Hertfordshire and Hemel Hempstead with Mr Osama Moussa. Surgical repair of upper abdominal wall weakness. Laparoscopic and open options. Spire Bushey, West Herts. Book a consultation.",
     description:
       "For patients with epigastric hernias, Osama performs surgical procedures aimed at repairing the weakened abdominal wall and restoring its integrity. Through meticulous surgical techniques, he ensures optimal outcomes and minimal recurrence rates for patients undergoing epigastric hernia repair.",
     image: "/Hernia repair surgery.png",
@@ -376,6 +381,7 @@ export const procedures: ProcedureItem[] = [
     faqs: [
       { question: "What is an epigastric hernia?", answer: "An epigastric hernia is a bulge through the midline of the upper abdomen, between the breastbone and the navel. Fatty tissue or sometimes bowel pushes through a weakness in the abdominal wall. It can cause discomfort or pain when straining or lifting. Repair is usually recommended when symptomatic or enlarging." },
       { question: "How is an epigastric hernia repaired?", answer: "Mr Moussa repairs epigastric hernias using open or laparoscopic (keyhole) techniques depending on the size and your circumstances. The defect is closed and often reinforced with mesh to reduce recurrence. You will get advice on wound care and activity." },
+      { question: "Can I have epigastric hernia repair in Hertfordshire or near Hemel Hempstead?", answer: "Yes. Mr Osama Moussa offers epigastric hernia repair for patients across Hertfordshire, including Hemel Hempstead, Watford, and Bushey. Appointments are available at Spire Bushey, Circle Health Group hospitals, and West Hertfordshire NHS Trust." },
     ],
   },
   {
@@ -415,6 +421,8 @@ export const procedures: ProcedureItem[] = [
   {
     slug: "umbilical-paraumbilical-hernia-surgery",
     title: "Umbilical and Paraumbilical Hernia Surgery",
+    seoTitle: "Umbilical Hernia Repair Hertfordshire & Hemel Hempstead",
+    seoDescription: "Umbilical hernia repair Hertfordshire and Hemel Hempstead. Mr Osama Moussa – umbilical and paraumbilical hernia surgery with minimally invasive options. Spire Bushey, West Herts. Book a consultation.",
     description:
       "Specialising in umbilical and paraumbilical hernia surgery, Osama provides patients with effective treatment options to address these common abdominal wall defects. With his expertise in minimally invasive surgery, he offers patients faster recovery times and reduced risk of complications.",
     image: "/Umbilical hernia surgery.jpg",
@@ -440,9 +448,18 @@ export const procedures: ProcedureItem[] = [
       { question: "How long is recovery after umbilical hernia repair?", answer: "Recovery is usually straightforward. You will get advice on wound care and gradual return to activity. Follow-up ensures you are healing well. Heavy lifting is typically avoided for several weeks." },
     ],
   },
+    faqs: [
+      { question: "What is an umbilical hernia?", answer: "An umbilical hernia is a bulge at the navel; a paraumbilical hernia is near but not exactly at the navel. Both occur when tissue pushes through a weakness in the abdominal wall. They are common in adults and can develop due to increased pressure (e.g. obesity, pregnancy, heavy lifting)." },
+      { question: "When should an umbilical or paraumbilical hernia be repaired?", answer: "Repair is usually recommended when the hernia causes symptoms, is enlarging, or when there is a risk of complications. Mr Moussa will assess the hernia and discuss the best approach—open or laparoscopic—and whether mesh is needed." },
+      { question: "How long is recovery after umbilical hernia repair?", answer: "Recovery is usually straightforward. You will get advice on wound care and gradual return to activity. Follow-up ensures you are healing well. Heavy lifting is typically avoided for several weeks." },
+      { question: "Is umbilical hernia repair available in Hertfordshire or Hemel Hempstead?", answer: "Yes. Mr Osama Moussa provides umbilical and paraumbilical hernia repair for patients in Hertfordshire and near Hemel Hempstead, with clinics at Spire Bushey, Circle Health Group, and West Hertfordshire NHS Trust." },
+    ],
+  },
   {
     slug: "abdominal-wall-reconstruction",
     title: "Abdominal Wall Reconstruction",
+    seoTitle: "Abdominal Wall Reconstruction Hertfordshire | Specialist Surgery",
+    seoDescription: "Abdominal wall reconstruction surgery in Hertfordshire and London. Mr Osama Moussa – abdominal wall reconstruction for complex hernias and previous surgery. Specialist assessment at Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
     description:
       "For patients requiring abdominal wall reconstruction due to trauma, injury, or previous surgeries, Osama offers specialised surgical procedures to restore abdominal integrity and function. Through personalised treatment plans, he aims to improve patients' quality of life and overall well-being.",
     image: "/Abdominal wall reconstruction.webp",
@@ -472,6 +489,7 @@ export const procedures: ProcedureItem[] = [
       { question: "What is abdominal wall reconstruction?", answer: "Abdominal wall reconstruction restores the structure and function of the abdominal wall when it has been weakened or damaged by previous surgery (e.g. large incisional hernias), trauma, or infection. The aim is to close the defect, reinforce the wall (often with mesh), and improve comfort, appearance, and function." },
       { question: "Who needs abdominal wall reconstruction?", answer: "Patients with large or complex incisional hernias, or damage to the abdominal wall from previous surgery, trauma, or infection, may benefit. Assessment includes examining the abdomen, reviewing previous operations and imaging, and considering your general health. Mr Moussa will discuss the procedure and what to expect." },
       { question: "How long is recovery after abdominal wall reconstruction?", answer: "Recovery depends on the extent of surgery. You will get clear advice on wound care, activity, and follow-up. Supporting the abdomen when moving and avoiding heavy lifting for the period advised helps the repair heal and reduces the risk of recurrence." },
+      { question: "Is abdominal wall reconstruction available privately in Hertfordshire?", answer: "Yes. Mr Osama Moussa offers abdominal wall reconstruction surgery for NHS and private patients in Hertfordshire and London. Consultations are available at Spire Bushey, Circle Health Group hospitals, and West Hertfordshire NHS Trust." },
     ],
   },
   {

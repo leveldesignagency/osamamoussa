@@ -11,7 +11,7 @@ import AppointmentSection from "@/components/AppointmentSection";
 export const metadata: Metadata = {
   title: "Mr Osama Moussa – Upper GI & Hernia Surgeon London | Robotic Surgery Specialist",
   description:
-    "Mr Osama Moussa – Consultant Upper GI surgeon London & Hertfordshire. Hernia repair, gallstones & gallbladder surgery, acid reflux (GORD), minimally invasive laparoscopic and robotic surgery. Spire Bushey, Circle Health Group, West Herts NHS. Book a consultation.",
+    "Mr Osama Moussa (also searched as Osama Mousa) – Consultant Upper GI surgeon London & Hertfordshire. Hernia repair, gallstones & gallbladder surgery, acid reflux (GORD), minimally invasive laparoscopic and robotic surgery. Spire Bushey, Circle Health Group, West Herts NHS. Book a consultation.",
   keywords: [
     "Robotic Surgery London",
     "Robotic Surgery Hertfordshire",

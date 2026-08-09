@@ -137,9 +137,9 @@ export const locationPages: LocationPage[] = [
     slug: "hertfordshire",
     title: "Upper GI Surgeon in Hertfordshire",
     seoTitle:
-      "Upper GI Surgeon Hertfordshire | Inguinal Hernia, Reflux and Gallbladder Surgery",
+      "Upper GI Surgeon Hertfordshire | Private Hernia, Reflux and Gallbladder Surgery",
     seoDescription:
-      "Consultant Upper GI surgeon in Hertfordshire. Mr Osama Moussa offers laparoscopic and robotic surgery for reflux, hernia repair, and gallbladder conditions.",
+      "Consultant Upper GI surgeon in Hertfordshire. Private hernia surgery specialists Hertfordshire – inguinal, umbilical, and abdominal wall repair. Also reflux and gallbladder surgery with Mr Osama Moussa.",
     intro: [
       "Mr Osama Moussa supports patients across Hertfordshire with consultant Upper GI and general surgical care, including diagnosis, specialist opinion, and surgery where required.",
       "Many Hertfordshire patients are referred for inguinal hernia, abdominal wall hernia, acid reflux symptoms, and gallbladder pain. Treatment is tailored to each patient with clear follow-up planning.",
@@ -167,15 +167,20 @@ export const locationPages: LocationPage[] = [
         answer:
           "Yes. Gallbladder disease, including recurrent biliary pain and stones, is commonly managed with laparoscopic cholecystectomy when indicated after clinical review and scans.",
       },
+      {
+        question: "Do you offer private hernia surgery for Hertfordshire patients?",
+        answer:
+          "Yes. Mr Moussa provides private hernia surgery across Hertfordshire for inguinal, umbilical, epigastric, femoral, and other abdominal wall hernias, with laparoscopic and open options depending on your case.",
+      },
     ],
   },
   {
     slug: "hemel-hempstead",
     title: "Gallbladder and Hernia Surgery near Hemel Hempstead",
     seoTitle:
-      "Gallbladder Surgery Hemel Hempstead | Hernia and Laparoscopic Upper GI Surgery",
+      "Gallbladder & Hernia Surgery Hemel Hempstead | Upper GI Specialist",
     seoDescription:
-      "Looking for gallbladder or hernia surgery near Hemel Hempstead? Mr Osama Moussa provides specialist Upper GI consultation and minimally invasive surgery options.",
+      "Looking for gallbladder or hernia surgery near Hemel Hempstead? Hernia surgery Hemel Hempstead, gallstone treatment, and gastro / Upper GI specialist care with Mr Osama Moussa. Minimally invasive options available.",
     intro: [
       "Patients searching for gallbladder surgery in Hemel Hempstead can access specialist Upper GI assessment and treatment pathways with Mr Osama Moussa.",
       "He also manages common hernia and reflux conditions, with laparoscopic and robotic techniques where clinically appropriate.",
@@ -202,6 +207,11 @@ export const locationPages: LocationPage[] = [
         question: "Do you offer laparoscopic surgery for Hemel Hempstead patients?",
         answer:
           "Yes. Laparoscopic surgery is often used for gallbladder and hernia operations and may provide faster recovery compared with open surgery in suitable patients.",
+      },
+      {
+        question: "Can I see a hernia or Upper GI specialist near Hemel Hempstead?",
+        answer:
+          "Yes. Mr Osama Moussa sees patients near Hemel Hempstead for hernia surgery, gallbladder and gallstone treatment, and Upper GI / gastro-oesophageal conditions, with private and NHS pathways available.",
       },
     ],
   },
