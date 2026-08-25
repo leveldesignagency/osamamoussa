@@ -23,13 +23,13 @@ export default function AppointmentSection() {
         <div className="absolute inset-0 overflow-hidden">
           <div className="image-grow-shrink absolute" style={{ top: "-50px", left: 0, right: 0, bottom: "-50px" }}>
             <Image
-              src="/book_now_global.png"
+              src="/book_now_global.jpg"
               alt="Book Your Appointment"
               fill
               className="object-cover"
               style={{ objectPosition: "center center" }}
-              priority
               sizes="100vw"
+              quality={75}
             />
           </div>
         </div>

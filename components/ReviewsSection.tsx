@@ -74,12 +74,14 @@ export default function ReviewsSection() {
           >
             <div className="relative">
               <Image
-                src="/OM1-2.png"
+                src="/OM1-2.jpg"
                 alt="Osama Moussa"
-                width={2000}
-                height={2600}
+                width={1400}
+                height={1820}
                 className="w-auto h-auto object-contain mx-auto lg:mx-0"
                 style={{ maxWidth: 'none', width: '180%', marginLeft: '-40%' }}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={75}
               />
               {/* Feathered bottom fade - only on bottom */}
               <div

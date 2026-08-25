@@ -47,7 +47,7 @@ export default function AboutPage() {
           {/* Mobile Image - full height from top */}
           <div className="absolute image-slide sm:hidden" style={{ top: 0, left: 0, right: 0, bottom: 0 }}>
             <Image
-              src="/osama about.png"
+              src="/osama-about.jpg"
               alt="About Osama Moussa"
               fill
               className="object-cover about-hero-image"
@@ -58,6 +58,7 @@ export default function AboutPage() {
                 opacity: 0.7
               }}
               priority
+              quality={75}
               sizes="100vw"
             />
           </div>
@@ -74,7 +75,7 @@ export default function AboutPage() {
                 WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 70%, transparent 100%)',
                 opacity: 0.7
               }}
-              priority
+              quality={75}
               sizes="100vw"
             />
           </div>

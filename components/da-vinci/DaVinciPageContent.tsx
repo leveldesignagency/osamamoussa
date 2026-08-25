@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -69,24 +69,49 @@ export default function DaVinciPageContent() {
   const [activeComponent, setActiveComponent] = useState<(typeof systemComponents)[number]["id"]>(
     systemComponents[0].id
   );
+  const [heroVideoReady, setHeroVideoReady] = useState(false);
   const active = systemComponents.find((c) => c.id === activeComponent) ?? systemComponents[0];
+
+  useEffect(() => {
+    const enableVideo = () => setHeroVideoReady(true);
+    const ric = window.requestIdleCallback?.bind(window);
+    if (ric) {
+      const id = ric(enableVideo, { timeout: 2500 });
+      return () => window.cancelIdleCallback?.(id);
+    }
+    const t = window.setTimeout(enableVideo, 1200);
+    return () => window.clearTimeout(t);
+  }, []);
 
   return (
     <>
       {/* ── Cinematic hero ── */}
       <section className="relative flex min-h-[100dvh] w-full items-end overflow-hidden">
         <div className="absolute inset-0">
-          <video
-            className="h-full w-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-            poster={daVinciHero.posterSrc}
+          <Image
+            src={daVinciHero.posterSrc}
+            alt=""
+            fill
+            className="object-cover"
+            priority
+            quality={75}
+            sizes="100vw"
             aria-hidden
-          >
-            <source src={daVinciHero.videoSrc} type="video/mp4" />
-          </video>
+          />
+          {heroVideoReady ? (
+            <video
+              className="absolute inset-0 h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+              poster={daVinciHero.posterSrc}
+              aria-hidden
+            >
+              <source src={daVinciHero.videoSrc} type="video/mp4" />
+            </video>
+          ) : null}
           <div
             className="absolute inset-0"
             style={{

@@ -65,7 +65,7 @@ function ValueCardLegacy({ videoSrc, title, description, index, audioEnabled }: 
       onMouseLeave={handleMouseLeave}
     >
       <div className="relative w-full aspect-square overflow-hidden bg-black shadow-lg drop-shadow-xl rounded-3xl">
-        <video ref={videoRef} src={videoSrc} className="w-full h-full object-cover" muted loop playsInline preload="auto" />
+        <video ref={videoRef} src={videoSrc} className="w-full h-full object-cover" muted loop playsInline preload="none" />
         <div className="absolute bottom-0 left-0 right-0 w-full bg-black/95 backdrop-blur-sm pt-3 sm:pt-4 md:pt-6 lg:pt-8 px-3 sm:px-4 md:px-6 pb-3 sm:pb-4 md:pb-6 rounded-b-2xl shadow-lg z-10 flex flex-col min-h-[30%]">
           <h3 className="text-white font-bold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl mb-1 sm:mb-2 text-left">{title}</h3>
           <p className="text-white text-xs sm:text-sm md:text-base text-left leading-relaxed">{description}</p>
@@ -177,7 +177,7 @@ function ValueCardWide({
             muted
             loop
             playsInline
-            preload="auto"
+            preload="none"
           />
 
           {/* Audio override — bottom corner opposite text panel */}

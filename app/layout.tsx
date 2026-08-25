@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -7,6 +8,13 @@ import Footer from "@/components/Footer";
 import { GlobalErrorHandler } from "./global-error-handler";
 import SmoothScroll from "@/components/SmoothScroll";
 import MobileFAB from "@/components/MobileFAB";
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+  variable: "--font-plus-jakarta",
+});
 
 export const viewport = {
   width: "device-width",
@@ -370,7 +378,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="h-full max-w-full overflow-x-clip">
+    <html lang="en" className={`h-full max-w-full overflow-x-clip ${plusJakarta.variable}`}>
       <head>
         {/* Google Search Console Verification */}
         <meta
@@ -389,10 +397,6 @@ export default function RootLayout({
           rel="apple-touch-icon"
           href="/Logo_Osama_Moussa_Compartment-02.png"
         />
-        {/* Google Fonts - Plus Jakarta Sans */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -413,7 +417,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-w-0 overflow-x-clip">
+      <body className={`${plusJakarta.className} min-w-0 overflow-x-clip`}>
         <GlobalErrorHandler />
         <SmoothScroll />
         <div className="min-w-0 overflow-x-clip">
@@ -427,9 +431,9 @@ export default function RootLayout({
           <>
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-              strategy="afterInteractive"
+              strategy="lazyOnload"
             />
-            <Script id="ga-init" strategy="afterInteractive">
+            <Script id="ga-init" strategy="lazyOnload">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}

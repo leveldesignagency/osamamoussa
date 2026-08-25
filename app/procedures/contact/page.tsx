@@ -68,7 +68,8 @@ export default function ContactPage() {
               WebkitMaskImage: 'linear-gradient(to right, black 0%, black 42%, rgba(0, 0, 0, 0.75) 52%, rgba(0, 0, 0, 0.35) 62%, rgba(0, 0, 0, 0.08) 72%, transparent 82%)',
             }}
             priority
-            sizes="100vw"
+            quality={75}
+            sizes="(max-width: 768px) 1px, 100vw"
           />
           {/* Bottom fade overlay */}
           <div 

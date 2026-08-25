@@ -1,18 +1,17 @@
-"use client";
-
-import { useEffect } from "react";
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import AppointmentSection from "@/components/AppointmentSection";
 
-export default function PrivacyPolicyPage() {
-  useEffect(() => {
-    document.title = "Privacy Policy";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Privacy Policy for Mr Osama Moussa\'s medical practice website. Learn how we protect and handle your personal information.');
-    }
-  }, []);
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Privacy Policy for Mr Osama Moussa's medical practice website. Learn how we protect and handle your personal information.",
+  alternates: {
+    canonical: "https://www.osamamoussa.co.uk/privacy-policy",
+  },
+};
 
+export default function PrivacyPolicyPage() {
   return (
     <main className="min-h-screen bg-gradient-grey relative">
       {/* Smooth gradient overlay at top for header area */}
@@ -157,7 +156,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div className="pt-8 text-sm text-gray-300">
-              <p>Last updated: {new Date().toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+              <p>Last updated: 25 August 2026</p>
             </div>
           </div>
         </div>
@@ -168,5 +167,3 @@ export default function PrivacyPolicyPage() {
     </main>
   );
 }
-
-

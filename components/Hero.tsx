@@ -11,11 +11,13 @@ export default function Hero() {
 
   useEffect(() => {
     if (scriptsLoaded.current) return;
+    scriptsLoaded.current = true;
 
-    const existingDoctify = document.querySelector(
-      'script[src*="doctify-widget-autoresize-plugin"]'
-    );
-    if (!existingDoctify) {
+    const loadDoctify = () => {
+      const existingDoctify = document.querySelector(
+        'script[src*="doctify-widget-autoresize-plugin"]'
+      );
+      if (existingDoctify) return;
       const doctifyScript = document.createElement("script");
       doctifyScript.type = "text/javascript";
       doctifyScript.src =
@@ -23,21 +25,27 @@ export default function Hero() {
       doctifyScript.async = true;
       doctifyScript.id = "doctify-widget-script";
       document.body.appendChild(doctifyScript);
-    }
+    };
 
-    scriptsLoaded.current = true;
+    const ric = window.requestIdleCallback?.bind(window);
+    if (ric) {
+      const id = ric(loadDoctify, { timeout: 4000 });
+      return () => window.cancelIdleCallback?.(id);
+    }
+    const t = window.setTimeout(loadDoctify, 2500);
+    return () => window.clearTimeout(t);
   }, []);
 
   return (
     <section className="relative flex h-auto min-h-[130dvh] w-full flex-col overflow-x-hidden sm:h-screen sm:min-h-screen sm:overflow-hidden">
       <div className="absolute inset-0 overflow-hidden animate-fade-in">
         <Image
-          src="/OsamaHeroMobile.png"
+          src="/OsamaHeroMobile.jpg"
           alt="Mr Osama Moussa – Consultant Upper GI and Robotic Surgeon, London and Hertfordshire"
           fill
           className="object-cover hero-breathe hero-image-mobile sm:hidden"
           priority
-          quality={90}
+          quality={75}
           style={{
             maskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
             WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
@@ -49,14 +57,14 @@ export default function Hero() {
           alt="Mr Osama Moussa – Consultant Upper GI and Robotic Surgeon, London and Hertfordshire"
           fill
           className="object-cover hero-breathe hidden sm:block"
-          priority
-          quality={90}
+          /* Avoid double LCP preload with the mobile hero; desktop still loads quickly from optimised source */
+          quality={75}
+          sizes="100vw"
           style={{
             maskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
             WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
             objectPosition: "50% center",
           }}
-          sizes="100vw"
         />
       </div>
       <div
