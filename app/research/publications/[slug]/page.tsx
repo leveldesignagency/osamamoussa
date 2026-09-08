@@ -128,7 +128,7 @@ export default async function PublicationPage({ params }: Props) {
             </Link>
           </p>
 
-          {/* Publication tabs – navigate between all publications */}
+          {/* Publication tabs, navigate between all publications */}
           <nav
             className="mb-8 overflow-x-auto"
             aria-label="Publications in this section"

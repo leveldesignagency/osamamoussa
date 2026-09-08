@@ -29,7 +29,7 @@ export const procedures: ProcedureItem[] = [
     slug: "advanced-upper-gastrointestinal-gi-surgery",
     title: "Advanced Upper Gastrointestinal (GI) Surgery",
     seoTitle: "Upper GI Surgeon London & Hertfordshire | Advanced Upper GI Surgery",
-    seoDescription: "Mr Osama Moussa – Upper GI surgeon London and Hertfordshire. Expert in advanced Upper GI surgery, laparoscopic and robotic techniques. Treating GORD, hiatus hernia, gallbladder and hernia. Spire Bushey, Circle Health Group, West Herts NHS. Book a consultation.",
+    seoDescription: "Mr Osama Moussa, Upper GI surgeon London and Hertfordshire. Expert in advanced Upper GI surgery, laparoscopic and robotic techniques. Treating GORD, hiatus hernia, gallbladder and hernia. Spire Bushey, Circle Health Group, West Herts NHS. Book a consultation.",
     description:
       "Specialising in Upper Gastrointestinal (GI) Surgery, Osama offers advanced surgical solutions to address a wide range of conditions affecting the upper digestive tract with precision and expertise. With a commitment to patient-centred care and the latest surgical techniques, he ensures that each procedure is tailored to meet the unique needs of the patient while promoting optimal outcomes and improved quality of life.",
     image: "/Advanced UGI surgery.jpg",
@@ -130,7 +130,7 @@ export const procedures: ProcedureItem[] = [
     ],
     faqs: [
       { question: "What is robotic surgery?", answer: "Robotic surgery uses a console where the surgeon controls precise instruments inside the body. The system gives a magnified 3D view and instruments that can bend and rotate more than the human hand, allowing very precise movements. Mr Moussa is trained on Versius and da Vinci systems." },
-      { question: "Is robotic surgery better than keyhole surgery?", answer: "For some procedures and patients, robotic surgery can offer advantages in precision and recovery. It is not always the best option—Mr Moussa will discuss whether robotic, standard laparoscopic, or open surgery is most appropriate for your condition." },
+      { question: "Is robotic surgery better than keyhole surgery?", answer: "For some procedures and patients, robotic surgery can offer advantages in precision and recovery. It is not always the best option. Mr Moussa will discuss whether robotic, standard laparoscopic, or open surgery is most appropriate for your condition." },
       { question: "Where can I have robotic surgery in London or Hertfordshire?", answer: "Mr Osama Moussa offers robotic Upper GI and general surgery at West Hertfordshire NHS Trust and at selected private hospitals including Spire Bushey and Circle Health Group. Book a consultation to discuss your options." },
     ],
   },
@@ -138,7 +138,7 @@ export const procedures: ProcedureItem[] = [
     slug: "gallbladder-surgery-cholecystectomy",
     title: "Gallbladder Surgery / Cholecystectomy",
     seoTitle: "Gallbladder Surgery London & Hertfordshire | Cholecystectomy Specialist",
-    seoDescription: "Gallbladder surgery (cholecystectomy) and gallstone treatment in London and Hertfordshire, including Hemel Hempstead. Mr Osama Moussa – gallbladder removal surgery specialist. Laparoscopic keyhole removal for gallstones. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
+    seoDescription: "Gallbladder surgery (cholecystectomy) and gallstone treatment in London and Hertfordshire, including Hemel Hempstead. Mr Osama Moussa, gallbladder removal surgery specialist. Laparoscopic keyhole removal for gallstones. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
     description:
       "Specialising in gallbladder surgery, Osama offers cholecystectomy procedures to patients suffering from gallstones or other gallbladder-related conditions. Using advanced laparoscopic techniques, he ensures safe and effective removal of the gallbladder, relieving symptoms and restoring digestive health.",
     image: "/Gallbladder_Gallstone.jpg",
@@ -176,7 +176,7 @@ export const procedures: ProcedureItem[] = [
     slug: "gastroesophageal-reflux-disease-gord",
     title: "Gastroesophageal Reflux Disease/GORD",
     seoTitle: "Acid Reflux Surgery London | GORD & Reflux Surgery Specialist",
-    seoDescription: "Acid reflux surgery London and Hertfordshire. Mr Osama Moussa – acid reflux surgery specialist. GORD treatment, fundoplication, LINX, hiatus hernia repair. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
+    seoDescription: "Acid reflux surgery London and Hertfordshire. Mr Osama Moussa, acid reflux surgery specialist. GORD treatment, fundoplication, LINX, hiatus hernia repair. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
     description:
       "Osama offers comprehensive treatments for Gastroesophageal Reflux Disease (GORD), including minimally invasive procedures like laparoscopic hiatus hernia repair and fundoplication. With his expertise in benign oesophagogastric surgery, he provides effective solutions to manage GORD symptoms and improve patients' quality of life.",
     image: "/Gastrooesophageal reflux disease.webp",
@@ -213,7 +213,7 @@ export const procedures: ProcedureItem[] = [
     slug: "hernia-repair-surgery",
     title: "Hernia Repair Surgery",
     seoTitle: "Hernia Surgeon London & Hertfordshire | Hernia Repair Surgery",
-    seoDescription: "Hernia surgeon London and Hertfordshire. Private hernia surgery specialists Hertfordshire – inguinal, ventral, umbilical, femoral, hiatal, TAPP. Hernia specialist near me options at Spire Bushey, Watford, West Herts. Laparoscopic and robotic. Book a consultation.",
+    seoDescription: "Hernia surgeon London and Hertfordshire. Private hernia surgery specialists Hertfordshire, inguinal, ventral, umbilical, femoral, hiatal, TAPP. Hernia specialist near me options at Spire Bushey, Watford, West Herts. Laparoscopic and robotic. Book a consultation.",
     description:
       "Specialising in hernia repair surgery, Osama offers various techniques, including laparoscopic and robotic approaches, to address different types of hernias affecting the upper GI tract. With a focus on patient safety and optimal outcomes, he ensures each procedure is tailored to meet the individual needs of the patient.",
     image: "/Hernia repair surgery.png",
@@ -252,7 +252,7 @@ export const procedures: ProcedureItem[] = [
     slug: "linx-device-gord-treatment",
     title: "LINX Device for GORD Treatment",
     seoTitle: "LINX Device London & Hertfordshire | Acid Reflux Surgery Specialist",
-    seoDescription: "LINX device for GORD treatment in London and Hertfordshire. Mr Osama Moussa – acid reflux surgery specialist. Minimally invasive LINX reflux implant. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
+    seoDescription: "LINX device for GORD treatment in London and Hertfordshire. Mr Osama Moussa, acid reflux surgery specialist. Minimally invasive LINX reflux implant. Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
     description:
       "Osama provides innovative treatments like the LINX device for GORD, offering patients a minimally invasive solution to manage reflux symptoms. By implanting the LINX device, he helps restore the natural function of the oesophagus and provides long-term relief from GORD-related issues.",
     image: "/linx-procedure.png",
@@ -288,7 +288,7 @@ export const procedures: ProcedureItem[] = [
     slug: "inguinal-hernia-surgery",
     title: "Inguinal Hernia Surgery",
     seoTitle: "Inguinal Hernia Surgeon London & Hertfordshire | Groin Hernia Repair",
-    seoDescription: "Inguinal hernia repair Hertfordshire and Hemel Hempstead. Mr Osama Moussa – inguinal hernia surgery specialist. Laparoscopic (TAPP) and open repair. Spire Bushey, Watford, West Herts. Book a consultation.",
+    seoDescription: "Inguinal hernia repair Hertfordshire and Hemel Hempstead. Mr Osama Moussa, inguinal hernia surgery specialist. Laparoscopic (TAPP) and open repair. Spire Bushey, Watford, West Herts. Book a consultation.",
     description:
       "Osama specialises in inguinal hernia surgery, offering both traditional and minimally invasive approaches to repair hernias in the groin area. With his expertise, patients can expect safe and effective hernia repair procedures that minimize post-operative discomfort and promote swift recovery.",
     image: "/Laparoscopic inguinal hernia surgery.jpg",
@@ -331,7 +331,7 @@ export const procedures: ProcedureItem[] = [
       {
         heading: "What is TAPP?",
         paragraphs: [
-          "TAPP (transabdominal preperitoneal) repair is a laparoscopic (keyhole) technique for groin (inguinal) hernias. The surgeon enters the abdomen, then places a mesh in the preperitoneal space—between the peritoneum and the abdominal wall—to reinforce the hernia defect. Both sides can be repaired during the same operation if needed.",
+          "TAPP (transabdominal preperitoneal) repair is a laparoscopic (keyhole) technique for groin (inguinal) hernias. The surgeon enters the abdomen, then places a mesh in the preperitoneal space between the peritoneum and the abdominal wall to reinforce the hernia defect. Both sides can be repaired during the same operation if needed.",
           "TAPP is well established and is associated with less post-operative pain and a quicker return to normal activities for many patients compared with open repair.",
         ],
       },
@@ -422,7 +422,7 @@ export const procedures: ProcedureItem[] = [
     slug: "umbilical-paraumbilical-hernia-surgery",
     title: "Umbilical and Paraumbilical Hernia Surgery",
     seoTitle: "Umbilical Hernia Repair Hertfordshire & Hemel Hempstead",
-    seoDescription: "Umbilical hernia repair Hertfordshire and Hemel Hempstead. Mr Osama Moussa – umbilical and paraumbilical hernia surgery with minimally invasive options. Spire Bushey, West Herts. Book a consultation.",
+    seoDescription: "Umbilical hernia repair Hertfordshire and Hemel Hempstead. Mr Osama Moussa, umbilical and paraumbilical hernia surgery with minimally invasive options. Spire Bushey, West Herts. Book a consultation.",
     description:
       "Specialising in umbilical and paraumbilical hernia surgery, Osama provides patients with effective treatment options to address these common abdominal wall defects. With his expertise in minimally invasive surgery, he offers patients faster recovery times and reduced risk of complications.",
     image: "/Umbilical hernia surgery.jpg",
@@ -444,7 +444,7 @@ export const procedures: ProcedureItem[] = [
     ],
     faqs: [
       { question: "What is an umbilical hernia?", answer: "An umbilical hernia is a bulge at the navel; a paraumbilical hernia is near but not exactly at the navel. Both occur when tissue pushes through a weakness in the abdominal wall. They are common in adults and can develop due to increased pressure (e.g. obesity, pregnancy, heavy lifting)." },
-      { question: "When should an umbilical or paraumbilical hernia be repaired?", answer: "Repair is usually recommended when the hernia causes symptoms, is enlarging, or when there is a risk of complications. Mr Moussa will assess the hernia and discuss the best approach—open or laparoscopic—and whether mesh is needed." },
+      { question: "When should an umbilical or paraumbilical hernia be repaired?", answer: "Repair is usually recommended when the hernia causes symptoms, is enlarging, or when there is a risk of complications. Mr Moussa will assess the hernia and discuss the best approach (open or laparoscopic) and whether mesh is needed." },
       { question: "How long is recovery after umbilical hernia repair?", answer: "Recovery is usually straightforward. You will get advice on wound care and gradual return to activity. Follow-up ensures you are healing well. Heavy lifting is typically avoided for several weeks." },
       { question: "Is umbilical hernia repair available in Hertfordshire or Hemel Hempstead?", answer: "Yes. Mr Osama Moussa provides umbilical and paraumbilical hernia repair for patients in Hertfordshire and near Hemel Hempstead, with clinics at Spire Bushey, Circle Health Group, and West Hertfordshire NHS Trust." },
     ],
@@ -453,7 +453,7 @@ export const procedures: ProcedureItem[] = [
     slug: "abdominal-wall-reconstruction",
     title: "Abdominal Wall Reconstruction",
     seoTitle: "Abdominal Wall Reconstruction Hertfordshire | Specialist Surgery",
-    seoDescription: "Abdominal wall reconstruction surgery in Hertfordshire and London. Mr Osama Moussa – abdominal wall reconstruction for complex hernias and previous surgery. Specialist assessment at Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
+    seoDescription: "Abdominal wall reconstruction surgery in Hertfordshire and London. Mr Osama Moussa, abdominal wall reconstruction for complex hernias and previous surgery. Specialist assessment at Spire Bushey, Circle Health Group, West Herts. Book a consultation.",
     description:
       "For patients requiring abdominal wall reconstruction due to trauma, injury, or previous surgeries, Osama offers specialised surgical procedures to restore abdominal integrity and function. Through personalised treatment plans, he aims to improve patients' quality of life and overall well-being.",
     image: "/Abdominal wall reconstruction.webp",

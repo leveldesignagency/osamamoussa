@@ -139,7 +139,7 @@ export const locationPages: LocationPage[] = [
     seoTitle:
       "Upper GI Surgeon Hertfordshire | Private Hernia, Reflux and Gallbladder Surgery",
     seoDescription:
-      "Consultant Upper GI surgeon in Hertfordshire. Private hernia surgery specialists Hertfordshire – inguinal, umbilical, and abdominal wall repair. Also reflux and gallbladder surgery with Mr Osama Moussa.",
+      "Consultant Upper GI surgeon in Hertfordshire. Private hernia surgery specialists Hertfordshire, inguinal, umbilical, and abdominal wall repair. Also reflux and gallbladder surgery with Mr Osama Moussa.",
     intro: [
       "Mr Osama Moussa supports patients across Hertfordshire with consultant Upper GI and general surgical care, including diagnosis, specialist opinion, and surgery where required.",
       "Many Hertfordshire patients are referred for inguinal hernia, abdominal wall hernia, acid reflux symptoms, and gallbladder pain. Treatment is tailored to each patient with clear follow-up planning.",

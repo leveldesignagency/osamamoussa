@@ -3,7 +3,7 @@
  * Events: "Contact - Call" | "Contact - WhatsApp" | "Contact - Email" | "CTA - Book Now"
  * Props: device ("mobile" | "desktop"), source (e.g. "fab", "header", "hero", "contact_page", "procedure_sidebar").
  *
- * FREE: Google Analytics 4 — set NEXT_PUBLIC_GA_ID in .env.local, then view in GA4 → Reports → Engagement → Events.
+ * FREE: Google Analytics 4, set NEXT_PUBLIC_GA_ID in .env.local, then view in GA4 → Reports → Engagement → Events.
  * Optional: Vercel Analytics Pro shows custom events in the Vercel dashboard.
  */
 

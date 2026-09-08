@@ -4,14 +4,14 @@ import Link from "next/link";
 import Header from "@/components/Header";
 
 const baseUrl = "https://www.osamamoussa.co.uk";
-/** Same asset as root layout OG / Twitter / Physician schema — replace `public/og-social-share.jpg` to update everywhere. */
+/** Same asset as root layout OG / Twitter / Physician schema, replace `public/og-social-share.jpg` to update everywhere. */
 const officialOgImagePath = "/og-social-share.jpg";
 const officialOgImageUrl = `${baseUrl}/og-social-share.jpg`;
 
 export const metadata: Metadata = {
-  title: "Official image — search & social preview",
+  title: "Official image, search & social preview",
   description:
-    "Canonical Open Graph image for Mr Osama Moussa — Consultant Upper GI & Robotic Surgeon, London & Hertfordshire. Used for link previews in Google, social platforms, and structured data.",
+    "Canonical Open Graph image for Mr Osama Moussa, Consultant Upper GI & Robotic Surgeon, London & Hertfordshire. Used for link previews in Google, social platforms, and structured data.",
   alternates: {
     canonical: `${baseUrl}/opengraph`,
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: `${baseUrl}/opengraph`,
     siteName: "Mr Osama Moussa - Consultant General Surgeon",
-    title: "Mr Osama Moussa — Official Open Graph image",
+    title: "Mr Osama Moussa, Official Open Graph image",
     description:
       "Official portrait and preview image for Mr Osama Moussa, Consultant Upper GI & Robotic Surgeon.",
     images: [
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
         url: officialOgImagePath,
         width: 1200,
         height: 720,
-        alt: "Mr Osama Moussa — Consultant Upper GI & Robotic Surgeon, London & Hertfordshire",
+        alt: "Mr Osama Moussa, Consultant Upper GI & Robotic Surgeon, London & Hertfordshire",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mr Osama Moussa — Official Open Graph image",
+    title: "Mr Osama Moussa, Official Open Graph image",
     description:
       "Official portrait and preview image for Mr Osama Moussa, Consultant Upper GI & Robotic Surgeon.",
     images: [officialOgImagePath],
@@ -49,7 +49,7 @@ export default function OpenGraphPage() {
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Official Open Graph image — Mr Osama Moussa",
+    name: "Official Open Graph image, Mr Osama Moussa",
     description:
       "Canonical page for the official Open Graph / social preview image on osamamoussa.co.uk.",
     url: `${baseUrl}/opengraph`,
@@ -64,7 +64,7 @@ export default function OpenGraphPage() {
       width: 1200,
       height: 720,
       caption:
-        "Mr Osama Moussa — Consultant Upper GI & Robotic Surgeon (official website preview image)",
+        "Mr Osama Moussa, Consultant Upper GI & Robotic Surgeon (official website preview image)",
     },
   };
 
@@ -96,7 +96,7 @@ export default function OpenGraphPage() {
         <div className="rounded-xl overflow-hidden border border-white/20 bg-black/30 shadow-xl">
           <Image
             src={officialOgImagePath}
-            alt="Mr Osama Moussa — Consultant Upper GI & Robotic Surgeon, London & Hertfordshire (official Open Graph image)"
+            alt="Mr Osama Moussa, Consultant Upper GI & Robotic Surgeon, London & Hertfordshire (official Open Graph image)"
             width={1200}
             height={720}
             className="w-full h-auto object-cover"

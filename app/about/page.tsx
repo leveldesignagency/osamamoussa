@@ -173,7 +173,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 image-slide overflow-hidden rounded-3xl">
                 <Image
                   src="/OM7.jpg"
-                  alt="Mr Osama Moussa – Accreditations and memberships: GMC registered (6043402), Royal College of Surgeons of England, BMA, BOMSS, AUGIS, IFSO"
+                  alt="Mr Osama Moussa, Accreditations and memberships: GMC registered (6043402), Royal College of Surgeons of England, BMA, BOMSS, AUGIS, IFSO"
                   fill
                   className="object-cover rounded-3xl about-accred-image"
                   style={{ objectPosition: 'center center' }}

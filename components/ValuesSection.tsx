@@ -11,7 +11,7 @@ interface ValueCardProps {
   onEnableAudio: () => void;
 }
 
-/* ── Legacy layout (2-col grid, square cards) — kept for reference / rollback ──
+/* ── Legacy layout (2-col grid, square cards), kept for reference / rollback ──
 function ValueCardLegacy({ videoSrc, title, description, index, audioEnabled }: ValueCardProps & { index: number }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -167,7 +167,7 @@ function ValueCardWide({
           reverse ? "lg:flex-row-reverse" : ""
         }`}
       >
-        {/* Video — full face visible, no text overlay */}
+        {/* Video, full face visible, no text overlay */}
         <div className="relative aspect-[16/10] w-full shrink-0 bg-black sm:aspect-[2/1] lg:aspect-auto lg:min-h-[19rem] lg:w-[58%] xl:min-h-[21rem] xl:w-[60%]">
           <video
             ref={videoRef}
@@ -180,7 +180,7 @@ function ValueCardWide({
             preload="none"
           />
 
-          {/* Audio override — bottom corner opposite text panel */}
+          {/* Audio override, bottom corner opposite text panel */}
           <button
             type="button"
             onClick={handleAudioToggle}
@@ -204,7 +204,7 @@ function ValueCardWide({
           </button>
         </div>
 
-        {/* Text panel — beside video with shaped inner seam */}
+        {/* Text panel, beside video with shaped inner seam */}
         <div className="relative flex flex-1 flex-col justify-center bg-black px-6 py-8 sm:px-8 sm:py-9 lg:px-10 lg:py-10 xl:px-12">
           {/* Diagonal seam wrapping into video edge (desktop) */}
           <div
@@ -310,7 +310,7 @@ export default function ValuesSection() {
           ))}
         </div>
 
-        {/* Legacy grid — swap back by rendering ValueCardLegacy in a 2-col grid instead
+        {/* Legacy grid, swap back by rendering ValueCardLegacy in a 2-col grid instead
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-6">
           {values.map((value, index) => (
             <ValueCardLegacy key={index} index={index} videoSrc={value.video} title={value.title} description={value.description} audioEnabled={audioEnabled} />

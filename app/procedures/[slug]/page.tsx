@@ -130,7 +130,7 @@ export default async function ProcedurePage({ params }: Props) {
         <div className="relative w-full aspect-[21/9] sm:aspect-[3/1] max-h-[50vh]">
           <Image
             src={procedure.image}
-            alt={`${procedure.title} – Mr Osama Moussa, Consultant General Surgeon`}
+            alt={`${procedure.title}, Mr Osama Moussa, Consultant General Surgeon`}
             fill
             className="object-cover"
             priority

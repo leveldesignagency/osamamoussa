@@ -59,7 +59,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 overflow-hidden hidden sm:block">
             <Image
             src="/OMCONTACT.JPG"
-            alt="Contact Mr Osama Moussa – Book a consultation for Upper GI and robotic surgery in London and Hertfordshire"
+            alt="Contact Mr Osama Moussa, Book a consultation for Upper GI and robotic surgery in London and Hertfordshire"
             fill
             className="object-cover image-grow-shrink"
             style={{ 
@@ -93,10 +93,10 @@ export default function ContactPage() {
         <div className="relative z-10 flex min-h-screen w-full flex-col">
           <div className="container mx-auto flex flex-1 flex-col px-4 pb-8 pt-28 sm:px-6 sm:pb-10 sm:pt-32 lg:px-8 lg:pb-12">
             <div className="grid flex-1 grid-cols-1 md:grid-cols-[minmax(0,46%)_minmax(0,54%)] md:gap-x-8 xl:grid-cols-[minmax(0,48%)_minmax(0,52%)] xl:gap-x-10">
-              {/* Portrait column — keep clear */}
+              {/* Portrait column, keep clear */}
               <div className="hidden md:block" aria-hidden />
 
-              {/* Right column — centred between left and right */}
+              {/* Right column, centred between left and right */}
               <div className="flex w-full max-w-lg flex-col items-start space-y-5 pt-4 md:col-start-2 md:max-w-xl md:translate-x-10 md:justify-self-center md:pt-10 lg:translate-x-14 lg:pt-14 xl:translate-x-16">
                 <a
                   href="tel:07352167642"
@@ -174,7 +174,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Book via hospital — full width, bottom-left */}
+            {/* Book via hospital, full width, bottom-left */}
             <div className="mt-auto border-t border-white/15 pt-6 sm:pt-8">
               <div className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-2">
                 <p className="shrink-0 text-sm font-semibold uppercase tracking-wide text-white/70">

@@ -69,7 +69,7 @@ export default function AppointmentSection() {
         </div>
       </section>
 
-      {/* Insurance logos — full banner links to /insurance */}
+      {/* Insurance logos, full banner links to /insurance */}
       <section className="w-full overflow-hidden bg-white py-8">
         <Link
           href="/insurance"
@@ -80,7 +80,7 @@ export default function AppointmentSection() {
             className="mb-3 px-4 text-center text-sm text-neutral-600 transition-colors group-hover:text-black"
             style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
           >
-            Private medical insurance —{" "}
+            Private medical insurance:{" "}
             <span className="font-semibold underline decoration-neutral-300 underline-offset-4 group-hover:decoration-black">
               view accepted providers
             </span>

@@ -11,7 +11,7 @@ export default function ReviewsPageContent() {
 
   const resources = [
     {
-      title: "NHS Gateway – info for patients",
+      title: "NHS Gateway, info for patients",
       url: "https://www.nhs.uk/",
     },
     {
@@ -98,7 +98,7 @@ export default function ReviewsPageContent() {
       rating: 5,
     },
     {
-      text: "Dr Moussa is an excellent surgeon and he did my surgery for gallbladder at Wellington Hospital and there after I had seen him twice. I will recommend consultant Dr Moussa—a wonderful surgeon. I am very happy.",
+      text: "Dr Moussa is an excellent surgeon and he did my surgery for gallbladder at Wellington Hospital and there after I had seen him twice. I will recommend consultant Dr Moussa, a wonderful surgeon. I am very happy.",
       rating: 5,
     },
     {

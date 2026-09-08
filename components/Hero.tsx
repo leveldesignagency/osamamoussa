@@ -41,7 +41,7 @@ export default function Hero() {
       <div className="absolute inset-0 overflow-hidden animate-fade-in">
         <Image
           src="/OsamaHeroMobile.jpg"
-          alt="Mr Osama Moussa – Consultant Upper GI and Robotic Surgeon, London and Hertfordshire"
+          alt="Mr Osama Moussa, Consultant Upper GI and Robotic Surgeon, London and Hertfordshire"
           fill
           className="object-cover hero-breathe hero-image-mobile sm:hidden"
           priority
@@ -54,7 +54,7 @@ export default function Hero() {
         />
         <Image
           src="/1-2.jpg"
-          alt="Mr Osama Moussa – Consultant Upper GI and Robotic Surgeon, London and Hertfordshire"
+          alt="Mr Osama Moussa, Consultant Upper GI and Robotic Surgeon, London and Hertfordshire"
           fill
           className="object-cover hero-breathe hidden sm:block"
           /* Avoid double LCP preload with the mobile hero; desktop still loads quickly from optimised source */

@@ -25,7 +25,7 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.osamamoussa.co.uk"),
   title: {
-    default: "Mr Osama Moussa – Upper GI & Hernia Surgeon London | Robotic Surgery Specialist",
+    default: "Mr Osama Moussa, Upper GI & Hernia Surgeon London | Robotic Surgery Specialist",
     template: "%s | Mr Osama Moussa - Consultant General Surgeon"
   },
   description: "Mr Osama Moussa is a Consultant General Surgeon specialising in Upper GI and Robotic Surgery. Expert in robotic surgery, laparoscopic surgery, hernia repair, gallbladder surgery (cholecystectomy), GORD treatment, fundoplication, LINX device, and benign Upper GI procedures. Serving London (Chelsea, Belgravia, Fitzrovia, Holland Park, West London), Hertfordshire, Watford, Hemel Hempstead. Available at Spire Bushey, Circle Health Group, and West Hertfordshire NHS Trust.",
@@ -147,13 +147,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  /** Canonical portrait for entity / GEO (JPEG share card — not SVG logo). Same asset as og:image. */
+  /** Canonical portrait for entity / GEO (JPEG share card, not SVG logo). Same asset as og:image. */
   const siteOrigin = "https://www.osamamoussa.co.uk";
   const physicianPortraitUrl = `${siteOrigin}/og-social-share.jpg`;
   const physicianPortraitImageObject = {
     "@type": "ImageObject",
     url: physicianPortraitUrl,
-    caption: "Mr Osama Moussa — Consultant General Surgeon (official website photo)",
+    caption: "Mr Osama Moussa, Consultant General Surgeon (official website photo)",
   };
 
   // Structured Data (JSON-LD) for Medical Practice

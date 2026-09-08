@@ -19,7 +19,7 @@ export default function InsurancePage() {
       <div className="pointer-events-none absolute left-0 right-0 top-0 z-40 h-32 header-gradient-overlay" />
       <Header backgroundColor="grey" />
 
-      {/* Page title — matches /procedures PageTitleSection */}
+      {/* Page title, matches /procedures PageTitleSection */}
       <section className="w-full pt-32 pb-2 sm:pb-12">
         <div className="container mx-auto px-4 text-center sm:px-6 sm:text-left lg:px-8">
           <h1 className="page-title page-title-main mx-auto font-bold leading-tight text-white sm:mx-0">
@@ -28,7 +28,7 @@ export default function InsurancePage() {
         </div>
       </section>
 
-      {/* Intro — matches /procedures desktop intro container */}
+      {/* Intro, matches /procedures desktop intro container */}
       <section className="w-full py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="paragraph-block paragraph-block-full space-y-8 text-center text-lg leading-relaxed text-gray-200 sm:text-xl lg:text-left">
@@ -38,7 +38,7 @@ export default function InsurancePage() {
               eligible private treatment, subject to your policy terms and insurer authorisation.
             </p>
             <p>
-              Use the quick links to open each insurer&apos;s website in a new tab — to check your
+              Use the quick links to open each insurer&apos;s website in a new tab, to check your
               benefits, obtain an authorisation code, or follow their process before you book your
               appointment.
             </p>
@@ -56,7 +56,7 @@ export default function InsurancePage() {
         </div>
       </section>
 
-      {/* Provider grid — matches /procedures ProceduresGrid shell */}
+      {/* Provider grid, matches /procedures ProceduresGrid shell */}
       <section className="w-full py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6">

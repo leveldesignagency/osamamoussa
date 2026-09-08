@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const ACCREDITATION_LINKS = [
-  { url: "https://www.rcseng.ac.uk/", name: "Royal College of Surgeons of England", fullName: "Royal College of Surgeons of England – Fellow (F.R.C.S.)", src: "/VECTORS-01.png" },
-  { url: "https://www.bma.org.uk/", name: "British Medical Association", fullName: "British Medical Association – Member", src: "/VECTORS-02.png" },
-  { url: "https://bomss.org/", name: "BOMSS", fullName: "BOMSS – British Obesity and Metabolic Surgery Society", src: "/VECTORS-03.png" },
-  { url: "https://www.augis.org/", name: "AUGIS", fullName: "AUGIS – Association of Upper Gastrointestinal Surgeons", src: "/VECTORS-04.png" },
-  { url: "https://www.ifso.com/", name: "IFSO", fullName: "IFSO – International Federation for the Surgery of Obesity", src: "/VECTORS-05.png" },
+  { url: "https://www.rcseng.ac.uk/", name: "Royal College of Surgeons of England", fullName: "Royal College of Surgeons of England, Fellow (F.R.C.S.)", src: "/VECTORS-01.png" },
+  { url: "https://www.bma.org.uk/", name: "British Medical Association", fullName: "British Medical Association, Member", src: "/VECTORS-02.png" },
+  { url: "https://bomss.org/", name: "BOMSS", fullName: "BOMSS, British Obesity and Metabolic Surgery Society", src: "/VECTORS-03.png" },
+  { url: "https://www.augis.org/", name: "AUGIS", fullName: "AUGIS, Association of Upper Gastrointestinal Surgeons", src: "/VECTORS-04.png" },
+  { url: "https://www.ifso.com/", name: "IFSO", fullName: "IFSO, International Federation for the Surgery of Obesity", src: "/VECTORS-05.png" },
 ];
 
 export default function Footer() {
@@ -58,7 +58,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={item.fullName}
-                    title={`Mr Osama Moussa – ${item.fullName}`}
+                    title={`Mr Osama Moussa, ${item.fullName}`}
                     className="transition-all duration-200 hover:opacity-90 hover:scale-105"
                   >
                     <Image
@@ -79,7 +79,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={item.fullName}
-                    title={`Mr Osama Moussa – ${item.fullName}`}
+                    title={`Mr Osama Moussa, ${item.fullName}`}
                     className="transition-all duration-200 hover:opacity-90 hover:scale-105"
                   >
                     <Image
@@ -173,7 +173,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.fullName}
-                  title={`Mr Osama Moussa – ${item.fullName}`}
+                  title={`Mr Osama Moussa, ${item.fullName}`}
                   className="transition-all duration-200 hover:opacity-90 hover:scale-105"
                 >
                   <Image

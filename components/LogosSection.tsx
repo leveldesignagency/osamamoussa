@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ACCREDITATION_LINKS = [
-  { url: "https://www.rcseng.ac.uk/", name: "Royal College of Surgeons of England", fullName: "Royal College of Surgeons of England – Fellow (F.R.C.S.) – Mr Osama Moussa" },
-  { url: "https://www.bma.org.uk/", name: "British Medical Association", fullName: "British Medical Association – Member – Mr Osama Moussa" },
-  { url: "https://bomss.org/", name: "BOMSS", fullName: "BOMSS – British Obesity and Metabolic Surgery Society – Mr Osama Moussa" },
-  { url: "https://www.augis.org/", name: "AUGIS", fullName: "AUGIS – Association of Upper Gastrointestinal Surgeons – Mr Osama Moussa" },
-  { url: "https://www.ifso.com/", name: "IFSO", fullName: "IFSO – International Federation for the Surgery of Obesity – Mr Osama Moussa" },
+  { url: "https://www.rcseng.ac.uk/", name: "Royal College of Surgeons of England", fullName: "Royal College of Surgeons of England, Fellow (F.R.C.S.), Mr Osama Moussa" },
+  { url: "https://www.bma.org.uk/", name: "British Medical Association", fullName: "British Medical Association, Member, Mr Osama Moussa" },
+  { url: "https://bomss.org/", name: "BOMSS", fullName: "BOMSS, British Obesity and Metabolic Surgery Society, Mr Osama Moussa" },
+  { url: "https://www.augis.org/", name: "AUGIS", fullName: "AUGIS, Association of Upper Gastrointestinal Surgeons, Mr Osama Moussa" },
+  { url: "https://www.ifso.com/", name: "IFSO", fullName: "IFSO, International Federation for the Surgery of Obesity, Mr Osama Moussa" },
 ];
 
 const LOGO_SOURCES = [

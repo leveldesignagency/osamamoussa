@@ -151,7 +151,7 @@ export default function ReviewsSection() {
           </div>
         </div>
 
-        {/* Doctify carousel — full width below the two-column block (horizontal strip) */}
+        {/* Doctify carousel, full width below the two-column block (horizontal strip) */}
         <div className="mt-14 w-full sm:mt-20">
           <div
             ref={doctifyCarouselRef}

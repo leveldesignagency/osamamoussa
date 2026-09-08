@@ -9,9 +9,9 @@ import ReviewsSection from "@/components/ReviewsSection";
 import AppointmentSection from "@/components/AppointmentSection";
 
 export const metadata: Metadata = {
-  title: "Mr Osama Moussa – Upper GI & Hernia Surgeon London | Robotic Surgery Specialist",
+  title: "Mr Osama Moussa, Upper GI & Hernia Surgeon London | Robotic Surgery Specialist",
   description:
-    "Mr Osama Moussa (also searched as Osama Mousa) – Consultant Upper GI surgeon London & Hertfordshire. Hernia repair, gallstones & gallbladder surgery, acid reflux (GORD), minimally invasive laparoscopic and robotic surgery. Spire Bushey, Circle Health Group, West Herts NHS. Book a consultation.",
+    "Mr Osama Moussa (also searched as Osama Mousa), Consultant Upper GI surgeon London & Hertfordshire. Hernia repair, gallstones & gallbladder surgery, acid reflux (GORD), minimally invasive laparoscopic and robotic surgery. Spire Bushey, Circle Health Group, West Herts NHS. Book a consultation.",
   keywords: [
     "Robotic Surgery London",
     "Robotic Surgery Hertfordshire",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     "Private Surgeon London"
   ],
   openGraph: {
-    title: "Mr Osama Moussa – Upper GI & Hernia Surgeon London | Robotic Surgery Specialist",
+    title: "Mr Osama Moussa, Upper GI & Hernia Surgeon London | Robotic Surgery Specialist",
     description:
       "Consultant Upper GI surgeon London & Hertfordshire. Hernia, gallbladder & gallstones, acid reflux, laparoscopic and robotic surgery. Book a consultation.",
     url: "https://www.osamamoussa.co.uk",

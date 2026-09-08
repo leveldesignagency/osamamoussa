@@ -153,7 +153,7 @@ export default function HomeLocationsTrustSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="grid gap-1 px-4 py-4 transition-colors hover:bg-neutral-50/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black sm:grid-cols-[1fr_auto] sm:items-start sm:gap-8 sm:px-6 sm:py-5"
-                  aria-label={`${h.name}, ${h.address} — open in Google Maps`}
+                  aria-label={`${h.name}, ${h.address}, open in Google Maps`}
                   style={{ fontFamily: '"Plus Jakarta Sans", sans-serif' }}
                 >
                   <span className="font-semibold text-black">{h.name}</span>

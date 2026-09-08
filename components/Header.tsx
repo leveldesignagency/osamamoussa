@@ -38,7 +38,7 @@ export default function Header({ backgroundColor = "transparent", textColor: tex
   // Prevent body scroll when menu is open and pause gradient animation
   useEffect(() => {
     if (isMenuOpen) {
-      /* Longhand only — do not set `overflow` shorthand or it clears overflow-x from Tailwind/CSS. */
+      /* Longhand only, do not set `overflow` shorthand or it clears overflow-x from Tailwind/CSS. */
       document.body.style.overflowY = "hidden";
       document.body.classList.add("menu-open");
     } else {
