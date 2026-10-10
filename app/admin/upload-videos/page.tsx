@@ -95,9 +95,9 @@ export default function UploadVideosPage() {
         <div className="bg-white p-6 rounded-lg">
           <h2 className="text-xl font-bold mb-4">Instructions:</h2>
           <ol className="list-decimal list-inside space-y-2 text-gray-700">
-            <li>Go to Vercel Dashboard → Your Project → Storage → Create Blob Storage</li>
-            <li>Get your <code className="bg-gray-100 px-1 rounded">BLOB_READ_WRITE_TOKEN</code> from Environment Variables</li>
-            <li>Add it to your Vercel project environment variables</li>
+            <li>Vercel → Storage → connect Blob to this project, then Upgrade to OIDC</li>
+            <li>Redeploy so the app uses short-lived OIDC auth (no long-lived token needed on Vercel)</li>
+            <li>Local uploads: <code className="bg-gray-100 px-1 rounded">vercel env pull</code>, or set legacy <code className="bg-gray-100 px-1 rounded">BLOB_READ_WRITE_TOKEN</code></li>
             <li>Upload your videos using the file input above</li>
             <li>Copy the URLs and update <code className="bg-gray-100 px-1 rounded">components/ValuesSection.tsx</code></li>
           </ol>

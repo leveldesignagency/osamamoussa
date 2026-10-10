@@ -2,38 +2,45 @@
 
 /**
  * Script to upload videos to Vercel Blob Storage
- * 
+ *
  * Usage: node scripts/upload-videos.js
- * 
- * Make sure to set BLOB_READ_WRITE_TOKEN in your environment variables
- * You can get this from: Vercel Dashboard > Your Project > Settings > Environment Variables
+ *
+ * Preferred (local):
+ *   vercel link && vercel env pull
+ *   (uses OIDC via BLOB_STORE_ID + VERCEL_OIDC_TOKEN)
+ *
+ * Fallback outside Vercel OIDC:
+ *   export BLOB_READ_WRITE_TOKEN="…"
  */
 
-const { put } = require('@vercel/blob');
-const fs = require('fs');
-const path = require('path');
+const { put } = require("@vercel/blob");
+const fs = require("fs");
+const path = require("path");
 
-const BLOB_READ_WRITE_TOKEN = process.env.BLOB_READ_WRITE_TOKEN;
+const hasOidc = Boolean(process.env.BLOB_STORE_ID || process.env.VERCEL_OIDC_TOKEN);
+const token = process.env.BLOB_READ_WRITE_TOKEN;
 
-if (!BLOB_READ_WRITE_TOKEN) {
-  console.error('❌ BLOB_READ_WRITE_TOKEN environment variable is not set');
-  console.log('\nTo get your token:');
-  console.log('1. Go to Vercel Dashboard > Your Project > Settings > Environment Variables');
-  console.log('2. Add BLOB_READ_WRITE_TOKEN with your Vercel Blob token');
-  console.log('3. Or run: export BLOB_READ_WRITE_TOKEN="your-token-here"');
+if (!hasOidc && !token) {
+  console.error("❌ Blob auth not configured");
+  console.log("\nPreferred:");
+  console.log("1. vercel link");
+  console.log("2. vercel env pull");
+  console.log("3. npm run … / node scripts/upload-videos.js");
+  console.log("\nFallback:");
+  console.log('export BLOB_READ_WRITE_TOKEN="your-token-here"');
   process.exit(1);
 }
 
 const videos = [
-  { localPath: '../Videos/Value 1.mp4', blobName: 'Value 1.mp4' },
-  { localPath: '../Videos/Values 2.mp4', blobName: 'Values 2.mp4' },
-  { localPath: '../Videos/Values 3.mp4', blobName: 'Values 3.mp4' },
-  { localPath: '../Videos/Values 4.mp4', blobName: 'Values 4.mp4' },
+  { localPath: "../Videos/Value 1.mp4", blobName: "Value 1.mp4" },
+  { localPath: "../Videos/Values 2.mp4", blobName: "Values 2.mp4" },
+  { localPath: "../Videos/Values 3.mp4", blobName: "Values 3.mp4" },
+  { localPath: "../Videos/Values 4.mp4", blobName: "Values 4.mp4" },
 ];
 
 async function uploadVideo(localPath, blobName) {
   const fullPath = path.join(__dirname, localPath);
-  
+
   if (!fs.existsSync(fullPath)) {
     console.log(`⚠️  File not found: ${fullPath}`);
     return null;
@@ -42,12 +49,16 @@ async function uploadVideo(localPath, blobName) {
   try {
     console.log(`📤 Uploading ${blobName}...`);
     const file = fs.readFileSync(fullPath);
-    const blob = await put(blobName, file, {
-      access: 'public',
+    const options = {
+      access: "public",
       addRandomSuffix: false,
-      token: BLOB_READ_WRITE_TOKEN,
-    });
-    
+    };
+    // Only pass token when OIDC is unavailable — explicit token overrides OIDC.
+    if (!hasOidc && token) {
+      options.token = token;
+    }
+    const blob = await put(blobName, file, options);
+
     console.log(`✅ Uploaded: ${blob.url}`);
     return blob.url;
   } catch (error) {
@@ -57,25 +68,24 @@ async function uploadVideo(localPath, blobName) {
 }
 
 async function main() {
-  console.log('🚀 Starting video uploads to Vercel Blob Storage...\n');
-  
+  console.log("🚀 Starting video uploads to Vercel Blob Storage...\n");
+  if (hasOidc) {
+    console.log("Auth: OIDC (BLOB_STORE_ID / VERCEL_OIDC_TOKEN)\n");
+  } else {
+    console.log("Auth: BLOB_READ_WRITE_TOKEN (legacy fallback)\n");
+  }
+
   const results = [];
-  
   for (const video of videos) {
     const url = await uploadVideo(video.localPath, video.blobName);
-    if (url) {
-      results.push({ name: video.blobName, url });
-    }
-    console.log(''); // Empty line for readability
+    if (url) results.push({ name: video.blobName, url });
   }
-  
-  console.log('\n📋 Upload Summary:');
-  console.log('Copy these URLs to your ValuesSection.tsx component:\n');
-  results.forEach(({ name, url }) => {
-    console.log(`  ${name}: ${url}`);
-  });
-  
-  console.log('\n✨ Done!');
+
+  console.log("\n📋 Upload summary:");
+  results.forEach((r) => console.log(`- ${r.name}: ${r.url}`));
 }
 
-main().catch(console.error);
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

@@ -19,26 +19,26 @@
 
 ## Quick Start: Vercel Blob Storage
 
-## Step 1: Get Your Vercel Blob Token
+## Step 1: Connect Blob with OIDC (preferred)
 
 1. Go to [Vercel Dashboard](https://vercel.com/dashboard)
 2. Select your project: `osamamoussa`
-3. Go to **Settings** → **Storage** → **Create Database/Storage**
-4. Select **Blob Storage**
-5. Create a new blob store (or use existing)
-6. Go to **Settings** → **Environment Variables**
-7. Add a new variable:
-   - **Name**: `BLOB_READ_WRITE_TOKEN`
-   - **Value**: Copy from Blob Storage settings (or generate new token)
+3. Open the Blob store → **Projects** → connect this project
+4. Use **Upgrade to OIDC** on the project (clears the long-lived token warning)
+5. Redeploy. Vercel injects `BLOB_STORE_ID` + rotating `VERCEL_OIDC_TOKEN`
+
+Legacy fallback (local/CI only): `BLOB_READ_WRITE_TOKEN`. Do not pass it on Vercel once OIDC is enabled, or it overrides OIDC.
 
 ## Step 2: Upload Videos Using Script
 
 ### Option A: Using the Upload Script (Recommended)
 
-1. **Set the token locally** (for one-time use):
+1. **Auth locally with OIDC**:
    ```bash
-   export BLOB_READ_WRITE_TOKEN="your-token-here"
+   vercel link
+   vercel env pull
    ```
+   Or set legacy `BLOB_READ_WRITE_TOKEN` if not using the CLI.
 
 2. **Run the upload script**:
    ```bash
@@ -94,7 +94,7 @@ const values = [
 
 ### Videos not uploading?
 - Check file paths in `scripts/upload-videos.js`
-- Verify `BLOB_READ_WRITE_TOKEN` is set correctly
+- Verify Blob OIDC is connected (`BLOB_STORE_ID`), or legacy `BLOB_READ_WRITE_TOKEN` for local/CI
 - Check file sizes (free tier has 1GB limit)
 
 ### Videos not playing?
